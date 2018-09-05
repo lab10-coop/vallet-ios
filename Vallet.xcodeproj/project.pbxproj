@@ -21,6 +21,8 @@
 		D429F89921400A5A004427F0 /* ValletAdmin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D429F89721400A5A004427F0 /* ValletAdmin.xcdatamodeld */; };
 		D429F89B21400A5B004427F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D429F89A21400A5B004427F0 /* Assets.xcassets */; };
 		D429F89E21400A5B004427F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D429F89C21400A5B004427F0 /* LaunchScreen.storyboard */; };
+		D429F8A821400DAE004427F0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8A721400DAE004427F0 /* Constants.swift */; };
+		D429F8AA21400F20004427F0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8A721400DAE004427F0 /* Constants.swift */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,7 @@
 		D429F89A21400A5B004427F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D429F89D21400A5B004427F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D429F89F21400A5B004427F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D429F8A721400DAE004427F0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +166,7 @@
 		D429F8A321400ADC004427F0 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				D429F8A721400DAE004427F0 /* Constants.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -415,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D429F8A821400DAE004427F0 /* Constants.swift in Sources */,
 				D429F85121400572004427F0 /* ViewController.swift in Sources */,
 				D429F85721400572004427F0 /* Vallet.xcdatamodeld in Sources */,
 				D429F84F21400572004427F0 /* AppDelegate.swift in Sources */,
@@ -433,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D429F8AA21400F20004427F0 /* Constants.swift in Sources */,
 				D429F89321400A5A004427F0 /* ViewController.swift in Sources */,
 				D429F89121400A5A004427F0 /* AppDelegate.swift in Sources */,
 				D429F89921400A5A004427F0 /* ValletAdmin.xcdatamodeld in Sources */,
