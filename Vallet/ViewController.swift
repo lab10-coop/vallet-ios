@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  Web3Test
+//  Vallet
 //
-//  Created by Matija Kregar on 29/08/2018.
+//  Created by Matija Kregar on 05/09/2018.
 //  Copyright © 2018 Matija Kregar. All rights reserved.
 //
 
