@@ -21,7 +21,9 @@
 		D429F89921400A5A004427F0 /* ValletAdmin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D429F89721400A5A004427F0 /* ValletAdmin.xcdatamodeld */; };
 		D429F89B21400A5B004427F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D429F89A21400A5B004427F0 /* Assets.xcassets */; };
 		D429F89E21400A5B004427F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D429F89C21400A5B004427F0 /* LaunchScreen.storyboard */; };
+		D429F8A621400D87004427F0 /* FaucetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8A521400D87004427F0 /* FaucetManager.swift */; };
 		D429F8A821400DAE004427F0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8A721400DAE004427F0 /* Constants.swift */; };
+		D429F8A921400F1C004427F0 /* FaucetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8A521400D87004427F0 /* FaucetManager.swift */; };
 		D429F8AA21400F20004427F0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8A721400DAE004427F0 /* Constants.swift */; };
 		D429F8AF21401049004427F0 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8AE21401049004427F0 /* Result.swift */; };
 		D429F8B021401049004427F0 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8AE21401049004427F0 /* Result.swift */; };
@@ -64,6 +66,7 @@
 		D429F89A21400A5B004427F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D429F89D21400A5B004427F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D429F89F21400A5B004427F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D429F8A521400D87004427F0 /* FaucetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaucetManager.swift; sourceTree = "<group>"; };
 		D429F8A721400DAE004427F0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D429F8AE21401049004427F0 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,8 +174,17 @@
 			children = (
 				D429F8A721400DAE004427F0 /* Constants.swift */,
 				D429F8AE21401049004427F0 /* Result.swift */,
+				D429F8A421400D34004427F0 /* BlockChain */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		D429F8A421400D34004427F0 /* BlockChain */ = {
+			isa = PBXGroup;
+			children = (
+				D429F8A521400D87004427F0 /* FaucetManager.swift */,
+			);
+			path = BlockChain;
 			sourceTree = "<group>";
 		};
 		F210E04398A1C2678A4653B5 /* Frameworks */ = {
@@ -426,6 +438,7 @@
 				D429F8AF21401049004427F0 /* Result.swift in Sources */,
 				D429F8A821400DAE004427F0 /* Constants.swift in Sources */,
 				D429F85121400572004427F0 /* ViewController.swift in Sources */,
+				D429F8A621400D87004427F0 /* FaucetManager.swift in Sources */,
 				D429F85721400572004427F0 /* Vallet.xcdatamodeld in Sources */,
 				D429F84F21400572004427F0 /* AppDelegate.swift in Sources */,
 			);
@@ -446,6 +459,7 @@
 				D429F8B021401049004427F0 /* Result.swift in Sources */,
 				D429F8AA21400F20004427F0 /* Constants.swift in Sources */,
 				D429F89321400A5A004427F0 /* ViewController.swift in Sources */,
+				D429F8A921400F1C004427F0 /* FaucetManager.swift in Sources */,
 				D429F89121400A5A004427F0 /* AppDelegate.swift in Sources */,
 				D429F89921400A5A004427F0 /* ValletAdmin.xcdatamodeld in Sources */,
 			);
