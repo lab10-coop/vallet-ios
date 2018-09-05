@@ -15,6 +15,13 @@
 		D429F85921400573004427F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D429F85821400573004427F0 /* Assets.xcassets */; };
 		D429F85C21400573004427F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D429F85A21400573004427F0 /* LaunchScreen.storyboard */; };
 		D429F86721400573004427F0 /* ValletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F86621400573004427F0 /* ValletTests.swift */; };
+		D429F89121400A5A004427F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F89021400A5A004427F0 /* AppDelegate.swift */; };
+		D429F89321400A5A004427F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F89221400A5A004427F0 /* ViewController.swift */; };
+		D429F89621400A5A004427F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D429F89421400A5A004427F0 /* Main.storyboard */; };
+		D429F89921400A5A004427F0 /* ValletAdmin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D429F89721400A5A004427F0 /* ValletAdmin.xcdatamodeld */; };
+		D429F89B21400A5B004427F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D429F89A21400A5B004427F0 /* Assets.xcassets */; };
+		D429F89E21400A5B004427F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D429F89C21400A5B004427F0 /* LaunchScreen.storyboard */; };
+		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +37,10 @@
 /* Begin PBXFileReference section */
 		3453223FDAEFCCEA65DA70F2 /* Pods-Vallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vallet/Pods-Vallet.release.xcconfig"; sourceTree = "<group>"; };
 		63CA453DC703DB1A613E81CD /* Pods_Vallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		978EBDBF8DA054E50C13A3CC /* Pods-ValletAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValletAdmin.release.xcconfig"; path = "Pods/Target Support Files/Pods-ValletAdmin/Pods-ValletAdmin.release.xcconfig"; sourceTree = "<group>"; };
 		BC427D9B2FFCD9CA48489E79 /* Pods-Vallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vallet/Pods-Vallet.debug.xcconfig"; sourceTree = "<group>"; };
+		C9683045E8DE422BEFE13276 /* Pods-ValletAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValletAdmin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ValletAdmin/Pods-ValletAdmin.debug.xcconfig"; sourceTree = "<group>"; };
+		CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ValletAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D429F84B21400572004427F0 /* Vallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D429F84E21400572004427F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D429F85021400572004427F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +52,14 @@
 		D429F86221400573004427F0 /* ValletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ValletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D429F86621400573004427F0 /* ValletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValletTests.swift; sourceTree = "<group>"; };
 		D429F86821400573004427F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D429F88E21400A5A004427F0 /* ValletAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ValletAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D429F89021400A5A004427F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D429F89221400A5A004427F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D429F89521400A5A004427F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D429F89821400A5A004427F0 /* ValletAdmin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ValletAdmin.xcdatamodel; sourceTree = "<group>"; };
+		D429F89A21400A5B004427F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D429F89D21400A5B004427F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D429F89F21400A5B004427F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +78,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D429F88B21400A5A004427F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -68,6 +94,8 @@
 			children = (
 				BC427D9B2FFCD9CA48489E79 /* Pods-Vallet.debug.xcconfig */,
 				3453223FDAEFCCEA65DA70F2 /* Pods-Vallet.release.xcconfig */,
+				C9683045E8DE422BEFE13276 /* Pods-ValletAdmin.debug.xcconfig */,
+				978EBDBF8DA054E50C13A3CC /* Pods-ValletAdmin.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -75,7 +103,9 @@
 		D429F84221400572004427F0 = {
 			isa = PBXGroup;
 			children = (
+				D429F8A321400ADC004427F0 /* Shared */,
 				D429F84D21400572004427F0 /* Vallet */,
+				D429F88F21400A5A004427F0 /* ValletAdmin */,
 				D429F86521400573004427F0 /* ValletTests */,
 				D429F84C21400572004427F0 /* Products */,
 				B3FCB82A81955A64C8763D97 /* Pods */,
@@ -88,6 +118,7 @@
 			children = (
 				D429F84B21400572004427F0 /* Vallet.app */,
 				D429F86221400573004427F0 /* ValletTests.xctest */,
+				D429F88E21400A5A004427F0 /* ValletAdmin.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,10 +146,32 @@
 			path = ValletTests;
 			sourceTree = "<group>";
 		};
+		D429F88F21400A5A004427F0 /* ValletAdmin */ = {
+			isa = PBXGroup;
+			children = (
+				D429F89021400A5A004427F0 /* AppDelegate.swift */,
+				D429F89221400A5A004427F0 /* ViewController.swift */,
+				D429F89421400A5A004427F0 /* Main.storyboard */,
+				D429F89A21400A5B004427F0 /* Assets.xcassets */,
+				D429F89C21400A5B004427F0 /* LaunchScreen.storyboard */,
+				D429F89F21400A5B004427F0 /* Info.plist */,
+				D429F89721400A5A004427F0 /* ValletAdmin.xcdatamodeld */,
+			);
+			path = ValletAdmin;
+			sourceTree = "<group>";
+		};
+		D429F8A321400ADC004427F0 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		F210E04398A1C2678A4653B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				63CA453DC703DB1A613E81CD /* Pods_Vallet.framework */,
+				CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -163,6 +216,25 @@
 			productReference = D429F86221400573004427F0 /* ValletTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		D429F88D21400A5A004427F0 /* ValletAdmin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D429F8A221400A5B004427F0 /* Build configuration list for PBXNativeTarget "ValletAdmin" */;
+			buildPhases = (
+				AADC8E7481F7C9251528CE50 /* [CP] Check Pods Manifest.lock */,
+				D429F88A21400A5A004427F0 /* Sources */,
+				D429F88B21400A5A004427F0 /* Frameworks */,
+				D429F88C21400A5A004427F0 /* Resources */,
+				3510BC3F3CA5CF3C2F70A87D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ValletAdmin;
+			productName = ValletAdmin;
+			productReference = D429F88E21400A5A004427F0 /* ValletAdmin.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -180,6 +252,9 @@
 						CreatedOnToolsVersion = 9.4.1;
 						TestTargetID = D429F84A21400572004427F0;
 					};
+					D429F88D21400A5A004427F0 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 				};
 			};
 			buildConfigurationList = D429F84621400572004427F0 /* Build configuration list for PBXProject "Vallet" */;
@@ -196,6 +271,7 @@
 			projectRoot = "";
 			targets = (
 				D429F84A21400572004427F0 /* Vallet */,
+				D429F88D21400A5A004427F0 /* ValletAdmin */,
 				D429F86121400573004427F0 /* ValletTests */,
 			);
 		};
@@ -219,9 +295,69 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D429F88C21400A5A004427F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D429F89E21400A5B004427F0 /* LaunchScreen.storyboard in Resources */,
+				D429F89B21400A5B004427F0 /* Assets.xcassets in Resources */,
+				D429F89621400A5A004427F0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3510BC3F3CA5CF3C2F70A87D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ValletAdmin/Pods-ValletAdmin-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
+				"${BUILT_PRODUCTS_DIR}/scrypt/scrypt.framework",
+				"${BUILT_PRODUCTS_DIR}/secp256k1_ios/secp256k1_ios.framework",
+				"${BUILT_PRODUCTS_DIR}/web3swift/web3swift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/scrypt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1_ios.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/web3swift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ValletAdmin/Pods-ValletAdmin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AADC8E7481F7C9251528CE50 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ValletAdmin-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B086528B7443118FBE04AB44 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -293,6 +429,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D429F88A21400A5A004427F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D429F89321400A5A004427F0 /* ViewController.swift in Sources */,
+				D429F89121400A5A004427F0 /* AppDelegate.swift in Sources */,
+				D429F89921400A5A004427F0 /* ValletAdmin.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -316,6 +462,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				D429F85B21400573004427F0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D429F89421400A5A004427F0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D429F89521400A5A004427F0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D429F89C21400A5B004427F0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D429F89D21400A5B004427F0 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -517,6 +679,44 @@
 			};
 			name = Release;
 		};
+		D429F8A021400A5B004427F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9683045E8DE422BEFE13276 /* Pods-ValletAdmin.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 93TVZG5NS7;
+				INFOPLIST_FILE = ValletAdmin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.matijakregar.ValletAdmin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D429F8A121400A5B004427F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 978EBDBF8DA054E50C13A3CC /* Pods-ValletAdmin.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 93TVZG5NS7;
+				INFOPLIST_FILE = ValletAdmin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.matijakregar.ValletAdmin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -547,6 +747,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		D429F8A221400A5B004427F0 /* Build configuration list for PBXNativeTarget "ValletAdmin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D429F8A021400A5B004427F0 /* Debug */,
+				D429F8A121400A5B004427F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
@@ -557,6 +766,16 @@
 			);
 			currentVersion = D429F85621400572004427F0 /* Vallet.xcdatamodel */;
 			path = Vallet.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		D429F89721400A5A004427F0 /* ValletAdmin.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D429F89821400A5A004427F0 /* ValletAdmin.xcdatamodel */,
+			);
+			currentVersion = D429F89821400A5A004427F0 /* ValletAdmin.xcdatamodel */;
+			path = ValletAdmin.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
