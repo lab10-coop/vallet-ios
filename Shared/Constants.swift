@@ -23,4 +23,11 @@ struct Constants {
 		}
 	}
 
+	// do not deploy with these values !!!
+	struct Temp {
+
+		static let keystorePassword = "ValletTEST"
+
+	}
+
 }
