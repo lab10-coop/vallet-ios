@@ -31,6 +31,8 @@
 		D429F8B521401528004427F0 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8B321401528004427F0 /* Wallet.swift */; };
 		D429F8B721411FA2004427F0 /* Web3Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8B621411FA2004427F0 /* Web3Manager.swift */; };
 		D429F8B821411FA2004427F0 /* Web3Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8B621411FA2004427F0 /* Web3Manager.swift */; };
+		D429F8C12141724C004427F0 /* TokenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8C02141724C004427F0 /* TokenType.swift */; };
+		D429F8C22141724C004427F0 /* TokenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8C02141724C004427F0 /* TokenType.swift */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,7 @@
 		D429F8AE21401049004427F0 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		D429F8B321401528004427F0 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		D429F8B621411FA2004427F0 /* Web3Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Web3Manager.swift; sourceTree = "<group>"; };
+		D429F8C02141724C004427F0 /* TokenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +191,7 @@
 		D429F8A421400D34004427F0 /* BlockChain */ = {
 			isa = PBXGroup;
 			children = (
+				D429F8C02141724C004427F0 /* TokenType.swift */,
 				D429F8B321401528004427F0 /* Wallet.swift */,
 				D429F8A521400D87004427F0 /* FaucetManager.swift */,
 				D429F8B621411FA2004427F0 /* Web3Manager.swift */,
@@ -445,6 +449,7 @@
 			files = (
 				D429F8B721411FA2004427F0 /* Web3Manager.swift in Sources */,
 				D429F8AF21401049004427F0 /* Result.swift in Sources */,
+				D429F8C12141724C004427F0 /* TokenType.swift in Sources */,
 				D429F8B421401528004427F0 /* Wallet.swift in Sources */,
 				D429F8A821400DAE004427F0 /* Constants.swift in Sources */,
 				D429F85121400572004427F0 /* ViewController.swift in Sources */,
@@ -468,6 +473,7 @@
 			files = (
 				D429F8B821411FA2004427F0 /* Web3Manager.swift in Sources */,
 				D429F8B021401049004427F0 /* Result.swift in Sources */,
+				D429F8C22141724C004427F0 /* TokenType.swift in Sources */,
 				D429F8B521401528004427F0 /* Wallet.swift in Sources */,
 				D429F8AA21400F20004427F0 /* Constants.swift in Sources */,
 				D429F89321400A5A004427F0 /* ViewController.swift in Sources */,
