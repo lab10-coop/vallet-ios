@@ -10,16 +10,34 @@ import UIKit
 
 class ViewController: UIViewController {
 
+	let tokenFactory = TokenFactory()
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+
+//		tokenFactory.createShop(with: Wallet.address, name: "test8", type: .voucher) { result in
+//			switch result {
+//			case .success(let shop):
+//				print("created shop: \(shop)")
+//			case .failure(let error):
+//				print("create shop error: \(error)")
+//			}
+//		}
+
+		tokenFactory.loadAllCreatedShops(for: Wallet.address) { (result) in
+			switch result {
+			case .success(let shops):
+				if let shops = shops {
+					print("all shops:")
+					shops.forEach {print($0)}
+				}
+			case .failure(let error):
+				print("load shops error: \(error)")
+			}
+		}
+
 	}
 
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
-	}
 
 
 }
-
