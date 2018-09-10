@@ -12,7 +12,7 @@ import PromiseKit
 import BigInt
 
 class TokenFactory: ContractProtocol {
-
+	
 	enum Method: String {
 		case createTokenContract = "createTokenContract"
 	}
@@ -36,36 +36,34 @@ class TokenFactory: ContractProtocol {
 	}
 
 	func createShop(with address: EthereumAddress, name: String, type: TokenType, decimals: UInt = 12, completion: @escaping (Result<Shop>) -> Void) {
-		guard let contract = contract
-			else {
-				return
-		}
-
 		var options = Web3Options()
 		options.from = address
-		options.value = BigUInt(0)
-		options.gasLimit = BigUInt(200000)
 
-		guard let intermediate = contract.method(Method.createTokenContract.rawValue, parameters: [NSString(string: name), NSString(string: type.rawValue), BigUInt(decimals) as AnyObject], options: options)
+		guard let intermediate = transactionIntermediate(method: Method.createTokenContract.rawValue, parameters: [NSString(string: name), NSString(string: type.rawValue), BigUInt(decimals) as AnyObject], options: options)
 			else {
+				completion(Result.failure(Web3Error.unknownError))
 				return
 		}
 
-		// TODO: Move off the main thread
-		let result = intermediate.send(password: Constants.Temp.keystorePassword)
-
-		switch result {
-		case .success(let transactionSendingResult):
-			loadCreatedShop(from: transactionSendingResult) { (result) in
-				switch result {
-				case .success(let shop):
-					completion(Result.success(shop))
-				case .failure(let error):
-					completion(Result.failure(error))
+		intermediate.sendInBackground(password: Constants.Temp.keystorePassword) { [weak self] (result) in
+			switch result {
+			case .success(let transactionSendingResult):
+				guard let strongSelf = self
+					else {
+						completion(Result.failure(Web3Error.unknownError))
+						return
 				}
+				strongSelf.loadCreatedShop(from: transactionSendingResult) { (result) in
+					switch result {
+					case .success(let shop):
+						completion(Result.success(shop))
+					case .failure(let error):
+						completion(Result.failure(error))
+					}
+				}
+			case .failure(let error):
+				completion(Result.failure(error))
 			}
-		case .failure(let error):
-			completion(Result.failure(error))
 		}
 	}
 
@@ -77,77 +75,78 @@ class TokenFactory: ContractProtocol {
 
 		let eventFilter = EventFilter(fromBlock: .blockNumber(0), toBlock: .latest)
 
-		// TODO: Move off the main thread
-		let eventsResult = contract.getIndexedEvents(eventName: Constants.BlockChain.Event.tokenCreated, filter: eventFilter)
+		DispatchQueue.global(qos: .background).async {
+			let eventsResult = contract.getIndexedEvents(eventName: Constants.BlockChain.Event.tokenCreated, filter: eventFilter)
 
-		switch eventsResult {
-		case .success(let events):
-			let myShops = events.compactMap { Shop(decodedLog: $0.decodedResult) }.filter { $0.creatorAddress == address }
-			completion(Result.success(myShops))
-		case .failure(let error):
-			print("factory contract events error: \(error)")
-			completion(Result.failure(error))
-		}
-	}
-
-	// TODO: This is a general utility method ... find a better place to put it
-	private func getTransactionReceipt(for txhash: String, completion: @escaping (Result<TransactionReceipt>) -> Void) {
-		// TODO: Move off the main thread
-		let result = Web3Manager.instance.eth.getTransactionReceipt(txhash)
-
-		switch result {
-		case .success(let receiptResult):
-			completion(Result.success(receiptResult))
-		case .failure(let error):
-			completion(Result.failure(error))
+			switch eventsResult {
+			case .success(let events):
+				let myShops = events.compactMap { Shop(decodedLog: $0.decodedResult) }.filter { $0.creatorAddress == address }
+				completion(Result.success(myShops))
+			case .failure(let error):
+				print("Factory contract events error: \(error)")
+				completion(Result.failure(error))
+			}
 		}
 	}
 
 	private func loadCreatedShop(from transactionSendingResult: TransactionSendingResult, completion: @escaping (Result<Shop>) -> Void) {
-		var errorCount = 0
+		var repeatCount = 0
 		// Use timer to get the transaction receipt, since it might not be ready immediately.
-		Timer.scheduledTimer(withTimeInterval: 2, repeats: true, block: { [weak self] (timer) in
-			self?.getTransactionReceipt(for: transactionSendingResult.hash, completion: { [weak self] (result) in
+		Timer.scheduledTimer(withTimeInterval: Constants.Timer.pollInterval, repeats: true, block: { (timer) in
+			Web3Manager.getTransactionReceipt(for: transactionSendingResult.hash, completion: { [weak self] (result) in
 				switch result {
 				case .success(let receipt):
 					timer.invalidate()
-					guard let shop = self?.resolveShop(from: receipt)
+					guard let strongSelf = self
 						else {
-							completion(Result.failure(Web3Error.dataError))
+							completion(Result.failure(Web3Error.unknownError))
 							return
 					}
-					completion(Result.success(shop))
+					strongSelf.resolveShop(from: receipt, completion: { (result) in
+						switch result {
+						case .success(let shop):
+							completion(Result.success(shop))
+						case .failure(let error):
+							completion(Result.failure(error))
+						}
+					})
 				case .failure(let error):
-					errorCount += 1
-					if errorCount > 30 {
+					repeatCount += 1
+					if repeatCount > Constants.Timer.maxRepeatCount {
 						timer.invalidate()
 						completion(Result.failure(error))
 					}
-					print("load transaction receipt error \(errorCount): \(error)")
+					print("Load transaction receipt error \(repeatCount): \(error)")
 				}
 			})
 		})
 	}
 
-	private func resolveShop(from receipt: TransactionReceipt) -> Shop? {
+	private func resolveShop(from receipt: TransactionReceipt, completion: @escaping (Result<Shop>) -> Void) {
 		guard let contract = contract,
 			let eventParser = contract.createEventParser(Constants.BlockChain.Event.tokenCreated, filter: nil)
 			else {
-				return nil
+				completion(Result.failure(Web3Error.unknownError))
+				return
 		}
 
-		// TODO: Move off the main thread
-		let result = eventParser.parseTransactionByHash(receipt.transactionHash)
+		DispatchQueue.global(qos: .background).async {
+			let result = eventParser.parseTransactionByHash(receipt.transactionHash)
 
-		switch result {
-		case .success(let parsedEvents):
-			if let decodedResult = parsedEvents.first?.decodedResult {
-				return Shop(decodedLog: decodedResult)
+			switch result {
+			case .success(let parsedEvents):
+				guard let decodedResult = parsedEvents.first?.decodedResult,
+					let shop = Shop(decodedLog: decodedResult)
+					else {
+						completion(Result.failure(Web3Error.dataError))
+						return
+				}
+				completion(Result.success(shop))
+			case .failure(let error):
+				print("factory events error: \(error)")
+				completion(Result.failure(error))
 			}
-		case .failure(let error):
-			print("factory events error: \(error)")
 		}
-		return nil
 	}
 
 }

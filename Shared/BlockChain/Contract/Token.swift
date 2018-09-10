@@ -37,154 +37,103 @@ class Token: ContractProtocol {
 		self.address = address
 	}
 
-	func issue(value: Int, to address: EthereumAddress, from fromAddress: EthereumAddress, completion: (Result<TransactionSendingResult>) -> Void) {
-		guard let contract = contract
-			else {
-				return
-		}
+	// MARK: - Contract methods
 
+	func issue(value: Int, to toAddress: EthereumAddress, from fromAddress: EthereumAddress, completion: @escaping (Result<TransactionSendingResult>) -> Void) {
 		var options = Web3Options()
 		options.from = fromAddress
-		options.value = BigUInt(0)
-		options.gasLimit = BigUInt(200000)
-		options.gasPrice = BigUInt(5000000000)
 
-		guard let intermediate = contract.method(Method.issue.rawValue, parameters: [NSString(string: address.address), BigUInt(value) as AnyObject], options: options)
+		guard let intermediate = transactionIntermediate(method: Method.issue.rawValue, parameters: [NSString(string: toAddress.address), BigUInt(value) as AnyObject], options: options)
 			else {
+				completion(Result.failure(Web3Error.unknownError))
 				return
 		}
 
-		// TODO: Move off the main thread
-		let result = intermediate.send(password: Constants.Temp.keystorePassword)
-
-		switch result {
-		case .success(let transactionSendingResult):
-			completion(Result.success(transactionSendingResult))
-		case .failure(let error):
-			completion(Result.failure(error))
+		intermediate.sendInBackground(password: Constants.Temp.keystorePassword) { (result) in
+			completion(result)
 		}
 	}
 
 	func balance(of address: EthereumAddress, completion: @escaping (Result<Int>) -> Void) {
-		guard let contract = contract
+		guard let intermediate = transactionIntermediate(method: Method.balance.rawValue, parameters: [NSString(string: address.address)])
 			else {
+				completion(Result.failure(Web3Error.unknownError))
 				return
 		}
 
-		var options = Web3Options()
-		options.value = BigUInt(0)
-		options.gasLimit = BigUInt(200000)
-		options.gasPrice = BigUInt(5000000000)
-
-		guard let intermediate = contract.method(Method.balance.rawValue, parameters: [NSString(string: address.address)], options: options)
-			else {
-				return
-		}
-
-		let result = intermediate.call(options: nil)
-
-		switch result {
-		case .success(let resultDictionary):
-			guard let balanceValue = resultDictionary["balance"],
-				let balance = Int("\(balanceValue)")
-				else {
-					completion(Result.failure(Web3Error.dataError))
-					return
+		intermediate.callInBackground { (result) in
+			switch result {
+			case .success(let resultDictionary):
+				guard let balanceValue = resultDictionary["balance"],
+					let balance = Int("\(balanceValue)")
+					else {
+						completion(Result.failure(Web3Error.dataError))
+						return
+				}
+				completion(Result.success(balance))
+			case .failure(let error):
+				completion(Result.failure(error))
 			}
-			completion(Result.success(balance))
-		case .failure(let error):
-			completion(Result.failure(error))
 		}
 	}
 
 	func redeem(value: Int, from address: EthereumAddress, completion: @escaping (Result<TransactionSendingResult>) -> Void) {
-		guard let contract = contract
-			else {
-				return
-		}
-
 		var options = Web3Options()
 		options.from = address
-		options.value = BigUInt(0)
-		options.gasLimit = BigUInt(200000)
-		options.gasPrice = BigUInt(5000000000)
 
-		guard let intermediate = contract.method(Method.redeem.rawValue, parameters: [BigUInt(value) as AnyObject], options: options)
+		guard let intermediate = transactionIntermediate(method: Method.redeem.rawValue, parameters: [BigUInt(value) as AnyObject], options: options)
 			else {
+				completion(Result.failure(Web3Error.unknownError))
 				return
 		}
 
-		// TODO: Move off the main thread
-		let result = intermediate.send(password: Constants.Temp.keystorePassword)
-		
-		switch result {
-		case .success(let transactionSendingResult):
-			completion(Result.success(transactionSendingResult))
-		case .failure(let error):
-			completion(Result.failure(error))
+		intermediate.sendInBackground(password: Constants.Temp.keystorePassword) { (result) in
+			completion(result)
 		}
 	}
 
 	func name(completion: @escaping (Result<String>) -> Void) {
-		guard let contract = contract
+		guard let intermediate = transactionIntermediate(method: Method.name.rawValue)
 			else {
+				completion(Result.failure(Web3Error.unknownError))
 				return
 		}
 
-		var options = Web3Options()
-		options.value = BigUInt(0)
-		options.gasLimit = BigUInt(200000)
-		options.gasPrice = BigUInt(5000000000)
-
-		guard let intermediate = contract.method(Method.name.rawValue, parameters: [], options: options)
-			else {
-				return
-		}
-
-		let result = intermediate.call(options: nil)
-
-		switch result {
-		case .success(let resultDictionary):
-			guard let name = resultDictionary.first?.value as? String
-				else {
-					completion(Result.failure(Web3Error.dataError))
-					return
+		intermediate.callInBackground(options: nil) { result in
+			switch result {
+			case .success(let resultDictionary):
+				guard let name = resultDictionary.first?.value as? String
+					else {
+						completion(Result.failure(Web3Error.dataError))
+						return
+				}
+				completion(Result.success(name))
+			case .failure(let error):
+				completion(Result.failure(error))
 			}
-			completion(Result.success(name))
-		case .failure(let error):
-			completion(Result.failure(error))
 		}
 	}
 
 	func totalSupply(completion: @escaping (Result<Int>) -> Void) {
-		guard let contract = contract
+		guard let intermediate = transactionIntermediate(method: Method.totalSupply.rawValue)
 			else {
+				completion(Result.failure(Web3Error.unknownError))
 				return
 		}
 
-		var options = Web3Options()
-		options.value = BigUInt(0)
-		options.gasLimit = BigUInt(200000)
-		options.gasPrice = BigUInt(5000000000)
-
-		guard let intermediate = contract.method(Method.totalSupply.rawValue, parameters: [], options: options)
-			else {
-				return
-		}
-
-		let result = intermediate.call(options: nil)
-
-		switch result {
-		case .success(let resultDictionary):
-			guard let supplyValue = resultDictionary.first?.value,
-				let supply = Int("\(supplyValue)")
-				else {
-					completion(Result.failure(Web3Error.dataError))
-					return
+		intermediate.callInBackground(options: nil) { result in
+			switch result {
+			case .success(let resultDictionary):
+				guard let supplyValue = resultDictionary.first?.value,
+					let supply = Int("\(supplyValue)")
+					else {
+						completion(Result.failure(Web3Error.dataError))
+						return
+				}
+				completion(Result.success(supply))
+			case .failure(let error):
+				completion(Result.failure(error))
 			}
-			completion(Result.success(supply))
-		case .failure(let error):
-			completion(Result.failure(error))
 		}
 	}
 

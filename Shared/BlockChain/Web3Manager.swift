@@ -11,6 +11,8 @@ import web3swift
 
 class Web3Manager {
 
+	// MARK: - Instance
+
 	private var _instance: web3?
 
 	private static var shared = Web3Manager()
@@ -40,6 +42,20 @@ class Web3Manager {
 		}
 		createdInstance.addKeystoreManager(Wallet.keystoreManager)
 		return createdInstance
+	}
+
+	// MARK - Utils
+
+	static func getTransactionReceipt(for txhash: String, completion: @escaping (Result<TransactionReceipt>) -> Void) {
+		DispatchQueue.global(qos: .background).async {
+			let result = Web3Manager.instance.eth.getTransactionReceipt(txhash)
+			switch result {
+			case .success(let receiptResult):
+				completion(Result.success(receiptResult))
+			case .failure(let error):
+				completion(Result.failure(error))
+			}
+		}
 	}
 
 }

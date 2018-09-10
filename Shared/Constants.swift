@@ -24,6 +24,13 @@ struct Constants {
 		}
 	}
 
+	struct Timer {
+
+		static let pollInterval: TimeInterval = 3.0
+		static let maxRepeatCount = 20
+
+	}
+
 	// do not deploy with these values !!!
 	struct Temp {
 
