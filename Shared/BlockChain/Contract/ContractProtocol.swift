@@ -13,5 +13,6 @@ protocol ContractProtocol {
 
 	var jsonABI: String { get }
 	var contract: web3.web3contract? { get }
+	var address: EthereumAddress? { get set }
 	
 }

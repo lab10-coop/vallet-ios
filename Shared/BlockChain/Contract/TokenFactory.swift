@@ -19,14 +19,21 @@ class TokenFactory: ContractProtocol {
 
 	var jsonABI = "[{\"constant\": false,\"inputs\": [{\"name\": \"name\",\"type\": \"string\"},{\"name\": \"symbol\",\"type\": \"string\"},{\"name\": \"decimals\",\"type\": \"uint8\"}],\"name\": \"createTokenContract\",\"outputs\": [],\"payable\": false,\"stateMutability\": \"nonpayable\",\"type\": \"function\"},{\"anonymous\": false,\"inputs\": [{\"indexed\": false,\"name\": \"_address\",\"type\": \"address\"},{\"indexed\": false,\"name\": \"_creator\",\"type\": \"address\"},{\"indexed\": false,\"name\": \"_name\",\"type\": \"string\"},{\"indexed\": false,\"name\": \"_symbol\",\"type\": \"string\"},{\"indexed\": false,\"name\": \"_decimals\",\"type\": \"uint8\"}],\"name\": \"TokenCreated\",\"type\": \"event\"}]"
 
+
 	lazy var contract: web3.web3contract? = {
-		guard let contractAddress = EthereumAddress(Constants.BlockChain.tokenFactoryContractAddress)
+		guard let address = address
 			else {
 				return nil
 		}
-		let contract = Web3Manager.instance.contract(jsonABI, at: contractAddress, abiVersion: 2)
+		let contract = Web3Manager.instance.contract(jsonABI, at: address, abiVersion: 2)
 		return contract
 	}()
+
+	var address: EthereumAddress?
+
+	init(address: EthereumAddress) {
+		self.address = address
+	}
 
 	func createShop(with address: EthereumAddress, name: String, type: TokenType, decimals: UInt = 12, completion: @escaping (Result<Shop>) -> Void) {
 		guard let contract = contract
