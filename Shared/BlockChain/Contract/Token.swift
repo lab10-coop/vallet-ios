@@ -137,6 +137,8 @@ class Token: ContractProtocol {
 		}
 	}
 
+	// MARK: - Events
+
 	func loadRedeemEvents(for clientAddress: EthereumAddress? = nil, completion: @escaping (Result<[EventValuable]?>) -> Void) {
 		guard let contract = contract,
 			let contractAddress = address
@@ -195,10 +197,37 @@ class Token: ContractProtocol {
 		}
 	}
 
+	func loadHistory(for clientAddress: EthereumAddress? = nil, completion: @escaping (Result<[EventValuable]?>) -> Void) {
+		var events = [EventValuable]()
+		// TODO: investigate the retain cycle in this case
+		loadTransferEvents(for: clientAddress) { (transferResult) in
+			switch transferResult {
+			case .success(let transfers):
+				if let transfers = transfers {
+					events.append(contentsOf: transfers)
+				}
+				self.loadRedeemEvents(for: clientAddress, completion: { (redeemResult) in
+					switch redeemResult {
+					case .success(let redeems):
+						if let redeems = redeems {
+							events.append(contentsOf: redeems)
+						}
+						events.sort(by: { $0.receipt.blockNumber < $1.receipt.blockNumber })
+						completion(Result.success(events))
+					case .failure:
+						completion(redeemResult)
+					}
+				})
+			case .failure:
+				completion(transferResult)
+			}
+		}
+	}
+
 }
 
 // TODO: move the events to separate files
-protocol EventValuable {
+protocol EventValuable: CustomStringConvertible {
 	var value: Int { get }
 	var receipt: TransactionReceipt { get }
 }
@@ -220,6 +249,10 @@ struct TransferEvent: EventValuable {
 		self.toAddress = parsedAddress
 		self.receipt = transactionReceipt
 	}
+
+	var description: String {
+		return "received: \(value), to: \(toAddress.address), blockNumber: \(receipt.blockNumber)"
+	}
 }
 
 struct RedeemEvent: EventValuable {
@@ -238,5 +271,9 @@ struct RedeemEvent: EventValuable {
 		self.value = parsedValue
 		self.fromAddress = parsedAddress
 		self.receipt = transactionReceipt
+	}
+
+	var description: String {
+		return "redeemed: \(value), from: \(fromAddress.address), blockNumber: \(receipt.blockNumber)"
 	}
 }
