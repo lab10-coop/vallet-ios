@@ -41,6 +41,8 @@
 		D429F8C92142BF87004427F0 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8C72142BF86004427F0 /* Token.swift */; };
 		D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
+		D4C5CD9A2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */; };
+		D4C5CD9B2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +92,7 @@
 		D429F8C02141724C004427F0 /* TokenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenType.swift; sourceTree = "<group>"; };
 		D429F8C72142BF86004427F0 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		D4C5CD932147D34200AB67D7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLinkedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +229,7 @@
 		D4C5CD912147D30200AB67D7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */,
 				D4C5CD922147D31600AB67D7 /* QRCode */,
 			);
 			path = UI;
@@ -500,6 +504,7 @@
 				D429F8BB21416D9D004427F0 /* TokenFactory.swift in Sources */,
 				D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */,
 				D429F84F21400572004427F0 /* AppDelegate.swift in Sources */,
+				D4C5CD9A2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +533,7 @@
 				D429F8BC21416D9D004427F0 /* TokenFactory.swift in Sources */,
 				D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */,
 				D429F89921400A5A004427F0 /* ValletAdmin.xcdatamodeld in Sources */,
+				D4C5CD9B2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
