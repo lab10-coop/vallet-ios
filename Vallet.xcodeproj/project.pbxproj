@@ -39,6 +39,8 @@
 		D429F8C22141724C004427F0 /* TokenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8C02141724C004427F0 /* TokenType.swift */; };
 		D429F8C82142BF86004427F0 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8C72142BF86004427F0 /* Token.swift */; };
 		D429F8C92142BF87004427F0 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8C72142BF86004427F0 /* Token.swift */; };
+		D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
+		D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +89,7 @@
 		D429F8BD21416F91004427F0 /* ContractProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractProtocol.swift; sourceTree = "<group>"; };
 		D429F8C02141724C004427F0 /* TokenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenType.swift; sourceTree = "<group>"; };
 		D429F8C72142BF86004427F0 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		D4C5CD932147D34200AB67D7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +195,7 @@
 			children = (
 				D429F8A721400DAE004427F0 /* Constants.swift */,
 				D429F8AE21401049004427F0 /* Result.swift */,
+				D4C5CD912147D30200AB67D7 /* UI */,
 				D429F8A421400D34004427F0 /* BlockChain */,
 			);
 			path = Shared;
@@ -217,6 +221,22 @@
 				D429F8C72142BF86004427F0 /* Token.swift */,
 			);
 			path = Contract;
+			sourceTree = "<group>";
+		};
+		D4C5CD912147D30200AB67D7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D4C5CD922147D31600AB67D7 /* QRCode */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D4C5CD922147D31600AB67D7 /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				D4C5CD932147D34200AB67D7 /* UIImage.swift */,
+			);
+			path = QRCode;
 			sourceTree = "<group>";
 		};
 		F210E04398A1C2678A4653B5 /* Frameworks */ = {
@@ -478,6 +498,7 @@
 				D429F8A621400D87004427F0 /* FaucetManager.swift in Sources */,
 				D429F85721400572004427F0 /* Vallet.xcdatamodeld in Sources */,
 				D429F8BB21416D9D004427F0 /* TokenFactory.swift in Sources */,
+				D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */,
 				D429F84F21400572004427F0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +526,7 @@
 				D429F8A921400F1C004427F0 /* FaucetManager.swift in Sources */,
 				D429F89121400A5A004427F0 /* AppDelegate.swift in Sources */,
 				D429F8BC21416D9D004427F0 /* TokenFactory.swift in Sources */,
+				D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */,
 				D429F89921400A5A004427F0 /* ValletAdmin.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
