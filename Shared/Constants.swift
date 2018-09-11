@@ -20,6 +20,8 @@ struct Constants {
 		struct Event {
 
 			static let tokenCreated = "TokenCreated"
+			static let redeem = "Redeem"
+			static let transfer = "Transfer"
 			
 		}
 	}

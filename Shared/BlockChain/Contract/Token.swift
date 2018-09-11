@@ -137,4 +137,106 @@ class Token: ContractProtocol {
 		}
 	}
 
+	func loadRedeemEvents(for clientAddress: EthereumAddress? = nil, completion: @escaping (Result<[EventValuable]?>) -> Void) {
+		guard let contract = contract,
+			let contractAddress = address
+			else {
+				completion(Result.failure(Web3Error.unknownError))
+				return
+		}
+
+		let eventFilter = EventFilter(fromBlock: .blockNumber(0), toBlock: .latest, addresses: [contractAddress])
+
+		DispatchQueue.global(qos: .background).async {
+			let eventsResult = contract.getIndexedEvents(eventName: Constants.BlockChain.Event.redeem, filter: eventFilter, joinWithReceipts: true)
+
+			switch eventsResult {
+			case .success(let events):
+				let redeems = events.compactMap { RedeemEvent(parserResult: $0) }.filter {
+					guard let clientAddress = clientAddress
+						else {
+							return true
+					}
+					return $0.fromAddress == clientAddress
+				}
+				completion(Result.success(redeems))
+			case .failure(let error):
+				completion(Result.failure(error))
+			}
+		}
+	}
+
+	func loadTransferEvents(for clientAddress: EthereumAddress? = nil, completion: @escaping (Result<[EventValuable]?>) -> Void) {
+		guard let contract = contract,
+			let contractAddress = address
+			else {
+				completion(Result.failure(Web3Error.unknownError))
+				return
+		}
+
+		let eventFilter = EventFilter(fromBlock: .blockNumber(0), toBlock: .latest, addresses: [contractAddress])
+
+		DispatchQueue.global(qos: .background).async {
+			let eventsResult = contract.getIndexedEvents(eventName: Constants.BlockChain.Event.transfer, filter: eventFilter, joinWithReceipts: true)
+
+			switch eventsResult {
+			case .success(let events):
+				let transfers = events.compactMap { TransferEvent(parserResult: $0) }.filter {
+					guard let clientAddress = clientAddress
+						else {
+							return true
+					}
+					return $0.toAddress == clientAddress
+				}
+				completion(Result.success(transfers))
+			case .failure(let error):
+				completion(Result.failure(error))
+			}
+		}
+	}
+
+}
+
+// TODO: move the events to separate files
+protocol EventValuable {
+	var value: Int { get }
+	var receipt: TransactionReceipt { get }
+}
+
+struct TransferEvent: EventValuable {
+	var value: Int
+	var toAddress: EthereumAddress
+	var receipt: TransactionReceipt
+
+	init?(parserResult: EventParserResultProtocol) {
+		guard let parsedValueString = parserResult.decodedResult["_value"],
+			let parsedValue = Int("\(parsedValueString)"),
+			let parsedAddress = parserResult.decodedResult["_to"] as? EthereumAddress,
+			let transactionReceipt = parserResult.transactionReceipt
+			else {
+				return nil
+		}
+		self.value = parsedValue
+		self.toAddress = parsedAddress
+		self.receipt = transactionReceipt
+	}
+}
+
+struct RedeemEvent: EventValuable {
+	var value: Int
+	var fromAddress: EthereumAddress
+	var receipt: TransactionReceipt
+
+	init?(parserResult: EventParserResultProtocol) {
+		guard let parsedValueString = parserResult.decodedResult["_value"],
+			let parsedValue = Int("\(parsedValueString)"),
+			let parsedAddress = parserResult.decodedResult["_from"] as? EthereumAddress,
+			let transactionReceipt = parserResult.transactionReceipt
+			else {
+				return nil
+		}
+		self.value = parsedValue
+		self.fromAddress = parsedAddress
+		self.receipt = transactionReceipt
+	}
 }
