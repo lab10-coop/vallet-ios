@@ -41,8 +41,12 @@
 		D429F8C92142BF87004427F0 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8C72142BF86004427F0 /* Token.swift */; };
 		D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
+		D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */; };
+		D4C5CD982147DA2700AB67D7 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */; };
 		D4C5CD9A2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */; };
 		D4C5CD9B2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */; };
+		D4C5CD9D2147DBAC00AB67D7 /* QRCodeReaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C5CD9C2147DBAC00AB67D7 /* QRCodeReaderView.xib */; };
+		D4C5CD9E2147DBAC00AB67D7 /* QRCodeReaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C5CD9C2147DBAC00AB67D7 /* QRCodeReaderView.xib */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,7 +96,9 @@
 		D429F8C02141724C004427F0 /* TokenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenType.swift; sourceTree = "<group>"; };
 		D429F8C72142BF86004427F0 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		D4C5CD932147D34200AB67D7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
 		D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLinkedView.swift; sourceTree = "<group>"; };
+		D4C5CD9C2147DBAC00AB67D7 /* QRCodeReaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeReaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +245,8 @@
 			isa = PBXGroup;
 			children = (
 				D4C5CD932147D34200AB67D7 /* UIImage.swift */,
+				D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */,
+				D4C5CD9C2147DBAC00AB67D7 /* QRCodeReaderView.xib */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -359,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D429F85C21400573004427F0 /* LaunchScreen.storyboard in Resources */,
+				D4C5CD9D2147DBAC00AB67D7 /* QRCodeReaderView.xib in Resources */,
 				D429F85921400573004427F0 /* Assets.xcassets in Resources */,
 				D429F85421400572004427F0 /* Main.storyboard in Resources */,
 			);
@@ -376,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D429F89E21400A5B004427F0 /* LaunchScreen.storyboard in Resources */,
+				D4C5CD9E2147DBAC00AB67D7 /* QRCodeReaderView.xib in Resources */,
 				D429F89B21400A5B004427F0 /* Assets.xcassets in Resources */,
 				D429F89621400A5A004427F0 /* Main.storyboard in Resources */,
 			);
@@ -502,6 +512,7 @@
 				D429F8A621400D87004427F0 /* FaucetManager.swift in Sources */,
 				D429F85721400572004427F0 /* Vallet.xcdatamodeld in Sources */,
 				D429F8BB21416D9D004427F0 /* TokenFactory.swift in Sources */,
+				D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */,
 				D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */,
 				D429F84F21400572004427F0 /* AppDelegate.swift in Sources */,
 				D4C5CD9A2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */,
@@ -531,6 +542,7 @@
 				D429F8A921400F1C004427F0 /* FaucetManager.swift in Sources */,
 				D429F89121400A5A004427F0 /* AppDelegate.swift in Sources */,
 				D429F8BC21416D9D004427F0 /* TokenFactory.swift in Sources */,
+				D4C5CD982147DA2700AB67D7 /* QRCodeReaderView.swift in Sources */,
 				D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */,
 				D429F89921400A5A004427F0 /* ValletAdmin.xcdatamodeld in Sources */,
 				D4C5CD9B2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */,
