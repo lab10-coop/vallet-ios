@@ -18,12 +18,11 @@ class Web3Manager {
 	private static var shared = Web3Manager()
 
 	static var instance: web3 {
-		if let instance = shared._instance {
-			return instance
+		guard let instance = shared._instance
+		else {
+			fatalError("Call Web3Manager().start() before using it.")
 		}
-		let newInstance = shared.createInstance()
-		shared._instance = newInstance
-		return newInstance
+		return instance
 	}
 
 	private func createInstance() -> web3 {
@@ -31,17 +30,15 @@ class Web3Manager {
 			else {
 				fatalError("invalid node URL")
 		}
-		var result: web3? = nil
-		DispatchQueue.global(qos: .background).sync {
-			if let web3Instance = Web3.new(nodeURL) {
-				result = web3Instance
-			}
-		}
-		guard let createdInstance = result else {
+		guard let createdInstance = Web3.new(nodeURL) else {
 			fatalError("no instance created")
 		}
 		createdInstance.addKeystoreManager(Wallet.keystoreManager)
 		return createdInstance
+	}
+
+	static func start() {
+		shared._instance = shared.createInstance()
 	}
 
 	// MARK - Utils
