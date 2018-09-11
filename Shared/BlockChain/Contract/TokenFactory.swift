@@ -70,6 +70,7 @@ class TokenFactory: ContractProtocol {
 	func loadAllCreatedShops(for address: EthereumAddress, completion: @escaping (Result<[Shop]?>) -> Void) {
 		guard let contract = contract
 			else {
+				completion(Result.failure(Web3Error.unknownError))
 				return
 		}
 
