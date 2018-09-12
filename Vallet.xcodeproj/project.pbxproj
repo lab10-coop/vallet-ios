@@ -47,6 +47,10 @@
 		D4C5CD9B2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */; };
 		D4C5CD9D2147DBAC00AB67D7 /* QRCodeReaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C5CD9C2147DBAC00AB67D7 /* QRCodeReaderView.xib */; };
 		D4C5CD9E2147DBAC00AB67D7 /* QRCodeReaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C5CD9C2147DBAC00AB67D7 /* QRCodeReaderView.xib */; };
+		D4C5CDA2214819AD00AB67D7 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CDA1214819AD00AB67D7 /* SideMenuViewController.swift */; };
+		D4C5CDA3214819AD00AB67D7 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CDA1214819AD00AB67D7 /* SideMenuViewController.swift */; };
+		D4C5CDA6214819EC00AB67D7 /* Shared.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C5CDA5214819EC00AB67D7 /* Shared.storyboard */; };
+		D4C5CDA7214819EC00AB67D7 /* Shared.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C5CDA5214819EC00AB67D7 /* Shared.storyboard */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +103,8 @@
 		D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
 		D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLinkedView.swift; sourceTree = "<group>"; };
 		D4C5CD9C2147DBAC00AB67D7 /* QRCodeReaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeReaderView.xib; sourceTree = "<group>"; };
+		D4C5CDA1214819AD00AB67D7 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		D4C5CDA5214819EC00AB67D7 /* Shared.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shared.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +243,8 @@
 			children = (
 				D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */,
 				D4C5CD922147D31600AB67D7 /* QRCode */,
+				D4C5CDA4214819CD00AB67D7 /* Storyboard */,
+				D4C5CD9F2148195E00AB67D7 /* ViewController */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -249,6 +257,30 @@
 				D4C5CD9C2147DBAC00AB67D7 /* QRCodeReaderView.xib */,
 			);
 			path = QRCode;
+			sourceTree = "<group>";
+		};
+		D4C5CD9F2148195E00AB67D7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D4C5CDA02148197500AB67D7 /* SideMenu */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D4C5CDA02148197500AB67D7 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D4C5CDA1214819AD00AB67D7 /* SideMenuViewController.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		D4C5CDA4214819CD00AB67D7 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				D4C5CDA5214819EC00AB67D7 /* Shared.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		F210E04398A1C2678A4653B5 /* Frameworks */ = {
@@ -367,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D429F85C21400573004427F0 /* LaunchScreen.storyboard in Resources */,
+				D4C5CDA6214819EC00AB67D7 /* Shared.storyboard in Resources */,
 				D4C5CD9D2147DBAC00AB67D7 /* QRCodeReaderView.xib in Resources */,
 				D429F85921400573004427F0 /* Assets.xcassets in Resources */,
 				D429F85421400572004427F0 /* Main.storyboard in Resources */,
@@ -385,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D429F89E21400A5B004427F0 /* LaunchScreen.storyboard in Resources */,
+				D4C5CDA7214819EC00AB67D7 /* Shared.storyboard in Resources */,
 				D4C5CD9E2147DBAC00AB67D7 /* QRCodeReaderView.xib in Resources */,
 				D429F89B21400A5B004427F0 /* Assets.xcassets in Resources */,
 				D429F89621400A5A004427F0 /* Main.storyboard in Resources */,
@@ -501,6 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4C5CDA2214819AD00AB67D7 /* SideMenuViewController.swift in Sources */,
 				D429F8B721411FA2004427F0 /* Web3Manager.swift in Sources */,
 				D429F8AF21401049004427F0 /* Result.swift in Sources */,
 				D429F8C12141724C004427F0 /* TokenType.swift in Sources */,
@@ -531,6 +566,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4C5CDA3214819AD00AB67D7 /* SideMenuViewController.swift in Sources */,
 				D429F8B821411FA2004427F0 /* Web3Manager.swift in Sources */,
 				D429F8B021401049004427F0 /* Result.swift in Sources */,
 				D429F8C22141724C004427F0 /* TokenType.swift in Sources */,

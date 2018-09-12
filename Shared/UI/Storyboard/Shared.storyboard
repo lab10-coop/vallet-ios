@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Side Menu View Controller-->
+        <scene sceneID="fxo-8r-WQn">
+            <objects>
+                <viewController storyboardIdentifier="SideMenuViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="y3i-IW-dkB" customClass="SideMenuViewController" customModule="Vallet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yAJ-iz-ObT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZJd-5y-NIJ">
+                                <rect key="frame" x="281" y="0.0" width="94" height="812"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Or3-uB-Oos" appends="YES" id="hHc-N5-nK8"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yPv-5h-V5n">
+                                <rect key="frame" x="0.0" y="0.0" width="281.33333333333331" height="812"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jSM-A6-HzV">
+                                        <rect key="frame" x="80" y="74" width="120" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="0jO-nJ-R4E"/>
+                                            <constraint firstAttribute="width" constant="120" id="RBJ-p6-Ehy"/>
+                                        </constraints>
+                                    </imageView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fXG-mv-CSH">
+                                        <rect key="frame" x="0.0" y="214" width="281" height="564"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <view key="tableFooterView" contentMode="scaleToFill" id="5dh-2t-GBO">
+                                            <rect key="frame" x="0.0" y="0.0" width="281" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewx-ge-BQi">
+                                                    <rect key="frame" x="91" y="7" width="98" height="30"/>
+                                                    <state key="normal" title="Add new shop"/>
+                                                    <connections>
+                                                        <action selector="createShop:" destination="y3i-IW-dkB" eventType="touchUpInside" id="hKx-DT-Hfq"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="ewx-ge-BQi" firstAttribute="centerY" secondItem="5dh-2t-GBO" secondAttribute="centerY" id="8kn-iy-e6e"/>
+                                                <constraint firstItem="ewx-ge-BQi" firstAttribute="centerX" secondItem="5dh-2t-GBO" secondAttribute="centerX" id="bvW-8Y-uM7"/>
+                                            </constraints>
+                                        </view>
+                                        <sections/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fXG-mv-CSH" secondAttribute="trailing" id="UC0-Me-uMk"/>
+                                    <constraint firstItem="jSM-A6-HzV" firstAttribute="centerX" secondItem="yPv-5h-V5n" secondAttribute="centerX" id="Ubx-Gy-J0Z"/>
+                                    <constraint firstItem="fXG-mv-CSH" firstAttribute="top" secondItem="jSM-A6-HzV" secondAttribute="bottom" constant="20" id="XTf-9c-scL"/>
+                                    <constraint firstItem="fXG-mv-CSH" firstAttribute="leading" secondItem="yPv-5h-V5n" secondAttribute="leading" id="wrV-NM-UDE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.7502140410958904" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ZJd-5y-NIJ" secondAttribute="trailing" id="04A-jd-xaq"/>
+                            <constraint firstItem="ZJd-5y-NIJ" firstAttribute="leading" secondItem="yPv-5h-V5n" secondAttribute="trailing" id="32e-4A-yRs"/>
+                            <constraint firstItem="pm9-WL-xen" firstAttribute="bottom" secondItem="fXG-mv-CSH" secondAttribute="bottom" id="Bxm-Oh-pHI"/>
+                            <constraint firstItem="yPv-5h-V5n" firstAttribute="width" secondItem="yAJ-iz-ObT" secondAttribute="width" multiplier="0.75" id="CNR-Y7-yG4"/>
+                            <constraint firstItem="yPv-5h-V5n" firstAttribute="leading" secondItem="yAJ-iz-ObT" secondAttribute="leading" id="GNa-56-4BO"/>
+                            <constraint firstItem="ZJd-5y-NIJ" firstAttribute="top" secondItem="yPv-5h-V5n" secondAttribute="top" id="KHX-UW-M3Z"/>
+                            <constraint firstItem="ZJd-5y-NIJ" firstAttribute="bottom" secondItem="yPv-5h-V5n" secondAttribute="bottom" id="Xez-2Y-mca"/>
+                            <constraint firstAttribute="top" secondItem="yPv-5h-V5n" secondAttribute="top" id="aOu-Kd-PJW"/>
+                            <constraint firstItem="yPv-5h-V5n" firstAttribute="bottom" secondItem="yAJ-iz-ObT" secondAttribute="bottom" id="c2K-xl-BkS"/>
+                            <constraint firstItem="jSM-A6-HzV" firstAttribute="top" secondItem="pm9-WL-xen" secondAttribute="top" constant="30" id="uAT-FG-vJ7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pm9-WL-xen"/>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="yPv-5h-V5n" id="Fg4-Al-1Ai"/>
+                        <outlet property="createShopButton" destination="ewx-ge-BQi" id="afD-i5-Wqm"/>
+                        <outlet property="leftConstraint" destination="GNa-56-4BO" id="Zdi-eH-2Mx"/>
+                        <outlet property="logoImageView" destination="jSM-A6-HzV" id="Po5-1C-UNx"/>
+                        <outlet property="shopsTableView" destination="fXG-mv-CSH" id="Fwj-LE-NaC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w20-Qm-cuo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Or3-uB-Oos">
+                    <connections>
+                        <action selector="didTapBackgorund:" destination="y3i-IW-dkB" id="URr-ed-jKz"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="85.599999999999994" y="145.56650246305421"/>
+        </scene>
+    </scenes>
+</document>
