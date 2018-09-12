@@ -11,14 +11,12 @@
 		D429F84F21400572004427F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F84E21400572004427F0 /* AppDelegate.swift */; };
 		D429F85121400572004427F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F85021400572004427F0 /* ViewController.swift */; };
 		D429F85421400572004427F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D429F85221400572004427F0 /* Main.storyboard */; };
-		D429F85721400572004427F0 /* Vallet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D429F85521400572004427F0 /* Vallet.xcdatamodeld */; };
 		D429F85921400573004427F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D429F85821400573004427F0 /* Assets.xcassets */; };
 		D429F85C21400573004427F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D429F85A21400573004427F0 /* LaunchScreen.storyboard */; };
 		D429F86721400573004427F0 /* ValletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F86621400573004427F0 /* ValletTests.swift */; };
 		D429F89121400A5A004427F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F89021400A5A004427F0 /* AppDelegate.swift */; };
 		D429F89321400A5A004427F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F89221400A5A004427F0 /* ViewController.swift */; };
 		D429F89621400A5A004427F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D429F89421400A5A004427F0 /* Main.storyboard */; };
-		D429F89921400A5A004427F0 /* ValletAdmin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D429F89721400A5A004427F0 /* ValletAdmin.xcdatamodeld */; };
 		D429F89B21400A5B004427F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D429F89A21400A5B004427F0 /* Assets.xcassets */; };
 		D429F89E21400A5B004427F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D429F89C21400A5B004427F0 /* LaunchScreen.storyboard */; };
 		D429F8A621400D87004427F0 /* FaucetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8A521400D87004427F0 /* FaucetManager.swift */; };
@@ -51,6 +49,8 @@
 		D4C5CDA3214819AD00AB67D7 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CDA1214819AD00AB67D7 /* SideMenuViewController.swift */; };
 		D4C5CDA6214819EC00AB67D7 /* Shared.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C5CDA5214819EC00AB67D7 /* Shared.storyboard */; };
 		D4C5CDA7214819EC00AB67D7 /* Shared.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C5CDA5214819EC00AB67D7 /* Shared.storyboard */; };
+		D4C5CDAA2149079500AB67D7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CDA82149079400AB67D7 /* Model.xcdatamodeld */; };
+		D4C5CDAB2149079500AB67D7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CDA82149079400AB67D7 /* Model.xcdatamodeld */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +75,6 @@
 		D429F84E21400572004427F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D429F85021400572004427F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D429F85321400572004427F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D429F85621400572004427F0 /* Vallet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vallet.xcdatamodel; sourceTree = "<group>"; };
 		D429F85821400573004427F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D429F85B21400573004427F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D429F85D21400573004427F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,7 +85,6 @@
 		D429F89021400A5A004427F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D429F89221400A5A004427F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D429F89521400A5A004427F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D429F89821400A5A004427F0 /* ValletAdmin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ValletAdmin.xcdatamodel; sourceTree = "<group>"; };
 		D429F89A21400A5B004427F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D429F89D21400A5B004427F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D429F89F21400A5B004427F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,6 +103,7 @@
 		D4C5CD9C2147DBAC00AB67D7 /* QRCodeReaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeReaderView.xib; sourceTree = "<group>"; };
 		D4C5CDA1214819AD00AB67D7 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		D4C5CDA5214819EC00AB67D7 /* Shared.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shared.storyboard; sourceTree = "<group>"; };
+		D4C5CDA92149079400AB67D7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +176,6 @@
 				D429F85821400573004427F0 /* Assets.xcassets */,
 				D429F85A21400573004427F0 /* LaunchScreen.storyboard */,
 				D429F85D21400573004427F0 /* Info.plist */,
-				D429F85521400572004427F0 /* Vallet.xcdatamodeld */,
 			);
 			path = Vallet;
 			sourceTree = "<group>";
@@ -200,7 +198,6 @@
 				D429F89A21400A5B004427F0 /* Assets.xcassets */,
 				D429F89C21400A5B004427F0 /* LaunchScreen.storyboard */,
 				D429F89F21400A5B004427F0 /* Info.plist */,
-				D429F89721400A5A004427F0 /* ValletAdmin.xcdatamodeld */,
 			);
 			path = ValletAdmin;
 			sourceTree = "<group>";
@@ -212,6 +209,7 @@
 				D429F8AE21401049004427F0 /* Result.swift */,
 				D4C5CD912147D30200AB67D7 /* UI */,
 				D429F8A421400D34004427F0 /* BlockChain */,
+				D4C5CDAC214907A400AB67D7 /* Model */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -281,6 +279,14 @@
 				D4C5CDA5214819EC00AB67D7 /* Shared.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		D4C5CDAC214907A400AB67D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D4C5CDA82149079400AB67D7 /* Model.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F210E04398A1C2678A4653B5 /* Frameworks */ = {
@@ -543,9 +549,9 @@
 				D429F8B421401528004427F0 /* Wallet.swift in Sources */,
 				D429F8A821400DAE004427F0 /* Constants.swift in Sources */,
 				D429F85121400572004427F0 /* ViewController.swift in Sources */,
+				D4C5CDAA2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
 				D429F8BE21416F91004427F0 /* ContractProtocol.swift in Sources */,
 				D429F8A621400D87004427F0 /* FaucetManager.swift in Sources */,
-				D429F85721400572004427F0 /* Vallet.xcdatamodeld in Sources */,
 				D429F8BB21416D9D004427F0 /* TokenFactory.swift in Sources */,
 				D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */,
 				D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */,
@@ -574,13 +580,13 @@
 				D429F8B521401528004427F0 /* Wallet.swift in Sources */,
 				D429F8AA21400F20004427F0 /* Constants.swift in Sources */,
 				D429F89321400A5A004427F0 /* ViewController.swift in Sources */,
+				D4C5CDAB2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
 				D429F8BF21416F91004427F0 /* ContractProtocol.swift in Sources */,
 				D429F8A921400F1C004427F0 /* FaucetManager.swift in Sources */,
 				D429F89121400A5A004427F0 /* AppDelegate.swift in Sources */,
 				D429F8BC21416D9D004427F0 /* TokenFactory.swift in Sources */,
 				D4C5CD982147DA2700AB67D7 /* QRCodeReaderView.swift in Sources */,
 				D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */,
-				D429F89921400A5A004427F0 /* ValletAdmin.xcdatamodeld in Sources */,
 				D4C5CD9B2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -905,23 +911,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D429F85521400572004427F0 /* Vallet.xcdatamodeld */ = {
+		D4C5CDA82149079400AB67D7 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D429F85621400572004427F0 /* Vallet.xcdatamodel */,
+				D4C5CDA92149079400AB67D7 /* Model.xcdatamodel */,
 			);
-			currentVersion = D429F85621400572004427F0 /* Vallet.xcdatamodel */;
-			path = Vallet.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		D429F89721400A5A004427F0 /* ValletAdmin.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				D429F89821400A5A004427F0 /* ValletAdmin.xcdatamodel */,
-			);
-			currentVersion = D429F89821400A5A004427F0 /* ValletAdmin.xcdatamodel */;
-			path = ValletAdmin.xcdatamodeld;
+			currentVersion = D4C5CDA92149079400AB67D7 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
