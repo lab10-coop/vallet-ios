@@ -39,6 +39,8 @@
 		D429F8C92142BF87004427F0 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8C72142BF86004427F0 /* Token.swift */; };
 		D443CD92214A93E400A7100F /* ShopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CD91214A93E400A7100F /* ShopManager.swift */; };
 		D443CD93214A93E400A7100F /* ShopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CD91214A93E400A7100F /* ShopManager.swift */; };
+		D443CDA5214AA46500A7100F /* NibBackedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDA4214AA46500A7100F /* NibBackedTableViewCell.swift */; };
+		D443CDA6214AA46500A7100F /* NibBackedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDA4214AA46500A7100F /* NibBackedTableViewCell.swift */; };
 		D443CDA9214AA73700A7100F /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDA8214AA73700A7100F /* NSObject.swift */; };
 		D443CDAA214AA73700A7100F /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDA8214AA73700A7100F /* NSObject.swift */; };
 		D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
@@ -106,6 +108,7 @@
 		D429F8C02141724C004427F0 /* TokenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenType.swift; sourceTree = "<group>"; };
 		D429F8C72142BF86004427F0 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		D443CD91214A93E400A7100F /* ShopManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopManager.swift; sourceTree = "<group>"; };
+		D443CDA4214AA46500A7100F /* NibBackedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibBackedTableViewCell.swift; sourceTree = "<group>"; };
 		D443CDA8214AA73700A7100F /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		D4C5CD932147D34200AB67D7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
@@ -259,6 +262,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D443CD95214AA05100A7100F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D443CDA4214AA46500A7100F /* NibBackedTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		D443CDA7214AA72000A7100F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +281,7 @@
 		D4C5CD912147D30200AB67D7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D443CD95214AA05100A7100F /* Cell */,
 				D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */,
 				D4C5CD922147D31600AB67D7 /* QRCode */,
 				D4C5CDA4214819CD00AB67D7 /* Storyboard */,
@@ -577,6 +589,7 @@
 				D443CDA9214AA73700A7100F /* NSObject.swift in Sources */,
 				D4C5CDA2214819AD00AB67D7 /* SideMenuViewController.swift in Sources */,
 				D429F8B721411FA2004427F0 /* Web3Manager.swift in Sources */,
+				D443CDA5214AA46500A7100F /* NibBackedTableViewCell.swift in Sources */,
 				D429F8AF21401049004427F0 /* Result.swift in Sources */,
 				D429F8C12141724C004427F0 /* TokenType.swift in Sources */,
 				D429F8C82142BF86004427F0 /* Token.swift in Sources */,
@@ -612,6 +625,7 @@
 				D443CDAA214AA73700A7100F /* NSObject.swift in Sources */,
 				D4C5CDA3214819AD00AB67D7 /* SideMenuViewController.swift in Sources */,
 				D429F8B821411FA2004427F0 /* Web3Manager.swift in Sources */,
+				D443CDA6214AA46500A7100F /* NibBackedTableViewCell.swift in Sources */,
 				D429F8B021401049004427F0 /* Result.swift in Sources */,
 				D429F8C22141724C004427F0 /* TokenType.swift in Sources */,
 				D429F8C92142BF87004427F0 /* Token.swift in Sources */,
