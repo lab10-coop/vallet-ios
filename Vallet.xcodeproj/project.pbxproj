@@ -55,6 +55,8 @@
 		D4C5CDAB2149079500AB67D7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CDA82149079400AB67D7 /* Model.xcdatamodeld */; };
 		D4C5CDB521490DC500AB67D7 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CDB321490DC500AB67D7 /* Shop.swift */; };
 		D4C5CDB621490DC500AB67D7 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CDB321490DC500AB67D7 /* Shop.swift */; };
+		D4C5CDBB2149410800AB67D7 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CDBA2149410800AB67D7 /* DataBaseManager.swift */; };
+		D4C5CDBC2149410800AB67D7 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CDBA2149410800AB67D7 /* DataBaseManager.swift */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +112,7 @@
 		D4C5CDA5214819EC00AB67D7 /* Shared.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shared.storyboard; sourceTree = "<group>"; };
 		D4C5CDA92149079400AB67D7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		D4C5CDB321490DC500AB67D7 /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		D4C5CDBA2149410800AB67D7 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +218,7 @@
 				D429F8AE21401049004427F0 /* Result.swift */,
 				D4C5CD912147D30200AB67D7 /* UI */,
 				D429F8A421400D34004427F0 /* BlockChain */,
+				D443CD94214AA01600A7100F /* ViewModel */,
 				D4C5CDAC214907A400AB67D7 /* Model */,
 				D443CDA7214AA72000A7100F /* Extensions */,
 			);
@@ -241,6 +245,14 @@
 				D429F8C72142BF86004427F0 /* Token.swift */,
 			);
 			path = Contract;
+			sourceTree = "<group>";
+		};
+		D443CD94214AA01600A7100F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D4C5CDBA2149410800AB67D7 /* DataBaseManager.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		D443CDA7214AA72000A7100F /* Extensions */ = {
@@ -568,6 +580,7 @@
 				D429F85121400572004427F0 /* ViewController.swift in Sources */,
 				D4C5CDB521490DC500AB67D7 /* Shop.swift in Sources */,
 				D4C5CDAA2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
+				D4C5CDBB2149410800AB67D7 /* DataBaseManager.swift in Sources */,
 				D429F8BE21416F91004427F0 /* ContractProtocol.swift in Sources */,
 				D429F8A621400D87004427F0 /* FaucetManager.swift in Sources */,
 				D429F8BB21416D9D004427F0 /* TokenFactory.swift in Sources */,
@@ -601,6 +614,7 @@
 				D429F89321400A5A004427F0 /* ViewController.swift in Sources */,
 				D4C5CDB621490DC500AB67D7 /* Shop.swift in Sources */,
 				D4C5CDAB2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
+				D4C5CDBC2149410800AB67D7 /* DataBaseManager.swift in Sources */,
 				D429F8BF21416F91004427F0 /* ContractProtocol.swift in Sources */,
 				D429F8A921400F1C004427F0 /* FaucetManager.swift in Sources */,
 				D429F89121400A5A004427F0 /* AppDelegate.swift in Sources */,
