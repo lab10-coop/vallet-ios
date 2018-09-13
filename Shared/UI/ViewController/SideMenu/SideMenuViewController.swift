@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import web3swift
 
 protocol SideMenuDelegate: class {
 
@@ -24,6 +25,8 @@ class SideMenuViewController: UIViewController {
 
 	weak var delegate: SideMenuDelegate?
 
+	let shopManager = ShopManager(tokenFactoryAddress: EthereumAddress(Constants.BlockChain.tokenFactoryContractAddress), managedObjectContext: DataBaseManager.managedContext)
+
 	static func present(over viewController: UIViewController) {
 		let storyboard = UIStoryboard(name: "Shared", bundle: Bundle.main)
 		guard let sideMenuViewController = storyboard.instantiateViewController(withIdentifier: "SideMenuViewController") as? SideMenuViewController
@@ -39,6 +42,10 @@ class SideMenuViewController: UIViewController {
 		super.viewDidLoad()
 		leftConstraint.constant = -containerView.bounds.size.width
 		self.view.backgroundColor = .clear
+
+		ShopTableViewCell.register(for: shopsTableView)
+		shopsTableView.delegate = self
+		shopsTableView.dataSource = self
 	}
 
 	func show() {
@@ -67,6 +74,25 @@ class SideMenuViewController: UIViewController {
 		print("tap bg")
 		hide()
 	}
+
+}
+
+extension SideMenuViewController: UITableViewDataSource {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return shopManager.shops.count
+	}
+
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: ShopTableViewCell.reuseIdentifier, for: indexPath)
+		if let shopCell = cell as? ShopTableViewCell {
+			shopCell.shop = shopManager.shops[indexPath.row]
+		}
+		return cell
+	}
+
+}
+
+extension SideMenuViewController: UITableViewDelegate {
 
 }
 
