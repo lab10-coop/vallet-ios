@@ -53,6 +53,8 @@
 		D4C5CDA7214819EC00AB67D7 /* Shared.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C5CDA5214819EC00AB67D7 /* Shared.storyboard */; };
 		D4C5CDAA2149079500AB67D7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CDA82149079400AB67D7 /* Model.xcdatamodeld */; };
 		D4C5CDAB2149079500AB67D7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CDA82149079400AB67D7 /* Model.xcdatamodeld */; };
+		D4C5CDB521490DC500AB67D7 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CDB321490DC500AB67D7 /* Shop.swift */; };
+		D4C5CDB621490DC500AB67D7 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CDB321490DC500AB67D7 /* Shop.swift */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +109,7 @@
 		D4C5CDA1214819AD00AB67D7 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		D4C5CDA5214819EC00AB67D7 /* Shared.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shared.storyboard; sourceTree = "<group>"; };
 		D4C5CDA92149079400AB67D7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		D4C5CDB321490DC500AB67D7 /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				D4C5CDA82149079400AB67D7 /* Model.xcdatamodeld */,
+				D4C5CDB321490DC500AB67D7 /* Shop.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -562,6 +566,7 @@
 				D429F8B421401528004427F0 /* Wallet.swift in Sources */,
 				D429F8A821400DAE004427F0 /* Constants.swift in Sources */,
 				D429F85121400572004427F0 /* ViewController.swift in Sources */,
+				D4C5CDB521490DC500AB67D7 /* Shop.swift in Sources */,
 				D4C5CDAA2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
 				D429F8BE21416F91004427F0 /* ContractProtocol.swift in Sources */,
 				D429F8A621400D87004427F0 /* FaucetManager.swift in Sources */,
@@ -594,6 +599,7 @@
 				D429F8B521401528004427F0 /* Wallet.swift in Sources */,
 				D429F8AA21400F20004427F0 /* Constants.swift in Sources */,
 				D429F89321400A5A004427F0 /* ViewController.swift in Sources */,
+				D4C5CDB621490DC500AB67D7 /* Shop.swift in Sources */,
 				D4C5CDAB2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
 				D429F8BF21416F91004427F0 /* ContractProtocol.swift in Sources */,
 				D429F8A921400F1C004427F0 /* FaucetManager.swift in Sources */,
