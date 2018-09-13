@@ -39,6 +39,10 @@
 		D429F8C92142BF87004427F0 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8C72142BF86004427F0 /* Token.swift */; };
 		D443CD92214A93E400A7100F /* ShopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CD91214A93E400A7100F /* ShopManager.swift */; };
 		D443CD93214A93E400A7100F /* ShopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CD91214A93E400A7100F /* ShopManager.swift */; };
+		D443CD98214AA0A500A7100F /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CD96214AA0A500A7100F /* ShopTableViewCell.swift */; };
+		D443CD99214AA0A500A7100F /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CD96214AA0A500A7100F /* ShopTableViewCell.swift */; };
+		D443CD9A214AA0A500A7100F /* ShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D443CD97214AA0A500A7100F /* ShopTableViewCell.xib */; };
+		D443CD9B214AA0A500A7100F /* ShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D443CD97214AA0A500A7100F /* ShopTableViewCell.xib */; };
 		D443CDA5214AA46500A7100F /* NibBackedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDA4214AA46500A7100F /* NibBackedTableViewCell.swift */; };
 		D443CDA6214AA46500A7100F /* NibBackedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDA4214AA46500A7100F /* NibBackedTableViewCell.swift */; };
 		D443CDA9214AA73700A7100F /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDA8214AA73700A7100F /* NSObject.swift */; };
@@ -108,6 +112,8 @@
 		D429F8C02141724C004427F0 /* TokenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenType.swift; sourceTree = "<group>"; };
 		D429F8C72142BF86004427F0 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		D443CD91214A93E400A7100F /* ShopManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopManager.swift; sourceTree = "<group>"; };
+		D443CD96214AA0A500A7100F /* ShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
+		D443CD97214AA0A500A7100F /* ShopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopTableViewCell.xib; sourceTree = "<group>"; };
 		D443CDA4214AA46500A7100F /* NibBackedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibBackedTableViewCell.swift; sourceTree = "<group>"; };
 		D443CDA8214AA73700A7100F /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		D4C5CD932147D34200AB67D7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -266,6 +272,8 @@
 			isa = PBXGroup;
 			children = (
 				D443CDA4214AA46500A7100F /* NibBackedTableViewCell.swift */,
+				D443CD96214AA0A500A7100F /* ShopTableViewCell.swift */,
+				D443CD97214AA0A500A7100F /* ShopTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -453,6 +461,7 @@
 				D4C5CD9D2147DBAC00AB67D7 /* QRCodeReaderView.xib in Resources */,
 				D429F85921400573004427F0 /* Assets.xcassets in Resources */,
 				D429F85421400572004427F0 /* Main.storyboard in Resources */,
+				D443CD9A214AA0A500A7100F /* ShopTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +481,7 @@
 				D4C5CD9E2147DBAC00AB67D7 /* QRCodeReaderView.xib in Resources */,
 				D429F89B21400A5B004427F0 /* Assets.xcassets in Resources */,
 				D429F89621400A5A004427F0 /* Main.storyboard in Resources */,
+				D443CD9B214AA0A500A7100F /* ShopTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,6 +612,7 @@
 				D429F8BE21416F91004427F0 /* ContractProtocol.swift in Sources */,
 				D429F8A621400D87004427F0 /* FaucetManager.swift in Sources */,
 				D429F8BB21416D9D004427F0 /* TokenFactory.swift in Sources */,
+				D443CD98214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
 				D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */,
 				D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */,
 				D429F84F21400572004427F0 /* AppDelegate.swift in Sources */,
@@ -638,6 +649,7 @@
 				D429F8BF21416F91004427F0 /* ContractProtocol.swift in Sources */,
 				D429F8A921400F1C004427F0 /* FaucetManager.swift in Sources */,
 				D429F89121400A5A004427F0 /* AppDelegate.swift in Sources */,
+				D443CD99214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
 				D429F8BC21416D9D004427F0 /* TokenFactory.swift in Sources */,
 				D4C5CD982147DA2700AB67D7 /* QRCodeReaderView.swift in Sources */,
 				D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */,
