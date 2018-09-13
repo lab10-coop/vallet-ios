@@ -35,7 +35,7 @@ class TokenFactory: ContractProtocol {
 		self.address = address
 	}
 
-	func createShop(with address: EthereumAddress, name: String, type: TokenType, decimals: UInt = 12, completion: @escaping (Result<Shop>) -> Void) {
+	func createShop(with address: EthereumAddress, name: String, type: TokenType, decimals: UInt = 12, completion: @escaping (Result<ShopIntermediate>) -> Void) {
 		var options = Web3Options()
 		options.from = address
 
@@ -67,7 +67,7 @@ class TokenFactory: ContractProtocol {
 		}
 	}
 
-	func loadAllCreatedShops(for address: EthereumAddress, completion: @escaping (Result<[Shop]?>) -> Void) {
+	func loadAllCreatedShops(for address: EthereumAddress, completion: @escaping (Result<[ShopIntermediate]>) -> Void) {
 		guard let contract = contract
 			else {
 				completion(Result.failure(Web3Error.unknownError))
@@ -81,7 +81,7 @@ class TokenFactory: ContractProtocol {
 
 			switch eventsResult {
 			case .success(let events):
-				let myShops = events.compactMap { Shop(decodedLog: $0.decodedResult) }.filter { $0.creatorAddress == address }
+				let myShops = events.compactMap { ShopIntermediate(decodedLog: $0.decodedResult) }.filter { $0.creatorAddress == address }
 				completion(Result.success(myShops))
 			case .failure(let error):
 				print("Factory contract events error: \(error)")
@@ -90,7 +90,7 @@ class TokenFactory: ContractProtocol {
 		}
 	}
 
-	private func loadCreatedShop(from transactionSendingResult: TransactionSendingResult, completion: @escaping (Result<Shop>) -> Void) {
+	private func loadCreatedShop(from transactionSendingResult: TransactionSendingResult, completion: @escaping (Result<ShopIntermediate>) -> Void) {
 		var repeatCount = 0
 		// Use timer to get the transaction receipt, since it might not be ready immediately.
 		Timer.scheduledTimer(withTimeInterval: Constants.Timer.pollInterval, repeats: true, block: { (timer) in
@@ -123,7 +123,7 @@ class TokenFactory: ContractProtocol {
 		})
 	}
 
-	private func resolveShop(from receipt: TransactionReceipt, completion: @escaping (Result<Shop>) -> Void) {
+	private func resolveShop(from receipt: TransactionReceipt, completion: @escaping (Result<ShopIntermediate>) -> Void) {
 		guard let contract = contract,
 			let eventParser = contract.createEventParser(Constants.BlockChain.Event.tokenCreated, filter: nil)
 			else {
@@ -137,7 +137,7 @@ class TokenFactory: ContractProtocol {
 			switch result {
 			case .success(let parsedEvents):
 				guard let decodedResult = parsedEvents.first?.decodedResult,
-					let shop = Shop(decodedLog: decodedResult)
+					let shop = ShopIntermediate(decodedLog: decodedResult)
 					else {
 						completion(Result.failure(Web3Error.dataError))
 						return
@@ -153,10 +153,9 @@ class TokenFactory: ContractProtocol {
 }
 
 
-
-struct Shop: CustomStringConvertible {
+struct ShopIntermediate: CustomStringConvertible {
 	var name: String
-	var symbol: String
+	var symbol: TokenType
 	var address: EthereumAddress
 	var decimals: Int
 	var creatorAddress: EthereumAddress
@@ -164,7 +163,8 @@ struct Shop: CustomStringConvertible {
 	init?(decodedLog: [String: Any]) {
 		guard
 			let newName = decodedLog["_name"] as? String,
-			let newSymbol = decodedLog["_symbol"] as? String,
+			let newSymbolValue = decodedLog["_symbol"] as? String,
+			let newSymbol = TokenType(rawValue: newSymbolValue),
 			let newAddress = decodedLog["_address"] as? EthereumAddress,
 			let decimalsValue = decodedLog["_decimals"],
 			let newDecimals = Int("\(decimalsValue)"),
