@@ -75,9 +75,23 @@ class SideMenuViewController: UIViewController {
 		hide()
 	}
 
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		switch segue.identifier {
+		case "PresentCreateNewShopViewController":
+			guard let createShopViewController = segue.destination as? CreateShopViewController
+				else {
+					return
+			}
+			createShopViewController.delegate = self
+		default:
+			break
+		}
+	}
+
 }
 
 extension SideMenuViewController: UITableViewDataSource {
+	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return shopManager.shops.count
 	}
@@ -93,6 +107,14 @@ extension SideMenuViewController: UITableViewDataSource {
 }
 
 extension SideMenuViewController: UITableViewDelegate {
+
+}
+
+extension SideMenuViewController: CreateShopDelegate {
+
+	func didCreate(shop: Shop) {
+		shopsTableView.reloadData()
+	}
 
 }
 
