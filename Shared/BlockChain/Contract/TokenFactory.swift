@@ -31,6 +31,8 @@ class TokenFactory: ContractProtocol {
 
 	var address: EthereumAddress?
 
+	private var timers = [Timer]()
+
 	init(address: EthereumAddress) {
 		self.address = address
 	}
@@ -45,7 +47,7 @@ class TokenFactory: ContractProtocol {
 				return
 		}
 
-		intermediate.sendInBackground(password: Constants.Temp.keystorePassword) { [weak self] (result) in
+		intermediate.sendAsync(password: Constants.Temp.keystorePassword) { [weak self] (result) in
 			switch result {
 			case .success(let transactionSendingResult):
 				guard let strongSelf = self
@@ -79,13 +81,15 @@ class TokenFactory: ContractProtocol {
 		DispatchQueue.global(qos: .background).async {
 			let eventsResult = contract.getIndexedEvents(eventName: Constants.BlockChain.Event.tokenCreated, filter: eventFilter)
 
-			switch eventsResult {
-			case .success(let events):
-				let myShops = events.compactMap { ShopIntermediate(decodedLog: $0.decodedResult) }.filter { $0.creatorAddress == address }
-				completion(Result.success(myShops))
-			case .failure(let error):
-				print("Factory contract events error: \(error)")
-				completion(Result.failure(error))
+			DispatchQueue.main.async {
+				switch eventsResult {
+				case .success(let events):
+					let myShops = events.compactMap { ShopIntermediate(decodedLog: $0.decodedResult) }.filter { $0.creatorAddress == address }
+					completion(Result.success(myShops))
+				case .failure(let error):
+					print("Factory contract events error: \(error)")
+					completion(Result.failure(error))
+				}
 			}
 		}
 	}
@@ -93,16 +97,17 @@ class TokenFactory: ContractProtocol {
 	private func loadCreatedShop(from transactionSendingResult: TransactionSendingResult, completion: @escaping (Result<ShopIntermediate>) -> Void) {
 		var repeatCount = 0
 		// Use timer to get the transaction receipt, since it might not be ready immediately.
-		Timer.scheduledTimer(withTimeInterval: Constants.Timer.pollInterval, repeats: true, block: { (timer) in
+		let newTimer = Timer.scheduledTimer(withTimeInterval: Constants.Timer.pollInterval, repeats: true, block: { [weak self] (timer) in
+			print("Transaction receipt timer: \(repeatCount)")
 			Web3Manager.getTransactionReceipt(for: transactionSendingResult.hash, completion: { [weak self] (result) in
+				guard let strongSelf = self
+					else {
+						completion(Result.failure(Web3Error.unknownError))
+						return
+				}
 				switch result {
 				case .success(let receipt):
 					timer.invalidate()
-					guard let strongSelf = self
-						else {
-							completion(Result.failure(Web3Error.unknownError))
-							return
-					}
 					strongSelf.resolveShop(from: receipt, completion: { (result) in
 						switch result {
 						case .success(let shop):
@@ -115,12 +120,14 @@ class TokenFactory: ContractProtocol {
 					repeatCount += 1
 					if repeatCount > Constants.Timer.maxRepeatCount {
 						timer.invalidate()
+						strongSelf.remove(timer: timer)
 						completion(Result.failure(error))
 					}
 					print("Load transaction receipt error \(repeatCount): \(error)")
 				}
 			})
 		})
+		add(timer: newTimer)
 	}
 
 	private func resolveShop(from receipt: TransactionReceipt, completion: @escaping (Result<ShopIntermediate>) -> Void) {
@@ -133,21 +140,31 @@ class TokenFactory: ContractProtocol {
 
 		DispatchQueue.global(qos: .background).async {
 			let result = eventParser.parseTransactionByHash(receipt.transactionHash)
-
-			switch result {
-			case .success(let parsedEvents):
-				guard let decodedResult = parsedEvents.first?.decodedResult,
-					let shop = ShopIntermediate(decodedLog: decodedResult)
-					else {
-						completion(Result.failure(Web3Error.dataError))
-						return
+			
+			DispatchQueue.main.async {
+				switch result {
+				case .success(let parsedEvents):
+					guard let decodedResult = parsedEvents.first?.decodedResult,
+						let shop = ShopIntermediate(decodedLog: decodedResult)
+						else {
+							completion(Result.failure(Web3Error.dataError))
+							return
+					}
+					completion(Result.success(shop))
+				case .failure(let error):
+					print("factory events error: \(error)")
+					completion(Result.failure(error))
 				}
-				completion(Result.success(shop))
-			case .failure(let error):
-				print("factory events error: \(error)")
-				completion(Result.failure(error))
 			}
 		}
+	}
+
+	private func add(timer: Timer) {
+		timers.append(timer)
+	}
+
+	private func remove(timer: Timer) {
+		timers = timers.filter { $0 != timer }
 	}
 
 }

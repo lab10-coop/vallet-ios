@@ -49,7 +49,7 @@ class Token: ContractProtocol {
 				return
 		}
 
-		intermediate.sendInBackground(password: Constants.Temp.keystorePassword) { (result) in
+		intermediate.sendAsync(password: Constants.Temp.keystorePassword) { (result) in
 			completion(result)
 		}
 	}
@@ -61,7 +61,7 @@ class Token: ContractProtocol {
 				return
 		}
 
-		intermediate.callInBackground { (result) in
+		intermediate.callAsync { (result) in
 			switch result {
 			case .success(let resultDictionary):
 				guard let balanceValue = resultDictionary["balance"],
@@ -87,7 +87,7 @@ class Token: ContractProtocol {
 				return
 		}
 
-		intermediate.sendInBackground(password: Constants.Temp.keystorePassword) { (result) in
+		intermediate.sendAsync(password: Constants.Temp.keystorePassword) { (result) in
 			completion(result)
 		}
 	}
@@ -99,7 +99,7 @@ class Token: ContractProtocol {
 				return
 		}
 
-		intermediate.callInBackground(options: nil) { result in
+		intermediate.callAsync(options: nil) { result in
 			switch result {
 			case .success(let resultDictionary):
 				guard let name = resultDictionary.first?.value as? String
@@ -121,7 +121,7 @@ class Token: ContractProtocol {
 				return
 		}
 
-		intermediate.callInBackground(options: nil) { result in
+		intermediate.callAsync(options: nil) { result in
 			switch result {
 			case .success(let resultDictionary):
 				guard let supplyValue = resultDictionary.first?.value,
