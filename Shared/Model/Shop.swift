@@ -33,7 +33,6 @@ public class Shop: NSManagedObject {
 		self.decimals = decimals
 		self.symbol = symbol.rawValue
 		self.creatorAddress = creatorAddress
-		self.uniqueId = Int64(self.hashValue)
 	}
 
 }
@@ -63,6 +62,5 @@ extension Shop {
 	@NSManaged public var decimals: Int16
 	@NSManaged public var symbol: String
 	@NSManaged public var creatorAddress: String
-	@NSManaged public var uniqueId: Int64
 
 }

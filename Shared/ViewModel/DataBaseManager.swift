@@ -30,6 +30,7 @@ class DataBaseManager {
 
 	static func save(managedContext: NSManagedObjectContext? = nil) {
 		let managedContext = managedContext ?? self.managedContext
+		managedContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
 		if managedContext.hasChanges {
 			try? managedContext.save()
 		}
