@@ -10,13 +10,12 @@ import Foundation
 
 extension NSObject {
 
-	// TODO: Check if this can be done wihtout force unwrapping.
 	public static var className: String {
-		return NSStringFromClass(self).components(separatedBy: ".").last!
+		return String(describing: self)
 	}
 
 	public var className: String {
-		return NSStringFromClass(type(of: self)).components(separatedBy: ".").last!
+		return String(describing: type(of: self))
 	}
 
 }
