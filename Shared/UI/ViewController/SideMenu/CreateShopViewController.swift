@@ -51,6 +51,7 @@ class CreateShopViewController: UIViewController {
 	}
 
 	private func createShop(named name: String) {
+		showActivityIndicator()
 		shopManager.createShop(named: name) { [weak self] (result) in
 			switch result {
 			case .success(let shop):
@@ -59,6 +60,7 @@ class CreateShopViewController: UIViewController {
 			case .failure(let error):
 				print("Create shop error: \(error)")
 			}
+			self?.hideActivityIndicator()
 		}
 	}
 
