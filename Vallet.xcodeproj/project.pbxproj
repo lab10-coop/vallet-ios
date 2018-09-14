@@ -47,6 +47,8 @@
 		D443CDA6214AA46500A7100F /* NibBackedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDA4214AA46500A7100F /* NibBackedTableViewCell.swift */; };
 		D443CDA9214AA73700A7100F /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDA8214AA73700A7100F /* NSObject.swift */; };
 		D443CDAA214AA73700A7100F /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDA8214AA73700A7100F /* NSObject.swift */; };
+		D443CDB3214BB2DE00A7100F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDB2214BB2DE00A7100F /* UIView.swift */; };
+		D443CDB4214BB2DE00A7100F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDB2214BB2DE00A7100F /* UIView.swift */; };
 		D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */; };
@@ -116,6 +118,7 @@
 		D443CD97214AA0A500A7100F /* ShopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopTableViewCell.xib; sourceTree = "<group>"; };
 		D443CDA4214AA46500A7100F /* NibBackedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibBackedTableViewCell.swift; sourceTree = "<group>"; };
 		D443CDA8214AA73700A7100F /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
+		D443CDB2214BB2DE00A7100F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		D4C5CD932147D34200AB67D7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
 		D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLinkedView.swift; sourceTree = "<group>"; };
@@ -282,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				D443CDA8214AA73700A7100F /* NSObject.swift */,
+				D443CDB2214BB2DE00A7100F /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -613,6 +617,7 @@
 				D429F8A621400D87004427F0 /* FaucetManager.swift in Sources */,
 				D429F8BB21416D9D004427F0 /* TokenFactory.swift in Sources */,
 				D443CD98214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
+				D443CDB3214BB2DE00A7100F /* UIView.swift in Sources */,
 				D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */,
 				D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */,
 				D429F84F21400572004427F0 /* AppDelegate.swift in Sources */,
@@ -650,6 +655,7 @@
 				D429F8A921400F1C004427F0 /* FaucetManager.swift in Sources */,
 				D429F89121400A5A004427F0 /* AppDelegate.swift in Sources */,
 				D443CD99214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
+				D443CDB4214BB2DE00A7100F /* UIView.swift in Sources */,
 				D429F8BC21416D9D004427F0 /* TokenFactory.swift in Sources */,
 				D4C5CD982147DA2700AB67D7 /* QRCodeReaderView.swift in Sources */,
 				D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */,
