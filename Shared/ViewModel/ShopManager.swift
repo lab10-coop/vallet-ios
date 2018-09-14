@@ -12,44 +12,48 @@ import CoreData
 
 class ShopManager {
 
-	// The tokenFactory object is only needed for the ValletAdmin target
-	var tokenFactory: TokenFactory?
-	let managedObjectContext: NSManagedObjectContext
+	private static var shared = ShopManager()
 
-	var shops: [Shop] {
+	// The tokenFactory object is only needed for the ValletAdmin target
+	private var tokenFactory: TokenFactory?
+	private var managedObjectContext: NSManagedObjectContext
+
+	// TODO: find a way to persist selectedShop on the device
+	static var selectedShop: Shop?
+
+	static var shops: [Shop] {
 		// return shops from the database
-		guard let shops = (try? managedObjectContext.fetch(Shop.fetchRequest())) as? [Shop]
+		guard let shops = (try? shared.managedObjectContext.fetch(Shop.fetchRequest())) as? [Shop]
 		else {
 			return [Shop]()
 		}
 		return shops
 	}
 
-	init(tokenFactoryAddress: EthereumAddress? = nil, managedObjectContext: NSManagedObjectContext) {
-		if let tokenFactoryAddress = tokenFactoryAddress {
+	init() {
+		if let tokenFactoryAddress = EthereumAddress(Constants.BlockChain.tokenFactoryContractAddress) {
 			self.tokenFactory = TokenFactory(address: tokenFactoryAddress)
 		}
-		self.managedObjectContext = managedObjectContext
+		self.managedObjectContext = DataBaseManager.managedContext
+	}
+
+	static func setManagedObjectContext(_ value: NSManagedObjectContext) {
+		shared.managedObjectContext = value
 	}
 
 	// TODO: Move this method to the ValletAdmin target
-	func reload(for shopOwnerAddress: EthereumAddress, completion: @escaping (Result<[Shop]>) -> Void) {
-		guard let tokenFactory = tokenFactory
+	static func reload(for shopOwnerAddress: EthereumAddress, completion: @escaping (Result<[Shop]>) -> Void) {
+		guard let tokenFactory = shared.tokenFactory
 			else {
 				completion(Result.failure(Web3Error.unknownError))
 				return
 		}
 
-		tokenFactory.loadAllCreatedShops(for: shopOwnerAddress) { [weak self] (result) in
-			guard let strongSelf = self
-				else {
-					completion(Result.failure(Web3Error.unknownError))
-					return
-			}
+		tokenFactory.loadAllCreatedShops(for: shopOwnerAddress) { (result) in
 			switch result {
 			case .success(let shopsIntermediate):
-				let loadedShops = shopsIntermediate.compactMap { Shop(in: strongSelf.managedObjectContext, intermediate: $0) }
-				DataBaseManager.save(managedContext: strongSelf.managedObjectContext)
+				let loadedShops = shopsIntermediate.compactMap { Shop(in: shared.managedObjectContext, intermediate: $0) }
+				DataBaseManager.save(managedContext: shared.managedObjectContext)
 				completion(Result.success(loadedShops))
 			case .failure(let error):
 				completion(Result.failure(error))
@@ -57,29 +61,22 @@ class ShopManager {
 		}
 	}
 
-	func createShop(named name: String, completion: @escaping (Result<Shop>) -> Void) {
-		guard let tokenFactory = tokenFactory
+	static func createShop(named name: String, completion: @escaping (Result<Shop>) -> Void) {
+		guard let tokenFactory = shared.tokenFactory
 			else {
 				completion(Result.failure(Web3Error.unknownError))
 				return
 		}
 
-		tokenFactory.createShop(with: Wallet.address, name: name, type: .voucher) { [weak self] (result) in
-			guard let strongSelf = self
-				else {
-					completion(Result.failure(Web3Error.unknownError))
-					return
-			}
-
+		tokenFactory.createShop(with: Wallet.address, name: name, type: .voucher) { (result) in
 			switch result {
 			case .success(let createdShop):
-				print(createdShop)
-				guard let shop = Shop(in: strongSelf.managedObjectContext, intermediate: createdShop)
+				guard let shop = Shop(in: shared.managedObjectContext, intermediate: createdShop)
 					else {
 						completion(Result.failure(Web3Error.dataError))
 						return
 				}
-				DataBaseManager.save(managedContext: strongSelf.managedObjectContext)
+				DataBaseManager.save(managedContext: shared.managedObjectContext)
 				completion(Result.success(shop))
 			case .failure(let error):
 				print(error)

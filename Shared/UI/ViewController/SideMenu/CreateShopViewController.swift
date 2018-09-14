@@ -23,8 +23,6 @@ class CreateShopViewController: UIViewController {
 
 	weak var delegate: CreateShopDelegate?
 
-	let shopManager = ShopManager(tokenFactoryAddress: EthereumAddress(Constants.BlockChain.tokenFactoryContractAddress), managedObjectContext: DataBaseManager.managedContext)
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -52,7 +50,7 @@ class CreateShopViewController: UIViewController {
 
 	private func createShop(named name: String) {
 		showActivityIndicator()
-		shopManager.createShop(named: name) { [weak self] (result) in
+		ShopManager.createShop(named: name) { [weak self] (result) in
 			switch result {
 			case .success(let shop):
 				self?.delegate?.didCreate(shop: shop)

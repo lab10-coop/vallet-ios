@@ -25,8 +25,6 @@ class SideMenuViewController: UIViewController {
 
 	weak var delegate: SideMenuDelegate?
 
-	let shopManager = ShopManager(tokenFactoryAddress: EthereumAddress(Constants.BlockChain.tokenFactoryContractAddress), managedObjectContext: DataBaseManager.managedContext)
-
 	static func present(over viewController: UIViewController) {
 		let storyboard = UIStoryboard(name: "Shared", bundle: Bundle.main)
 		guard let sideMenuViewController = storyboard.instantiateViewController(withIdentifier: "SideMenuViewController") as? SideMenuViewController
@@ -46,6 +44,16 @@ class SideMenuViewController: UIViewController {
 		ShopTableViewCell.register(for: shopsTableView)
 		shopsTableView.delegate = self
 		shopsTableView.dataSource = self
+	}
+
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		shopsTableView.reloadData()
+
+		if let selectedShop = ShopManager.selectedShop,
+			let selectedIndex = ShopManager.shops.index(of: selectedShop) {
+			shopsTableView.selectRow(at: IndexPath(row: selectedIndex, section: 0), animated: true, scrollPosition: UITableViewScrollPosition.none)
+		}
 	}
 
 	func show() {
@@ -93,13 +101,14 @@ class SideMenuViewController: UIViewController {
 extension SideMenuViewController: UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return shopManager.shops.count
+		return ShopManager.shops.count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: ShopTableViewCell.reuseIdentifier, for: indexPath)
 		if let shopCell = cell as? ShopTableViewCell {
-			shopCell.shop = shopManager.shops[indexPath.row]
+			shopCell.shop = ShopManager.shops[indexPath.row]
+//			shopCell.isSelected = ShopManager.selectedShop == shopCell.shop
 		}
 		return cell
 	}
@@ -108,6 +117,10 @@ extension SideMenuViewController: UITableViewDataSource {
 
 extension SideMenuViewController: UITableViewDelegate {
 
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		ShopManager.selectedShop = ShopManager.shops[indexPath.row]
+	}
+	
 }
 
 extension SideMenuViewController: CreateShopDelegate {
