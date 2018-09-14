@@ -48,26 +48,30 @@ import enum Result.Result
 
 extension TransactionIntermediate {
 
-	func callInBackground(options: Web3Options? = nil, onBlock: String = "latest", completion: @escaping (Result<[String: Any]>) -> Void) {
+	func callAsync(options: Web3Options? = nil, onBlock: String = "latest", completion: @escaping (Result<[String: Any]>) -> Void) {
 		DispatchQueue.global(qos: .background).async {
 			let result = self.call(options: options, onBlock: onBlock)
-			switch result {
-			case .success(let value):
-				completion(Result.success(value))
-			case .failure(let error):
-				completion(Result.failure(error))
+			DispatchQueue.main.async {
+				switch result {
+				case .success(let value):
+					completion(Result.success(value))
+				case .failure(let error):
+					completion(Result.failure(error))
+				}
 			}
 		}
 	}
 
-	func sendInBackground(password: String, options: Web3Options? = nil, onBlock: String = "pending", completion: @escaping (Result<TransactionSendingResult>) -> Void) {
+	func sendAsync(password: String, options: Web3Options? = nil, onBlock: String = "pending", completion: @escaping (Result<TransactionSendingResult>) -> Void) {
 		DispatchQueue.global(qos: .background).async {
 			let result = self.send(password: password, options: options, onBlock: onBlock)
-			switch result {
-			case .success(let value):
-				completion(Result.success(value))
-			case .failure(let error):
-				completion(Result.failure(error))
+			DispatchQueue.main.async {
+				switch result {
+				case .success(let value):
+					completion(Result.success(value))
+				case .failure(let error):
+					completion(Result.failure(error))
+				}
 			}
 		}
 	}
