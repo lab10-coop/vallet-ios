@@ -57,4 +57,34 @@ class ShopManager {
 		}
 	}
 
+	func createShop(named name: String, completion: @escaping (Result<Shop>) -> Void) {
+		guard let tokenFactory = tokenFactory
+			else {
+				completion(Result.failure(Web3Error.unknownError))
+				return
+		}
+
+		tokenFactory.createShop(with: Wallet.address, name: name, type: .voucher) { [weak self] (result) in
+			guard let strongSelf = self
+				else {
+					completion(Result.failure(Web3Error.unknownError))
+					return
+			}
+
+			switch result {
+			case .success(let createdShop):
+				print(createdShop)
+				guard let shop = Shop(in: strongSelf.managedObjectContext, intermediate: createdShop)
+					else {
+						completion(Result.failure(Web3Error.dataError))
+						return
+				}
+				DataBaseManager.save(managedContext: strongSelf.managedObjectContext)
+				completion(Result.success(shop))
+			case .failure(let error):
+				print(error)
+			}
+		}
+	}
+
 }
