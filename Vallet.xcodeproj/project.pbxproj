@@ -61,6 +61,7 @@
 		D443CDBE214BDAF900A7100F /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDBC214BDAF900A7100F /* ActivityIndicatorView.swift */; };
 		D443CDC0214BDB1600A7100F /* ActivityIndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D443CDBF214BDB1600A7100F /* ActivityIndicatorView.xib */; };
 		D443CDC1214BDB1600A7100F /* ActivityIndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D443CDBF214BDB1600A7100F /* ActivityIndicatorView.xib */; };
+		D443CDC6214C00C500A7100F /* ShopAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDC4214C00C500A7100F /* ShopAddressViewController.swift */; };
 		D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */; };
@@ -137,6 +138,7 @@
 		D443CDB9214BDABE00A7100F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		D443CDBC214BDAF900A7100F /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		D443CDBF214BDB1600A7100F /* ActivityIndicatorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityIndicatorView.xib; sourceTree = "<group>"; };
+		D443CDC4214C00C500A7100F /* ShopAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopAddressViewController.swift; sourceTree = "<group>"; };
 		D4C5CD932147D34200AB67D7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
 		D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLinkedView.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 		D429F88F21400A5A004427F0 /* ValletAdmin */ = {
 			isa = PBXGroup;
 			children = (
+				D443CDC2214C009400A7100F /* UI */,
 				D429F89021400A5A004427F0 /* AppDelegate.swift */,
 				D429F89221400A5A004427F0 /* ViewController.swift */,
 				D429F89421400A5A004427F0 /* Main.storyboard */,
@@ -319,6 +322,22 @@
 				D443CDBF214BDB1600A7100F /* ActivityIndicatorView.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D443CDC2214C009400A7100F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D443CDC3214C00A100A7100F /* ViewController */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D443CDC3214C00A100A7100F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D443CDC4214C00C500A7100F /* ShopAddressViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		D4C5CD912147D30200AB67D7 /* UI */ = {
@@ -694,6 +713,7 @@
 				D443CDB1214BB26400A7100F /* TextInputView.swift in Sources */,
 				D443CDBE214BDAF900A7100F /* ActivityIndicatorView.swift in Sources */,
 				D4C5CDBC2149410800AB67D7 /* DataBaseManager.swift in Sources */,
+				D443CDC6214C00C500A7100F /* ShopAddressViewController.swift in Sources */,
 				D429F8BF21416F91004427F0 /* ContractProtocol.swift in Sources */,
 				D429F8A921400F1C004427F0 /* FaucetManager.swift in Sources */,
 				D429F89121400A5A004427F0 /* AppDelegate.swift in Sources */,
