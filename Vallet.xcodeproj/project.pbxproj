@@ -55,6 +55,12 @@
 		D443CDB4214BB2DE00A7100F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDB2214BB2DE00A7100F /* UIView.swift */; };
 		D443CDB6214BB3EE00A7100F /* TextInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D443CDB5214BB3EE00A7100F /* TextInputView.xib */; };
 		D443CDB7214BB3EE00A7100F /* TextInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D443CDB5214BB3EE00A7100F /* TextInputView.xib */; };
+		D443CDBA214BDABE00A7100F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDB9214BDABE00A7100F /* UIViewController.swift */; };
+		D443CDBB214BDABE00A7100F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDB9214BDABE00A7100F /* UIViewController.swift */; };
+		D443CDBD214BDAF900A7100F /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDBC214BDAF900A7100F /* ActivityIndicatorView.swift */; };
+		D443CDBE214BDAF900A7100F /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDBC214BDAF900A7100F /* ActivityIndicatorView.swift */; };
+		D443CDC0214BDB1600A7100F /* ActivityIndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D443CDBF214BDB1600A7100F /* ActivityIndicatorView.xib */; };
+		D443CDC1214BDB1600A7100F /* ActivityIndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D443CDBF214BDB1600A7100F /* ActivityIndicatorView.xib */; };
 		D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */; };
@@ -128,6 +134,9 @@
 		D443CDAF214BB26400A7100F /* TextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
 		D443CDB2214BB2DE00A7100F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		D443CDB5214BB3EE00A7100F /* TextInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextInputView.xib; sourceTree = "<group>"; };
+		D443CDB9214BDABE00A7100F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		D443CDBC214BDAF900A7100F /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		D443CDBF214BDB1600A7100F /* ActivityIndicatorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityIndicatorView.xib; sourceTree = "<group>"; };
 		D4C5CD932147D34200AB67D7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
 		D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLinkedView.swift; sourceTree = "<group>"; };
@@ -295,6 +304,7 @@
 			children = (
 				D443CDA8214AA73700A7100F /* NSObject.swift */,
 				D443CDB2214BB2DE00A7100F /* UIView.swift */,
+				D443CDB9214BDABE00A7100F /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -305,6 +315,8 @@
 				D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */,
 				D443CDAF214BB26400A7100F /* TextInputView.swift */,
 				D443CDB5214BB3EE00A7100F /* TextInputView.xib */,
+				D443CDBC214BDAF900A7100F /* ActivityIndicatorView.swift */,
+				D443CDBF214BDB1600A7100F /* ActivityIndicatorView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -487,6 +499,7 @@
 				D443CDB6214BB3EE00A7100F /* TextInputView.xib in Resources */,
 				D429F85421400572004427F0 /* Main.storyboard in Resources */,
 				D443CD9A214AA0A500A7100F /* ShopTableViewCell.xib in Resources */,
+				D443CDC0214BDB1600A7100F /* ActivityIndicatorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +521,7 @@
 				D443CDB7214BB3EE00A7100F /* TextInputView.xib in Resources */,
 				D429F89621400A5A004427F0 /* Main.storyboard in Resources */,
 				D443CD9B214AA0A500A7100F /* ShopTableViewCell.xib in Resources */,
+				D443CDC1214BDB1600A7100F /* ActivityIndicatorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,11 +650,13 @@
 				D4C5CDB521490DC500AB67D7 /* Shop.swift in Sources */,
 				D4C5CDAA2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
 				D443CDB0214BB26400A7100F /* TextInputView.swift in Sources */,
+				D443CDBD214BDAF900A7100F /* ActivityIndicatorView.swift in Sources */,
 				D4C5CDBB2149410800AB67D7 /* DataBaseManager.swift in Sources */,
 				D429F8BE21416F91004427F0 /* ContractProtocol.swift in Sources */,
 				D429F8A621400D87004427F0 /* FaucetManager.swift in Sources */,
 				D429F8BB21416D9D004427F0 /* TokenFactory.swift in Sources */,
 				D443CD98214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
+				D443CDBA214BDABE00A7100F /* UIViewController.swift in Sources */,
 				D443CDB3214BB2DE00A7100F /* UIView.swift in Sources */,
 				D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */,
 				D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */,
@@ -676,11 +692,13 @@
 				D4C5CDB621490DC500AB67D7 /* Shop.swift in Sources */,
 				D4C5CDAB2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
 				D443CDB1214BB26400A7100F /* TextInputView.swift in Sources */,
+				D443CDBE214BDAF900A7100F /* ActivityIndicatorView.swift in Sources */,
 				D4C5CDBC2149410800AB67D7 /* DataBaseManager.swift in Sources */,
 				D429F8BF21416F91004427F0 /* ContractProtocol.swift in Sources */,
 				D429F8A921400F1C004427F0 /* FaucetManager.swift in Sources */,
 				D429F89121400A5A004427F0 /* AppDelegate.swift in Sources */,
 				D443CD99214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
+				D443CDBB214BDABE00A7100F /* UIViewController.swift in Sources */,
 				D443CDB4214BB2DE00A7100F /* UIView.swift in Sources */,
 				D429F8BC21416D9D004427F0 /* TokenFactory.swift in Sources */,
 				D4C5CD982147DA2700AB67D7 /* QRCodeReaderView.swift in Sources */,
