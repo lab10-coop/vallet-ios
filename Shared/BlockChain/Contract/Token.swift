@@ -39,7 +39,7 @@ class Token: ContractProtocol {
 
 	// MARK: - Contract methods
 
-	func issue(value: Int, to toAddress: EthereumAddress, from fromAddress: EthereumAddress, completion: @escaping (Result<TransactionSendingResult>) -> Void) {
+	func issue(value: Int, to toAddress: EthereumAddress, from fromAddress: EthereumAddress, completion: @escaping (Result<TransactionReceipt>) -> Void) {
 		var options = Web3Options()
 		options.from = fromAddress
 
@@ -50,7 +50,14 @@ class Token: ContractProtocol {
 		}
 
 		intermediate.sendAsync(password: Constants.Temp.keystorePassword) { (result) in
-			completion(result)
+			switch result {
+			case .success(let transactionResult):
+				Web3Manager.getTransactionReceipt(for: transactionResult.hash, completion: { (receiptResult) in
+					completion(receiptResult)
+				})
+			case .failure(let error):
+				completion(Result.failure(error))
+			}
 		}
 	}
 
