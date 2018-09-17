@@ -42,6 +42,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="142" y="134"/>
         </scene>
         <!--Shop Address View Controller-->
         <scene sceneID="nPQ-ly-zbO">
@@ -82,7 +83,128 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="an9-G4-aD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1636" y="32.833583208395808"/>
+            <point key="canvasLocation" x="1033" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="plX-wG-wzo">
+            <objects>
+                <navigationController storyboardIdentifier="IssueNavigationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xbQ-Wm-r2m" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j1n-gi-eOK">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="3g6-jh-7dW" kind="relationship" relationship="rootViewController" id="1l9-pA-fr6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xqn-LO-drq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="142" y="937"/>
+        </scene>
+        <!--Issue Address View Controller-->
+        <scene sceneID="NZx-vz-6A0">
+            <objects>
+                <viewController storyboardIdentifier="IssueAddressViewController" id="3g6-jh-7dW" customClass="IssueAddressViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d85-I8-jeU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUQ-cy-gBk" customClass="QRCodeReaderView" customModule="ValletAdmin" customModuleProvider="target">
+                                <rect key="frame" x="67" y="245.5" width="240" height="240"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QUQ-cy-gBk" secondAttribute="height" multiplier="1:1" id="HDQ-vm-a8x"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Client address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="obp-mc-1my">
+                                <rect key="frame" x="41" y="505.5" width="297" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDt-uZ-FgV">
+                                <rect key="frame" x="156.5" y="617" width="62" height="30"/>
+                                <state key="normal" title="Continue"/>
+                                <connections>
+                                    <segue destination="Bjh-Ss-7BC" kind="show" identifier="ShowIssueAmountViewControllerSegue" id="HfX-sb-lqG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oWD-uB-4j0" firstAttribute="bottom" secondItem="uDt-uZ-FgV" secondAttribute="bottom" constant="20" id="2fE-BQ-mOb"/>
+                            <constraint firstItem="oWD-uB-4j0" firstAttribute="trailing" secondItem="obp-mc-1my" secondAttribute="trailing" constant="37" id="72p-Hm-6r1"/>
+                            <constraint firstItem="uDt-uZ-FgV" firstAttribute="centerX" secondItem="oWD-uB-4j0" secondAttribute="centerX" id="BKh-ra-TDh"/>
+                            <constraint firstItem="obp-mc-1my" firstAttribute="top" secondItem="QUQ-cy-gBk" secondAttribute="bottom" constant="20" id="HxL-vr-fqO"/>
+                            <constraint firstItem="oWD-uB-4j0" firstAttribute="trailing" secondItem="QUQ-cy-gBk" secondAttribute="trailing" constant="68" id="OKn-UV-WW0"/>
+                            <constraint firstItem="QUQ-cy-gBk" firstAttribute="centerY" secondItem="oWD-uB-4j0" secondAttribute="centerY" id="fm6-YZ-dez"/>
+                            <constraint firstItem="QUQ-cy-gBk" firstAttribute="leading" secondItem="oWD-uB-4j0" secondAttribute="leading" constant="67" id="hsn-ak-dB0"/>
+                            <constraint firstItem="obp-mc-1my" firstAttribute="leading" secondItem="oWD-uB-4j0" secondAttribute="leading" constant="41" id="m3c-dH-U1y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oWD-uB-4j0"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NBD-0i-EBb">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Yh1-Ms-GcF">
+                            <connections>
+                                <action selector="close:" destination="3g6-jh-7dW" id="jJ4-xI-ORS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addressLabel" destination="obp-mc-1my" id="U3t-13-aC8"/>
+                        <outlet property="continueButton" destination="uDt-uZ-FgV" id="9YW-H6-NIq"/>
+                        <outlet property="qrCodeReaderView" destination="QUQ-cy-gBk" id="Bfq-cH-Xgk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oD3-t1-96k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1033" y="937"/>
+        </scene>
+        <!--Issue Amount View Controller-->
+        <scene sceneID="o6w-Uy-zr7">
+            <objects>
+                <viewController storyboardIdentifier="IssueAmountViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bjh-Ss-7BC" customClass="IssueAmountViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fha-DP-RN0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ga9-WC-gs1" customClass="TextInputView" customModule="Vallet" customModuleProvider="target">
+                                <rect key="frame" x="20" y="94" width="335" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="TUp-c2-Uzr"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Amount"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRequired" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGz-aA-owU">
+                                <rect key="frame" x="169" y="185" width="36" height="30"/>
+                                <state key="normal" title="Issue"/>
+                                <connections>
+                                    <action selector="issue:" destination="Bjh-Ss-7BC" eventType="touchUpInside" id="JnQ-vM-ZUm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jGz-aA-owU" firstAttribute="centerX" secondItem="Ga9-WC-gs1" secondAttribute="centerX" id="136-2M-xbC"/>
+                            <constraint firstItem="Ga9-WC-gs1" firstAttribute="top" secondItem="zbz-ES-zpV" secondAttribute="top" constant="30" id="OGh-qM-oWd"/>
+                            <constraint firstItem="jGz-aA-owU" firstAttribute="top" secondItem="Ga9-WC-gs1" secondAttribute="bottom" constant="31" id="Xao-hx-jMc"/>
+                            <constraint firstItem="Ga9-WC-gs1" firstAttribute="leading" secondItem="zbz-ES-zpV" secondAttribute="leading" constant="20" id="cI9-Ui-PFf"/>
+                            <constraint firstItem="zbz-ES-zpV" firstAttribute="trailing" secondItem="Ga9-WC-gs1" secondAttribute="trailing" constant="20" id="v7W-dQ-QV7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zbz-ES-zpV"/>
+                    </view>
+                    <connections>
+                        <outlet property="amountTextInputView" destination="Ga9-WC-gs1" id="X0m-fn-Cyb"/>
+                        <outlet property="issueButton" destination="jGz-aA-owU" id="uQX-Ou-Cvx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oeq-F3-0CQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1934" y="937"/>
         </scene>
     </scenes>
 </document>

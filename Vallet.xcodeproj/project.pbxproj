@@ -62,6 +62,8 @@
 		D443CDC0214BDB1600A7100F /* ActivityIndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D443CDBF214BDB1600A7100F /* ActivityIndicatorView.xib */; };
 		D443CDC1214BDB1600A7100F /* ActivityIndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D443CDBF214BDB1600A7100F /* ActivityIndicatorView.xib */; };
 		D443CDC6214C00C500A7100F /* ShopAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDC4214C00C500A7100F /* ShopAddressViewController.swift */; };
+		D443CDC8214C190900A7100F /* IssueAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDC7214C190900A7100F /* IssueAddressViewController.swift */; };
+		D443CDCA214F7E4200A7100F /* IssueAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDC9214F7E4200A7100F /* IssueAmountViewController.swift */; };
 		D443CDCD214F7EFA00A7100F /* IssueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDCC214F7EFA00A7100F /* IssueViewModel.swift */; };
 		D443CDD0214F925000A7100F /* ClientAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDCF214F925000A7100F /* ClientAddressViewController.swift */; };
 		D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
@@ -141,6 +143,8 @@
 		D443CDBC214BDAF900A7100F /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		D443CDBF214BDB1600A7100F /* ActivityIndicatorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityIndicatorView.xib; sourceTree = "<group>"; };
 		D443CDC4214C00C500A7100F /* ShopAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopAddressViewController.swift; sourceTree = "<group>"; };
+		D443CDC7214C190900A7100F /* IssueAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueAddressViewController.swift; sourceTree = "<group>"; };
+		D443CDC9214F7E4200A7100F /* IssueAmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueAmountViewController.swift; sourceTree = "<group>"; };
 		D443CDCC214F7EFA00A7100F /* IssueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueViewModel.swift; sourceTree = "<group>"; };
 		D443CDCF214F925000A7100F /* ClientAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientAddressViewController.swift; sourceTree = "<group>"; };
 		D4C5CD932147D34200AB67D7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -342,6 +346,8 @@
 			isa = PBXGroup;
 			children = (
 				D443CDC4214C00C500A7100F /* ShopAddressViewController.swift */,
+				D443CDC7214C190900A7100F /* IssueAddressViewController.swift */,
+				D443CDC9214F7E4200A7100F /* IssueAmountViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -736,6 +742,7 @@
 				D4C5CDAB2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
 				D443CDB1214BB26400A7100F /* TextInputView.swift in Sources */,
 				D443CDBE214BDAF900A7100F /* ActivityIndicatorView.swift in Sources */,
+				D443CDCA214F7E4200A7100F /* IssueAmountViewController.swift in Sources */,
 				D4C5CDBC2149410800AB67D7 /* DataBaseManager.swift in Sources */,
 				D443CDC6214C00C500A7100F /* ShopAddressViewController.swift in Sources */,
 				D429F8BF21416F91004427F0 /* ContractProtocol.swift in Sources */,
@@ -744,6 +751,7 @@
 				D443CD99214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
 				D443CDBB214BDABE00A7100F /* UIViewController.swift in Sources */,
 				D443CDB4214BB2DE00A7100F /* UIView.swift in Sources */,
+				D443CDC8214C190900A7100F /* IssueAddressViewController.swift in Sources */,
 				D429F8BC21416D9D004427F0 /* TokenFactory.swift in Sources */,
 				D4C5CD982147DA2700AB67D7 /* QRCodeReaderView.swift in Sources */,
 				D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */,
