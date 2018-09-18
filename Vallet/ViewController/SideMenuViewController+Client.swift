@@ -11,6 +11,19 @@ import UIKit
 extension SideMenuViewController: ShopAddable {
 
 	func addShop() {
+		guard let scanShopAddressViewController = ScanShopAddressViewController.present(over: self)
+			else {
+				return
+		}
+		scanShopAddressViewController.delegate = self
+	}
+
+}
+
+extension SideMenuViewController: ScanShopAddressViewControllerDelegate {
+
+	func didScan(shop: Shop) {
+		shopsTableView.reloadData()
 	}
 
 }

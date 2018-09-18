@@ -19,4 +19,8 @@ class ViewController: UIViewController {
 		ClientAddressViewController.present(over: self)
 	}
 
+	@IBAction func showSideMenu() {
+		SideMenuViewController.present(over: self)
+	}
+
 }
