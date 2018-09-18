@@ -231,8 +231,8 @@
 		D429F84D21400572004427F0 /* Vallet */ = {
 			isa = PBXGroup;
 			children = (
+				D48D95692151181F00840707 /* UI */,
 				D48D955E2150F65F00840707 /* ViewModel */,
-				D443CDCE214F923100A7100F /* ViewController */,
 				D429F84E21400572004427F0 /* AppDelegate.swift */,
 				D429F85021400572004427F0 /* ViewController.swift */,
 				D429F85221400572004427F0 /* Main.storyboard */,
@@ -255,8 +255,8 @@
 		D429F88F21400A5A004427F0 /* ValletAdmin */ = {
 			isa = PBXGroup;
 			children = (
-				D443CDCB214F7EE300A7100F /* ViewModel */,
 				D443CDC2214C009400A7100F /* UI */,
+				D443CDCB214F7EE300A7100F /* ViewModel */,
 				D429F89021400A5A004427F0 /* AppDelegate.swift */,
 				D429F89221400A5A004427F0 /* ViewController.swift */,
 				D429F89421400A5A004427F0 /* Main.storyboard */,
@@ -389,6 +389,14 @@
 				D48D955F2150F67000840707 /* ShopManager+Client.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D48D95692151181F00840707 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D443CDCE214F923100A7100F /* ViewController */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		D4C5CD912147D30200AB67D7 /* UI */ = {
