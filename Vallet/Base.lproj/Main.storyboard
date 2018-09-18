@@ -27,6 +27,14 @@
                                     <action selector="showAddress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3nO-zQ-gPI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nrr-un-nvE">
+                                <rect key="frame" x="16" y="78" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Side menu"/>
+                                <connections>
+                                    <action selector="showSideMenu" destination="BYZ-38-t0r" eventType="touchUpInside" id="8sQ-OI-CNj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -76,6 +84,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N70-R3-DnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1626" y="33"/>
+        </scene>
+        <!--Scan Shop Address View Controller-->
+        <scene sceneID="SWG-DO-anR">
+            <objects>
+                <viewController storyboardIdentifier="ScanShopAddressViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IaT-Uf-uc0" customClass="ScanShopAddressViewController" customModule="Vallet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nth-Wx-GrB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLa-SE-AlK" customClass="QRCodeReaderView" customModule="ValletAdmin" customModuleProvider="target">
+                                <rect key="frame" x="65" y="223.5" width="240" height="240"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="WLa-SE-AlK" secondAttribute="height" multiplier="1:1" id="pY7-8Q-LvG"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pGz-Cm-QXT">
+                                <rect key="frame" x="39" y="483.5" width="297" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMU-4K-bsz">
+                                <rect key="frame" x="16" y="20" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="close:" destination="IaT-Uf-uc0" eventType="touchUpInside" id="qVE-0t-LDm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JMU-4K-bsz" firstAttribute="top" secondItem="xre-Tg-r0B" secondAttribute="top" id="5m1-Xd-Vmu"/>
+                            <constraint firstItem="WLa-SE-AlK" firstAttribute="centerY" secondItem="xre-Tg-r0B" secondAttribute="centerY" id="ML8-yO-FiY"/>
+                            <constraint firstItem="pGz-Cm-QXT" firstAttribute="leading" secondItem="xre-Tg-r0B" secondAttribute="leading" constant="39" id="MRw-ru-HEu"/>
+                            <constraint firstItem="JMU-4K-bsz" firstAttribute="leading" secondItem="xre-Tg-r0B" secondAttribute="leading" constant="16" id="O2u-bv-dgh"/>
+                            <constraint firstItem="pGz-Cm-QXT" firstAttribute="top" secondItem="WLa-SE-AlK" secondAttribute="bottom" constant="20" id="ThE-5q-xvr"/>
+                            <constraint firstItem="WLa-SE-AlK" firstAttribute="leading" secondItem="xre-Tg-r0B" secondAttribute="leading" constant="65" id="Y0E-CL-w7U"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JMU-4K-bsz" secondAttribute="trailing" constant="20" symbolic="YES" id="kGC-Zs-WcX"/>
+                            <constraint firstItem="xre-Tg-r0B" firstAttribute="trailing" secondItem="pGz-Cm-QXT" secondAttribute="trailing" constant="39" id="m9S-cs-U0r"/>
+                            <constraint firstItem="WLa-SE-AlK" firstAttribute="width" secondItem="WLa-SE-AlK" secondAttribute="height" multiplier="1:1" id="pjQ-jp-lex"/>
+                            <constraint firstItem="xre-Tg-r0B" firstAttribute="trailing" secondItem="WLa-SE-AlK" secondAttribute="trailing" constant="70" id="ue2-tq-8EU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xre-Tg-r0B"/>
+                    </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="pGz-Cm-QXT" id="o16-zM-jV1"/>
+                        <outlet property="qrCodeReaderView" destination="WLa-SE-AlK" id="7O2-dj-q6y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1mg-yh-HRO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1625" y="839"/>
         </scene>
     </scenes>
 </document>

@@ -15,10 +15,16 @@ protocol SideMenuDelegate: class {
 
 }
 
+protocol ShopAddable {
+
+	func addShop()
+
+}
+
 class SideMenuViewController: UIViewController {
 
+	@IBOutlet var shopsTableView: UITableView!
 	@IBOutlet private var logoImageView: UIImageView!
-	@IBOutlet private var shopsTableView: UITableView!
 	@IBOutlet private var createShopButton: UIButton!
 	@IBOutlet private var containerView: UIView!
 	@IBOutlet private var leftConstraint: NSLayoutConstraint!
@@ -75,25 +81,12 @@ class SideMenuViewController: UIViewController {
 	}
 
 	@IBAction func createShop(_ sender: UIButton) {
-		print("create shop")
+		addShop()
 	}
 
 	@IBAction func didTapBackgorund(_ sender: Any) {
 		print("tap bg")
 		hide()
-	}
-
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		switch segue.identifier {
-		case "PresentCreateNewShopViewController":
-			guard let createShopViewController = segue.destination as? CreateShopViewController
-				else {
-					return
-			}
-			createShopViewController.delegate = self
-		default:
-			break
-		}
 	}
 
 }
@@ -121,13 +114,5 @@ extension SideMenuViewController: UITableViewDelegate {
 		ShopManager.selectedShop = ShopManager.shops[indexPath.row]
 	}
 	
-}
-
-extension SideMenuViewController: CreateShopDelegate {
-
-	func didCreate(shop: Shop) {
-		shopsTableView.reloadData()
-	}
-
 }
 
