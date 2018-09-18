@@ -15,4 +15,8 @@ class ViewController: UIViewController {
 
 	}
 
+	@IBAction func showAddress(_ sender: Any? = nil) {
+		ClientAddressViewController.present(over: self)
+	}
+
 }

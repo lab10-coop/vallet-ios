@@ -30,5 +30,12 @@ class ViewController: UIViewController {
 		ShopAddressViewController.present(shop: selectedShop, over: self)
 	}
 
+	@IBAction func startIssueFlow() {
+		guard let selectedShop = ShopManager.selectedShop else {
+			return
+		}
+		IssueAddressViewController.present(for: selectedShop, over: self)
+	}
+
 }
 

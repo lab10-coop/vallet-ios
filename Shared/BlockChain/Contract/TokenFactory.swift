@@ -31,8 +31,6 @@ class TokenFactory: ContractProtocol {
 
 	var address: EthereumAddress?
 
-	private var timers = [Timer]()
-
 	init(address: EthereumAddress) {
 		self.address = address
 	}
@@ -95,39 +93,26 @@ class TokenFactory: ContractProtocol {
 	}
 
 	private func loadCreatedShop(from transactionSendingResult: TransactionSendingResult, completion: @escaping (Result<ShopIntermediate>) -> Void) {
-		var repeatCount = 0
-		// Use timer to get the transaction receipt, since it might not be ready immediately.
-		let newTimer = Timer.scheduledTimer(withTimeInterval: Constants.Timer.pollInterval, repeats: true, block: { [weak self] (timer) in
-			print("Transaction receipt timer: \(repeatCount)")
-			Web3Manager.getTransactionReceipt(for: transactionSendingResult.hash, completion: { [weak self] (result) in
-				guard let strongSelf = self
-					else {
-						completion(Result.failure(Web3Error.unknownError))
-						return
-				}
-				switch result {
-				case .success(let receipt):
-					timer.invalidate()
-					strongSelf.resolveShop(from: receipt, completion: { (result) in
-						switch result {
-						case .success(let shop):
-							completion(Result.success(shop))
-						case .failure(let error):
-							completion(Result.failure(error))
-						}
-					})
-				case .failure(let error):
-					repeatCount += 1
-					if repeatCount > Constants.Timer.maxRepeatCount {
-						timer.invalidate()
-						strongSelf.remove(timer: timer)
+		Web3Manager.getTransactionReceipt(for: transactionSendingResult.hash) { [weak self] (receiptResult) in
+			guard let strongSelf = self
+				else {
+					completion(Result.failure(Web3Error.unknownError))
+					return
+			}
+			switch receiptResult {
+			case .success(let receipt):
+				strongSelf.resolveShop(from: receipt, completion: { (result) in
+					switch result {
+					case .success(let shop):
+						completion(Result.success(shop))
+					case .failure(let error):
 						completion(Result.failure(error))
 					}
-					print("Load transaction receipt error \(repeatCount): \(error)")
-				}
-			})
-		})
-		add(timer: newTimer)
+				})
+			case .failure(let error):
+				completion(Result.failure(error))
+			}
+		}
 	}
 
 	private func resolveShop(from receipt: TransactionReceipt, completion: @escaping (Result<ShopIntermediate>) -> Void) {
@@ -157,14 +142,6 @@ class TokenFactory: ContractProtocol {
 				}
 			}
 		}
-	}
-
-	private func add(timer: Timer) {
-		timers.append(timer)
-	}
-
-	private func remove(timer: Timer) {
-		timers = timers.filter { $0 != timer }
 	}
 
 }
