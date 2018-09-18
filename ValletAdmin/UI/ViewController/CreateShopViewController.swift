@@ -23,6 +23,17 @@ class CreateShopViewController: UIViewController {
 
 	weak var delegate: CreateShopDelegate?
 
+	@discardableResult
+	static func present(over viewController: UIViewController) -> CreateShopViewController? {
+		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+		guard let createShopViewController = storyboard.instantiateViewController(withIdentifier: "CreateShopViewController") as? CreateShopViewController
+			else {
+				return nil
+		}
+		viewController.present(createShopViewController, animated: false)
+		return createShopViewController
+	}
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 

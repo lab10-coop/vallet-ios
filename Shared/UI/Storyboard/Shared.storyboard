@@ -49,7 +49,6 @@
                                                     <state key="normal" title="Add new shop"/>
                                                     <connections>
                                                         <action selector="createShop:" destination="y3i-IW-dkB" eventType="touchUpInside" id="hKx-DT-Hfq"/>
-                                                        <segue destination="Lbg-XX-bmJ" kind="presentation" identifier="PresentCreateNewShopViewController" id="Tqy-xQ-1dz"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -103,61 +102,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="85.599999999999994" y="145.56650246305421"/>
-        </scene>
-        <!--Create Shop View Controller-->
-        <scene sceneID="Acg-78-3jy">
-            <objects>
-                <viewController storyboardIdentifier="CreateShopViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lbg-XX-bmJ" customClass="CreateShopViewController" customModule="Vallet" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="BJq-WO-EU0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kr5-sh-BjG">
-                                <rect key="frame" x="20" y="44" width="39" height="30"/>
-                                <state key="normal" title="Close"/>
-                                <connections>
-                                    <action selector="close:" destination="Lbg-XX-bmJ" eventType="touchUpInside" id="Eaa-xf-tzA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3m-Il-kZE">
-                                <rect key="frame" x="123" y="739" width="128" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Create a new shop"/>
-                                <connections>
-                                    <action selector="submit:" destination="Lbg-XX-bmJ" eventType="touchUpInside" id="P8L-VK-QF3"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Xq-Sy-ee6" customClass="TextInputView" customModule="Vallet" customModuleProvider="target">
-                                <rect key="frame" x="20" y="381" width="335" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="m2s-k0-QMs"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Shop name"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRequired" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="0Xq-Sy-ee6" firstAttribute="leading" secondItem="752-M7-m5B" secondAttribute="leading" constant="20" id="BbK-3y-ej4"/>
-                            <constraint firstItem="Kr5-sh-BjG" firstAttribute="leading" secondItem="752-M7-m5B" secondAttribute="leading" constant="20" id="RZ2-2S-5BF"/>
-                            <constraint firstItem="Kr5-sh-BjG" firstAttribute="top" secondItem="752-M7-m5B" secondAttribute="top" id="cuh-v9-u4l"/>
-                            <constraint firstItem="752-M7-m5B" firstAttribute="trailing" secondItem="0Xq-Sy-ee6" secondAttribute="trailing" constant="20" id="dwu-58-Vpw"/>
-                            <constraint firstItem="0Xq-Sy-ee6" firstAttribute="centerY" secondItem="752-M7-m5B" secondAttribute="centerY" id="uBS-YE-0QJ"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="752-M7-m5B"/>
-                    </view>
-                    <connections>
-                        <outlet property="closeButton" destination="Kr5-sh-BjG" id="a0Y-Yh-lby"/>
-                        <outlet property="nameInputView" destination="0Xq-Sy-ee6" id="yZZ-J1-XCf"/>
-                        <outlet property="submitButton" destination="p3m-Il-kZE" id="KbC-8x-qUn"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d60-ms-c7V" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1164" y="146"/>
         </scene>
     </scenes>
 </document>

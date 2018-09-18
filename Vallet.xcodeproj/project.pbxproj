@@ -47,7 +47,6 @@
 		D443CDA6214AA46500A7100F /* NibBackedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDA4214AA46500A7100F /* NibBackedTableViewCell.swift */; };
 		D443CDA9214AA73700A7100F /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDA8214AA73700A7100F /* NSObject.swift */; };
 		D443CDAA214AA73700A7100F /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDA8214AA73700A7100F /* NSObject.swift */; };
-		D443CDAC214BAB5A00A7100F /* CreateShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDAB214BAB5A00A7100F /* CreateShopViewController.swift */; };
 		D443CDAD214BAB5A00A7100F /* CreateShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDAB214BAB5A00A7100F /* CreateShopViewController.swift */; };
 		D443CDB0214BB26400A7100F /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDAF214BB26400A7100F /* TextInputView.swift */; };
 		D443CDB1214BB26400A7100F /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDAF214BB26400A7100F /* TextInputView.swift */; };
@@ -66,6 +65,9 @@
 		D443CDCA214F7E4200A7100F /* IssueAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDC9214F7E4200A7100F /* IssueAmountViewController.swift */; };
 		D443CDCD214F7EFA00A7100F /* IssueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDCC214F7EFA00A7100F /* IssueViewModel.swift */; };
 		D443CDD0214F925000A7100F /* ClientAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDCF214F925000A7100F /* ClientAddressViewController.swift */; };
+		D48D956421510ECB00840707 /* ShopManager+Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D956321510ECB00840707 /* ShopManager+Admin.swift */; };
+		D48D95662151104000840707 /* SideMenuViewController+Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D95652151104000840707 /* SideMenuViewController+Admin.swift */; };
+		D48D95682151130700840707 /* SideMenuViewController+Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D95672151130700840707 /* SideMenuViewController+Client.swift */; };
 		D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */; };
@@ -147,6 +149,9 @@
 		D443CDC9214F7E4200A7100F /* IssueAmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueAmountViewController.swift; sourceTree = "<group>"; };
 		D443CDCC214F7EFA00A7100F /* IssueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueViewModel.swift; sourceTree = "<group>"; };
 		D443CDCF214F925000A7100F /* ClientAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientAddressViewController.swift; sourceTree = "<group>"; };
+		D48D956321510ECB00840707 /* ShopManager+Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopManager+Admin.swift"; sourceTree = "<group>"; };
+		D48D95652151104000840707 /* SideMenuViewController+Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SideMenuViewController+Admin.swift"; sourceTree = "<group>"; };
+		D48D95672151130700840707 /* SideMenuViewController+Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SideMenuViewController+Client.swift"; sourceTree = "<group>"; };
 		D4C5CD932147D34200AB67D7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
 		D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLinkedView.swift; sourceTree = "<group>"; };
@@ -345,6 +350,8 @@
 		D443CDC3214C00A100A7100F /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D48D95652151104000840707 /* SideMenuViewController+Admin.swift */,
+				D443CDAB214BAB5A00A7100F /* CreateShopViewController.swift */,
 				D443CDC4214C00C500A7100F /* ShopAddressViewController.swift */,
 				D443CDC7214C190900A7100F /* IssueAddressViewController.swift */,
 				D443CDC9214F7E4200A7100F /* IssueAmountViewController.swift */,
@@ -355,6 +362,7 @@
 		D443CDCB214F7EE300A7100F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D48D956321510ECB00840707 /* ShopManager+Admin.swift */,
 				D443CDCC214F7EFA00A7100F /* IssueViewModel.swift */,
 			);
 			path = ViewModel;
@@ -363,6 +371,7 @@
 		D443CDCE214F923100A7100F /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D48D95672151130700840707 /* SideMenuViewController+Client.swift */,
 				D443CDCF214F925000A7100F /* ClientAddressViewController.swift */,
 			);
 			path = ViewController;
@@ -402,7 +411,6 @@
 			isa = PBXGroup;
 			children = (
 				D4C5CDA1214819AD00AB67D7 /* SideMenuViewController.swift */,
-				D443CDAB214BAB5A00A7100F /* CreateShopViewController.swift */,
 			);
 			path = SideMenu;
 			sourceTree = "<group>";
@@ -692,7 +700,6 @@
 				D429F8C82142BF86004427F0 /* Token.swift in Sources */,
 				D429F8B421401528004427F0 /* Wallet.swift in Sources */,
 				D429F8A821400DAE004427F0 /* Constants.swift in Sources */,
-				D443CDAC214BAB5A00A7100F /* CreateShopViewController.swift in Sources */,
 				D429F85121400572004427F0 /* ViewController.swift in Sources */,
 				D4C5CDB521490DC500AB67D7 /* Shop.swift in Sources */,
 				D4C5CDAA2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
@@ -705,6 +712,7 @@
 				D443CDD0214F925000A7100F /* ClientAddressViewController.swift in Sources */,
 				D443CD98214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
 				D443CDBA214BDABE00A7100F /* UIViewController.swift in Sources */,
+				D48D95682151130700840707 /* SideMenuViewController+Client.swift in Sources */,
 				D443CDB3214BB2DE00A7100F /* UIView.swift in Sources */,
 				D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */,
 				D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */,
@@ -739,6 +747,7 @@
 				D429F89321400A5A004427F0 /* ViewController.swift in Sources */,
 				D4C5CDB621490DC500AB67D7 /* Shop.swift in Sources */,
 				D443CDCD214F7EFA00A7100F /* IssueViewModel.swift in Sources */,
+				D48D95662151104000840707 /* SideMenuViewController+Admin.swift in Sources */,
 				D4C5CDAB2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
 				D443CDB1214BB26400A7100F /* TextInputView.swift in Sources */,
 				D443CDBE214BDAF900A7100F /* ActivityIndicatorView.swift in Sources */,
@@ -752,6 +761,7 @@
 				D443CDBB214BDABE00A7100F /* UIViewController.swift in Sources */,
 				D443CDB4214BB2DE00A7100F /* UIView.swift in Sources */,
 				D443CDC8214C190900A7100F /* IssueAddressViewController.swift in Sources */,
+				D48D956421510ECB00840707 /* ShopManager+Admin.swift in Sources */,
 				D429F8BC21416D9D004427F0 /* TokenFactory.swift in Sources */,
 				D4C5CD982147DA2700AB67D7 /* QRCodeReaderView.swift in Sources */,
 				D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */,
