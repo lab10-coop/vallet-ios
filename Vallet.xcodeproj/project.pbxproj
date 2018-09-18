@@ -66,6 +66,7 @@
 		D443CDCD214F7EFA00A7100F /* IssueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDCC214F7EFA00A7100F /* IssueViewModel.swift */; };
 		D443CDD0214F925000A7100F /* ClientAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDCF214F925000A7100F /* ClientAddressViewController.swift */; };
 		D48D95602150F67000840707 /* ShopManager+Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D955F2150F67000840707 /* ShopManager+Client.swift */; };
+		D48D95622150FD7700840707 /* ScanShopAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D95612150FD7600840707 /* ScanShopAddressViewController.swift */; };
 		D48D956421510ECB00840707 /* ShopManager+Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D956321510ECB00840707 /* ShopManager+Admin.swift */; };
 		D48D95662151104000840707 /* SideMenuViewController+Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D95652151104000840707 /* SideMenuViewController+Admin.swift */; };
 		D48D95682151130700840707 /* SideMenuViewController+Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D95672151130700840707 /* SideMenuViewController+Client.swift */; };
@@ -151,6 +152,7 @@
 		D443CDCC214F7EFA00A7100F /* IssueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueViewModel.swift; sourceTree = "<group>"; };
 		D443CDCF214F925000A7100F /* ClientAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientAddressViewController.swift; sourceTree = "<group>"; };
 		D48D955F2150F67000840707 /* ShopManager+Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopManager+Client.swift"; sourceTree = "<group>"; };
+		D48D95612150FD7600840707 /* ScanShopAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanShopAddressViewController.swift; sourceTree = "<group>"; };
 		D48D956321510ECB00840707 /* ShopManager+Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopManager+Admin.swift"; sourceTree = "<group>"; };
 		D48D95652151104000840707 /* SideMenuViewController+Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SideMenuViewController+Admin.swift"; sourceTree = "<group>"; };
 		D48D95672151130700840707 /* SideMenuViewController+Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SideMenuViewController+Client.swift"; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 			children = (
 				D48D95672151130700840707 /* SideMenuViewController+Client.swift */,
 				D443CDCF214F925000A7100F /* ClientAddressViewController.swift */,
+				D48D95612150FD7600840707 /* ScanShopAddressViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -722,6 +725,7 @@
 				D429F8BB21416D9D004427F0 /* TokenFactory.swift in Sources */,
 				D443CDD0214F925000A7100F /* ClientAddressViewController.swift in Sources */,
 				D443CD98214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
+				D48D95622150FD7700840707 /* ScanShopAddressViewController.swift in Sources */,
 				D443CDBA214BDABE00A7100F /* UIViewController.swift in Sources */,
 				D48D95682151130700840707 /* SideMenuViewController+Client.swift in Sources */,
 				D443CDB3214BB2DE00A7100F /* UIView.swift in Sources */,
