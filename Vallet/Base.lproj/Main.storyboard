@@ -93,7 +93,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLa-SE-AlK" customClass="QRCodeReaderView" customModule="ValletAdmin" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLa-SE-AlK" customClass="QRCodeReaderView" customModule="Vallet" customModuleProvider="target">
                                 <rect key="frame" x="65" y="223.5" width="240" height="240"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -137,6 +137,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1mg-yh-HRO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1625" y="839"/>
+        </scene>
+        <!--Client History Table View Controller-->
+        <scene sceneID="j53-h2-Owx">
+            <objects>
+                <tableViewController storyboardIdentifier="ClientHistoryTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fa2-wN-ecY" customClass="ClientHistoryTableViewController" customModule="Vallet" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lvl-df-zxf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="CLL-i5-tOm">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4S-0T-MUN">
+                                    <rect key="frame" x="20" y="7" width="39" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Close"/>
+                                    <connections>
+                                        <action selector="close:" destination="fa2-wN-ecY" eventType="touchUpInside" id="a2X-4c-C4i"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <connections>
+                            <outlet property="dataSource" destination="fa2-wN-ecY" id="5Zj-dh-9Aj"/>
+                            <outlet property="delegate" destination="fa2-wN-ecY" id="XU0-qQ-ViE"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6dS-R1-rvR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1625" y="1646"/>
         </scene>
     </scenes>
 </document>
