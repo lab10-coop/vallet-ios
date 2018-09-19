@@ -62,5 +62,23 @@ extension Shop {
 	@NSManaged public var decimals: Int16
 	@NSManaged public var symbol: String
 	@NSManaged public var creatorAddress: String
+	@NSManaged public var events: NSSet?
+
+}
+
+// MARK: Generated accessors for events
+extension Shop {
+
+	@objc(addEventsObject:)
+	@NSManaged public func addToEvents(_ value: ValueEvent)
+
+	@objc(removeEventsObject:)
+	@NSManaged public func removeFromEvents(_ value: ValueEvent)
+
+	@objc(addEvents:)
+	@NSManaged public func addToEvents(_ values: NSSet)
+
+	@objc(removeEvents:)
+	@NSManaged public func removeFromEvents(_ values: NSSet)
 
 }

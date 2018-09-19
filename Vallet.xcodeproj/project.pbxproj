@@ -70,6 +70,8 @@
 		D48D956421510ECB00840707 /* ShopManager+Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D956321510ECB00840707 /* ShopManager+Admin.swift */; };
 		D48D95662151104000840707 /* SideMenuViewController+Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D95652151104000840707 /* SideMenuViewController+Admin.swift */; };
 		D48D95682151130700840707 /* SideMenuViewController+Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D95672151130700840707 /* SideMenuViewController+Client.swift */; };
+		D48D956F21512BDE00840707 /* ValueEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D956E21512BDE00840707 /* ValueEvent.swift */; };
+		D48D957021512BDE00840707 /* ValueEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D956E21512BDE00840707 /* ValueEvent.swift */; };
 		D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */; };
@@ -156,6 +158,7 @@
 		D48D956321510ECB00840707 /* ShopManager+Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopManager+Admin.swift"; sourceTree = "<group>"; };
 		D48D95652151104000840707 /* SideMenuViewController+Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SideMenuViewController+Admin.swift"; sourceTree = "<group>"; };
 		D48D95672151130700840707 /* SideMenuViewController+Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SideMenuViewController+Client.swift"; sourceTree = "<group>"; };
+		D48D956E21512BDE00840707 /* ValueEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueEvent.swift; sourceTree = "<group>"; };
 		D4C5CD932147D34200AB67D7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
 		D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLinkedView.swift; sourceTree = "<group>"; };
@@ -450,6 +453,7 @@
 			children = (
 				D4C5CDA82149079400AB67D7 /* Model.xcdatamodeld */,
 				D4C5CDB321490DC500AB67D7 /* Shop.swift */,
+				D48D956E21512BDE00840707 /* ValueEvent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -722,6 +726,7 @@
 				D429F8C82142BF86004427F0 /* Token.swift in Sources */,
 				D429F8B421401528004427F0 /* Wallet.swift in Sources */,
 				D429F8A821400DAE004427F0 /* Constants.swift in Sources */,
+				D48D956F21512BDE00840707 /* ValueEvent.swift in Sources */,
 				D429F85121400572004427F0 /* ViewController.swift in Sources */,
 				D4C5CDB521490DC500AB67D7 /* Shop.swift in Sources */,
 				D4C5CDAA2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
@@ -784,6 +789,7 @@
 				D443CD99214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
 				D443CDBB214BDABE00A7100F /* UIViewController.swift in Sources */,
 				D443CDB4214BB2DE00A7100F /* UIView.swift in Sources */,
+				D48D957021512BDE00840707 /* ValueEvent.swift in Sources */,
 				D443CDC8214C190900A7100F /* IssueAddressViewController.swift in Sources */,
 				D48D956421510ECB00840707 /* ShopManager+Admin.swift in Sources */,
 				D429F8BC21416D9D004427F0 /* TokenFactory.swift in Sources */,
