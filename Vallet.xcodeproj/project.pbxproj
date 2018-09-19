@@ -83,6 +83,7 @@
 		D48D958421525B0000840707 /* AdminHistoryEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D958221525B0000840707 /* AdminHistoryEventTableViewCell.swift */; };
 		D48D958521525B0000840707 /* AdminHistoryEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48D958321525B0000840707 /* AdminHistoryEventTableViewCell.xib */; };
 		D48D95872152646500840707 /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D95862152646500840707 /* ShopViewModel.swift */; };
+		D48D9589215283A500840707 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D9588215283A500840707 /* UserDefaultsManager.swift */; };
 		D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */; };
@@ -179,6 +180,7 @@
 		D48D958221525B0000840707 /* AdminHistoryEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHistoryEventTableViewCell.swift; sourceTree = "<group>"; };
 		D48D958321525B0000840707 /* AdminHistoryEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminHistoryEventTableViewCell.xib; sourceTree = "<group>"; };
 		D48D95862152646500840707 /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
+		D48D9588215283A500840707 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		D4C5CD932147D34200AB67D7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
 		D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLinkedView.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 			children = (
 				D4C5CDBA2149410800AB67D7 /* DataBaseManager.swift */,
 				D443CD91214A93E400A7100F /* ShopManager.swift */,
+				D48D9588215283A500840707 /* UserDefaultsManager.swift */,
 				D48D956B2151192A00840707 /* HistoryViewModel.swift */,
 			);
 			path = ViewModel;
@@ -794,6 +797,7 @@
 				D48D95682151130700840707 /* SideMenuViewController+Client.swift in Sources */,
 				D443CDB3214BB2DE00A7100F /* UIView.swift in Sources */,
 				D48D95602150F67000840707 /* ShopManager+Client.swift in Sources */,
+				D48D9589215283A500840707 /* UserDefaultsManager.swift in Sources */,
 				D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */,
 				D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */,
 				D48D957421523BBD00840707 /* ClientHistoryTableViewController.swift in Sources */,

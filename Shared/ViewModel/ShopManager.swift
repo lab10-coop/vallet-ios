@@ -16,10 +16,23 @@ class ShopManager {
 
 	// The tokenFactory object is only needed for the ValletAdmin target
 	private var _tokenFactory: TokenFactory?
+	private var _selectedShop: Shop?
 	private var _managedObjectContext: NSManagedObjectContext
 
-	// TODO: find a way to persist selectedShop on the device
-	static var selectedShop: Shop?
+	static var selectedShop: Shop? {
+		get {
+			if let shop = shared._selectedShop {
+				return shop
+			}
+			shared._selectedShop = retrieveSelectedShop()
+			return shared._selectedShop
+		}
+		set {
+			UserDefaultsManager.selectedShopAddress = newValue?.address
+			shared._selectedShop = newValue
+		}
+	}
+
 	static var tokenFactory: TokenFactory? {
 		return shared._tokenFactory
 	}
@@ -47,6 +60,18 @@ class ShopManager {
 		get {
 			return shared._managedObjectContext
 		}
+	}
+
+	static private func retrieveSelectedShop() -> Shop? {
+		if let selectedShopAddress = UserDefaultsManager.selectedShopAddress,
+			let selectedShop = shops.filter({ $0.address == selectedShopAddress }).first {
+			return selectedShop
+		}
+		else if let shop = shops.first {
+			UserDefaultsManager.selectedShopAddress = shop.address
+			return shop
+		}
+		return nil
 	}
 
 }
