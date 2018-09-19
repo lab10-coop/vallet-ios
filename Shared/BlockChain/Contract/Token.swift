@@ -194,7 +194,7 @@ class Token: ContractProtocol {
 
 	// MARK: - Events
 
-	func loadRedeemEvents(for clientAddress: EthereumAddress? = nil, completion: @escaping (Result<[EventValuable]?>) -> Void) {
+	func loadRedeemEvents(for clientAddress: EthereumAddress? = nil, completion: @escaping (Result<[ValueEventIntermediate]>) -> Void) {
 		guard let contract = contract,
 			let contractAddress = address
 			else {
@@ -202,28 +202,30 @@ class Token: ContractProtocol {
 				return
 		}
 
+		var events = [ValueEventIntermediate]()
 		let eventFilter = EventFilter(fromBlock: .blockNumber(0), toBlock: .latest, addresses: [contractAddress])
 
 		DispatchQueue.global(qos: .background).async {
 			let eventsResult = contract.getIndexedEvents(eventName: Constants.BlockChain.Event.redeem, filter: eventFilter, joinWithReceipts: true)
 
 			switch eventsResult {
-			case .success(let events):
-				let redeems = events.compactMap { RedeemEvent(parserResult: $0) }.filter {
+			case .success(let loadedEvents):
+				let redeems = loadedEvents.compactMap { ValueEventIntermediate(redeemResult: $0) }.filter {
 					guard let clientAddress = clientAddress
 						else {
 							return true
 					}
-					return $0.fromAddress == clientAddress
+					return $0.clientAddress == clientAddress
 				}
-				completion(Result.success(redeems))
+				events.append(contentsOf: redeems)
+				completion(Result.success(events))
 			case .failure(let error):
 				completion(Result.failure(error))
 			}
 		}
 	}
 
-	func loadTransferEvents(for clientAddress: EthereumAddress? = nil, completion: @escaping (Result<[EventValuable]?>) -> Void) {
+	func loadTransferEvents(for clientAddress: EthereumAddress? = nil, completion: @escaping (Result<[ValueEventIntermediate]>) -> Void) {
 		guard let contract = contract,
 			let contractAddress = address
 			else {
@@ -231,43 +233,41 @@ class Token: ContractProtocol {
 				return
 		}
 
+		var events = [ValueEventIntermediate]()
 		let eventFilter = EventFilter(fromBlock: .blockNumber(0), toBlock: .latest, addresses: [contractAddress])
 
 		DispatchQueue.global(qos: .background).async {
 			let eventsResult = contract.getIndexedEvents(eventName: Constants.BlockChain.Event.transfer, filter: eventFilter, joinWithReceipts: true)
 
 			switch eventsResult {
-			case .success(let events):
-				let transfers = events.compactMap { TransferEvent(parserResult: $0) }.filter {
+			case .success(let loadedEvents):
+				let transfers = loadedEvents.compactMap { ValueEventIntermediate(issueResult: $0) }.filter {
 					guard let clientAddress = clientAddress
 						else {
 							return true
 					}
-					return $0.toAddress == clientAddress
+					return $0.clientAddress == clientAddress
 				}
-				completion(Result.success(transfers))
+				events.append(contentsOf: transfers)
+				completion(Result.success(events))
 			case .failure(let error):
 				completion(Result.failure(error))
 			}
 		}
 	}
 
-	func loadHistory(for clientAddress: EthereumAddress? = nil, completion: @escaping (Result<[EventValuable]?>) -> Void) {
-		var events = [EventValuable]()
+	func loadHistory(for clientAddress: EthereumAddress? = nil, completion: @escaping (Result<[ValueEventIntermediate]>) -> Void) {
+		var events = [ValueEventIntermediate]()
 		// TODO: investigate the retain cycle in this case
 		loadTransferEvents(for: clientAddress) { (transferResult) in
 			switch transferResult {
 			case .success(let transfers):
-				if let transfers = transfers {
-					events.append(contentsOf: transfers)
-				}
+				events.append(contentsOf: transfers)
 				self.loadRedeemEvents(for: clientAddress, completion: { (redeemResult) in
 					switch redeemResult {
 					case .success(let redeems):
-						if let redeems = redeems {
-							events.append(contentsOf: redeems)
-						}
-						events.sort(by: { $0.receipt.blockNumber < $1.receipt.blockNumber })
+						events.append(contentsOf: redeems)
+//						events.sort(by: { $0.receipt.blockNumber < $1.receipt.blockNumber })
 						completion(Result.success(events))
 					case .failure:
 						completion(redeemResult)
@@ -281,54 +281,64 @@ class Token: ContractProtocol {
 
 }
 
-// TODO: move the events to separate files
-protocol EventValuable: CustomStringConvertible {
-	var value: Int { get }
-	var receipt: TransactionReceipt { get }
-}
+struct ValueEventIntermediate: CustomStringConvertible {
 
-struct TransferEvent: EventValuable {
-	var value: Int
-	var toAddress: EthereumAddress
-	var receipt: TransactionReceipt
+	var transactionHash: Data
+	var value: Int64
+	var clientAddress: EthereumAddress
+	var type: ValueEventType
+	var status: ValueEventStatus
+	var blockHash: Data
+	var date: Date?
 
-	init?(parserResult: EventParserResultProtocol) {
-		guard let parsedValueString = parserResult.decodedResult["_value"],
-			let parsedValue = Int("\(parsedValueString)"),
-			let parsedAddress = parserResult.decodedResult["_to"] as? EthereumAddress,
-			let transactionReceipt = parserResult.transactionReceipt
+	init?(issueResult: EventParserResultProtocol) {
+		guard let parsedValueString = issueResult.decodedResult["_value"],
+			let parsedValue = Int64("\(parsedValueString)"),
+			let parsedAddress = issueResult.decodedResult["_to"] as? EthereumAddress,
+			let transactionReceipt = issueResult.transactionReceipt
 			else {
 				return nil
 		}
 		self.value = parsedValue
-		self.toAddress = parsedAddress
-		self.receipt = transactionReceipt
+		self.clientAddress = parsedAddress
+		self.type = .issue
+		self.transactionHash = transactionReceipt.transactionHash
+		self.blockHash = transactionReceipt.blockHash
+		switch transactionReceipt.status {
+		case .ok:
+			self.status = .ok
+		case .failed:
+			self.status = .failed
+		case .notYetProcessed:
+			self.status = .unknown
+		}
 	}
 
-	var description: String {
-		return "received: \(value), to: \(toAddress.address), blockNumber: \(receipt.blockNumber)"
-	}
-}
-
-struct RedeemEvent: EventValuable {
-	var value: Int
-	var fromAddress: EthereumAddress
-	var receipt: TransactionReceipt
-
-	init?(parserResult: EventParserResultProtocol) {
-		guard let parsedValueString = parserResult.decodedResult["_value"],
-			let parsedValue = Int("\(parsedValueString)"),
-			let parsedAddress = parserResult.decodedResult["_from"] as? EthereumAddress,
-			let transactionReceipt = parserResult.transactionReceipt
+	init?(redeemResult: EventParserResultProtocol) {
+		guard let parsedValueString = redeemResult.decodedResult["_value"],
+			let parsedValue = Int64("\(parsedValueString)"),
+			let parsedAddress = redeemResult.decodedResult["_from"] as? EthereumAddress,
+			let transactionReceipt = redeemResult.transactionReceipt
 			else {
 				return nil
 		}
 		self.value = parsedValue
-		self.fromAddress = parsedAddress
-		self.receipt = transactionReceipt
+		self.clientAddress = parsedAddress
+		self.type = .redeem
+		self.transactionHash = transactionReceipt.transactionHash
+		self.blockHash = transactionReceipt.blockHash
+		switch transactionReceipt.status {
+		case .ok:
+			self.status = .ok
+		case .failed:
+			self.status = .failed
+		case .notYetProcessed:
+			self.status = .unknown
+		}
 	}
 
 	var description: String {
-		return "redeemed: \(value), from: \(fromAddress.address), blockNumber: \(receipt.blockNumber)"
+		return "\(type.rawValue): \(value), client: \(clientAddress.address)"
 	}
+
 }
