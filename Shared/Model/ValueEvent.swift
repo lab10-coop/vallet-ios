@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import web3swift
 
 public enum ValueEventType: String {
 	case redeem
@@ -18,6 +19,17 @@ public enum ValueEventStatus: String {
 	case ok
 	case failed
 	case unknown
+
+	init(from status: TransactionReceipt.TXStatus) {
+		switch status {
+		case .ok:
+			self = .ok
+		case .failed:
+			self = .failed
+		case .notYetProcessed:
+			self = .unknown
+		}
+	}
 }
 
 @objc(ValueEvent)
@@ -34,6 +46,17 @@ public class ValueEvent: NSManagedObject {
 			blockHash: intermediate.blockHash,
 			status: intermediate.status,
 			date: intermediate.date)
+	}
+
+	convenience init?(from pendingValueEvent: PendingValueEvent, transactionHash: Data, blockHash: Data, status: ValueEventStatus) {
+		guard let managedObjectContext = pendingValueEvent.managedObjectContext,
+			let shop = pendingValueEvent.shop,
+			let type = ValueEventType(rawValue: pendingValueEvent.type)
+			else {
+				return nil
+		}
+		self.init(in: managedObjectContext, shop: shop, value: pendingValueEvent.value, clientAddress: pendingValueEvent.clientAddress, type: type, transactionHash: transactionHash, blockHash: blockHash, status: status, date: pendingValueEvent.storedDate as Date)
+		pendingValueEvent.delete()
 	}
 
 	convenience init?(in managedContext: NSManagedObjectContext, shop: Shop, value: Int64, clientAddress: String, type: ValueEventType, transactionHash: Data, blockHash: Data, status: ValueEventStatus, date: Date? = nil) {
