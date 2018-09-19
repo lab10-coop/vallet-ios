@@ -77,6 +77,8 @@
 		D48D957421523BBD00840707 /* ClientHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D957321523BBD00840707 /* ClientHistoryTableViewController.swift */; };
 		D48D957721523F6000840707 /* ClientHistoryEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D957521523F6000840707 /* ClientHistoryEventTableViewCell.swift */; };
 		D48D957921523F6000840707 /* ClientHistoryEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48D957621523F6000840707 /* ClientHistoryEventTableViewCell.xib */; };
+		D48D957D2152515900840707 /* PendingValueEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D957C2152515900840707 /* PendingValueEvent.swift */; };
+		D48D957E2152515900840707 /* PendingValueEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D957C2152515900840707 /* PendingValueEvent.swift */; };
 		D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */; };
@@ -168,6 +170,7 @@
 		D48D957321523BBD00840707 /* ClientHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHistoryTableViewController.swift; sourceTree = "<group>"; };
 		D48D957521523F6000840707 /* ClientHistoryEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHistoryEventTableViewCell.swift; sourceTree = "<group>"; };
 		D48D957621523F6000840707 /* ClientHistoryEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClientHistoryEventTableViewCell.xib; sourceTree = "<group>"; };
+		D48D957C2152515900840707 /* PendingValueEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingValueEvent.swift; sourceTree = "<group>"; };
 		D4C5CD932147D34200AB67D7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
 		D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLinkedView.swift; sourceTree = "<group>"; };
@@ -475,6 +478,7 @@
 				D4C5CDA82149079400AB67D7 /* Model.xcdatamodeld */,
 				D4C5CDB321490DC500AB67D7 /* Shop.swift */,
 				D48D956E21512BDE00840707 /* ValueEvent.swift */,
+				D48D957C2152515900840707 /* PendingValueEvent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -764,6 +768,7 @@
 				D443CD98214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
 				D48D95622150FD7700840707 /* ScanShopAddressViewController.swift in Sources */,
 				D443CDBA214BDABE00A7100F /* UIViewController.swift in Sources */,
+				D48D957D2152515900840707 /* PendingValueEvent.swift in Sources */,
 				D48D95682151130700840707 /* SideMenuViewController+Client.swift in Sources */,
 				D443CDB3214BB2DE00A7100F /* UIView.swift in Sources */,
 				D48D95602150F67000840707 /* ShopManager+Client.swift in Sources */,
@@ -801,6 +806,7 @@
 				D429F89321400A5A004427F0 /* ViewController.swift in Sources */,
 				D4C5CDB621490DC500AB67D7 /* Shop.swift in Sources */,
 				D443CDCD214F7EFA00A7100F /* IssueViewModel.swift in Sources */,
+				D48D957E2152515900840707 /* PendingValueEvent.swift in Sources */,
 				D48D95662151104000840707 /* SideMenuViewController+Admin.swift in Sources */,
 				D4C5CDAB2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
 				D443CDB1214BB26400A7100F /* TextInputView.swift in Sources */,
