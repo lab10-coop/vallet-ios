@@ -45,10 +45,15 @@ class IssueAddressViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		guard let shop = ShopManager.selectedShop
+			else {
+				return
+		}
+
 		continueButton.isEnabled = false
 		qrCodeReaderView.delegate = self
 
-		issueViewModel = IssueViewModel(with: ShopManager.selectedShop)
+		issueViewModel = IssueViewModel(with: shop)
 	}
 
 	@IBAction func close(_ sender: Any? = nil) {
