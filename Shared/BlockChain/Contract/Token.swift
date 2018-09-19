@@ -39,6 +39,15 @@ class Token: ContractProtocol {
 		self.address = address
 	}
 
+	convenience init?(shop: Shop) {
+		guard let shopAddressValue = shop.address,
+			let shopAddress = EthereumAddress(shopAddressValue)
+			else {
+				return nil
+		}
+		self.init(address: shopAddress)
+	}
+
 	// MARK: - Contract methods
 
 	func issue(value: Int, to toAddress: EthereumAddress, from fromAddress: EthereumAddress, completion: @escaping (Result<TransactionReceipt>) -> Void) {
