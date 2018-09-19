@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		FaucetManager.getFunds(for: Wallet.address) { _ in }
 	}
 
 	@IBAction func showAddress(_ sender: Any? = nil) {
@@ -21,6 +22,14 @@ class ViewController: UIViewController {
 
 	@IBAction func showSideMenu() {
 		SideMenuViewController.present(over: self)
+	}
+
+	@IBAction func loadHistory() {
+		guard let shop = ShopManager.selectedShop
+			else {
+				return
+		}
+		ClientHistoryTableViewController.present(for: shop, over: self)
 	}
 
 }
