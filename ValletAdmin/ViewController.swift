@@ -16,7 +16,7 @@ class ViewController: UIViewController {
 
 		print("address: \(Wallet.address)")
 
-//		FaucetManager.getFunds(for: Wallet.address) { _ in }s
+		FaucetManager.getFunds(for: Wallet.address) { _ in }
 	}
 
 	@IBAction func showSideMenu() {
@@ -35,6 +35,14 @@ class ViewController: UIViewController {
 			return
 		}
 		IssueAddressViewController.present(for: selectedShop, over: self)
+	}
+
+	@IBAction func loadHistory() {
+		guard let shop = ShopManager.selectedShop
+			else {
+				return
+		}
+		AdminHistoryTableViewController.present(for: shop, over: self)
 	}
 
 }

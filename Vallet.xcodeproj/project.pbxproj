@@ -70,6 +70,21 @@
 		D48D956421510ECB00840707 /* ShopManager+Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D956321510ECB00840707 /* ShopManager+Admin.swift */; };
 		D48D95662151104000840707 /* SideMenuViewController+Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D95652151104000840707 /* SideMenuViewController+Admin.swift */; };
 		D48D95682151130700840707 /* SideMenuViewController+Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D95672151130700840707 /* SideMenuViewController+Client.swift */; };
+		D48D956C2151192A00840707 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D956B2151192A00840707 /* HistoryViewModel.swift */; };
+		D48D956D2151192A00840707 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D956B2151192A00840707 /* HistoryViewModel.swift */; };
+		D48D956F21512BDE00840707 /* ValueEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D956E21512BDE00840707 /* ValueEvent.swift */; };
+		D48D957021512BDE00840707 /* ValueEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D956E21512BDE00840707 /* ValueEvent.swift */; };
+		D48D957421523BBD00840707 /* ClientHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D957321523BBD00840707 /* ClientHistoryTableViewController.swift */; };
+		D48D957721523F6000840707 /* ClientHistoryEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D957521523F6000840707 /* ClientHistoryEventTableViewCell.swift */; };
+		D48D957921523F6000840707 /* ClientHistoryEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48D957621523F6000840707 /* ClientHistoryEventTableViewCell.xib */; };
+		D48D957D2152515900840707 /* PendingValueEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D957C2152515900840707 /* PendingValueEvent.swift */; };
+		D48D957E2152515900840707 /* PendingValueEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D957C2152515900840707 /* PendingValueEvent.swift */; };
+		D48D958021525AE100840707 /* AdminHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D957F21525AE100840707 /* AdminHistoryTableViewController.swift */; };
+		D48D958421525B0000840707 /* AdminHistoryEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D958221525B0000840707 /* AdminHistoryEventTableViewCell.swift */; };
+		D48D958521525B0000840707 /* AdminHistoryEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48D958321525B0000840707 /* AdminHistoryEventTableViewCell.xib */; };
+		D48D95872152646500840707 /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D95862152646500840707 /* ShopViewModel.swift */; };
+		D48D9589215283A500840707 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D9588215283A500840707 /* UserDefaultsManager.swift */; };
+		D48D958A215290C100840707 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D9588215283A500840707 /* UserDefaultsManager.swift */; };
 		D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */; };
@@ -156,6 +171,17 @@
 		D48D956321510ECB00840707 /* ShopManager+Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopManager+Admin.swift"; sourceTree = "<group>"; };
 		D48D95652151104000840707 /* SideMenuViewController+Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SideMenuViewController+Admin.swift"; sourceTree = "<group>"; };
 		D48D95672151130700840707 /* SideMenuViewController+Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SideMenuViewController+Client.swift"; sourceTree = "<group>"; };
+		D48D956B2151192A00840707 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		D48D956E21512BDE00840707 /* ValueEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueEvent.swift; sourceTree = "<group>"; };
+		D48D957321523BBD00840707 /* ClientHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHistoryTableViewController.swift; sourceTree = "<group>"; };
+		D48D957521523F6000840707 /* ClientHistoryEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHistoryEventTableViewCell.swift; sourceTree = "<group>"; };
+		D48D957621523F6000840707 /* ClientHistoryEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClientHistoryEventTableViewCell.xib; sourceTree = "<group>"; };
+		D48D957C2152515900840707 /* PendingValueEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingValueEvent.swift; sourceTree = "<group>"; };
+		D48D957F21525AE100840707 /* AdminHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHistoryTableViewController.swift; sourceTree = "<group>"; };
+		D48D958221525B0000840707 /* AdminHistoryEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHistoryEventTableViewCell.swift; sourceTree = "<group>"; };
+		D48D958321525B0000840707 /* AdminHistoryEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminHistoryEventTableViewCell.xib; sourceTree = "<group>"; };
+		D48D95862152646500840707 /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
+		D48D9588215283A500840707 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		D4C5CD932147D34200AB67D7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
 		D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLinkedView.swift; sourceTree = "<group>"; };
@@ -231,8 +257,8 @@
 		D429F84D21400572004427F0 /* Vallet */ = {
 			isa = PBXGroup;
 			children = (
+				D48D95692151181F00840707 /* UI */,
 				D48D955E2150F65F00840707 /* ViewModel */,
-				D443CDCE214F923100A7100F /* ViewController */,
 				D429F84E21400572004427F0 /* AppDelegate.swift */,
 				D429F85021400572004427F0 /* ViewController.swift */,
 				D429F85221400572004427F0 /* Main.storyboard */,
@@ -255,8 +281,8 @@
 		D429F88F21400A5A004427F0 /* ValletAdmin */ = {
 			isa = PBXGroup;
 			children = (
-				D443CDCB214F7EE300A7100F /* ViewModel */,
 				D443CDC2214C009400A7100F /* UI */,
+				D443CDCB214F7EE300A7100F /* ViewModel */,
 				D429F89021400A5A004427F0 /* AppDelegate.swift */,
 				D429F89221400A5A004427F0 /* ViewController.swift */,
 				D429F89421400A5A004427F0 /* Main.storyboard */,
@@ -308,6 +334,8 @@
 			children = (
 				D4C5CDBA2149410800AB67D7 /* DataBaseManager.swift */,
 				D443CD91214A93E400A7100F /* ShopManager.swift */,
+				D48D9588215283A500840707 /* UserDefaultsManager.swift */,
+				D48D956B2151192A00840707 /* HistoryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -347,6 +375,7 @@
 		D443CDC2214C009400A7100F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D48D958121525AE800840707 /* Cell */,
 				D443CDC3214C00A100A7100F /* ViewController */,
 			);
 			path = UI;
@@ -360,6 +389,7 @@
 				D443CDC4214C00C500A7100F /* ShopAddressViewController.swift */,
 				D443CDC7214C190900A7100F /* IssueAddressViewController.swift */,
 				D443CDC9214F7E4200A7100F /* IssueAmountViewController.swift */,
+				D48D957F21525AE100840707 /* AdminHistoryTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -379,6 +409,7 @@
 				D48D95672151130700840707 /* SideMenuViewController+Client.swift */,
 				D443CDCF214F925000A7100F /* ClientAddressViewController.swift */,
 				D48D95612150FD7600840707 /* ScanShopAddressViewController.swift */,
+				D48D957321523BBD00840707 /* ClientHistoryTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -387,8 +418,36 @@
 			isa = PBXGroup;
 			children = (
 				D48D955F2150F67000840707 /* ShopManager+Client.swift */,
+				D48D95862152646500840707 /* ShopViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D48D95692151181F00840707 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D48D957B215241BD00840707 /* Cell */,
+				D443CDCE214F923100A7100F /* ViewController */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D48D957B215241BD00840707 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D48D957521523F6000840707 /* ClientHistoryEventTableViewCell.swift */,
+				D48D957621523F6000840707 /* ClientHistoryEventTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D48D958121525AE800840707 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D48D958221525B0000840707 /* AdminHistoryEventTableViewCell.swift */,
+				D48D958321525B0000840707 /* AdminHistoryEventTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		D4C5CD912147D30200AB67D7 /* UI */ = {
@@ -442,6 +501,8 @@
 			children = (
 				D4C5CDA82149079400AB67D7 /* Model.xcdatamodeld */,
 				D4C5CDB321490DC500AB67D7 /* Shop.swift */,
+				D48D956E21512BDE00840707 /* ValueEvent.swift */,
+				D48D957C2152515900840707 /* PendingValueEvent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -568,6 +629,7 @@
 				D443CDB6214BB3EE00A7100F /* TextInputView.xib in Resources */,
 				D429F85421400572004427F0 /* Main.storyboard in Resources */,
 				D443CD9A214AA0A500A7100F /* ShopTableViewCell.xib in Resources */,
+				D48D957921523F6000840707 /* ClientHistoryEventTableViewCell.xib in Resources */,
 				D443CDC0214BDB1600A7100F /* ActivityIndicatorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -590,6 +652,7 @@
 				D443CDB7214BB3EE00A7100F /* TextInputView.xib in Resources */,
 				D429F89621400A5A004427F0 /* Main.storyboard in Resources */,
 				D443CD9B214AA0A500A7100F /* ShopTableViewCell.xib in Resources */,
+				D48D958521525B0000840707 /* AdminHistoryEventTableViewCell.xib in Resources */,
 				D443CDC1214BDB1600A7100F /* ActivityIndicatorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -712,12 +775,16 @@
 				D429F8AF21401049004427F0 /* Result.swift in Sources */,
 				D429F8C12141724C004427F0 /* TokenType.swift in Sources */,
 				D429F8C82142BF86004427F0 /* Token.swift in Sources */,
+				D48D95872152646500840707 /* ShopViewModel.swift in Sources */,
 				D429F8B421401528004427F0 /* Wallet.swift in Sources */,
+				D48D957721523F6000840707 /* ClientHistoryEventTableViewCell.swift in Sources */,
 				D429F8A821400DAE004427F0 /* Constants.swift in Sources */,
+				D48D956F21512BDE00840707 /* ValueEvent.swift in Sources */,
 				D429F85121400572004427F0 /* ViewController.swift in Sources */,
 				D4C5CDB521490DC500AB67D7 /* Shop.swift in Sources */,
 				D4C5CDAA2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
 				D443CDB0214BB26400A7100F /* TextInputView.swift in Sources */,
+				D48D956C2151192A00840707 /* HistoryViewModel.swift in Sources */,
 				D443CDBD214BDAF900A7100F /* ActivityIndicatorView.swift in Sources */,
 				D4C5CDBB2149410800AB67D7 /* DataBaseManager.swift in Sources */,
 				D429F8BE21416F91004427F0 /* ContractProtocol.swift in Sources */,
@@ -727,11 +794,14 @@
 				D443CD98214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
 				D48D95622150FD7700840707 /* ScanShopAddressViewController.swift in Sources */,
 				D443CDBA214BDABE00A7100F /* UIViewController.swift in Sources */,
+				D48D957D2152515900840707 /* PendingValueEvent.swift in Sources */,
 				D48D95682151130700840707 /* SideMenuViewController+Client.swift in Sources */,
 				D443CDB3214BB2DE00A7100F /* UIView.swift in Sources */,
 				D48D95602150F67000840707 /* ShopManager+Client.swift in Sources */,
+				D48D9589215283A500840707 /* UserDefaultsManager.swift in Sources */,
 				D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */,
 				D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */,
+				D48D957421523BBD00840707 /* ClientHistoryTableViewController.swift in Sources */,
 				D429F84F21400572004427F0 /* AppDelegate.swift in Sources */,
 				D4C5CD9A2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */,
 			);
@@ -755,6 +825,8 @@
 				D429F8B821411FA2004427F0 /* Web3Manager.swift in Sources */,
 				D443CDA6214AA46500A7100F /* NibBackedTableViewCell.swift in Sources */,
 				D429F8B021401049004427F0 /* Result.swift in Sources */,
+				D48D958421525B0000840707 /* AdminHistoryEventTableViewCell.swift in Sources */,
+				D48D958021525AE100840707 /* AdminHistoryTableViewController.swift in Sources */,
 				D429F8C22141724C004427F0 /* TokenType.swift in Sources */,
 				D429F8C92142BF87004427F0 /* Token.swift in Sources */,
 				D429F8B521401528004427F0 /* Wallet.swift in Sources */,
@@ -763,6 +835,7 @@
 				D429F89321400A5A004427F0 /* ViewController.swift in Sources */,
 				D4C5CDB621490DC500AB67D7 /* Shop.swift in Sources */,
 				D443CDCD214F7EFA00A7100F /* IssueViewModel.swift in Sources */,
+				D48D957E2152515900840707 /* PendingValueEvent.swift in Sources */,
 				D48D95662151104000840707 /* SideMenuViewController+Admin.swift in Sources */,
 				D4C5CDAB2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
 				D443CDB1214BB26400A7100F /* TextInputView.swift in Sources */,
@@ -770,12 +843,15 @@
 				D443CDCA214F7E4200A7100F /* IssueAmountViewController.swift in Sources */,
 				D4C5CDBC2149410800AB67D7 /* DataBaseManager.swift in Sources */,
 				D443CDC6214C00C500A7100F /* ShopAddressViewController.swift in Sources */,
+				D48D956D2151192A00840707 /* HistoryViewModel.swift in Sources */,
 				D429F8BF21416F91004427F0 /* ContractProtocol.swift in Sources */,
 				D429F8A921400F1C004427F0 /* FaucetManager.swift in Sources */,
 				D429F89121400A5A004427F0 /* AppDelegate.swift in Sources */,
 				D443CD99214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
+				D48D958A215290C100840707 /* UserDefaultsManager.swift in Sources */,
 				D443CDBB214BDABE00A7100F /* UIViewController.swift in Sources */,
 				D443CDB4214BB2DE00A7100F /* UIView.swift in Sources */,
+				D48D957021512BDE00840707 /* ValueEvent.swift in Sources */,
 				D443CDC8214C190900A7100F /* IssueAddressViewController.swift in Sources */,
 				D48D956421510ECB00840707 /* ShopManager+Admin.swift in Sources */,
 				D429F8BC21416D9D004427F0 /* TokenFactory.swift in Sources */,

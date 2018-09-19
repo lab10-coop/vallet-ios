@@ -1,18 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="PendingValueEvent" representedClassName="PendingValueEvent" syncable="YES">
+        <attribute name="clientAddress" attributeType="String" syncable="YES"/>
+        <attribute name="storedDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="type" attributeType="String" syncable="YES"/>
+        <attribute name="value" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="shop" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Shop" inverseName="pendingEvents" inverseEntity="Shop" syncable="YES"/>
+    </entity>
     <entity name="Shop" representedClassName="Shop" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="creatorAddress" attributeType="String" syncable="YES"/>
         <attribute name="decimals" attributeType="Integer 16" defaultValueString="12" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="symbol" attributeType="String" syncable="YES"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ValueEvent" inverseName="shop" inverseEntity="ValueEvent" syncable="YES"/>
+        <relationship name="pendingEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PendingValueEvent" inverseName="shop" inverseEntity="PendingValueEvent" syncable="YES"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="address"/>
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
+    <entity name="ValueEvent" representedClassName="ValueEvent" syncable="YES">
+        <attribute name="clientAddress" attributeType="String" syncable="YES"/>
+        <attribute name="status" attributeType="String" syncable="YES"/>
+        <attribute name="storedBlockHash" attributeType="Binary" customClassName=".Data" syncable="YES"/>
+        <attribute name="storedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" customClassName="Date" syncable="YES"/>
+        <attribute name="storedTransactionHash" attributeType="Binary" syncable="YES"/>
+        <attribute name="type" attributeType="String" syncable="YES"/>
+        <attribute name="value" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="shop" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Shop" inverseName="events" inverseEntity="Shop" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="storedTransactionHash"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
     <elements>
-        <element name="Shop" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Shop" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="ValueEvent" positionX="187" positionY="-18" width="128" height="165"/>
+        <element name="PendingValueEvent" positionX="187" positionY="177" width="128" height="118"/>
     </elements>
 </model>

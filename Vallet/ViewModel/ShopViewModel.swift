@@ -1,20 +1,20 @@
 //
-//  IssueViewModel.swift
-//  ValletAdmin
+//  ShopViewModel.swift
+//  Vallet
 //
-//  Created by Matija Kregar on 17/09/2018.
+//  Created by Matija Kregar on 19/09/2018.
 //  Copyright © 2018 Matija Kregar. All rights reserved.
 //
 
 import Foundation
 import web3swift
 
-class IssueViewModel {
+class ShopViewModel {
 
-	var clientAddress: String?
-	var	amount: Int = 0
 	var token: Token
 	var shop: Shop
+
+	var clientAddress: String?
 
 	lazy var managedObjectContext = { DataBaseManager.managedContext }()
 
@@ -26,22 +26,23 @@ class IssueViewModel {
 		}
 		self.shop = shop
 		self.token = Token(address: shopAddress)
+		self.clientAddress = Wallet.address.address
 	}
 
-	func issue(completion: @escaping (Result<Bool>) -> Void) {
+	func redeem(amount: Int, completion: @escaping (Result<Bool>) -> Void) {
 		// TODO: Check if pendingEvent creates a retain cycle
 		guard	amount > 0,
 			let clientAddress = clientAddress,
 			let clientEthAddress = EthereumAddress(clientAddress),
-			let pendingEvent = PendingValueEvent(in: managedObjectContext, shop: shop, type: .issue, value: Int64(amount), clientAddress: clientAddress, date: Date())
+			let pendingEvent = PendingValueEvent(in: managedObjectContext, shop: shop, type: .redeem, value: Int64(amount), clientAddress: clientAddress, date: Date())
 			else {
 				completion(Result.failure(Web3Error.unknownError))
 				return
 		}
 
 		DataBaseManager.save(managedContext: managedObjectContext)
-		
-		token.issue(value: amount, to: clientEthAddress, from: Wallet.address) { [weak self] (result) in
+
+		token.redeem(value: amount, from: clientEthAddress) { [weak self] (result) in
 			switch result {
 			case .success(let receipt):
 				let success = receipt.status == .ok
@@ -60,4 +61,5 @@ class IssueViewModel {
 	}
 
 }
+
 

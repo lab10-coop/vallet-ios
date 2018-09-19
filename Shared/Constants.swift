@@ -27,14 +27,22 @@ struct Constants {
 	}
 
 	struct Animation {
+
 		static let shortDuration = 0.25
 		static let longDuration = 0.7
+
 	}
 
 	struct Timer {
 
 		static let pollInterval: TimeInterval = 3.0
 		static let maxRepeatCount = 20
+
+	}
+
+	struct UserDefaultsKey {
+
+		static let selectedShopAddress = "selectedShopAddress"
 
 	}
 

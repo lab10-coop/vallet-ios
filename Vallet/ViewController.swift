@@ -10,9 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+	var shopViewModel: ShopViewModel?
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		FaucetManager.getFunds(for: Wallet.address) { _ in }
 	}
 
 	@IBAction func showAddress(_ sender: Any? = nil) {
@@ -21,6 +24,27 @@ class ViewController: UIViewController {
 
 	@IBAction func showSideMenu() {
 		SideMenuViewController.present(over: self)
+	}
+
+	@IBAction func loadHistory() {
+		guard let shop = ShopManager.selectedShop
+			else {
+				return
+		}
+		ClientHistoryTableViewController.present(for: shop, over: self)
+	}
+
+	@IBAction func redeem() {
+		guard let shop = ShopManager.selectedShop
+			else {
+				return
+		}
+
+		shopViewModel = ShopViewModel(with: shop)
+
+		shopViewModel?.redeem(amount: 1, completion: { (result) in
+			print(result)
+		})
 	}
 
 }

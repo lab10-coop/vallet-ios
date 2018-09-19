@@ -39,6 +39,7 @@ class Web3Manager {
 	}
 
 	static func start() {
+		Wallet.start()
 		shared._instance = shared.createInstance()
 	}
 
@@ -69,6 +70,20 @@ class Web3Manager {
 			}
 		})
 		add(timer: newTimer)
+	}
+
+	static func getBlock(by blockHash: Data, completion: @escaping (Result<Block>) -> Void) {
+		DispatchQueue.global(qos: .background).async {
+		let result = instance.eth.getBlockByHash(blockHash)
+			DispatchQueue.main.async {
+				switch result {
+				case .success(let block):
+					completion(Result.success(block))
+				case .failure(let error):
+					completion(Result.failure(error))
+				}
+			}
+		}
 	}
 
 	private static func add(timer: Timer) {

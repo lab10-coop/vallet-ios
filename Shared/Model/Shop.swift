@@ -62,5 +62,41 @@ extension Shop {
 	@NSManaged public var decimals: Int16
 	@NSManaged public var symbol: String
 	@NSManaged public var creatorAddress: String
+	@NSManaged public var events: NSSet?
+	@NSManaged public var pendingEvents: NSSet?
+
+}
+
+// MARK: Generated accessors for events
+extension Shop {
+
+	@objc(addEventsObject:)
+	@NSManaged public func addToEvents(_ value: ValueEvent)
+
+	@objc(removeEventsObject:)
+	@NSManaged public func removeFromEvents(_ value: ValueEvent)
+
+	@objc(addEvents:)
+	@NSManaged public func addToEvents(_ values: NSSet)
+
+	@objc(removeEvents:)
+	@NSManaged public func removeFromEvents(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for pendingEvents
+extension Shop {
+
+	@objc(addPendingEventsObject:)
+	@NSManaged public func addToPendingEvents(_ value: PendingValueEvent)
+
+	@objc(removePendingEventsObject:)
+	@NSManaged public func removeFromPendingEvents(_ value: PendingValueEvent)
+
+	@objc(addPendingEvents:)
+	@NSManaged public func addToPendingEvents(_ values: NSSet)
+
+	@objc(removePendingEvents:)
+	@NSManaged public func removeFromPendingEvents(_ values: NSSet)
 
 }
