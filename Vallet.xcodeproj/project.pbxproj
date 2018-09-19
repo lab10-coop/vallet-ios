@@ -74,6 +74,8 @@
 		D48D956D2151192A00840707 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D956B2151192A00840707 /* HistoryViewModel.swift */; };
 		D48D956F21512BDE00840707 /* ValueEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D956E21512BDE00840707 /* ValueEvent.swift */; };
 		D48D957021512BDE00840707 /* ValueEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D956E21512BDE00840707 /* ValueEvent.swift */; };
+		D48D957721523F6000840707 /* ClientHistoryEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D957521523F6000840707 /* ClientHistoryEventTableViewCell.swift */; };
+		D48D957921523F6000840707 /* ClientHistoryEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48D957621523F6000840707 /* ClientHistoryEventTableViewCell.xib */; };
 		D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */; };
@@ -162,6 +164,8 @@
 		D48D95672151130700840707 /* SideMenuViewController+Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SideMenuViewController+Client.swift"; sourceTree = "<group>"; };
 		D48D956B2151192A00840707 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		D48D956E21512BDE00840707 /* ValueEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueEvent.swift; sourceTree = "<group>"; };
+		D48D957521523F6000840707 /* ClientHistoryEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHistoryEventTableViewCell.swift; sourceTree = "<group>"; };
+		D48D957621523F6000840707 /* ClientHistoryEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClientHistoryEventTableViewCell.xib; sourceTree = "<group>"; };
 		D4C5CD932147D34200AB67D7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
 		D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLinkedView.swift; sourceTree = "<group>"; };
@@ -401,9 +405,19 @@
 		D48D95692151181F00840707 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D48D957B215241BD00840707 /* Cell */,
 				D443CDCE214F923100A7100F /* ViewController */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		D48D957B215241BD00840707 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D48D957521523F6000840707 /* ClientHistoryEventTableViewCell.swift */,
+				D48D957621523F6000840707 /* ClientHistoryEventTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		D4C5CD912147D30200AB67D7 /* UI */ = {
@@ -584,6 +598,7 @@
 				D443CDB6214BB3EE00A7100F /* TextInputView.xib in Resources */,
 				D429F85421400572004427F0 /* Main.storyboard in Resources */,
 				D443CD9A214AA0A500A7100F /* ShopTableViewCell.xib in Resources */,
+				D48D957921523F6000840707 /* ClientHistoryEventTableViewCell.xib in Resources */,
 				D443CDC0214BDB1600A7100F /* ActivityIndicatorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -729,6 +744,7 @@
 				D429F8C12141724C004427F0 /* TokenType.swift in Sources */,
 				D429F8C82142BF86004427F0 /* Token.swift in Sources */,
 				D429F8B421401528004427F0 /* Wallet.swift in Sources */,
+				D48D957721523F6000840707 /* ClientHistoryEventTableViewCell.swift in Sources */,
 				D429F8A821400DAE004427F0 /* Constants.swift in Sources */,
 				D48D956F21512BDE00840707 /* ValueEvent.swift in Sources */,
 				D429F85121400572004427F0 /* ViewController.swift in Sources */,
