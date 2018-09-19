@@ -79,6 +79,7 @@
 		D48D957921523F6000840707 /* ClientHistoryEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48D957621523F6000840707 /* ClientHistoryEventTableViewCell.xib */; };
 		D48D957D2152515900840707 /* PendingValueEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D957C2152515900840707 /* PendingValueEvent.swift */; };
 		D48D957E2152515900840707 /* PendingValueEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D957C2152515900840707 /* PendingValueEvent.swift */; };
+		D48D958021525AE100840707 /* AdminHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D957F21525AE100840707 /* AdminHistoryTableViewController.swift */; };
 		D48D958421525B0000840707 /* AdminHistoryEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D958221525B0000840707 /* AdminHistoryEventTableViewCell.swift */; };
 		D48D958521525B0000840707 /* AdminHistoryEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48D958321525B0000840707 /* AdminHistoryEventTableViewCell.xib */; };
 		D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
@@ -173,6 +174,7 @@
 		D48D957521523F6000840707 /* ClientHistoryEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHistoryEventTableViewCell.swift; sourceTree = "<group>"; };
 		D48D957621523F6000840707 /* ClientHistoryEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClientHistoryEventTableViewCell.xib; sourceTree = "<group>"; };
 		D48D957C2152515900840707 /* PendingValueEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingValueEvent.swift; sourceTree = "<group>"; };
+		D48D957F21525AE100840707 /* AdminHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHistoryTableViewController.swift; sourceTree = "<group>"; };
 		D48D958221525B0000840707 /* AdminHistoryEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHistoryEventTableViewCell.swift; sourceTree = "<group>"; };
 		D48D958321525B0000840707 /* AdminHistoryEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminHistoryEventTableViewCell.xib; sourceTree = "<group>"; };
 		D4C5CD932147D34200AB67D7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 				D443CDC4214C00C500A7100F /* ShopAddressViewController.swift */,
 				D443CDC7214C190900A7100F /* IssueAddressViewController.swift */,
 				D443CDC9214F7E4200A7100F /* IssueAmountViewController.swift */,
+				D48D957F21525AE100840707 /* AdminHistoryTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -814,6 +817,7 @@
 				D443CDA6214AA46500A7100F /* NibBackedTableViewCell.swift in Sources */,
 				D429F8B021401049004427F0 /* Result.swift in Sources */,
 				D48D958421525B0000840707 /* AdminHistoryEventTableViewCell.swift in Sources */,
+				D48D958021525AE100840707 /* AdminHistoryTableViewController.swift in Sources */,
 				D429F8C22141724C004427F0 /* TokenType.swift in Sources */,
 				D429F8C92142BF87004427F0 /* Token.swift in Sources */,
 				D429F8B521401528004427F0 /* Wallet.swift in Sources */,

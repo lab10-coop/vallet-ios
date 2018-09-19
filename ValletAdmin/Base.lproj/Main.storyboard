@@ -217,7 +217,7 @@
         <!--Create Shop View Controller-->
         <scene sceneID="Y0k-vs-8G4">
             <objects>
-                <viewController storyboardIdentifier="CreateShopViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qm1-lP-tJ1" customClass="CreateShopViewController" customModule="Vallet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateShopViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qm1-lP-tJ1" customClass="CreateShopViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aYG-0O-fWu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -237,7 +237,7 @@
                                     <action selector="submit:" destination="qm1-lP-tJ1" eventType="touchUpInside" id="eF2-nN-9Df"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVg-kP-Wrp" customClass="TextInputView" customModule="Vallet" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVg-kP-Wrp" customClass="TextInputView" customModule="ValletAdmin" customModuleProvider="target">
                                 <rect key="frame" x="20" y="313.5" width="335" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -268,6 +268,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="woM-La-CYt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1934" y="134"/>
+        </scene>
+        <!--Admin History Table View Controller-->
+        <scene sceneID="LCD-pi-MST">
+            <objects>
+                <tableViewController storyboardIdentifier="AdminHistoryTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="i7H-Gs-CUL" customClass="AdminHistoryTableViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qEP-Fc-AdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="IhB-sZ-8D4">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQm-AF-U8r">
+                                    <rect key="frame" x="20" y="7" width="39" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Close"/>
+                                    <connections>
+                                        <action selector="close:" destination="i7H-Gs-CUL" eventType="touchUpInside" id="WjS-XP-mql"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <connections>
+                            <outlet property="dataSource" destination="i7H-Gs-CUL" id="BKU-9C-GUN"/>
+                            <outlet property="delegate" destination="i7H-Gs-CUL" id="Lpb-OK-Wq5"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W3Q-at-I5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2841" y="134"/>
         </scene>
     </scenes>
 </document>
