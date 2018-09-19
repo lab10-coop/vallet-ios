@@ -79,6 +79,8 @@
 		D48D957921523F6000840707 /* ClientHistoryEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48D957621523F6000840707 /* ClientHistoryEventTableViewCell.xib */; };
 		D48D957D2152515900840707 /* PendingValueEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D957C2152515900840707 /* PendingValueEvent.swift */; };
 		D48D957E2152515900840707 /* PendingValueEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D957C2152515900840707 /* PendingValueEvent.swift */; };
+		D48D958421525B0000840707 /* AdminHistoryEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D958221525B0000840707 /* AdminHistoryEventTableViewCell.swift */; };
+		D48D958521525B0000840707 /* AdminHistoryEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48D958321525B0000840707 /* AdminHistoryEventTableViewCell.xib */; };
 		D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */; };
@@ -171,6 +173,8 @@
 		D48D957521523F6000840707 /* ClientHistoryEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHistoryEventTableViewCell.swift; sourceTree = "<group>"; };
 		D48D957621523F6000840707 /* ClientHistoryEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClientHistoryEventTableViewCell.xib; sourceTree = "<group>"; };
 		D48D957C2152515900840707 /* PendingValueEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingValueEvent.swift; sourceTree = "<group>"; };
+		D48D958221525B0000840707 /* AdminHistoryEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHistoryEventTableViewCell.swift; sourceTree = "<group>"; };
+		D48D958321525B0000840707 /* AdminHistoryEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminHistoryEventTableViewCell.xib; sourceTree = "<group>"; };
 		D4C5CD932147D34200AB67D7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
 		D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLinkedView.swift; sourceTree = "<group>"; };
@@ -363,6 +367,7 @@
 		D443CDC2214C009400A7100F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D48D958121525AE800840707 /* Cell */,
 				D443CDC3214C00A100A7100F /* ViewController */,
 			);
 			path = UI;
@@ -422,6 +427,15 @@
 			children = (
 				D48D957521523F6000840707 /* ClientHistoryEventTableViewCell.swift */,
 				D48D957621523F6000840707 /* ClientHistoryEventTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D48D958121525AE800840707 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D48D958221525B0000840707 /* AdminHistoryEventTableViewCell.swift */,
+				D48D958321525B0000840707 /* AdminHistoryEventTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -628,6 +642,7 @@
 				D443CDB7214BB3EE00A7100F /* TextInputView.xib in Resources */,
 				D429F89621400A5A004427F0 /* Main.storyboard in Resources */,
 				D443CD9B214AA0A500A7100F /* ShopTableViewCell.xib in Resources */,
+				D48D958521525B0000840707 /* AdminHistoryEventTableViewCell.xib in Resources */,
 				D443CDC1214BDB1600A7100F /* ActivityIndicatorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -798,6 +813,7 @@
 				D429F8B821411FA2004427F0 /* Web3Manager.swift in Sources */,
 				D443CDA6214AA46500A7100F /* NibBackedTableViewCell.swift in Sources */,
 				D429F8B021401049004427F0 /* Result.swift in Sources */,
+				D48D958421525B0000840707 /* AdminHistoryEventTableViewCell.swift in Sources */,
 				D429F8C22141724C004427F0 /* TokenType.swift in Sources */,
 				D429F8C92142BF87004427F0 /* Token.swift in Sources */,
 				D429F8B521401528004427F0 /* Wallet.swift in Sources */,
