@@ -35,6 +35,23 @@ public enum ValueEventStatus: String {
 @objc(ValueEvent)
 public class ValueEvent: NSManagedObject {
 
+	var date: Date? {
+		get {
+			return storedDate as Date?
+		}
+		set {
+			storedDate = newValue as NSDate?
+		}
+	}
+
+	var blockHash: Data {
+		return storedBlockHash as Data
+	}
+
+	var transactionHash: Data {
+		return storedTransactionHash as Data
+	}
+
 	convenience init?(in managedContext: NSManagedObjectContext, shop: Shop, intermediate: ValueEventIntermediate) {
 		self.init(
 			in: managedContext,

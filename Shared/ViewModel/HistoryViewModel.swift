@@ -17,14 +17,7 @@ class HistoryViewModel {
 	var clientAddress: EthereumAddress?
 	var managedObjectContext: NSManagedObjectContext?
 
-	var events: [ValueEvent] {
-		// return events from the database
-		guard let events = (try? managedObjectContext?.fetch(ValueEvent.fetchRequest())) as? [ValueEvent]
-			else {
-				return [ValueEvent]()
-		}
-		return events.filter { $0.shop == shop }
-	}
+	var events: [ValueEvent] = [ValueEvent]()
 
 	init?(shop: Shop, clientAddress: EthereumAddress? = nil) {
 		guard let shopAddress = shop.address,
@@ -36,6 +29,8 @@ class HistoryViewModel {
 		self.managedObjectContext = shop.managedObjectContext
 		self.token = Token(address: shopEthAddress)
 		self.clientAddress = clientAddress
+
+		updateEvents()
 	}
 
 	func reload(completion: @escaping (Result<[ValueEvent]>) -> Void) {
@@ -50,9 +45,46 @@ class HistoryViewModel {
 			case .success(let eventsIntermediate):
 				let loadedEvents = eventsIntermediate.compactMap { ValueEvent(in: managedObjectContext, shop: strongSelf.shop, intermediate: $0) }
 				DataBaseManager.save(managedContext: managedObjectContext)
+				strongSelf.updateEvents()
 				completion(Result.success(loadedEvents))
 			case .failure(let error):
 				print("Load history error: \(error)")
+			}
+		}
+	}
+
+	func updateEvents() {
+		// update events from the database
+		guard let updatedEvents = (try? managedObjectContext?.fetch(ValueEvent.fetchRequest())) as? [ValueEvent]
+			else {
+				return
+		}
+		events = updatedEvents.filter { $0.shop == shop }
+		fetchDateFor(events: events) { (result) in
+			print("Fetch date events result: \(result)")
+		}
+	}
+
+	func fetchDateFor(events: [ValueEvent], completion: @escaping (Result<Bool>) -> Void) {
+		let events = events.filter { $0.date == nil }
+
+		// TODO: Find a more elegant way of doing this.
+		let allEvents = events.count
+		var successCounter = 0
+		var resultCounter = 0
+		for event in events {
+			Web3Manager.getBlock(by: event.blockHash) { (blockResult) in
+				resultCounter += 1
+				guard case .success(let block) = blockResult
+				else {
+					return
+				}
+				successCounter += 1
+				event.date = block.timestamp
+				if resultCounter == allEvents {
+					let result = successCounter == allEvents ? Result.success(true) : Result.failure(Web3Error.connectionError)
+					completion(result)
+				}
 			}
 		}
 	}

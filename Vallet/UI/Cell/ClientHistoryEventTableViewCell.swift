@@ -20,7 +20,7 @@ class ClientHistoryEventTableViewCell: UITableViewCell, NibBackedTableViewCell {
 					prepareForReuse()
 					return
 			}
-			descriptionLabel.text = "\(event.type.description) \(event.clientAddress)"
+			descriptionLabel.text = "\(event.type.description) \(event.date?.description ?? "no date")"
 			valueLabel.text = event.type == ValueEventType.issue.rawValue ? "+ \(event.value)" : "- \(event.value)"
 		}
 	}
