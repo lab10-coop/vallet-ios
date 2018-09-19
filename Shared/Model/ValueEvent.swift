@@ -23,7 +23,7 @@ public enum ValueEventStatus: String {
 @objc(ValueEvent)
 public class ValueEvent: NSManagedObject {
 
-	convenience init?(in managedContext: NSManagedObjectContext, shop: Shop?, intermediate: ValueEventIntermediate) {
+	convenience init?(in managedContext: NSManagedObjectContext, shop: Shop, intermediate: ValueEventIntermediate) {
 		self.init(
 			in: managedContext,
 			shop: shop,
@@ -36,7 +36,7 @@ public class ValueEvent: NSManagedObject {
 			date: intermediate.date)
 	}
 
-	convenience init?(in managedContext: NSManagedObjectContext, shop: Shop? = nil, value: Int64, clientAddress: String, type: ValueEventType, transactionHash: Data, blockHash: Data, status: ValueEventStatus, date: Date? = nil) {
+	convenience init?(in managedContext: NSManagedObjectContext, shop: Shop, value: Int64, clientAddress: String, type: ValueEventType, transactionHash: Data, blockHash: Data, status: ValueEventStatus, date: Date? = nil) {
 		guard let entity = ValueEvent.entity(in: managedContext)
 			else {
 				return nil
