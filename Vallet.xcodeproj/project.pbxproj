@@ -84,6 +84,7 @@
 		D48D958521525B0000840707 /* AdminHistoryEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48D958321525B0000840707 /* AdminHistoryEventTableViewCell.xib */; };
 		D48D95872152646500840707 /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D95862152646500840707 /* ShopViewModel.swift */; };
 		D48D9589215283A500840707 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D9588215283A500840707 /* UserDefaultsManager.swift */; };
+		D48D958A215290C100840707 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D9588215283A500840707 /* UserDefaultsManager.swift */; };
 		D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */; };
@@ -847,6 +848,7 @@
 				D429F8A921400F1C004427F0 /* FaucetManager.swift in Sources */,
 				D429F89121400A5A004427F0 /* AppDelegate.swift in Sources */,
 				D443CD99214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
+				D48D958A215290C100840707 /* UserDefaultsManager.swift in Sources */,
 				D443CDBB214BDABE00A7100F /* UIViewController.swift in Sources */,
 				D443CDB4214BB2DE00A7100F /* UIView.swift in Sources */,
 				D48D957021512BDE00840707 /* ValueEvent.swift in Sources */,
