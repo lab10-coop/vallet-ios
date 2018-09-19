@@ -39,6 +39,7 @@ class Web3Manager {
 	}
 
 	static func start() {
+		Wallet.start()
 		shared._instance = shared.createInstance()
 	}
 

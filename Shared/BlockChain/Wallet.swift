@@ -44,17 +44,30 @@ class Wallet {
 	}
 
 	static var keystoreManager: KeystoreManager {
-		// return keystore from memory
-		if let keystoreManager = shared._keystoreManager {
+		// return keystoreManager from memory
+		if let keystoreManager = shared._keystoreManager,
+			keystoreManager.addresses?.first != nil {
 			return keystoreManager
 		}
 
+		// create new keystoreManager
+		let newKeystoreManager = createNewKeystoreManager()
+		shared._keystoreManager = newKeystoreManager
+		return newKeystoreManager
+	}
+
+	static func start() {
+		// make sure to call this first so keystore and keystoreManager are created in correct order
+		_ = keystore
+		_ = keystoreManager
+	}
+
+	static private func createNewKeystoreManager() -> KeystoreManager {
 		guard let userDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first,
 			let newKeystoreManager = KeystoreManager.managerForPath(userDirectory + "/keystore")
 			else {
 				fatalError("Couldn't create a KeystoreManager.")
 		}
-		shared._keystoreManager = newKeystoreManager
 		return newKeystoreManager
 	}
 
@@ -68,6 +81,8 @@ class Wallet {
 			
 			let newKeystoreJSON = try JSONEncoder().encode(newKeystore.keystoreParams)
 			FileManager.default.createFile(atPath: "\(keystoreManager.path)/keystore.json", contents: newKeystoreJSON, attributes: nil)
+
+			shared._keystoreManager = createNewKeystoreManager()
 
 			return newKeystore
 		} catch {
