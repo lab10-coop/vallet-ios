@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+	var shopViewModel: ShopViewModel?
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -30,6 +32,19 @@ class ViewController: UIViewController {
 				return
 		}
 		ClientHistoryTableViewController.present(for: shop, over: self)
+	}
+
+	@IBAction func redeem() {
+		guard let shop = ShopManager.selectedShop
+			else {
+				return
+		}
+
+		shopViewModel = ShopViewModel(with: shop)
+
+		shopViewModel?.redeem(amount: 1, completion: { (result) in
+			print(result)
+		})
 	}
 
 }
