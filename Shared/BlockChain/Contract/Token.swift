@@ -208,19 +208,21 @@ class Token: ContractProtocol {
 		DispatchQueue.global(qos: .background).async {
 			let eventsResult = contract.getIndexedEvents(eventName: Constants.BlockChain.Event.redeem, filter: eventFilter, joinWithReceipts: true)
 
-			switch eventsResult {
-			case .success(let loadedEvents):
-				let redeems = loadedEvents.compactMap { ValueEventIntermediate(redeemResult: $0) }.filter {
-					guard let clientAddress = clientAddress
-						else {
-							return true
+			DispatchQueue.main.async {
+				switch eventsResult {
+				case .success(let loadedEvents):
+					let redeems = loadedEvents.compactMap { ValueEventIntermediate(redeemResult: $0) }.filter {
+						guard let clientAddress = clientAddress
+							else {
+								return true
+						}
+						return $0.clientAddress == clientAddress
 					}
-					return $0.clientAddress == clientAddress
+					events.append(contentsOf: redeems)
+					completion(Result.success(events))
+				case .failure(let error):
+					completion(Result.failure(error))
 				}
-				events.append(contentsOf: redeems)
-				completion(Result.success(events))
-			case .failure(let error):
-				completion(Result.failure(error))
 			}
 		}
 	}
@@ -239,19 +241,21 @@ class Token: ContractProtocol {
 		DispatchQueue.global(qos: .background).async {
 			let eventsResult = contract.getIndexedEvents(eventName: Constants.BlockChain.Event.transfer, filter: eventFilter, joinWithReceipts: true)
 
-			switch eventsResult {
-			case .success(let loadedEvents):
-				let transfers = loadedEvents.compactMap { ValueEventIntermediate(issueResult: $0) }.filter {
-					guard let clientAddress = clientAddress
-						else {
-							return true
+			DispatchQueue.main.async {
+				switch eventsResult {
+				case .success(let loadedEvents):
+					let transfers = loadedEvents.compactMap { ValueEventIntermediate(issueResult: $0) }.filter {
+						guard let clientAddress = clientAddress
+							else {
+								return true
+						}
+						return $0.clientAddress == clientAddress
 					}
-					return $0.clientAddress == clientAddress
+					events.append(contentsOf: transfers)
+					completion(Result.success(events))
+				case .failure(let error):
+					completion(Result.failure(error))
 				}
-				events.append(contentsOf: transfers)
-				completion(Result.success(events))
-			case .failure(let error):
-				completion(Result.failure(error))
 			}
 		}
 	}
