@@ -111,6 +111,12 @@
 		D4C8C9282153B7CF00C831F0 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9202153A4EF00C831F0 /* Product.swift */; };
 		D4C8C92A2153C73B00C831F0 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9292153C73B00C831F0 /* JSONDecoder.swift */; };
 		D4C8C92B2153C73B00C831F0 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9292153C73B00C831F0 /* JSONDecoder.swift */; };
+		D4C8C92E2153D87400C831F0 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C92D2153D87400C831F0 /* NetworkRequest.swift */; };
+		D4C8C92F2153D87400C831F0 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C92D2153D87400C831F0 /* NetworkRequest.swift */; };
+		D4C8C9312153D88200C831F0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9302153D88200C831F0 /* NetworkManager.swift */; };
+		D4C8C9322153D88200C831F0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9302153D88200C831F0 /* NetworkManager.swift */; };
+		D4C8C9342153DA7C00C831F0 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9332153DA7C00C831F0 /* HTTPMethod.swift */; };
+		D4C8C9352153DA7D00C831F0 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9332153DA7C00C831F0 /* HTTPMethod.swift */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -203,6 +209,9 @@
 		D4C8C9222153A4FA00C831F0 /* PriceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceList.swift; sourceTree = "<group>"; };
 		D4C8C9242153B3C200C831F0 /* CodingUserInfoKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingUserInfoKey.swift; sourceTree = "<group>"; };
 		D4C8C9292153C73B00C831F0 /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
+		D4C8C92D2153D87400C831F0 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		D4C8C9302153D88200C831F0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D4C8C9332153DA7C00C831F0 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +323,7 @@
 				D429F8A421400D34004427F0 /* BlockChain */,
 				D443CD94214AA01600A7100F /* ViewModel */,
 				D4C5CDAC214907A400AB67D7 /* Model */,
+				D4C8C92C2153D81D00C831F0 /* Network */,
 				D443CDA7214AA72000A7100F /* Extensions */,
 			);
 			path = Shared;
@@ -521,6 +531,16 @@
 				D4C8C9222153A4FA00C831F0 /* PriceList.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D4C8C92C2153D81D00C831F0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D4C8C9332153DA7C00C831F0 /* HTTPMethod.swift */,
+				D4C8C92D2153D87400C831F0 /* NetworkRequest.swift */,
+				D4C8C9302153D88200C831F0 /* NetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		F210E04398A1C2678A4653B5 /* Frameworks */ = {
@@ -811,6 +831,7 @@
 				D429F8BB21416D9D004427F0 /* TokenFactory.swift in Sources */,
 				D443CDD0214F925000A7100F /* ClientAddressViewController.swift in Sources */,
 				D443CD98214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
+				D4C8C92E2153D87400C831F0 /* NetworkRequest.swift in Sources */,
 				D48D95622150FD7700840707 /* ScanShopAddressViewController.swift in Sources */,
 				D443CDBA214BDABE00A7100F /* UIViewController.swift in Sources */,
 				D48D957D2152515900840707 /* PendingValueEvent.swift in Sources */,
@@ -818,11 +839,13 @@
 				D443CDB3214BB2DE00A7100F /* UIView.swift in Sources */,
 				D48D95602150F67000840707 /* ShopManager+Client.swift in Sources */,
 				D48D9589215283A500840707 /* UserDefaultsManager.swift in Sources */,
+				D4C8C9342153DA7C00C831F0 /* HTTPMethod.swift in Sources */,
 				D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */,
 				D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */,
 				D48D957421523BBD00840707 /* ClientHistoryTableViewController.swift in Sources */,
 				D429F84F21400572004427F0 /* AppDelegate.swift in Sources */,
 				D4C5CD9A2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */,
+				D4C8C9312153D88200C831F0 /* NetworkManager.swift in Sources */,
 				D4C8C9232153A4FA00C831F0 /* PriceList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -859,6 +882,7 @@
 				D443CDCD214F7EFA00A7100F /* IssueViewModel.swift in Sources */,
 				D48D957E2152515900840707 /* PendingValueEvent.swift in Sources */,
 				D48D95662151104000840707 /* SideMenuViewController+Admin.swift in Sources */,
+				D4C8C9352153DA7D00C831F0 /* HTTPMethod.swift in Sources */,
 				D4C8C9262153B3C200C831F0 /* CodingUserInfoKey.swift in Sources */,
 				D4C5CDAB2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
 				D443CDB1214BB26400A7100F /* TextInputView.swift in Sources */,
@@ -866,9 +890,11 @@
 				D443CDCA214F7E4200A7100F /* IssueAmountViewController.swift in Sources */,
 				D4C5CDBC2149410800AB67D7 /* DataBaseManager.swift in Sources */,
 				D443CDC6214C00C500A7100F /* ShopAddressViewController.swift in Sources */,
+				D4C8C9322153D88200C831F0 /* NetworkManager.swift in Sources */,
 				D48D956D2151192A00840707 /* HistoryViewModel.swift in Sources */,
 				D429F8BF21416F91004427F0 /* ContractProtocol.swift in Sources */,
 				D429F8A921400F1C004427F0 /* FaucetManager.swift in Sources */,
+				D4C8C92F2153D87400C831F0 /* NetworkRequest.swift in Sources */,
 				D429F89121400A5A004427F0 /* AppDelegate.swift in Sources */,
 				D443CD99214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
 				D48D958A215290C100840707 /* UserDefaultsManager.swift in Sources */,

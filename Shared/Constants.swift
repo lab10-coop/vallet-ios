@@ -10,6 +10,12 @@ import Foundation
 
 struct Constants {
 
+	struct Network {
+
+		static let apiHost = "https://vallet.mars.lab10.io"
+
+	}
+
 	struct BlockChain {
 
 		// TODO: move the addresses to the xcconfig file
