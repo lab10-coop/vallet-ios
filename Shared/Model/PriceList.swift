@@ -33,6 +33,12 @@ public class PriceList: NSManagedObject, Codable {
 
 	// MARK: - Codable
 
+	var jsonData: Data? {
+		let jsonEncoder = JSONEncoder()
+		let jsonData = try? jsonEncoder.encode(self)
+		return jsonData
+	}
+
 	enum CodingKeys: String, CodingKey {
 		case products
 		case name = "token_name"
@@ -46,7 +52,11 @@ public class PriceList: NSManagedObject, Codable {
 		try container.encode(name ?? shop?.name, forKey: .name)
 		try container.encode(0, forKey: .type)
 		try container.encode(shop?.address, forKey: .shopAddress)
-		try container.encode(products?.array as? [Product], forKey: .products)
+		let productsArray = products?.array as? [Product] ?? [Product]()
+		try container.encode(productsArray, forKey: .products)
+		if let secret = secret {
+			try container.encode(secret, forKey: .secret)
+		}
 	}
 
 	public required convenience init(from decoder: Decoder) throws {
