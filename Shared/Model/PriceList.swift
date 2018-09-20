@@ -22,6 +22,15 @@ public class PriceList: NSManagedObject, Codable {
 		self.name = shop.name
 	}
 
+	static func create(in managedContext: NSManagedObjectContext, jsonData: Data) -> PriceList? {
+		guard let jsonDecoder = JSONDecoder(with: managedContext)
+			else {
+				return nil
+		}
+		let priceList = try? jsonDecoder.decode(PriceList.self, from: jsonData)
+		return priceList
+	}
+
 	// MARK: - Codable
 
 	enum CodingKeys: String, CodingKey {
