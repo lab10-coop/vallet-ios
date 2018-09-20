@@ -103,6 +103,10 @@
 		D4C5CDB621490DC500AB67D7 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CDB321490DC500AB67D7 /* Shop.swift */; };
 		D4C5CDBB2149410800AB67D7 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CDBA2149410800AB67D7 /* DataBaseManager.swift */; };
 		D4C5CDBC2149410800AB67D7 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CDBA2149410800AB67D7 /* DataBaseManager.swift */; };
+		D4C8C9212153A4EF00C831F0 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9202153A4EF00C831F0 /* Product.swift */; };
+		D4C8C9232153A4FA00C831F0 /* PriceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9222153A4FA00C831F0 /* PriceList.swift */; };
+		D4C8C9272153B7CC00C831F0 /* PriceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9222153A4FA00C831F0 /* PriceList.swift */; };
+		D4C8C9282153B7CF00C831F0 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9202153A4EF00C831F0 /* Product.swift */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -191,6 +195,8 @@
 		D4C5CDA92149079400AB67D7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		D4C5CDB321490DC500AB67D7 /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		D4C5CDBA2149410800AB67D7 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
+		D4C8C9202153A4EF00C831F0 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		D4C8C9222153A4FA00C831F0 /* PriceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -503,6 +509,8 @@
 				D4C5CDB321490DC500AB67D7 /* Shop.swift */,
 				D48D956E21512BDE00840707 /* ValueEvent.swift */,
 				D48D957C2152515900840707 /* PendingValueEvent.swift */,
+				D4C8C9202153A4EF00C831F0 /* Product.swift */,
+				D4C8C9222153A4FA00C831F0 /* PriceList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -786,6 +794,7 @@
 				D443CDB0214BB26400A7100F /* TextInputView.swift in Sources */,
 				D48D956C2151192A00840707 /* HistoryViewModel.swift in Sources */,
 				D443CDBD214BDAF900A7100F /* ActivityIndicatorView.swift in Sources */,
+				D4C8C9212153A4EF00C831F0 /* Product.swift in Sources */,
 				D4C5CDBB2149410800AB67D7 /* DataBaseManager.swift in Sources */,
 				D429F8BE21416F91004427F0 /* ContractProtocol.swift in Sources */,
 				D429F8A621400D87004427F0 /* FaucetManager.swift in Sources */,
@@ -804,6 +813,7 @@
 				D48D957421523BBD00840707 /* ClientHistoryTableViewController.swift in Sources */,
 				D429F84F21400572004427F0 /* AppDelegate.swift in Sources */,
 				D4C5CD9A2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */,
+				D4C8C9232153A4FA00C831F0 /* PriceList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -828,6 +838,7 @@
 				D48D958421525B0000840707 /* AdminHistoryEventTableViewCell.swift in Sources */,
 				D48D958021525AE100840707 /* AdminHistoryTableViewController.swift in Sources */,
 				D429F8C22141724C004427F0 /* TokenType.swift in Sources */,
+				D4C8C9272153B7CC00C831F0 /* PriceList.swift in Sources */,
 				D429F8C92142BF87004427F0 /* Token.swift in Sources */,
 				D429F8B521401528004427F0 /* Wallet.swift in Sources */,
 				D429F8AA21400F20004427F0 /* Constants.swift in Sources */,
@@ -858,6 +869,7 @@
 				D4C5CD982147DA2700AB67D7 /* QRCodeReaderView.swift in Sources */,
 				D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */,
 				D4C5CD9B2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */,
+				D4C8C9282153B7CF00C831F0 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

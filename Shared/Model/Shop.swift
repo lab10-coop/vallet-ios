@@ -62,6 +62,7 @@ extension Shop {
 	@NSManaged public var decimals: Int16
 	@NSManaged public var symbol: String
 	@NSManaged public var creatorAddress: String
+	@NSManaged public var priceList: PriceList?
 	@NSManaged public var events: NSSet?
 	@NSManaged public var pendingEvents: NSSet?
 
