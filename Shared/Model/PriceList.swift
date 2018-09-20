@@ -10,7 +10,62 @@ import Foundation
 import CoreData
 
 @objc(PriceList)
-public class PriceList: NSManagedObject {
+public class PriceList: NSManagedObject, Codable {
+
+	convenience init?(in managedContext: NSManagedObjectContext, shop: Shop) {
+		guard let entity = PriceList.entity(in: managedContext)
+			else {
+				return nil
+		}
+		self.init(entity: entity, insertInto: managedContext)
+		self.shop = shop
+		self.name = shop.name
+	}
+
+	// MARK: - Codable
+
+	enum CodingKeys: String, CodingKey {
+		case products
+		case name = "token_name"
+		case type = "token_type"
+		case shopAddress = "token_contract_address"
+		case secret
+	}
+
+	public func encode(to encoder: Encoder) throws {
+		var container = encoder.container(keyedBy: CodingKeys.self)
+		try container.encode(name ?? shop?.name, forKey: .name)
+		try container.encode(0, forKey: .type)
+		try container.encode(shop?.address, forKey: .shopAddress)
+		try container.encode(products?.array as? [Product], forKey: .products)
+	}
+
+	public required convenience init(from decoder: Decoder) throws {
+		guard let contextUserInfoKey = CodingUserInfoKey.context,
+			let managedObjectContext = decoder.userInfo[contextUserInfoKey] as? NSManagedObjectContext,
+			let entity = PriceList.entity(in: managedObjectContext) else {
+				fatalError("Failed to resolve the PriceList ")
+		}
+		self.init(entity: entity, insertInto: managedObjectContext)
+
+		let values = try decoder.container(keyedBy: CodingKeys.self)
+		self.name = try values.decode(String.self, forKey: .name)
+		let shopAddress = try values.decode(String.self, forKey: .shopAddress)
+		self.shop = findShop(in: managedObjectContext, with: shopAddress)
+		let productsArray = try values.decode([Product]?.self, forKey: .products)
+		if let productsArray = productsArray {
+			self.products = NSOrderedSet(array: productsArray)
+		}
+		if let decodedSecret = try? values.decode(String.self, forKey: .secret) {
+			self.secret = decodedSecret
+		}
+	}
+
+	private func findShop(in managedContext: NSManagedObjectContext, with address: String) -> Shop? {
+		// TODO: Implement this with a predicate instead of using filter
+		let shops = (try? managedContext.fetch(Shop.fetchRequest())) as? [Shop]
+		return shops?.filter({ $0.address == address }).first
+	}
 
 }
 

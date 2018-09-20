@@ -105,6 +105,8 @@
 		D4C5CDBC2149410800AB67D7 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CDBA2149410800AB67D7 /* DataBaseManager.swift */; };
 		D4C8C9212153A4EF00C831F0 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9202153A4EF00C831F0 /* Product.swift */; };
 		D4C8C9232153A4FA00C831F0 /* PriceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9222153A4FA00C831F0 /* PriceList.swift */; };
+		D4C8C9252153B3C200C831F0 /* CodingUserInfoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9242153B3C200C831F0 /* CodingUserInfoKey.swift */; };
+		D4C8C9262153B3C200C831F0 /* CodingUserInfoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9242153B3C200C831F0 /* CodingUserInfoKey.swift */; };
 		D4C8C9272153B7CC00C831F0 /* PriceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9222153A4FA00C831F0 /* PriceList.swift */; };
 		D4C8C9282153B7CF00C831F0 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9202153A4EF00C831F0 /* Product.swift */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
@@ -197,6 +199,7 @@
 		D4C5CDBA2149410800AB67D7 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		D4C8C9202153A4EF00C831F0 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		D4C8C9222153A4FA00C831F0 /* PriceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceList.swift; sourceTree = "<group>"; };
+		D4C8C9242153B3C200C831F0 /* CodingUserInfoKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingUserInfoKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -362,6 +365,7 @@
 				D443CDA8214AA73700A7100F /* NSObject.swift */,
 				D443CDB2214BB2DE00A7100F /* UIView.swift */,
 				D443CDB9214BDABE00A7100F /* UIViewController.swift */,
+				D4C8C9242153B3C200C831F0 /* CodingUserInfoKey.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -793,6 +797,7 @@
 				D4C5CDAA2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
 				D443CDB0214BB26400A7100F /* TextInputView.swift in Sources */,
 				D48D956C2151192A00840707 /* HistoryViewModel.swift in Sources */,
+				D4C8C9252153B3C200C831F0 /* CodingUserInfoKey.swift in Sources */,
 				D443CDBD214BDAF900A7100F /* ActivityIndicatorView.swift in Sources */,
 				D4C8C9212153A4EF00C831F0 /* Product.swift in Sources */,
 				D4C5CDBB2149410800AB67D7 /* DataBaseManager.swift in Sources */,
@@ -848,6 +853,7 @@
 				D443CDCD214F7EFA00A7100F /* IssueViewModel.swift in Sources */,
 				D48D957E2152515900840707 /* PendingValueEvent.swift in Sources */,
 				D48D95662151104000840707 /* SideMenuViewController+Admin.swift in Sources */,
+				D4C8C9262153B3C200C831F0 /* CodingUserInfoKey.swift in Sources */,
 				D4C5CDAB2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
 				D443CDB1214BB26400A7100F /* TextInputView.swift in Sources */,
 				D443CDBE214BDAF900A7100F /* ActivityIndicatorView.swift in Sources */,
