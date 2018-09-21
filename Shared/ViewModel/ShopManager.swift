@@ -74,4 +74,42 @@ class ShopManager {
 		return nil
 	}
 
+	// MARK: - Price List
+
+	static func loadPriceList(for shop: Shop? = nil, completion: @escaping (Result<PriceList>) -> Void) {
+		guard let shop = shop ?? selectedShop,
+			let shopAddress = shop.address
+			else {
+				completion(Result.failure(Web3Error.unknownError))
+				return
+		}
+
+		NetworkManager.performDataRequest(request: NetworkRequest.getPriceList(address: shopAddress)) { (result) in
+			switch result {
+			case .success(let listJSONData):
+				guard let listJSONData = listJSONData
+					else {
+						completion(Result.failure(Web3Error.dataError))
+						return
+				}
+				// Update if the price list for the shop already exists.
+				if let priceList = shop.priceList,
+					priceList.update(with: listJSONData) {
+					completion(Result.success(priceList))
+					return
+				}
+				// Create a new price list with the loaded data
+				guard let managedContext = shop.managedObjectContext,
+					let loadedPriceList = PriceList.create(in: managedContext, jsonData: listJSONData)
+					else {
+						completion(Result.failure(Web3Error.dataError))
+						return
+				}
+				completion(Result.success(loadedPriceList))
+			case .failure(let error):
+				completion(Result.failure(error))
+			}
+		}
+	}
+
 }
