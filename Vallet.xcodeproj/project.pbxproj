@@ -11,7 +11,6 @@
 		D429F84F21400572004427F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F84E21400572004427F0 /* AppDelegate.swift */; };
 		D429F85121400572004427F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F85021400572004427F0 /* ViewController.swift */; };
 		D429F85421400572004427F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D429F85221400572004427F0 /* Main.storyboard */; };
-		D429F85921400573004427F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D429F85821400573004427F0 /* Assets.xcassets */; };
 		D429F85C21400573004427F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D429F85A21400573004427F0 /* LaunchScreen.storyboard */; };
 		D429F86721400573004427F0 /* ValletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F86621400573004427F0 /* ValletTests.swift */; };
 		D429F89121400A5A004427F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F89021400A5A004427F0 /* AppDelegate.swift */; };
@@ -117,6 +116,9 @@
 		D4C8C9322153D88200C831F0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9302153D88200C831F0 /* NetworkManager.swift */; };
 		D4C8C9342153DA7C00C831F0 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9332153DA7C00C831F0 /* HTTPMethod.swift */; };
 		D4C8C9352153DA7D00C831F0 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9332153DA7C00C831F0 /* HTTPMethod.swift */; };
+		D4C8C9392155249300C831F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D429F85821400573004427F0 /* Assets.xcassets */; };
+		D4C8C93C215524DC00C831F0 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C93B215524DC00C831F0 /* Media.xcassets */; };
+		D4C8C93D215524DC00C831F0 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C93B215524DC00C831F0 /* Media.xcassets */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -212,6 +214,7 @@
 		D4C8C92D2153D87400C831F0 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		D4C8C9302153D88200C831F0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D4C8C9332153DA7C00C831F0 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		D4C8C93B215524DC00C831F0 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,14 +281,12 @@
 		D429F84D21400572004427F0 /* Vallet */ = {
 			isa = PBXGroup;
 			children = (
+				D429F84E21400572004427F0 /* AppDelegate.swift */,
 				D48D95692151181F00840707 /* UI */,
 				D48D955E2150F65F00840707 /* ViewModel */,
-				D429F84E21400572004427F0 /* AppDelegate.swift */,
+				D4C8C93E2155258700C831F0 /* Assets */,
+				D4C8C93F2155259E00C831F0 /* Supporting Files */,
 				D429F85021400572004427F0 /* ViewController.swift */,
-				D429F85221400572004427F0 /* Main.storyboard */,
-				D429F85821400573004427F0 /* Assets.xcassets */,
-				D429F85A21400573004427F0 /* LaunchScreen.storyboard */,
-				D429F85D21400573004427F0 /* Info.plist */,
 			);
 			path = Vallet;
 			sourceTree = "<group>";
@@ -302,14 +303,12 @@
 		D429F88F21400A5A004427F0 /* ValletAdmin */ = {
 			isa = PBXGroup;
 			children = (
+				D429F89021400A5A004427F0 /* AppDelegate.swift */,
 				D443CDC2214C009400A7100F /* UI */,
 				D443CDCB214F7EE300A7100F /* ViewModel */,
-				D429F89021400A5A004427F0 /* AppDelegate.swift */,
+				D4C8C940215525B900C831F0 /* Assets */,
+				D4C8C941215525CA00C831F0 /* Supporting Files */,
 				D429F89221400A5A004427F0 /* ViewController.swift */,
-				D429F89421400A5A004427F0 /* Main.storyboard */,
-				D429F89A21400A5B004427F0 /* Assets.xcassets */,
-				D429F89C21400A5B004427F0 /* LaunchScreen.storyboard */,
-				D429F89F21400A5B004427F0 /* Info.plist */,
 			);
 			path = ValletAdmin;
 			sourceTree = "<group>";
@@ -325,6 +324,7 @@
 				D4C5CDAC214907A400AB67D7 /* Model */,
 				D4C8C92C2153D81D00C831F0 /* Network */,
 				D443CDA7214AA72000A7100F /* Extensions */,
+				D4C8C93A215524AE00C831F0 /* Assets */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -400,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				D48D958121525AE800840707 /* Cell */,
+				D4C8C9362155242000C831F0 /* Storyboard */,
 				D443CDC3214C00A100A7100F /* ViewController */,
 			);
 			path = UI;
@@ -451,6 +452,7 @@
 			isa = PBXGroup;
 			children = (
 				D48D957B215241BD00840707 /* Cell */,
+				D4C8C9372155244900C831F0 /* Storyboard */,
 				D443CDCE214F923100A7100F /* ViewController */,
 			);
 			path = UI;
@@ -541,6 +543,64 @@
 				D4C8C9302153D88200C831F0 /* NetworkManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		D4C8C9362155242000C831F0 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				D429F89421400A5A004427F0 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		D4C8C9372155244900C831F0 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				D429F85221400572004427F0 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		D4C8C93A215524AE00C831F0 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D4C8C93B215524DC00C831F0 /* Media.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		D4C8C93E2155258700C831F0 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D429F85821400573004427F0 /* Assets.xcassets */,
+				D429F85A21400573004427F0 /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		D4C8C93F2155259E00C831F0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D429F85D21400573004427F0 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D4C8C940215525B900C831F0 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D429F89A21400A5B004427F0 /* Assets.xcassets */,
+				D429F89C21400A5B004427F0 /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		D4C8C941215525CA00C831F0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D429F89F21400A5B004427F0 /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		F210E04398A1C2678A4653B5 /* Frameworks */ = {
@@ -658,10 +718,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4C8C93C215524DC00C831F0 /* Media.xcassets in Resources */,
 				D429F85C21400573004427F0 /* LaunchScreen.storyboard in Resources */,
 				D4C5CDA6214819EC00AB67D7 /* Shared.storyboard in Resources */,
 				D4C5CD9D2147DBAC00AB67D7 /* QRCodeReaderView.xib in Resources */,
-				D429F85921400573004427F0 /* Assets.xcassets in Resources */,
+				D4C8C9392155249300C831F0 /* Assets.xcassets in Resources */,
 				D443CDB6214BB3EE00A7100F /* TextInputView.xib in Resources */,
 				D429F85421400572004427F0 /* Main.storyboard in Resources */,
 				D443CD9A214AA0A500A7100F /* ShopTableViewCell.xib in Resources */,
@@ -681,6 +742,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4C8C93D215524DC00C831F0 /* Media.xcassets in Resources */,
 				D429F89E21400A5B004427F0 /* LaunchScreen.storyboard in Resources */,
 				D4C5CDA7214819EC00AB67D7 /* Shared.storyboard in Resources */,
 				D4C5CD9E2147DBAC00AB67D7 /* QRCodeReaderView.xib in Resources */,
