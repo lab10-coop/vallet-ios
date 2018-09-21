@@ -46,7 +46,21 @@ extension ShopManager {
 						return
 				}
 				DataBaseManager.save(managedContext: managedObjectContext)
-				completion(Result.success(shop))
+				createPriceList(for: shop, completion: { (listResult) in
+					switch listResult {
+					case .success(let priceList):
+						guard let shop = priceList.shop
+							else {
+								completion(Result.failure(Web3Error.dataError))
+								return
+						}
+						DataBaseManager.save(managedContext: managedObjectContext)
+						completion(Result.success(shop))
+					case .failure(let error):
+						completion(Result.failure(error))
+					}
+				})
+
 			case .failure(let error):
 				print(error)
 			}
@@ -55,7 +69,7 @@ extension ShopManager {
 
 	// MARK: - Price List
 
-	static func createPriceList(for shop: Shop? = nil, completion: @escaping (Result<PriceList>) -> Void) {
+	private static func createPriceList(for shop: Shop? = nil, completion: @escaping (Result<PriceList>) -> Void) {
 		guard let shop = shop ?? selectedShop,
 			shop.address != nil,
 			let blankPriceList = PriceList(in: managedObjectContext, shop: shop),
