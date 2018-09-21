@@ -35,6 +35,12 @@ public class Shop: NSManagedObject {
 		self.creatorAddress = creatorAddress
 	}
 
+	static func shop(in managedContext: NSManagedObjectContext, with address: String) -> Shop? {
+		// TODO: Implement this with a predicate instead of using filter
+		let shops = (try? managedContext.fetch(Shop.fetchRequest())) as? [Shop]
+		return shops?.filter({ $0.address == address }).first
+	}
+
 }
 
 extension Shop {

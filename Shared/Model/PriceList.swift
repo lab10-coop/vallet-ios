@@ -70,7 +70,7 @@ public class PriceList: NSManagedObject, Codable {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		self.name = try values.decode(String.self, forKey: .name)
 		let shopAddress = try values.decode(String.self, forKey: .shopAddress)
-		self.shop = findShop(in: managedObjectContext, with: shopAddress)
+		self.shop = Shop.shop(in: managedObjectContext, with: shopAddress)
 		let productsArray = try values.decode([Product]?.self, forKey: .products)
 		if let productsArray = productsArray {
 			self.products = NSOrderedSet(array: productsArray)
@@ -80,14 +80,9 @@ public class PriceList: NSManagedObject, Codable {
 		}
 	}
 
-	private func findShop(in managedContext: NSManagedObjectContext, with address: String) -> Shop? {
-		// TODO: Implement this with a predicate instead of using filter
-		let shops = (try? managedContext.fetch(Shop.fetchRequest())) as? [Shop]
-		return shops?.filter({ $0.address == address }).first
-	}
-
 }
 
+// MARK: - Core Data
 
 extension PriceList {
 
@@ -138,5 +133,74 @@ extension PriceList {
 
 	@objc(removeProducts:)
 	@NSManaged public func removeFromProducts(_ values: NSOrderedSet)
+
+}
+
+// MARK: - Update helpers
+
+extension PriceList {
+
+	func update(with data: Data) -> Bool {
+		guard let priceListData = PriceListData.decode(from: data),
+			let managedObjectContext = self.managedObjectContext,
+			self.shop?.address == priceListData.shopAddress
+			else {
+				return false
+		}
+		self.name = priceListData.name
+		deletaAllProducts()
+		for productData in priceListData.products {
+			if let product = Product(in: managedObjectContext, data: productData) {
+				self.addToProducts(product)
+			}
+		}
+		DataBaseManager.save(managedContext: managedObjectContext)
+		return true
+	}
+
+	func deletaAllProducts() {
+		guard let managedObjectContext = self.managedObjectContext,
+			let products = products
+			else {
+				return
+		}
+		for case let product as NSManagedObject in products {
+			managedObjectContext.delete(product)
+		}
+		DataBaseManager.save(managedContext: managedObjectContext)
+	}
+
+}
+
+// MARK: - PriceListData struct
+
+// Used for parsing and updating
+struct PriceListData: Decodable {
+
+	var shopAddress: String
+	var name: String
+	var products = [ProductData]()
+
+	enum CodingKeys: String, CodingKey {
+		case products
+		case name = "token_name"
+		case shopAddress = "token_contract_address"
+	}
+
+	static func decode(from jsonData: Data) -> PriceListData? {
+		let jsonDecoder = JSONDecoder()
+		let priceListData = try? jsonDecoder.decode(PriceListData.self, from: jsonData)
+		return priceListData
+	}
+
+	init(from decoder: Decoder) throws {
+		let values = try decoder.container(keyedBy: CodingKeys.self)
+		self.name = try values.decode(String.self, forKey: .name)
+		self.shopAddress = try values.decode(String.self, forKey: .shopAddress)
+
+		if let products = try values.decode([ProductData]?.self, forKey: .products) {
+			self.products = products
+		}
+	}
 
 }

@@ -12,6 +12,10 @@ import CoreData
 @objc(Product)
 public class Product: NSManagedObject, Codable {
 
+	convenience init?(in managedContext: NSManagedObjectContext, data: ProductData) {
+		self.init(in: managedContext, name: data.name, price: data.price, imagePath: data.imagePath, nfcTagId: data.nfcTagId)
+	}
+
 	convenience init?(in managedContext: NSManagedObjectContext, name: String, price: Int64, imagePath: String?, nfcTagId: String?) {
 		guard let entity = Product.entity(in: managedContext)
 			else {
@@ -59,6 +63,7 @@ public class Product: NSManagedObject, Codable {
 
 }
 
+// MARK: - Core Data
 
 extension Product {
 
@@ -75,6 +80,18 @@ extension Product {
 	@NSManaged public var imagePath: String?
 	@NSManaged public var nfcTagId: String?
 	@NSManaged public var priceList: PriceList?
+
+}
+
+// MARK: - ProductData struct
+
+// used for decoding and updating
+struct ProductData: Decodable {
+
+	var name: String
+	var price: Int64
+	var imagePath: String?
+	var nfcTagId: String?
 
 }
 
