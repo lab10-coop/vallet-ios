@@ -40,7 +40,7 @@ class PriceListViewModel {
 		}
 	}
 
-	private func updateProducts(to priceList: PriceList?) {
+	func updateProducts(to priceList: PriceList?) {
 		self.products = priceList?.products?.array as? [Product]
 		newDataBlock()
 	}

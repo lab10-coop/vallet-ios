@@ -23,6 +23,9 @@ extension PriceListViewModel {
 		ShopManager.updatePriceList(for: shop) { (result) in
 			completion(result)
 		}
+
+		updateProducts(to: shop.priceList)
+		newDataBlock()
 	}
 
 }

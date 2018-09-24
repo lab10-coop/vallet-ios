@@ -21,6 +21,9 @@ extension MainViewController {
 				return
 		}
 
+		historyViewController.container = self
+		priceListViewController.container = self
+
 		viewControllers.append(historyViewController)
 		viewControllers.append(priceListViewController)
 

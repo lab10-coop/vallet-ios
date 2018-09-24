@@ -17,6 +17,7 @@ class AdminPriceListCollectionViewController: UIViewController {
 
 	var shop: Shop?
 	var priceListViewModel: PriceListViewModel?
+	weak var container: UIViewController?
 
 	static func instance(for shop: Shop) -> AdminPriceListCollectionViewController? {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -48,6 +49,15 @@ class AdminPriceListCollectionViewController: UIViewController {
 		}
 
 		priceListViewModel?.reload()
+	}
+
+	@IBAction func addNewProduct(_ sender: Any? = nil) {
+		guard let priceListViewModel = priceListViewModel,
+		let container = container
+			else {
+				return
+		}
+		CreateProductViewController.present(for: priceListViewModel, over: container)
 	}
 
 }

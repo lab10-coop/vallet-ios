@@ -421,13 +421,22 @@
                                     <outlet property="delegate" destination="tsT-3K-oep" id="LBp-Aa-af9"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9E-hZ-RLo">
+                                <rect key="frame" x="138" y="608" width="98" height="30"/>
+                                <state key="normal" title="Add a Product"/>
+                                <connections>
+                                    <action selector="addNewProduct:" destination="tsT-3K-oep" eventType="touchUpInside" id="bQG-V4-Kdp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="uEP-zv-bYi" firstAttribute="bottom" secondItem="R9E-hZ-RLo" secondAttribute="bottom" constant="29" id="Fk8-aR-vRo"/>
                             <constraint firstItem="uEP-zv-bYi" firstAttribute="top" secondItem="fxx-zd-wso" secondAttribute="top" id="Sby-dF-D2j"/>
                             <constraint firstItem="uEP-zv-bYi" firstAttribute="trailing" secondItem="fxx-zd-wso" secondAttribute="trailing" id="VkR-we-oqV"/>
                             <constraint firstItem="fxx-zd-wso" firstAttribute="bottom" secondItem="uEP-zv-bYi" secondAttribute="bottom" id="WvX-Yf-pB3"/>
                             <constraint firstItem="fxx-zd-wso" firstAttribute="leading" secondItem="uEP-zv-bYi" secondAttribute="leading" id="ltk-uM-MZ1"/>
+                            <constraint firstItem="R9E-hZ-RLo" firstAttribute="centerX" secondItem="uEP-zv-bYi" secondAttribute="centerX" id="nC1-5A-jqb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uEP-zv-bYi"/>
                     </view>

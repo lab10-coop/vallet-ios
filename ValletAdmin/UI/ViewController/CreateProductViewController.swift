@@ -27,7 +27,7 @@ class CreateProductViewController: UIViewController {
 
 		createProductViewController.priceListViewModel = viewModel
 
-		presenter.present(createProductViewController, animated: true) {
+		presenter.present(navigationController, animated: true) {
 			
 		}
 	}
@@ -70,6 +70,7 @@ class CreateProductViewController: UIViewController {
 			case .failure(let error):
 				print("Create new product error: \(error)")
 			}
+			self?.close()
 		}
 
 	}
