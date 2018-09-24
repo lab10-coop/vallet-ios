@@ -119,6 +119,10 @@
 		D4C8C9392155249300C831F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D429F85821400573004427F0 /* Assets.xcassets */; };
 		D4C8C93C215524DC00C831F0 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C93B215524DC00C831F0 /* Media.xcassets */; };
 		D4C8C93D215524DC00C831F0 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C93B215524DC00C831F0 /* Media.xcassets */; };
+		D4C8C94521552DA200C831F0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C94421552DA200C831F0 /* MainViewController.swift */; };
+		D4C8C94621552DA200C831F0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C94421552DA200C831F0 /* MainViewController.swift */; };
+		D4C8C9482158D31F00C831F0 /* MainViewController+Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9472158D31F00C831F0 /* MainViewController+Admin.swift */; };
+		D4C8C94A2158D37200C831F0 /* MainViewController+Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9492158D37200C831F0 /* MainViewController+Client.swift */; };
 		D4C8C94C2158D5A800C831F0 /* AdminPriceListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C94B2158D5A800C831F0 /* AdminPriceListCollectionViewController.swift */; };
 		D4C8C94F2158E6DF00C831F0 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C94D2158E6DF00C831F0 /* ProductCollectionViewCell.swift */; };
 		D4C8C9502158E6DF00C831F0 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C94E2158E6DF00C831F0 /* ProductCollectionViewCell.xib */; };
@@ -224,6 +228,9 @@
 		D4C8C9302153D88200C831F0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D4C8C9332153DA7C00C831F0 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		D4C8C93B215524DC00C831F0 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		D4C8C94421552DA200C831F0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D4C8C9472158D31F00C831F0 /* MainViewController+Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Admin.swift"; sourceTree = "<group>"; };
+		D4C8C9492158D37200C831F0 /* MainViewController+Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Client.swift"; sourceTree = "<group>"; };
 		D4C8C94B2158D5A800C831F0 /* AdminPriceListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPriceListCollectionViewController.swift; sourceTree = "<group>"; };
 		D4C8C94D2158E6DF00C831F0 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		D4C8C94E2158E6DF00C831F0 /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -428,6 +435,7 @@
 			isa = PBXGroup;
 			children = (
 				D48D95652151104000840707 /* SideMenuViewController+Admin.swift */,
+				D4C8C9472158D31F00C831F0 /* MainViewController+Admin.swift */,
 				D443CDAB214BAB5A00A7100F /* CreateShopViewController.swift */,
 				D443CDC4214C00C500A7100F /* ShopAddressViewController.swift */,
 				D443CDC7214C190900A7100F /* IssueAddressViewController.swift */,
@@ -453,6 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				D48D95672151130700840707 /* SideMenuViewController+Client.swift */,
+				D4C8C9492158D37200C831F0 /* MainViewController+Client.swift */,
 				D443CDCF214F925000A7100F /* ClientAddressViewController.swift */,
 				D48D95612150FD7600840707 /* ScanShopAddressViewController.swift */,
 				D48D957321523BBD00840707 /* ClientHistoryTableViewController.swift */,
@@ -522,6 +531,7 @@
 		D4C5CD9F2148195E00AB67D7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D4C8C94321552D7A00C831F0 /* Main */,
 				D4C5CDA02148197500AB67D7 /* SideMenu */,
 			);
 			path = ViewController;
@@ -622,6 +632,14 @@
 				D429F89F21400A5B004427F0 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D4C8C94321552D7A00C831F0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D4C8C94421552DA200C831F0 /* MainViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		F210E04398A1C2678A4653B5 /* Frameworks */ = {
@@ -914,6 +932,7 @@
 				D4C8C9212153A4EF00C831F0 /* Product.swift in Sources */,
 				D4C5CDBB2149410800AB67D7 /* DataBaseManager.swift in Sources */,
 				D429F8BE21416F91004427F0 /* ContractProtocol.swift in Sources */,
+				D4C8C94521552DA200C831F0 /* MainViewController.swift in Sources */,
 				D429F8A621400D87004427F0 /* FaucetManager.swift in Sources */,
 				D429F8BB21416D9D004427F0 /* TokenFactory.swift in Sources */,
 				D443CDD0214F925000A7100F /* ClientAddressViewController.swift in Sources */,
@@ -933,6 +952,7 @@
 				D429F84F21400572004427F0 /* AppDelegate.swift in Sources */,
 				D4C5CD9A2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */,
 				D4C8C9312153D88200C831F0 /* NetworkManager.swift in Sources */,
+				D4C8C94A2158D37200C831F0 /* MainViewController+Client.swift in Sources */,
 				D4C8C9232153A4FA00C831F0 /* PriceList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -960,12 +980,14 @@
 				D48D958021525AE100840707 /* AdminHistoryTableViewController.swift in Sources */,
 				D429F8C22141724C004427F0 /* TokenType.swift in Sources */,
 				D4C8C9272153B7CC00C831F0 /* PriceList.swift in Sources */,
+				D4C8C94621552DA200C831F0 /* MainViewController.swift in Sources */,
 				D4C8C92B2153C73B00C831F0 /* JSONDecoder.swift in Sources */,
 				D429F8C92142BF87004427F0 /* Token.swift in Sources */,
 				D429F8B521401528004427F0 /* Wallet.swift in Sources */,
 				D429F8AA21400F20004427F0 /* Constants.swift in Sources */,
 				D443CDAD214BAB5A00A7100F /* CreateShopViewController.swift in Sources */,
 				D429F89321400A5A004427F0 /* ViewController.swift in Sources */,
+				D4C8C9482158D31F00C831F0 /* MainViewController+Admin.swift in Sources */,
 				D4C5CDB621490DC500AB67D7 /* Shop.swift in Sources */,
 				D443CDCD214F7EFA00A7100F /* IssueViewModel.swift in Sources */,
 				D48D957E2152515900840707 /* PendingValueEvent.swift in Sources */,

@@ -13,15 +13,24 @@ class AdminHistoryTableViewController: UITableViewController {
 	var historyViewModel: HistoryViewModel?
 	var shop: Shop?
 
-	static func present(for shop: Shop, over viewController: UIViewController) {
+	static func instance(for shop: Shop) -> AdminHistoryTableViewController? {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
 		guard let adminHistoryTableViewController = storyboard.instantiateViewController(withIdentifier: "AdminHistoryTableViewController") as? AdminHistoryTableViewController
 			else {
-				return
+				return nil
 		}
 
 		adminHistoryTableViewController.shop = shop
+
+		return adminHistoryTableViewController
+	}
+
+	static func present(for shop: Shop, over viewController: UIViewController) {
+		guard let adminHistoryTableViewController = instance(for: shop)
+			else {
+				return
+		}
 
 		viewController.present(adminHistoryTableViewController, animated: false)
 	}
