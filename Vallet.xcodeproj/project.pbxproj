@@ -9,12 +9,10 @@
 /* Begin PBXBuildFile section */
 		2C34255CC06607463FE40399 /* Pods_Vallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63CA453DC703DB1A613E81CD /* Pods_Vallet.framework */; };
 		D429F84F21400572004427F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F84E21400572004427F0 /* AppDelegate.swift */; };
-		D429F85121400572004427F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F85021400572004427F0 /* ViewController.swift */; };
 		D429F85421400572004427F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D429F85221400572004427F0 /* Main.storyboard */; };
 		D429F85C21400573004427F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D429F85A21400573004427F0 /* LaunchScreen.storyboard */; };
 		D429F86721400573004427F0 /* ValletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F86621400573004427F0 /* ValletTests.swift */; };
 		D429F89121400A5A004427F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F89021400A5A004427F0 /* AppDelegate.swift */; };
-		D429F89321400A5A004427F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F89221400A5A004427F0 /* ViewController.swift */; };
 		D429F89621400A5A004427F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D429F89421400A5A004427F0 /* Main.storyboard */; };
 		D429F89B21400A5B004427F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D429F89A21400A5B004427F0 /* Assets.xcassets */; };
 		D429F89E21400A5B004427F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D429F89C21400A5B004427F0 /* LaunchScreen.storyboard */; };
@@ -155,7 +153,6 @@
 		CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ValletAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D429F84B21400572004427F0 /* Vallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D429F84E21400572004427F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D429F85021400572004427F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D429F85321400572004427F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D429F85821400573004427F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D429F85B21400573004427F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -165,7 +162,6 @@
 		D429F86821400573004427F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D429F88E21400A5A004427F0 /* ValletAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ValletAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D429F89021400A5A004427F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D429F89221400A5A004427F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D429F89521400A5A004427F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D429F89A21400A5B004427F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D429F89D21400A5B004427F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -310,7 +306,6 @@
 				D48D955E2150F65F00840707 /* ViewModel */,
 				D4C8C93E2155258700C831F0 /* Assets */,
 				D4C8C93F2155259E00C831F0 /* Supporting Files */,
-				D429F85021400572004427F0 /* ViewController.swift */,
 			);
 			path = Vallet;
 			sourceTree = "<group>";
@@ -332,7 +327,6 @@
 				D443CDCB214F7EE300A7100F /* ViewModel */,
 				D4C8C940215525B900C831F0 /* Assets */,
 				D4C8C941215525CA00C831F0 /* Supporting Files */,
-				D429F89221400A5A004427F0 /* ViewController.swift */,
 			);
 			path = ValletAdmin;
 			sourceTree = "<group>";
@@ -925,7 +919,6 @@
 				D48D956F21512BDE00840707 /* ValueEvent.swift in Sources */,
 				D4C8C95B215936AF00C831F0 /* ClientPriceListViewController.swift in Sources */,
 				D4C8C9552158ECC900C831F0 /* PriceListViewModel.swift in Sources */,
-				D429F85121400572004427F0 /* ViewController.swift in Sources */,
 				D4C5CDB521490DC500AB67D7 /* Shop.swift in Sources */,
 				D4C5CDAA2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
 				D443CDB0214BB26400A7100F /* TextInputView.swift in Sources */,
@@ -990,7 +983,6 @@
 				D429F8B521401528004427F0 /* Wallet.swift in Sources */,
 				D429F8AA21400F20004427F0 /* Constants.swift in Sources */,
 				D443CDAD214BAB5A00A7100F /* CreateShopViewController.swift in Sources */,
-				D429F89321400A5A004427F0 /* ViewController.swift in Sources */,
 				D4C8C9482158D31F00C831F0 /* MainViewController+Admin.swift in Sources */,
 				D4C5CDB621490DC500AB67D7 /* Shop.swift in Sources */,
 				D443CDCD214F7EFA00A7100F /* IssueViewModel.swift in Sources */,
