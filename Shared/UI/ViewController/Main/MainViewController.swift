@@ -27,6 +27,8 @@ class MainViewController: UIViewController {
 		}
 	}
 
+	var selectedIndex: Int = 0
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -48,8 +50,31 @@ class MainViewController: UIViewController {
 		}
 	}
 
+	private func updateSegmentedControl() {
+		contentSegmentedControl.selectedSegmentIndex = selectedIndex
+	}
+
+	private func updatePageViewContoller(direction: UIPageViewControllerNavigationDirection) {
+		guard selectedIndex < viewControllers.count
+			else {
+				return
+		}
+		let viewController = viewControllers[selectedIndex]
+
+		pageViewController?.setViewControllers([viewController], direction: direction, animated: true, completion: { (success) in
+		})
+	}
+
 	@IBAction func didChangeContent(_ sender: Any? = nil) {
-		print("change content")
+		guard contentSegmentedControl.selectedSegmentIndex != selectedIndex
+			else {
+				return
+		}
+
+		let direction: UIPageViewControllerNavigationDirection = selectedIndex < contentSegmentedControl.selectedSegmentIndex ? .forward : .reverse
+		selectedIndex = contentSegmentedControl.selectedSegmentIndex
+
+		updatePageViewContoller(direction: direction)
 	}
 
 	@IBAction func shopShopMenu(_ sender: Any? = nil) {
@@ -67,8 +92,8 @@ extension MainViewController: UIPageViewControllerDataSource {
 			else {
 				return nil
 		}
-		let prevIndex = currentIndex - 1
-		return viewControllers[prevIndex]
+		selectedIndex = currentIndex - 1
+		return viewControllers[selectedIndex]
 	}
 
 	func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
@@ -77,13 +102,24 @@ extension MainViewController: UIPageViewControllerDataSource {
 			else {
 				return nil
 		}
-		let nextIndex = currentIndex + 1
-		return viewControllers[nextIndex]
+		selectedIndex = currentIndex + 1
+		return viewControllers[selectedIndex]
 	}
 
 }
 
 extension MainViewController: UIPageViewControllerDelegate {
+
+	func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+		if let pendingViewController = pendingViewControllers.first,
+			let pendingIndex = viewControllers.index(of: pendingViewController) {
+			selectedIndex = pendingIndex
+		}
+	}
+
+	func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+		updateSegmentedControl()
+	}
 
 }
 

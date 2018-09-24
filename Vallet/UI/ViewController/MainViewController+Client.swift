@@ -27,6 +27,8 @@ extension MainViewController {
 		viewControllers.append(historyViewController)
 		viewControllers.append(priceListViewController)
 
+		let currentViewController = viewControllers[selectedIndex]
+
 		pageViewController?.setViewControllers([historyViewController], direction: .forward, animated: false, completion: { (success) in
 
 		})
