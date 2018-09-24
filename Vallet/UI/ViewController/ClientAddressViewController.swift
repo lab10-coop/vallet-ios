@@ -14,11 +14,12 @@ class ClientAddressViewController: UIViewController {
 
 	static func present(over viewController: UIViewController) {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-		guard let clientAddressViewController = storyboard.instantiateViewController(withIdentifier: "ClientAddressViewController") as? ClientAddressViewController
+		guard let clientAddressNavigationController = storyboard.instantiateViewController(withIdentifier: "ClientAddressNavigationController") as? UINavigationController,
+			let _ = clientAddressNavigationController.topViewController as? ClientAddressViewController
 			else {
 				return
 		}
-		viewController.present(clientAddressViewController, animated: false)
+		viewController.present(clientAddressNavigationController, animated: true)
 	}
 
 	override func viewDidLoad() {

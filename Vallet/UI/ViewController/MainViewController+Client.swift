@@ -32,4 +32,8 @@ extension MainViewController {
 		})
 	}
 
+	@IBAction func showQRCode(_ sender: Any? = nil) {
+		ClientAddressViewController.present(over: self)
+	}
+
 }

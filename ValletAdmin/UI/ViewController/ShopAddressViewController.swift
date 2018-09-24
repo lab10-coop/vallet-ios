@@ -24,12 +24,14 @@ class ShopAddressViewController: UIViewController {
 
 	static func present(shop: Shop, over viewController: UIViewController) {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-		guard let shopAddressViewController = storyboard.instantiateViewController(withIdentifier: "ShopAddressViewController") as? ShopAddressViewController
+		guard let shopAddressNavigationController = storyboard.instantiateViewController(withIdentifier: "ShopAddressNavigationController") as? UINavigationController,
+			let shopAddressViewController = shopAddressNavigationController.topViewController as? ShopAddressViewController
 			else {
 				return
 		}
+
 		shopAddressViewController.shop = shop
-		viewController.present(shopAddressViewController, animated: false)
+		viewController.present(shopAddressNavigationController, animated: true)
 	}
 
 	override func viewDidLoad() {

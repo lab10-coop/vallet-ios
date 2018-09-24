@@ -32,4 +32,12 @@ extension MainViewController {
 		})
 	}
 
+	@IBAction func showQRCode(_ sender: Any? = nil) {
+		guard let shop = shop
+			else {
+				return
+		}
+		ShopAddressViewController.present(shop: shop, over: self)
+	}
+
 }

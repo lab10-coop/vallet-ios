@@ -17,15 +17,20 @@ class MainViewController: UIViewController {
 	var pageViewController: UIPageViewController?
 	var viewControllers = [UIViewController]()
 
+	var shop: Shop? {
+		didSet {
+			guard let shop = shop
+				else {
+					return
+			}
+			setupContent(for: shop)
+		}
+	}
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		guard let shop = ShopManager.selectedShop
-			else {
-				return
-		}
-
-		setupContent(for: shop)
+		self.shop = ShopManager.selectedShop
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -85,7 +90,7 @@ extension MainViewController: UIPageViewControllerDelegate {
 extension MainViewController: SideMenuDelegate {
 
 	func didSelect(shop: Shop) {
-		setupContent(for: shop)
+		self.shop = shop
 	}
 
 }
