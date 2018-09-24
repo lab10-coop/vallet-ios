@@ -14,6 +14,7 @@ class ClientHistoryViewController: UIViewController {
 
 	var historyViewModel: HistoryViewModel?
 	var shop: Shop?
+	weak var container: UIViewController?
 
 	static func instance(for shop: Shop) -> ClientHistoryViewController? {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)

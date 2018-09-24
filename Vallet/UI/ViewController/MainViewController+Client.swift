@@ -6,12 +6,30 @@
 //  Copyright © 2018 Matija Kregar. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension MainViewController {
 
 	func setupContent(for shop: Shop) {
+		shopNameLabel.text = shop.name
 
+		viewControllers = [UIViewController]()
+
+		guard let historyViewController = ClientHistoryViewController.instance(for: shop),
+			let priceListViewController = ClientPriceListViewController.instance(for: shop)
+			else {
+				return
+		}
+
+		historyViewController.container = self
+		priceListViewController.container = self
+
+		viewControllers.append(historyViewController)
+		viewControllers.append(priceListViewController)
+
+		pageViewController?.setViewControllers([historyViewController], direction: .forward, animated: false, completion: { (success) in
+
+		})
 	}
 
 }
