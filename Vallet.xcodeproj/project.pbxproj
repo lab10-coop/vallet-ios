@@ -119,6 +119,7 @@
 		D4C8C9392155249300C831F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D429F85821400573004427F0 /* Assets.xcassets */; };
 		D4C8C93C215524DC00C831F0 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C93B215524DC00C831F0 /* Media.xcassets */; };
 		D4C8C93D215524DC00C831F0 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C93B215524DC00C831F0 /* Media.xcassets */; };
+		D4C8C94C2158D5A800C831F0 /* AdminPriceListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C94B2158D5A800C831F0 /* AdminPriceListCollectionViewController.swift */; };
 		D4C8C94F2158E6DF00C831F0 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C94D2158E6DF00C831F0 /* ProductCollectionViewCell.swift */; };
 		D4C8C9502158E6DF00C831F0 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C94E2158E6DF00C831F0 /* ProductCollectionViewCell.xib */; };
 		D4C8C9512158E6E300C831F0 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C94D2158E6DF00C831F0 /* ProductCollectionViewCell.swift */; };
@@ -223,6 +224,7 @@
 		D4C8C9302153D88200C831F0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D4C8C9332153DA7C00C831F0 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		D4C8C93B215524DC00C831F0 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		D4C8C94B2158D5A800C831F0 /* AdminPriceListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPriceListCollectionViewController.swift; sourceTree = "<group>"; };
 		D4C8C94D2158E6DF00C831F0 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		D4C8C94E2158E6DF00C831F0 /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		D4C8C9532158ECC600C831F0 /* PriceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceListViewModel.swift; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 				D443CDC7214C190900A7100F /* IssueAddressViewController.swift */,
 				D443CDC9214F7E4200A7100F /* IssueAmountViewController.swift */,
 				D48D957F21525AE100840707 /* AdminHistoryTableViewController.swift */,
+				D4C8C94B2158D5A800C831F0 /* AdminPriceListCollectionViewController.swift */,
 				D4C8C956215901C900C831F0 /* CreateProductViewController.swift */,
 			);
 			path = ViewController;
@@ -996,6 +999,7 @@
 				D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */,
 				D4C5CD9B2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */,
 				D4C8C9282153B7CF00C831F0 /* Product.swift in Sources */,
+				D4C8C94C2158D5A800C831F0 /* AdminPriceListCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
