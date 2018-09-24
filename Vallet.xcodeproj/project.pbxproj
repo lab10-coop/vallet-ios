@@ -119,6 +119,9 @@
 		D4C8C9392155249300C831F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D429F85821400573004427F0 /* Assets.xcassets */; };
 		D4C8C93C215524DC00C831F0 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C93B215524DC00C831F0 /* Media.xcassets */; };
 		D4C8C93D215524DC00C831F0 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C93B215524DC00C831F0 /* Media.xcassets */; };
+		D4C8C9542158ECC600C831F0 /* PriceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9532158ECC600C831F0 /* PriceListViewModel.swift */; };
+		D4C8C9552158ECC900C831F0 /* PriceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9532158ECC600C831F0 /* PriceListViewModel.swift */; };
+		D4C8C9592159058600C831F0 /* PriceListViewModel+Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9582159058600C831F0 /* PriceListViewModel+Admin.swift */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -215,6 +218,8 @@
 		D4C8C9302153D88200C831F0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D4C8C9332153DA7C00C831F0 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		D4C8C93B215524DC00C831F0 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		D4C8C9532158ECC600C831F0 /* PriceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceListViewModel.swift; sourceTree = "<group>"; };
+		D4C8C9582159058600C831F0 /* PriceListViewModel+Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PriceListViewModel+Admin.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,6 +363,7 @@
 				D443CD91214A93E400A7100F /* ShopManager.swift */,
 				D48D9588215283A500840707 /* UserDefaultsManager.swift */,
 				D48D956B2151192A00840707 /* HistoryViewModel.swift */,
+				D4C8C9532158ECC600C831F0 /* PriceListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -423,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				D48D956321510ECB00840707 /* ShopManager+Admin.swift */,
+				D4C8C9582159058600C831F0 /* PriceListViewModel+Admin.swift */,
 				D443CDCC214F7EFA00A7100F /* IssueViewModel.swift */,
 			);
 			path = ViewModel;
@@ -878,6 +885,7 @@
 				D48D957721523F6000840707 /* ClientHistoryEventTableViewCell.swift in Sources */,
 				D429F8A821400DAE004427F0 /* Constants.swift in Sources */,
 				D48D956F21512BDE00840707 /* ValueEvent.swift in Sources */,
+				D4C8C9552158ECC900C831F0 /* PriceListViewModel.swift in Sources */,
 				D429F85121400572004427F0 /* ViewController.swift in Sources */,
 				D4C5CDB521490DC500AB67D7 /* Shop.swift in Sources */,
 				D4C5CDAA2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
@@ -944,6 +952,8 @@
 				D443CDCD214F7EFA00A7100F /* IssueViewModel.swift in Sources */,
 				D48D957E2152515900840707 /* PendingValueEvent.swift in Sources */,
 				D48D95662151104000840707 /* SideMenuViewController+Admin.swift in Sources */,
+				D4C8C9592159058600C831F0 /* PriceListViewModel+Admin.swift in Sources */,
+				D4C8C9542158ECC600C831F0 /* PriceListViewModel.swift in Sources */,
 				D4C8C9352153DA7D00C831F0 /* HTTPMethod.swift in Sources */,
 				D4C8C9262153B3C200C831F0 /* CodingUserInfoKey.swift in Sources */,
 				D4C5CDAB2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
