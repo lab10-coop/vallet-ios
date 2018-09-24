@@ -180,6 +180,90 @@
             </objects>
             <point key="canvasLocation" x="1033" y="937"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4cP-4y-XPF">
+            <objects>
+                <navigationController storyboardIdentifier="CreateProductNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZbP-Zn-CM8" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vlu-3A-Wgv">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ezM-hd-YWz" kind="relationship" relationship="rootViewController" id="aY7-Rr-vHG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2FJ-Db-gwZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="142" y="1685"/>
+        </scene>
+        <!--Create Product View Controller-->
+        <scene sceneID="al5-7I-nAQ">
+            <objects>
+                <viewController storyboardIdentifier="CreateProductViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ezM-hd-YWz" customClass="CreateProductViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5ZQ-AA-xF1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="e48-XY-vw1">
+                                <rect key="frame" x="16" y="96" width="343" height="182"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KyD-zD-etp" customClass="TextInputView" customModule="ValletAdmin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="jgk-E8-YZ9"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Name"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRequired" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFe-k4-bf2" customClass="TextInputView" customModule="ValletAdmin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="76" width="343" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Ptr-AO-7yh"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Price"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRequired" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJO-xO-Ktm">
+                                        <rect key="frame" x="0.0" y="152" width="343" height="30"/>
+                                        <state key="normal" title="Add a product"/>
+                                        <connections>
+                                            <action selector="submit:" destination="ezM-hd-YWz" eventType="touchUpInside" id="vQY-Nw-Nkr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JeG-Cq-ll6" firstAttribute="trailing" secondItem="e48-XY-vw1" secondAttribute="trailing" constant="16" id="AoR-OJ-pjE"/>
+                            <constraint firstItem="e48-XY-vw1" firstAttribute="leading" secondItem="JeG-Cq-ll6" secondAttribute="leading" constant="16" id="EMJ-AT-ent"/>
+                            <constraint firstItem="e48-XY-vw1" firstAttribute="top" secondItem="JeG-Cq-ll6" secondAttribute="top" constant="32" id="qN9-jw-ZT5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JeG-Cq-ll6"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="p4a-39-y6H">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="FQg-Aj-srp">
+                            <connections>
+                                <action selector="close:" destination="ezM-hd-YWz" id="JCk-NJ-Pby"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameInputView" destination="KyD-zD-etp" id="JCr-eq-hYa"/>
+                        <outlet property="priceInputView" destination="aFe-k4-bf2" id="ehQ-Y9-19h"/>
+                        <outlet property="submitButton" destination="aJO-xO-Ktm" id="U9a-wh-B8B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p0i-sF-jIT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1033" y="1685"/>
+        </scene>
         <!--Issue Amount View Controller-->
         <scene sceneID="o6w-Uy-zr7">
             <objects>

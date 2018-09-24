@@ -153,11 +153,13 @@ class TextInputView: NibLinkedView {
 		delegate?.inputFieldDidChange(self)
 	}
 
+	@discardableResult
 	override func becomeFirstResponder() -> Bool {
 		super.becomeFirstResponder()
 		return valueTextField.becomeFirstResponder()
 	}
 
+	@discardableResult
 	override func resignFirstResponder() -> Bool {
 		super.resignFirstResponder()
 		return valueTextField.resignFirstResponder()

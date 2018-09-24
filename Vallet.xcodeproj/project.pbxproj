@@ -121,6 +121,7 @@
 		D4C8C93D215524DC00C831F0 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C93B215524DC00C831F0 /* Media.xcassets */; };
 		D4C8C9542158ECC600C831F0 /* PriceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9532158ECC600C831F0 /* PriceListViewModel.swift */; };
 		D4C8C9552158ECC900C831F0 /* PriceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9532158ECC600C831F0 /* PriceListViewModel.swift */; };
+		D4C8C957215901C900C831F0 /* CreateProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C956215901C900C831F0 /* CreateProductViewController.swift */; };
 		D4C8C9592159058600C831F0 /* PriceListViewModel+Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9582159058600C831F0 /* PriceListViewModel+Admin.swift */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
@@ -219,6 +220,7 @@
 		D4C8C9332153DA7C00C831F0 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		D4C8C93B215524DC00C831F0 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		D4C8C9532158ECC600C831F0 /* PriceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceListViewModel.swift; sourceTree = "<group>"; };
+		D4C8C956215901C900C831F0 /* CreateProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductViewController.swift; sourceTree = "<group>"; };
 		D4C8C9582159058600C831F0 /* PriceListViewModel+Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PriceListViewModel+Admin.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -421,6 +423,7 @@
 				D443CDC7214C190900A7100F /* IssueAddressViewController.swift */,
 				D443CDC9214F7E4200A7100F /* IssueAmountViewController.swift */,
 				D48D957F21525AE100840707 /* AdminHistoryTableViewController.swift */,
+				D4C8C956215901C900C831F0 /* CreateProductViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -932,6 +935,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4C8C957215901C900C831F0 /* CreateProductViewController.swift in Sources */,
 				D443CD93214A93E400A7100F /* ShopManager.swift in Sources */,
 				D443CDAA214AA73700A7100F /* NSObject.swift in Sources */,
 				D4C5CDA3214819AD00AB67D7 /* SideMenuViewController.swift in Sources */,
