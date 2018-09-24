@@ -11,8 +11,7 @@ import Foundation
 extension PriceListViewModel {
 
 	func createNewProduct(named name: String, price: Int, completion: @escaping (Result<Bool>) -> Void) {
-		guard let shop = shop,
-			let managedObjectContext = shop.managedObjectContext,
+		guard let managedObjectContext = managedObjectContext,
 			let product = Product(in: managedObjectContext, name: name, price: Int64(price), imagePath: nil, nfcTagId: nil)
 			else {
 				// TODO: Send an error to the completion block.

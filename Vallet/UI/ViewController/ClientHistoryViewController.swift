@@ -44,6 +44,11 @@ class ClientHistoryViewController: UIViewController {
 		reloadData()
 	}
 
+	override func viewWillAppear(_ animated: Bool) {
+		historyViewModel?.updateEvents()
+		tableView.reloadData()
+	}
+
 	private func reloadData() {
 		historyViewModel?.reload(completion: { [weak self] (result) in
 			guard case .success = result

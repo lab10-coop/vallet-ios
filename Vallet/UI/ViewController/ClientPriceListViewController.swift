@@ -79,6 +79,33 @@ extension ClientPriceListViewController: UICollectionViewDataSource {
 
 }
 
+// MARK: - UICollectionView Delegate
+
+extension ClientPriceListViewController: UICollectionViewDelegate {
+
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		guard let container = container,
+			let priceListViewModel = priceListViewModel,
+			let products = priceListViewModel.products,
+			indexPath.row < products.count
+			else {
+				return
+		}
+		let product = products[indexPath.row]
+		container.showActivityIndicator()
+		priceListViewModel.pay(for: product) { [weak self] (result) in
+			switch result {
+			case .success:
+				print("Paid for product")
+			case .failure(let error):
+				print("Payment error: \(error)")
+			}
+			self?.container?.hideActivityIndicator()
+		}
+	}
+
+}
+
 // MARK: - UICollectionView Flow Layout
 
 extension ClientPriceListViewController: UICollectionViewDelegateFlowLayout {

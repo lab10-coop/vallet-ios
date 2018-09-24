@@ -7,26 +7,36 @@
 //
 
 import Foundation
+import web3swift
+import CoreData
 
 class PriceListViewModel {
 
-	private(set) var shop: Shop?
+	private(set) var shop: Shop
+	private(set) var token: Token
 	private(set) var priceList: PriceList? {
 		didSet {
 			updateProducts(to: priceList)
 		}
+	}
+	var managedObjectContext: NSManagedObjectContext? {
+		return shop.managedObjectContext
 	}
 
 	var products: [Product]?
 
 	var newDataBlock: (() -> Void) = {}
 
-	init(shop: Shop) {
-		self.shop = shop
-
-		if let storedPriceList = shop.priceList {
-			self.priceList = storedPriceList
+	init?(shop: Shop) {
+		guard	let shopAddressValue = shop.address,
+			let shopAddress = EthereumAddress(shopAddressValue)
+			else {
+				return nil
 		}
+		self.shop = shop
+		self.token = Token(address: shopAddress)
+
+		self.priceList = shop.priceList
 	}
 
 	func reload() {
