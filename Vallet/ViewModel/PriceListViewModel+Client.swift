@@ -37,6 +37,7 @@ extension PriceListViewModel {
 						return
 				}
 				DataBaseManager.save(managedContext: strongSelf.managedObjectContext)
+				NotificationCenter.default.post(name: Constants.Notification.newValueEvent, object: nil)
 				completion(Result.success(success))
 			case .failure(let error):
 				completion(Result.failure(error))

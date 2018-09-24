@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
 	@IBOutlet var contentSegmentedControl: UISegmentedControl!
 	@IBOutlet var containerView: UIView!
 	@IBOutlet var shopNameLabel: UILabel!
+	@IBOutlet var clientBalanceLabel: UILabel!
 
 	var pageViewController: UIPageViewController?
 	var viewControllers = [UIViewController]()

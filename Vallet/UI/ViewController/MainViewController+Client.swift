@@ -13,6 +13,10 @@ extension MainViewController {
 	func setupContent(for shop: Shop) {
 		shopNameLabel.text = shop.name
 
+		clientBalanceLabel.isHidden = false
+		clientBalanceLabel.text = ""
+		updateBalance()
+
 		viewControllers = [UIViewController]()
 
 		guard let historyViewController = ClientHistoryViewController.instance(for: shop),
@@ -30,8 +34,20 @@ extension MainViewController {
 		let currentViewController = viewControllers[selectedIndex]
 
 		pageViewController?.setViewControllers([currentViewController], direction: .forward, animated: false, completion: { (success) in
-
 		})
+
+		NotificationCenter.default.addObserver(self, selector: #selector(updateBalance), name: Constants.Notification.newValueEvent, object: nil)
+	}
+
+	@objc func updateBalance() {
+		ShopManager.balance(for: Wallet.address, in: shop) { [weak self] (result) in
+			switch result {
+			case .success(let balance):
+				self?.clientBalanceLabel.text = "Balance: \(balance.description)"
+			case .failure(let error):
+				print("Load balance error: \(error)")
+			}
+		}
 	}
 
 	@IBAction func showQRCode(_ sender: Any? = nil) {

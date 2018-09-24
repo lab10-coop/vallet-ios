@@ -72,7 +72,7 @@ class Token: ContractProtocol {
 		}
 	}
 
-	func balance(of address: EthereumAddress, completion: @escaping (Result<Int>) -> Void) {
+	func balance(for address: EthereumAddress, completion: @escaping (Result<Int>) -> Void) {
 		guard let intermediate = transactionIntermediate(method: Method.balance.rawValue, parameters: [NSString(string: address.address)])
 			else {
 				completion(Result.failure(Web3Error.unknownError))

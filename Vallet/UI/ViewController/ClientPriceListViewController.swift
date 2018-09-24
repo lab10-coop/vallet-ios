@@ -105,7 +105,6 @@ extension ClientPriceListViewController: UICollectionViewDelegate {
 				self?.container?.hideActivityIndicator()
 			}
 		}
-
 	}
 
 }

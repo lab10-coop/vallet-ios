@@ -74,6 +74,43 @@ class ShopManager {
 		return nil
 	}
 
+	// MARK: - Total Supply/Ballance
+
+	private static func token(for shop: Shop?) -> Token? {
+		guard let shop = shop ?? selectedShop,
+			let shopAddress = shop.address,
+			let shopEthereumAddress = EthereumAddress(shopAddress)
+			else {
+				return nil
+		}
+		let token = Token(address: shopEthereumAddress)
+		return token
+	}
+
+	static func totalSupply(for shop: Shop? = nil, completion: @escaping (Result<Int>) -> Void) {
+		guard let shop = shop ?? selectedShop,
+			let token = token(for: shop)
+			else {
+				completion(Result.failure(Web3Error.unknownError))
+				return
+		}
+		token.totalSupply { (result) in
+			completion(result)
+		}
+	}
+
+	static func balance(for address: EthereumAddress, in shop: Shop? = nil, completion: @escaping (Result<Int>) -> Void) {
+		guard let shop = shop ?? selectedShop,
+			let token = token(for: shop)
+			else {
+				completion(Result.failure(Web3Error.unknownError))
+				return
+		}
+		token.balance(for: address) { (result) in
+			completion(result)
+		}
+	}
+
 	// MARK: - Price List
 
 	static func loadPriceList(for shop: Shop? = nil, completion: @escaping (Result<PriceList>) -> Void) {

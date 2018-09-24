@@ -32,6 +32,12 @@ struct Constants {
 		}
 	}
 
+	struct Notification {
+
+		static let newValueEvent: NSNotification.Name = NSNotification.Name(rawValue: "Notification.newValueEvent")
+
+	}
+
 	struct Animation {
 
 		static let shortDuration = 0.25
