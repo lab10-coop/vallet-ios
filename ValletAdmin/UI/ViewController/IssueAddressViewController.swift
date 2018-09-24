@@ -39,7 +39,7 @@ class IssueAddressViewController: UIViewController {
 
 		issueAddressViewController.shop = shop
 
-		viewController.present(issueNavigationController, animated: false)
+		viewController.present(issueNavigationController, animated: true)
 	}
 
 	override func viewDidLoad() {
@@ -82,7 +82,6 @@ class IssueAddressViewController: UIViewController {
 			break
 		}
 	}
-
 
 }
 

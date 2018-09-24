@@ -39,13 +39,10 @@ class IssueAmountViewController: UIViewController {
 				if success {
 					self?.dismiss(animated: true, completion: nil)
 				}
-				else {
-					self?.hideActivityIndicator()
-				}
 			case .failure(let error):
-				self?.hideActivityIndicator()
 				print("Issue to client error: \(error)")
 			}
+			self?.hideActivityIndicator()
 		}
 	}
 

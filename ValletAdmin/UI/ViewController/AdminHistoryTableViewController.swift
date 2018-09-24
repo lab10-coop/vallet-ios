@@ -8,10 +8,13 @@
 
 import UIKit
 
-class AdminHistoryTableViewController: UITableViewController {
+class AdminHistoryTableViewController: UIViewController {
+
+	@IBOutlet private var tableView: UITableView!
 
 	var historyViewModel: HistoryViewModel?
 	var shop: Shop?
+	weak var container: UIViewController?
 
 	static func instance(for shop: Shop) -> AdminHistoryTableViewController? {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -50,6 +53,11 @@ class AdminHistoryTableViewController: UITableViewController {
 		reloadData()
 	}
 
+	override func viewWillAppear(_ animated: Bool) {
+		historyViewModel?.updateEvents()
+		tableView.reloadData()
+	}
+
 	private func reloadData() {
 		historyViewModel?.reload(completion: { [weak self] (result) in
 			guard case .success = result
@@ -60,8 +68,13 @@ class AdminHistoryTableViewController: UITableViewController {
 		})
 	}
 
-	@IBAction func close(_ sender: Any? = nil) {
-		dismiss(animated: true, completion: nil)
+	@IBAction func sendMoney(_ sender: Any? = nil) {
+		guard let shop = shop,
+			let container = container
+			else {
+				return
+		}
+		IssueAddressViewController.present(for: shop, over: container)
 	}
 
 }
@@ -69,17 +82,17 @@ class AdminHistoryTableViewController: UITableViewController {
 
 // MARK: - Table view data source
 
-extension AdminHistoryTableViewController {
+extension AdminHistoryTableViewController: UITableViewDataSource {
 
-	override func numberOfSections(in tableView: UITableView) -> Int {
+	func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
 	}
 
-	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return historyViewModel?.events.count ?? 0
 	}
 
-	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: AdminHistoryEventTableViewCell.reuseIdentifier, for: indexPath)
 		if let historyEventCell = cell as? AdminHistoryEventTableViewCell {
 			historyEventCell.event = historyViewModel?.events[indexPath.row]
@@ -92,9 +105,9 @@ extension AdminHistoryTableViewController {
 
 // MARK: - Table view delegate
 
-extension AdminHistoryTableViewController {
+extension AdminHistoryTableViewController: UITableViewDelegate {
 
-	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 	}
 
