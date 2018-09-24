@@ -31,15 +31,17 @@ class SideMenuViewController: UIViewController {
 
 	weak var delegate: SideMenuDelegate?
 
-	static func present(over viewController: UIViewController) {
+	@discardableResult
+	static func present(over viewController: UIViewController) -> SideMenuViewController? {
 		let storyboard = UIStoryboard(name: "Shared", bundle: Bundle.main)
 		guard let sideMenuViewController = storyboard.instantiateViewController(withIdentifier: "SideMenuViewController") as? SideMenuViewController
 			else {
-				return
+				return nil
 		}
 		viewController.present(sideMenuViewController, animated: false) {
 			sideMenuViewController.show()
 		}
+		return sideMenuViewController
 	}
 
 	override func viewDidLoad() {
@@ -111,7 +113,11 @@ extension SideMenuViewController: UITableViewDataSource {
 extension SideMenuViewController: UITableViewDelegate {
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		ShopManager.selectedShop = ShopManager.shops[indexPath.row]
+		let shop = ShopManager.shops[indexPath.row]
+		ShopManager.selectedShop = shop
+
+		delegate?.didSelect(shop: shop)
+		hide()
 	}
 	
 }
