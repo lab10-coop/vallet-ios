@@ -365,10 +365,10 @@
             </objects>
             <point key="canvasLocation" x="1934" y="134"/>
         </scene>
-        <!--Admin History Table View Controller-->
+        <!--Admin History View Controller-->
         <scene sceneID="rzv-eH-uXi">
             <objects>
-                <viewController storyboardIdentifier="AdminHistoryTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lI6-Jt-LVj" customClass="AdminHistoryTableViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AdminHistoryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lI6-Jt-LVj" customClass="AdminHistoryViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bCb-CH-6fH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -403,12 +403,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iWQ-Q1-iEE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2841" y="134"/>
+            <point key="canvasLocation" x="2837.5999999999999" y="133.5832083958021"/>
         </scene>
-        <!--Admin Price List Collection View Controller-->
+        <!--Admin Price List View Controller-->
         <scene sceneID="jWx-vb-p9T">
             <objects>
-                <viewController storyboardIdentifier="AdminPriceListCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tsT-3K-oep" customClass="AdminPriceListCollectionViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AdminPriceListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tsT-3K-oep" customClass="AdminPriceListViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Voa-cU-hKL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

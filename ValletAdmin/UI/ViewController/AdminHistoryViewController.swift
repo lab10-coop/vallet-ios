@@ -1,5 +1,5 @@
 //
-//  AdminHistoryTableViewController.swift
+//  AdminHistoryViewController.swift
 //  ValletAdmin
 //
 //  Created by Matija Kregar on 19/09/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdminHistoryTableViewController: UIViewController {
+class AdminHistoryViewController: UIViewController {
 
 	@IBOutlet private var tableView: UITableView!
 
@@ -16,10 +16,10 @@ class AdminHistoryTableViewController: UIViewController {
 	var shop: Shop?
 	weak var container: UIViewController?
 
-	static func instance(for shop: Shop) -> AdminHistoryTableViewController? {
+	static func instance(for shop: Shop) -> AdminHistoryViewController? {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
-		guard let adminHistoryTableViewController = storyboard.instantiateViewController(withIdentifier: "AdminHistoryTableViewController") as? AdminHistoryTableViewController
+		guard let adminHistoryTableViewController = storyboard.instantiateViewController(withIdentifier: "AdminHistoryViewController") as? AdminHistoryViewController
 			else {
 				return nil
 		}
@@ -82,7 +82,7 @@ class AdminHistoryTableViewController: UIViewController {
 
 // MARK: - Table view data source
 
-extension AdminHistoryTableViewController: UITableViewDataSource {
+extension AdminHistoryViewController: UITableViewDataSource {
 
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
@@ -105,7 +105,7 @@ extension AdminHistoryTableViewController: UITableViewDataSource {
 
 // MARK: - Table view delegate
 
-extension AdminHistoryTableViewController: UITableViewDelegate {
+extension AdminHistoryViewController: UITableViewDelegate {
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 

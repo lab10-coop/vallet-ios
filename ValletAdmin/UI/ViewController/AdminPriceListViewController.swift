@@ -1,5 +1,5 @@
 //
-//  AdminPriceListCollectionViewController.swift
+//  AdminPriceListViewController.swift
 //  ValletAdmin
 //
 //  Created by Matija Kregar on 24/09/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdminPriceListCollectionViewController: UIViewController {
+class AdminPriceListViewController: UIViewController {
 
 	@IBOutlet private var collectionView: UICollectionView!
 
@@ -19,10 +19,10 @@ class AdminPriceListCollectionViewController: UIViewController {
 	var priceListViewModel: PriceListViewModel?
 	weak var container: UIViewController?
 
-	static func instance(for shop: Shop) -> AdminPriceListCollectionViewController? {
+	static func instance(for shop: Shop) -> AdminPriceListViewController? {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
-		guard let adminPriceListCollectionViewController = storyboard.instantiateViewController(withIdentifier: "AdminPriceListCollectionViewController") as? AdminPriceListCollectionViewController
+		guard let adminPriceListCollectionViewController = storyboard.instantiateViewController(withIdentifier: "AdminPriceListViewController") as? AdminPriceListViewController
 			else {
 				return nil
 		}
@@ -64,7 +64,7 @@ class AdminPriceListCollectionViewController: UIViewController {
 
 // MARK: - UICollectionView Data Source
 
-extension AdminPriceListCollectionViewController: UICollectionViewDataSource {
+extension AdminPriceListViewController: UICollectionViewDataSource {
 
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return 1
@@ -88,7 +88,7 @@ extension AdminPriceListCollectionViewController: UICollectionViewDataSource {
 
 }
 
-extension AdminPriceListCollectionViewController: UICollectionViewDelegateFlowLayout {
+extension AdminPriceListViewController: UICollectionViewDelegateFlowLayout {
 
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 		let width = collectionView.frame.size.width

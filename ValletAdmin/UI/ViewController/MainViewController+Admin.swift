@@ -15,8 +15,8 @@ extension MainViewController {
 
 		viewControllers = [UIViewController]()
 
-		guard let historyViewController = AdminHistoryTableViewController.instance(for: shop),
-		let priceListViewController = AdminPriceListCollectionViewController.instance(for: shop)
+		guard let historyViewController = AdminHistoryViewController.instance(for: shop),
+		let priceListViewController = AdminPriceListViewController.instance(for: shop)
 			else {
 				return
 		}
