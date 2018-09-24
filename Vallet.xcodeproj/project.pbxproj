@@ -131,6 +131,7 @@
 		D4C8C9592159058600C831F0 /* PriceListViewModel+Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9582159058600C831F0 /* PriceListViewModel+Admin.swift */; };
 		D4C8C95B215936AF00C831F0 /* ClientPriceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C95A215936AF00C831F0 /* ClientPriceListViewController.swift */; };
 		D4C8C95D2159370200C831F0 /* PriceListViewModel+Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C95C2159370200C831F0 /* PriceListViewModel+Client.swift */; };
+		D4C8C95F21596BE100C831F0 /* PaymentConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C95E21596BE100C831F0 /* PaymentConfirmationViewController.swift */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -235,6 +236,7 @@
 		D4C8C9582159058600C831F0 /* PriceListViewModel+Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PriceListViewModel+Admin.swift"; sourceTree = "<group>"; };
 		D4C8C95A215936AF00C831F0 /* ClientPriceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientPriceListViewController.swift; sourceTree = "<group>"; };
 		D4C8C95C2159370200C831F0 /* PriceListViewModel+Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PriceListViewModel+Client.swift"; sourceTree = "<group>"; };
+		D4C8C95E21596BE100C831F0 /* PaymentConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentConfirmationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -462,6 +464,7 @@
 				D48D95612150FD7600840707 /* ScanShopAddressViewController.swift */,
 				D48D957321523BBD00840707 /* ClientHistoryViewController.swift */,
 				D4C8C95A215936AF00C831F0 /* ClientPriceListViewController.swift */,
+				D4C8C95E21596BE100C831F0 /* PaymentConfirmationViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -934,6 +937,7 @@
 				D429F8BB21416D9D004427F0 /* TokenFactory.swift in Sources */,
 				D443CDD0214F925000A7100F /* ClientAddressViewController.swift in Sources */,
 				D443CD98214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
+				D4C8C95F21596BE100C831F0 /* PaymentConfirmationViewController.swift in Sources */,
 				D4C8C92E2153D87400C831F0 /* NetworkRequest.swift in Sources */,
 				D48D95622150FD7700840707 /* ScanShopAddressViewController.swift in Sources */,
 				D443CDBA214BDABE00A7100F /* UIViewController.swift in Sources */,

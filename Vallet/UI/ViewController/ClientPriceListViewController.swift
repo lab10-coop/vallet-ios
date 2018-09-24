@@ -92,16 +92,20 @@ extension ClientPriceListViewController: UICollectionViewDelegate {
 				return
 		}
 		let product = products[indexPath.row]
-		container.showActivityIndicator()
-		priceListViewModel.pay(for: product) { [weak self] (result) in
-			switch result {
-			case .success:
-				print("Paid for product")
-			case .failure(let error):
-				print("Payment error: \(error)")
+
+		PaymentConfirmationViewController.present(for: product, over: container) { [weak self] in
+			self?.container?.showActivityIndicator()
+			self?.priceListViewModel?.pay(for: product) { [weak self] (result) in
+				switch result {
+				case .success:
+					print("Paid for product")
+				case .failure(let error):
+					print("Payment error: \(error)")
+				}
+				self?.container?.hideActivityIndicator()
 			}
-			self?.container?.hideActivityIndicator()
 		}
+
 	}
 
 }
