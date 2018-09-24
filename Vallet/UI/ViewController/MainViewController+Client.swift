@@ -29,7 +29,7 @@ extension MainViewController {
 
 		let currentViewController = viewControllers[selectedIndex]
 
-		pageViewController?.setViewControllers([historyViewController], direction: .forward, animated: false, completion: { (success) in
+		pageViewController?.setViewControllers([currentViewController], direction: .forward, animated: false, completion: { (success) in
 
 		})
 	}
