@@ -8,17 +8,15 @@
 
 import UIKit
 
-protocol NibBackedTableViewCell: class {
+protocol NibBackedCell: class {
 
 	static var nibName: String { get }
 	static var nib: UINib { get }
 	static var reuseIdentifier: String { get }
 
-	static func register(for tableView: UITableView)
-
 }
 
-extension NibBackedTableViewCell where Self: UITableViewCell {
+extension NibBackedCell where Self: UIView {
 
 	static var nibName: String {
 		return className
@@ -32,8 +30,32 @@ extension NibBackedTableViewCell where Self: UITableViewCell {
 		return className
 	}
 
+}
+
+protocol NibBackedTableViewCell: NibBackedCell {
+
+	static func register(for tableView: UITableView)
+
+}
+
+extension NibBackedTableViewCell where Self: UITableViewCell {
+
 	static func register(for tableView: UITableView) {
 		tableView.register(nib, forCellReuseIdentifier: reuseIdentifier)
+	}
+
+}
+
+protocol NibBackedCollectionViewCell: NibBackedCell {
+
+	static func register(for collectionView: UICollectionView)
+
+}
+
+extension NibBackedCollectionViewCell where Self: UICollectionViewCell {
+
+	static func register(for collectionView: UICollectionView) {
+		collectionView.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
 	}
 
 }

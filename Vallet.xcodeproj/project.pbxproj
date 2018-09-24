@@ -42,8 +42,8 @@
 		D443CD99214AA0A500A7100F /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CD96214AA0A500A7100F /* ShopTableViewCell.swift */; };
 		D443CD9A214AA0A500A7100F /* ShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D443CD97214AA0A500A7100F /* ShopTableViewCell.xib */; };
 		D443CD9B214AA0A500A7100F /* ShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D443CD97214AA0A500A7100F /* ShopTableViewCell.xib */; };
-		D443CDA5214AA46500A7100F /* NibBackedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDA4214AA46500A7100F /* NibBackedTableViewCell.swift */; };
-		D443CDA6214AA46500A7100F /* NibBackedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDA4214AA46500A7100F /* NibBackedTableViewCell.swift */; };
+		D443CDA5214AA46500A7100F /* NibBackedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDA4214AA46500A7100F /* NibBackedCell.swift */; };
+		D443CDA6214AA46500A7100F /* NibBackedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDA4214AA46500A7100F /* NibBackedCell.swift */; };
 		D443CDA9214AA73700A7100F /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDA8214AA73700A7100F /* NSObject.swift */; };
 		D443CDAA214AA73700A7100F /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDA8214AA73700A7100F /* NSObject.swift */; };
 		D443CDAD214BAB5A00A7100F /* CreateShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDAB214BAB5A00A7100F /* CreateShopViewController.swift */; };
@@ -168,7 +168,7 @@
 		D443CD91214A93E400A7100F /* ShopManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopManager.swift; sourceTree = "<group>"; };
 		D443CD96214AA0A500A7100F /* ShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
 		D443CD97214AA0A500A7100F /* ShopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopTableViewCell.xib; sourceTree = "<group>"; };
-		D443CDA4214AA46500A7100F /* NibBackedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibBackedTableViewCell.swift; sourceTree = "<group>"; };
+		D443CDA4214AA46500A7100F /* NibBackedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibBackedCell.swift; sourceTree = "<group>"; };
 		D443CDA8214AA73700A7100F /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		D443CDAB214BAB5A00A7100F /* CreateShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateShopViewController.swift; sourceTree = "<group>"; };
 		D443CDAF214BB26400A7100F /* TextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
@@ -365,7 +365,7 @@
 		D443CD95214AA05100A7100F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				D443CDA4214AA46500A7100F /* NibBackedTableViewCell.swift */,
+				D443CDA4214AA46500A7100F /* NibBackedCell.swift */,
 				D443CD96214AA0A500A7100F /* ShopTableViewCell.swift */,
 				D443CD97214AA0A500A7100F /* ShopTableViewCell.xib */,
 			);
@@ -869,7 +869,7 @@
 				D443CDA9214AA73700A7100F /* NSObject.swift in Sources */,
 				D4C5CDA2214819AD00AB67D7 /* SideMenuViewController.swift in Sources */,
 				D429F8B721411FA2004427F0 /* Web3Manager.swift in Sources */,
-				D443CDA5214AA46500A7100F /* NibBackedTableViewCell.swift in Sources */,
+				D443CDA5214AA46500A7100F /* NibBackedCell.swift in Sources */,
 				D429F8AF21401049004427F0 /* Result.swift in Sources */,
 				D429F8C12141724C004427F0 /* TokenType.swift in Sources */,
 				D429F8C82142BF86004427F0 /* Token.swift in Sources */,
@@ -928,7 +928,7 @@
 				D443CDAA214AA73700A7100F /* NSObject.swift in Sources */,
 				D4C5CDA3214819AD00AB67D7 /* SideMenuViewController.swift in Sources */,
 				D429F8B821411FA2004427F0 /* Web3Manager.swift in Sources */,
-				D443CDA6214AA46500A7100F /* NibBackedTableViewCell.swift in Sources */,
+				D443CDA6214AA46500A7100F /* NibBackedCell.swift in Sources */,
 				D429F8B021401049004427F0 /* Result.swift in Sources */,
 				D48D958421525B0000840707 /* AdminHistoryEventTableViewCell.swift in Sources */,
 				D48D958021525AE100840707 /* AdminHistoryTableViewController.swift in Sources */,
