@@ -11,6 +11,7 @@ import UIKit
 class AdminHistoryViewController: UIViewController {
 
 	@IBOutlet private var tableView: UITableView!
+	@IBOutlet private var totalSupplyLabel: UILabel!
 
 	var historyViewModel: HistoryViewModel?
 	var shop: Shop?
@@ -56,6 +57,7 @@ class AdminHistoryViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		historyViewModel?.updateEvents()
 		tableView.reloadData()
+		updateTotalSupply()
 	}
 
 	private func reloadData() {
@@ -66,6 +68,21 @@ class AdminHistoryViewController: UIViewController {
 			}
 			self?.tableView.reloadData()
 		})
+	}
+
+	private func updateTotalSupply() {
+		guard let shop = shop
+			else {
+				return
+		}
+		ShopManager.totalSupply(for: shop) { [weak self] (result) in
+			switch result {
+			case .success(let balance):
+				self?.totalSupplyLabel.text = "Total supply: \(balance.description)"
+			case .failure(let error):
+				print("Load total supply error: \(error)")
+			}
+		}
 	}
 
 	@IBAction func sendMoney(_ sender: Any? = nil) {
