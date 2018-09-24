@@ -19,14 +19,14 @@ class AdminHistoryViewController: UIViewController {
 	static func instance(for shop: Shop) -> AdminHistoryViewController? {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
-		guard let adminHistoryTableViewController = storyboard.instantiateViewController(withIdentifier: "AdminHistoryViewController") as? AdminHistoryViewController
+		guard let adminHistoryViewController = storyboard.instantiateViewController(withIdentifier: "AdminHistoryViewController") as? AdminHistoryViewController
 			else {
 				return nil
 		}
 
-		adminHistoryTableViewController.shop = shop
+		adminHistoryViewController.shop = shop
 
-		return adminHistoryTableViewController
+		return adminHistoryViewController
 	}
 
 	static func present(for shop: Shop, over viewController: UIViewController) {

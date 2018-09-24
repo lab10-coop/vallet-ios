@@ -27,11 +27,7 @@ class ViewController: UIViewController {
 	}
 
 	@IBAction func loadHistory() {
-		guard let shop = ShopManager.selectedShop
-			else {
-				return
-		}
-		ClientHistoryTableViewController.present(for: shop, over: self)
+		
 	}
 
 	@IBAction func redeem() {

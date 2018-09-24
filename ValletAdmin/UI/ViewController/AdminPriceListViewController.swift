@@ -22,14 +22,14 @@ class AdminPriceListViewController: UIViewController {
 	static func instance(for shop: Shop) -> AdminPriceListViewController? {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
-		guard let adminPriceListCollectionViewController = storyboard.instantiateViewController(withIdentifier: "AdminPriceListViewController") as? AdminPriceListViewController
+		guard let adminPriceListViewController = storyboard.instantiateViewController(withIdentifier: "AdminPriceListViewController") as? AdminPriceListViewController
 			else {
 				return nil
 		}
 
-		adminPriceListCollectionViewController.shop = shop
+		adminPriceListViewController.shop = shop
 
-		return adminPriceListCollectionViewController
+		return adminPriceListViewController
 	}
 
 	override func viewDidLoad() {

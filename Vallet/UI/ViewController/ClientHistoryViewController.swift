@@ -1,5 +1,5 @@
 //
-//  ClientHistoryTableViewController.swift
+//  ClientHistoryViewController.swift
 //  Vallet
 //
 //  Created by Matija Kregar on 19/09/2018.
@@ -8,22 +8,24 @@
 
 import UIKit
 
-class ClientHistoryTableViewController: UITableViewController {
+class ClientHistoryViewController: UIViewController {
+
+	@IBOutlet private var tableView: UITableView!
 
 	var historyViewModel: HistoryViewModel?
 	var shop: Shop?
 
-	static func present(for shop: Shop, over viewController: UIViewController) {
+	static func instance(for shop: Shop) -> ClientHistoryViewController? {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
-		guard let clientHistoryTableViewController = storyboard.instantiateViewController(withIdentifier: "ClientHistoryTableViewController") as? ClientHistoryTableViewController
+		guard let clientHistoryViewController = storyboard.instantiateViewController(withIdentifier: "ClientHistoryViewController") as? ClientHistoryViewController
 			else {
-				return
+				return nil
 		}
 
-		clientHistoryTableViewController.shop = shop
+		clientHistoryViewController.shop = shop
 
-		viewController.present(clientHistoryTableViewController, animated: false)
+		return clientHistoryViewController
 	}
 
 	override func viewDidLoad() {
@@ -51,26 +53,22 @@ class ClientHistoryTableViewController: UITableViewController {
 		})
 	}
 
-	@IBAction func close(_ sender: Any? = nil) {
-		dismiss(animated: true, completion: nil)
-	}
-
 }
 
 
 // MARK: - Table view data source
 
-extension ClientHistoryTableViewController {
+extension ClientHistoryViewController: UITableViewDataSource {
 
-	override func numberOfSections(in tableView: UITableView) -> Int {
+	func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
 	}
 
-	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return historyViewModel?.events.count ?? 0
 	}
 
-	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: ClientHistoryEventTableViewCell.reuseIdentifier, for: indexPath)
 		if let historyEventCell = cell as? ClientHistoryEventTableViewCell {
 			historyEventCell.event = historyViewModel?.events[indexPath.row]
@@ -83,9 +81,9 @@ extension ClientHistoryTableViewController {
 
 // MARK: - Table view delegate
 
-extension ClientHistoryTableViewController {
+extension ClientHistoryViewController: UITableViewDelegate {
 
-	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		
 	}
 
