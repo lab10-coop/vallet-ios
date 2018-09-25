@@ -135,6 +135,12 @@
 		D4C8C961215A105100C831F0 /* AdminStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C960215A105100C831F0 /* AdminStartViewController.swift */; };
 		D4C8C963215A30DB00C831F0 /* ClientStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C962215A30DB00C831F0 /* ClientStartViewController.swift */; };
 		D4C8C965215A36B700C831F0 /* NoShopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C964215A36B700C831F0 /* NoShopsViewController.swift */; };
+		D4C8C972215A844400C831F0 /* WorkSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C968215A844000C831F0 /* WorkSans-Medium.ttf */; };
+		D4C8C973215A844400C831F0 /* WorkSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C968215A844000C831F0 /* WorkSans-Medium.ttf */; };
+		D4C8C97E215A844400C831F0 /* WorkSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C96E215A844300C831F0 /* WorkSans-Bold.ttf */; };
+		D4C8C97F215A844400C831F0 /* WorkSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C96E215A844300C831F0 /* WorkSans-Bold.ttf */; };
+		D4C8C980215A844400C831F0 /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C96F215A844300C831F0 /* WorkSans-Regular.ttf */; };
+		D4C8C981215A844400C831F0 /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C96F215A844300C831F0 /* WorkSans-Regular.ttf */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -243,6 +249,9 @@
 		D4C8C960215A105100C831F0 /* AdminStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminStartViewController.swift; sourceTree = "<group>"; };
 		D4C8C962215A30DB00C831F0 /* ClientStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientStartViewController.swift; sourceTree = "<group>"; };
 		D4C8C964215A36B700C831F0 /* NoShopsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoShopsViewController.swift; sourceTree = "<group>"; };
+		D4C8C968215A844000C831F0 /* WorkSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Medium.ttf"; sourceTree = "<group>"; };
+		D4C8C96E215A844300C831F0 /* WorkSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Bold.ttf"; sourceTree = "<group>"; };
+		D4C8C96F215A844300C831F0 /* WorkSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -604,6 +613,7 @@
 		D4C8C93A215524AE00C831F0 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				D4C8C966215A840B00C831F0 /* Font */,
 				D4C8C93B215524DC00C831F0 /* Media.xcassets */,
 			);
 			path = Assets;
@@ -649,6 +659,16 @@
 				D4C8C94421552DA200C831F0 /* MainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		D4C8C966215A840B00C831F0 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				D4C8C96E215A844300C831F0 /* WorkSans-Bold.ttf */,
+				D4C8C968215A844000C831F0 /* WorkSans-Medium.ttf */,
+				D4C8C96F215A844300C831F0 /* WorkSans-Regular.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		F210E04398A1C2678A4653B5 /* Frameworks */ = {
@@ -767,6 +787,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4C8C93C215524DC00C831F0 /* Media.xcassets in Resources */,
+				D4C8C97E215A844400C831F0 /* WorkSans-Bold.ttf in Resources */,
 				D429F85C21400573004427F0 /* LaunchScreen.storyboard in Resources */,
 				D4C5CDA6214819EC00AB67D7 /* Shared.storyboard in Resources */,
 				D4C5CD9D2147DBAC00AB67D7 /* QRCodeReaderView.xib in Resources */,
@@ -776,7 +797,9 @@
 				D429F85421400572004427F0 /* Main.storyboard in Resources */,
 				D443CD9A214AA0A500A7100F /* ShopTableViewCell.xib in Resources */,
 				D48D957921523F6000840707 /* ClientHistoryEventTableViewCell.xib in Resources */,
+				D4C8C972215A844400C831F0 /* WorkSans-Medium.ttf in Resources */,
 				D443CDC0214BDB1600A7100F /* ActivityIndicatorView.xib in Resources */,
+				D4C8C980215A844400C831F0 /* WorkSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,6 +815,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4C8C93D215524DC00C831F0 /* Media.xcassets in Resources */,
+				D4C8C97F215A844400C831F0 /* WorkSans-Bold.ttf in Resources */,
 				D429F89E21400A5B004427F0 /* LaunchScreen.storyboard in Resources */,
 				D4C5CDA7214819EC00AB67D7 /* Shared.storyboard in Resources */,
 				D4C5CD9E2147DBAC00AB67D7 /* QRCodeReaderView.xib in Resources */,
@@ -801,7 +825,9 @@
 				D429F89621400A5A004427F0 /* Main.storyboard in Resources */,
 				D443CD9B214AA0A500A7100F /* ShopTableViewCell.xib in Resources */,
 				D48D958521525B0000840707 /* AdminHistoryEventTableViewCell.xib in Resources */,
+				D4C8C973215A844400C831F0 /* WorkSans-Medium.ttf in Resources */,
 				D443CDC1214BDB1600A7100F /* ActivityIndicatorView.xib in Resources */,
+				D4C8C981215A844400C831F0 /* WorkSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
