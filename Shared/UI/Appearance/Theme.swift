@@ -10,12 +10,33 @@ import UIKit
 
 struct Theme {
 
+	// MARK: - Colors
+
+	struct Color {
+
+		static let lightText = UIColor(red:0.61, green:0.62, blue:0.63, alpha:1.0) //#9B9EA0
+		static let darkText = UIColor(red:0.20, green:0.20, blue:0.20, alpha:1.0) //#333333
+
+		static let accent = UIColor(red:0.04, green:0.62, blue:0.98, alpha:1.0) //#0A9FFA
+		static let error = UIColor(red:0.85, green:0.02, blue:0.20, alpha:1.0) //#D90634
+
+		static let separator = UIColor(red:0.90, green:0.91, blue:0.92, alpha:1.0) //#E5E8EB
+		static let contentBackground = UIColor.white
+		static let background = UIColor(red:0.98, green:0.98, blue:0.99, alpha:1.0) //#FAFBFC
+
+		static let accentGradientStart = UIColor(red:0.00, green:0.75, blue:0.99, alpha:1.0) //#00C0FD
+		static let accentGradientEnd = UIColor(red:0.13, green:0.29, blue:0.95, alpha:1.0) //#224AF2
+
+	}
+
+	// MARK: - Fonts
+
 	struct Font {
 
 		static let fontName = "Work Sans"
 		static let scaledFont: ScaledFont = ScaledFont(fontName: fontName)
 
-		//MARK - Computed fonts
+		// MARK: - Computed fonts
 
 		static var largeTitleFont: UIFont {
 			return scaledFont.font(for: .title1)
