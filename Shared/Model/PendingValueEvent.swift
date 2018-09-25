@@ -12,7 +12,7 @@ import CoreData
 @objc(PendingValueEvent)
 public class PendingValueEvent: NSManagedObject {
 
-	convenience init?(in managedContext: NSManagedObjectContext, shop: Shop, type: ValueEventType, value: Int64, clientAddress: String, date: Date) {
+	convenience init?(in managedContext: NSManagedObjectContext, shop: Shop, type: ValueEventType, value: Int64, productName: String? = nil,  clientAddress: String, date: Date) {
 		guard let entity = PendingValueEvent.entity(in: managedContext)
 			else {
 				return nil
@@ -22,6 +22,7 @@ public class PendingValueEvent: NSManagedObject {
 		self.value = value
 		self.clientAddress = clientAddress
 		self.storedDate = date as NSDate
+		self.productName = productName
 		self.shop = shop
 	}
 
@@ -46,6 +47,7 @@ extension PendingValueEvent {
 	@NSManaged public var clientAddress: String
 	@NSManaged public var type: String
 	@NSManaged public var storedDate: NSDate
+	@NSManaged public var productName: String?
 	@NSManaged public var shop: Shop?
 
 }

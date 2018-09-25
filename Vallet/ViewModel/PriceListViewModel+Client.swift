@@ -18,7 +18,7 @@ extension PriceListViewModel {
 
 		guard let managedObjectContext = managedObjectContext,
 			product.price > 0,
-			let pendingEvent = PendingValueEvent(in: managedObjectContext, shop: shop, type: .redeem, value: product.price, clientAddress: clientAddress, date: Date())
+			let pendingEvent = PendingValueEvent(in: managedObjectContext, shop: shop, type: .redeem, value: product.price, productName: product.name, clientAddress: clientAddress, date: Date())
 			else {
 				completion(Result.failure(Web3Error.unknownError))
 				return
