@@ -141,6 +141,12 @@
 		D4C8C97F215A844400C831F0 /* WorkSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C96E215A844300C831F0 /* WorkSans-Bold.ttf */; };
 		D4C8C980215A844400C831F0 /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C96F215A844300C831F0 /* WorkSans-Regular.ttf */; };
 		D4C8C981215A844400C831F0 /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C96F215A844300C831F0 /* WorkSans-Regular.ttf */; };
+		D4C8C983215A8BF000C831F0 /* Work Sans.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C982215A8BEF00C831F0 /* Work Sans.plist */; };
+		D4C8C984215A8BF000C831F0 /* Work Sans.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C982215A8BEF00C831F0 /* Work Sans.plist */; };
+		D4C8C986215A8D7B00C831F0 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C985215A8D7B00C831F0 /* Theme.swift */; };
+		D4C8C987215A8D7B00C831F0 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C985215A8D7B00C831F0 /* Theme.swift */; };
+		D4C8C98A215A8DC700C831F0 /* ScaledFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C989215A8DC700C831F0 /* ScaledFont.swift */; };
+		D4C8C98B215A8DC700C831F0 /* ScaledFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C989215A8DC700C831F0 /* ScaledFont.swift */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -252,6 +258,9 @@
 		D4C8C968215A844000C831F0 /* WorkSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Medium.ttf"; sourceTree = "<group>"; };
 		D4C8C96E215A844300C831F0 /* WorkSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Bold.ttf"; sourceTree = "<group>"; };
 		D4C8C96F215A844300C831F0 /* WorkSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Regular.ttf"; sourceTree = "<group>"; };
+		D4C8C982215A8BEF00C831F0 /* Work Sans.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Work Sans.plist"; sourceTree = "<group>"; };
+		D4C8C985215A8D7B00C831F0 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		D4C8C989215A8DC700C831F0 /* ScaledFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledFont.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -527,6 +536,7 @@
 		D4C5CD912147D30200AB67D7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D4C8C988215A8DB600C831F0 /* Appearance */,
 				D443CDAE214BB19B00A7100F /* View */,
 				D443CD95214AA05100A7100F /* Cell */,
 				D4C5CD922147D31600AB67D7 /* QRCode */,
@@ -664,11 +674,21 @@
 		D4C8C966215A840B00C831F0 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				D4C8C982215A8BEF00C831F0 /* Work Sans.plist */,
 				D4C8C96E215A844300C831F0 /* WorkSans-Bold.ttf */,
 				D4C8C968215A844000C831F0 /* WorkSans-Medium.ttf */,
 				D4C8C96F215A844300C831F0 /* WorkSans-Regular.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		D4C8C988215A8DB600C831F0 /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				D4C8C985215A8D7B00C831F0 /* Theme.swift */,
+				D4C8C989215A8DC700C831F0 /* ScaledFont.swift */,
+			);
+			path = Appearance;
 			sourceTree = "<group>";
 		};
 		F210E04398A1C2678A4653B5 /* Frameworks */ = {
@@ -795,6 +815,7 @@
 				D4C8C9522158E6EC00C831F0 /* ProductCollectionViewCell.xib in Resources */,
 				D443CDB6214BB3EE00A7100F /* TextInputView.xib in Resources */,
 				D429F85421400572004427F0 /* Main.storyboard in Resources */,
+				D4C8C983215A8BF000C831F0 /* Work Sans.plist in Resources */,
 				D443CD9A214AA0A500A7100F /* ShopTableViewCell.xib in Resources */,
 				D48D957921523F6000840707 /* ClientHistoryEventTableViewCell.xib in Resources */,
 				D4C8C972215A844400C831F0 /* WorkSans-Medium.ttf in Resources */,
@@ -823,6 +844,7 @@
 				D4C8C9502158E6DF00C831F0 /* ProductCollectionViewCell.xib in Resources */,
 				D443CDB7214BB3EE00A7100F /* TextInputView.xib in Resources */,
 				D429F89621400A5A004427F0 /* Main.storyboard in Resources */,
+				D4C8C984215A8BF000C831F0 /* Work Sans.plist in Resources */,
 				D443CD9B214AA0A500A7100F /* ShopTableViewCell.xib in Resources */,
 				D48D958521525B0000840707 /* AdminHistoryEventTableViewCell.xib in Resources */,
 				D4C8C973215A844400C831F0 /* WorkSans-Medium.ttf in Resources */,
@@ -946,6 +968,7 @@
 				D4C8C965215A36B700C831F0 /* NoShopsViewController.swift in Sources */,
 				D4C5CDA2214819AD00AB67D7 /* SideMenuViewController.swift in Sources */,
 				D429F8B721411FA2004427F0 /* Web3Manager.swift in Sources */,
+				D4C8C98A215A8DC700C831F0 /* ScaledFont.swift in Sources */,
 				D4C8C963215A30DB00C831F0 /* ClientStartViewController.swift in Sources */,
 				D4C8C9512158E6E300C831F0 /* ProductCollectionViewCell.swift in Sources */,
 				D443CDA5214AA46500A7100F /* NibBackedCell.swift in Sources */,
@@ -958,6 +981,7 @@
 				D429F8A821400DAE004427F0 /* Constants.swift in Sources */,
 				D48D956F21512BDE00840707 /* ValueEvent.swift in Sources */,
 				D4C8C95B215936AF00C831F0 /* ClientPriceListViewController.swift in Sources */,
+				D4C8C986215A8D7B00C831F0 /* Theme.swift in Sources */,
 				D4C8C9552158ECC900C831F0 /* PriceListViewModel.swift in Sources */,
 				D4C5CDB521490DC500AB67D7 /* Shop.swift in Sources */,
 				D4C5CDAA2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
@@ -1011,6 +1035,7 @@
 				D443CD93214A93E400A7100F /* ShopManager.swift in Sources */,
 				D443CDAA214AA73700A7100F /* NSObject.swift in Sources */,
 				D4C5CDA3214819AD00AB67D7 /* SideMenuViewController.swift in Sources */,
+				D4C8C98B215A8DC700C831F0 /* ScaledFont.swift in Sources */,
 				D429F8B821411FA2004427F0 /* Web3Manager.swift in Sources */,
 				D443CDA6214AA46500A7100F /* NibBackedCell.swift in Sources */,
 				D429F8B021401049004427F0 /* Result.swift in Sources */,
@@ -1034,6 +1059,7 @@
 				D4C8C9542158ECC600C831F0 /* PriceListViewModel.swift in Sources */,
 				D4C8C9352153DA7D00C831F0 /* HTTPMethod.swift in Sources */,
 				D4C8C9262153B3C200C831F0 /* CodingUserInfoKey.swift in Sources */,
+				D4C8C987215A8D7B00C831F0 /* Theme.swift in Sources */,
 				D4C5CDAB2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
 				D443CDB1214BB26400A7100F /* TextInputView.swift in Sources */,
 				D443CDBE214BDAF900A7100F /* ActivityIndicatorView.swift in Sources */,
