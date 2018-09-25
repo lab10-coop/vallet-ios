@@ -14,6 +14,7 @@ extension MainViewController {
 		guard let shop = shop
 			else {
 				shopNameLabel.text = ""
+				addNoShopsViewController()
 				return
 		}
 
@@ -43,6 +44,17 @@ extension MainViewController {
 		})
 
 		NotificationCenter.default.addObserver(self, selector: #selector(updateBalance), name: Constants.Notification.newValueEvent, object: nil)
+	}
+
+	private func addNoShopsViewController() {
+		guard let noShopsViewController = NoShopsViewController.instance()
+			else {
+				return
+		}
+		noShopsViewController.container = self
+		noShopsViewController.delegate = self
+		pageViewController?.setViewControllers([noShopsViewController], direction: .forward, animated: false, completion: { (success) in
+		})
 	}
 
 	@objc func updateBalance() {

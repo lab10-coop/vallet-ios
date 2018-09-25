@@ -134,6 +134,7 @@
 		D4C8C95F21596BE100C831F0 /* PaymentConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C95E21596BE100C831F0 /* PaymentConfirmationViewController.swift */; };
 		D4C8C961215A105100C831F0 /* AdminStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C960215A105100C831F0 /* AdminStartViewController.swift */; };
 		D4C8C963215A30DB00C831F0 /* ClientStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C962215A30DB00C831F0 /* ClientStartViewController.swift */; };
+		D4C8C965215A36B700C831F0 /* NoShopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C964215A36B700C831F0 /* NoShopsViewController.swift */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -241,6 +242,7 @@
 		D4C8C95E21596BE100C831F0 /* PaymentConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentConfirmationViewController.swift; sourceTree = "<group>"; };
 		D4C8C960215A105100C831F0 /* AdminStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminStartViewController.swift; sourceTree = "<group>"; };
 		D4C8C962215A30DB00C831F0 /* ClientStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientStartViewController.swift; sourceTree = "<group>"; };
+		D4C8C964215A36B700C831F0 /* NoShopsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoShopsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -471,6 +473,7 @@
 				D48D957321523BBD00840707 /* ClientHistoryViewController.swift */,
 				D4C8C95A215936AF00C831F0 /* ClientPriceListViewController.swift */,
 				D4C8C95E21596BE100C831F0 /* PaymentConfirmationViewController.swift */,
+				D4C8C964215A36B700C831F0 /* NoShopsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -914,6 +917,7 @@
 			files = (
 				D443CD92214A93E400A7100F /* ShopManager.swift in Sources */,
 				D443CDA9214AA73700A7100F /* NSObject.swift in Sources */,
+				D4C8C965215A36B700C831F0 /* NoShopsViewController.swift in Sources */,
 				D4C5CDA2214819AD00AB67D7 /* SideMenuViewController.swift in Sources */,
 				D429F8B721411FA2004427F0 /* Web3Manager.swift in Sources */,
 				D4C8C963215A30DB00C831F0 /* ClientStartViewController.swift in Sources */,
