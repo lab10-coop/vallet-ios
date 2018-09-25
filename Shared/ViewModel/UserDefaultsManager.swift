@@ -20,4 +20,14 @@ class UserDefaultsManager {
 		}
 	}
 
+	static var userName: String? {
+		set {
+			UserDefaults.standard.set(newValue, forKey: Constants.UserDefaultsKey.userName)
+			UserDefaults.standard.synchronize()
+		}
+		get {
+			return UserDefaults.standard.value(forKey: Constants.UserDefaultsKey.userName) as? String
+		}
+	}
+
 }

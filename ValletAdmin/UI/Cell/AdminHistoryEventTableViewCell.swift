@@ -13,6 +13,16 @@ class AdminHistoryEventTableViewCell: UITableViewCell, NibBackedTableViewCell {
 	@IBOutlet var descriptionLabel: UILabel!
 	@IBOutlet var valueLabel: UILabel!
 
+	private var dateOutput: String {
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateStyle = .short
+		var dateString = "no date"
+		if let date = event?.date {
+			dateString = dateFormatter.string(from: date)
+		}
+		return dateString
+	}
+
 	var event: ValueEvent? {
 		didSet {
 			guard let event = event
@@ -20,7 +30,7 @@ class AdminHistoryEventTableViewCell: UITableViewCell, NibBackedTableViewCell {
 					prepareForReuse()
 					return
 			}
-			descriptionLabel.text = "\(event.type.description) \(event.date?.description ?? "no date")"
+			descriptionLabel.text = "\(event.type.description) \(dateOutput)"
 			valueLabel.text = event.type == ValueEventType.issue.rawValue ? "- \(event.value)" : "+ \(event.value)"
 		}
 	}

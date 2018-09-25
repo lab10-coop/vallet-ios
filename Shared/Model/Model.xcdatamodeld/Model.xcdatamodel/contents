@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="PendingValueEvent" representedClassName="PendingValueEvent" syncable="YES">
         <attribute name="clientAddress" attributeType="String" syncable="YES"/>
+        <attribute name="productName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="storedDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="type" attributeType="String" syncable="YES"/>
         <attribute name="value" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -37,6 +38,7 @@
     </entity>
     <entity name="ValueEvent" representedClassName="ValueEvent" syncable="YES">
         <attribute name="clientAddress" attributeType="String" syncable="YES"/>
+        <attribute name="productName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" attributeType="String" syncable="YES"/>
         <attribute name="storedBlockHash" attributeType="Binary" customClassName=".Data" syncable="YES"/>
         <attribute name="storedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" customClassName="Date" syncable="YES"/>
@@ -51,10 +53,10 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="PendingValueEvent" positionX="187" positionY="177" width="128" height="118"/>
+        <element name="PendingValueEvent" positionX="187" positionY="177" width="128" height="135"/>
         <element name="PriceList" positionX="-63" positionY="135" width="128" height="105"/>
         <element name="Product" positionX="-326" positionY="-18" width="128" height="120"/>
         <element name="Shop" positionX="-63" positionY="-18" width="128" height="163"/>
-        <element name="ValueEvent" positionX="187" positionY="-18" width="128" height="165"/>
+        <element name="ValueEvent" positionX="187" positionY="-18" width="128" height="180"/>
     </elements>
 </model>

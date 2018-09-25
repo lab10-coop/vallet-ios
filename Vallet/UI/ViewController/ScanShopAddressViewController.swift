@@ -35,11 +35,12 @@ class ScanShopAddressViewController: UIViewController {
 	@discardableResult
 	static func present(over viewController: UIViewController) -> ScanShopAddressViewController? {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-		guard let scanShopAddressViewController = storyboard.instantiateViewController(withIdentifier: "ScanShopAddressViewController") as? ScanShopAddressViewController
+		guard let navigationController = storyboard.instantiateViewController(withIdentifier: "ScanShopAddressNavigationController") as? UINavigationController,
+			let scanShopAddressViewController = navigationController.topViewController as? ScanShopAddressViewController
 			else {
 				return nil
 		}
-		viewController.present(scanShopAddressViewController, animated: false)
+		viewController.present(navigationController, animated: false)
 		return scanShopAddressViewController
 	}
 

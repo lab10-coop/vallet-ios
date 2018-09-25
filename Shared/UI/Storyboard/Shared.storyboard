@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fV0-dP-h2U">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -103,5 +103,110 @@
             </objects>
             <point key="canvasLocation" x="85.599999999999994" y="145.56650246305421"/>
         </scene>
+        <!--Main View Controller-->
+        <scene sceneID="Mi3-Vy-Q6f">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fV0-dP-h2U" customClass="MainViewController" customModule="Vallet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sb0-HC-91z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zRf-bP-RgQ">
+                                <rect key="frame" x="137.66666666666666" y="60.000000000000007" width="100" height="20.333333333333336"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="HrJ-cs-Bz4">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="20.333333333333332"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" text="Shop Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdQ-CW-E16">
+                                                <rect key="frame" x="0.0" y="0.0" width="89.333333333333329" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="^" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2c-fw-iLQ">
+                                                <rect key="frame" x="92.333333333333343" y="0.0" width="7.6666666666666714" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="749" verticalHuggingPriority="749" horizontalCompressionResistancePriority="754" verticalCompressionResistancePriority="754" text="Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Up-lT-TrN">
+                                        <rect key="frame" x="19.666666666666682" y="-60" width="60.666666666666657" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBi-kq-gNy">
+                                <rect key="frame" x="137" y="60.000000000000007" width="100" height="20.333333333333336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="shopShopMenu:" destination="fV0-dP-h2U" eventType="touchUpInside" id="H2U-M3-zxQ"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="obT-o8-DvS">
+                                <rect key="frame" x="10" y="96.333333333333329" width="355" height="29"/>
+                                <segments>
+                                    <segment title="History"/>
+                                    <segment title="Pricelist"/>
+                                </segments>
+                                <connections>
+                                    <action selector="didChangeContent:" destination="fV0-dP-h2U" eventType="valueChanged" id="vGP-Pn-jNh"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43w-Hg-OjD">
+                                <rect key="frame" x="0.0" y="134.33333333333331" width="375" height="643.66666666666674"/>
+                                <connections>
+                                    <segue destination="pDq-cy-8vN" kind="embed" identifier="EmbedContentSegue" id="k05-vS-WN7"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOy-Rz-xnh">
+                                <rect key="frame" x="347" y="59" width="18" height="22"/>
+                                <state key="normal" image="QRIcon"/>
+                                <connections>
+                                    <action selector="showQRCode:" destination="fV0-dP-h2U" eventType="touchUpInside" id="yrf-pg-7YT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="obT-o8-DvS" firstAttribute="leading" secondItem="8Lx-ip-Bkz" secondAttribute="leading" constant="10" id="23P-mF-fCg"/>
+                            <constraint firstItem="8Lx-ip-Bkz" firstAttribute="bottom" secondItem="43w-Hg-OjD" secondAttribute="bottom" id="BWd-r6-XY3"/>
+                            <constraint firstItem="8Lx-ip-Bkz" firstAttribute="trailing" secondItem="KOy-Rz-xnh" secondAttribute="trailing" constant="10" id="EUu-0T-UIx"/>
+                            <constraint firstItem="43w-Hg-OjD" firstAttribute="top" secondItem="obT-o8-DvS" secondAttribute="bottom" constant="10" id="U8K-JO-V76"/>
+                            <constraint firstItem="KOy-Rz-xnh" firstAttribute="centerY" secondItem="HrJ-cs-Bz4" secondAttribute="centerY" id="ZT1-4d-644"/>
+                            <constraint firstItem="8Lx-ip-Bkz" firstAttribute="trailing" secondItem="obT-o8-DvS" secondAttribute="trailing" constant="10" id="bc7-p1-rPh"/>
+                            <constraint firstItem="43w-Hg-OjD" firstAttribute="leading" secondItem="8Lx-ip-Bkz" secondAttribute="leading" id="dKi-gw-582"/>
+                            <constraint firstItem="zRf-bP-RgQ" firstAttribute="centerX" secondItem="8Lx-ip-Bkz" secondAttribute="centerX" id="f05-KF-1zQ"/>
+                            <constraint firstItem="8Lx-ip-Bkz" firstAttribute="trailing" secondItem="43w-Hg-OjD" secondAttribute="trailing" id="hno-L6-b8e"/>
+                            <constraint firstItem="zRf-bP-RgQ" firstAttribute="top" secondItem="8Lx-ip-Bkz" secondAttribute="top" constant="16" id="ojH-6X-X8W"/>
+                            <constraint firstItem="obT-o8-DvS" firstAttribute="top" secondItem="zRf-bP-RgQ" secondAttribute="bottom" constant="16" id="rgZ-tx-a6q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8Lx-ip-Bkz"/>
+                    </view>
+                    <connections>
+                        <outlet property="clientBalanceLabel" destination="3Up-lT-TrN" id="J8r-ES-KOw"/>
+                        <outlet property="containerView" destination="43w-Hg-OjD" id="4a6-oh-iKG"/>
+                        <outlet property="contentSegmentedControl" destination="obT-o8-DvS" id="mmU-Nv-MXV"/>
+                        <outlet property="shopNameLabel" destination="vdQ-CW-E16" id="xZE-bV-f9q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7W4-1s-XNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052" y="145.27736131934034"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="amy-iD-Zo3">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="pDq-cy-8vN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gwg-K3-Veb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1862" y="179"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="QRIcon" width="18" height="18"/>
+    </resources>
 </document>
