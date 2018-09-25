@@ -153,6 +153,10 @@
 		D4C8C992215A9D9F00C831F0 /* LabelCustomizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C990215A9D9F00C831F0 /* LabelCustomizable.swift */; };
 		D4C8C994215A9E6500C831F0 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C993215A9E6500C831F0 /* Label.swift */; };
 		D4C8C995215A9E6500C831F0 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C993215A9E6500C831F0 /* Label.swift */; };
+		D4C8C998215AA1BD00C831F0 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C997215AA1BD00C831F0 /* View.swift */; };
+		D4C8C999215AA1BD00C831F0 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C997215AA1BD00C831F0 /* View.swift */; };
+		D4C8C99B215AA22500C831F0 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C99A215AA22500C831F0 /* Appearance.swift */; };
+		D4C8C99C215AA22500C831F0 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C99A215AA22500C831F0 /* Appearance.swift */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -270,6 +274,8 @@
 		D4C8C98D215A9D7300C831F0 /* BaseLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
 		D4C8C990215A9D9F00C831F0 /* LabelCustomizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCustomizable.swift; sourceTree = "<group>"; };
 		D4C8C993215A9E6500C831F0 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		D4C8C997215AA1BD00C831F0 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		D4C8C99A215AA22500C831F0 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -443,6 +449,7 @@
 		D443CDAE214BB19B00A7100F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D4C8C997215AA1BD00C831F0 /* View.swift */,
 				D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */,
 				D443CDAF214BB26400A7100F /* TextInputView.swift */,
 				D443CDB5214BB3EE00A7100F /* TextInputView.xib */,
@@ -697,6 +704,7 @@
 			children = (
 				D4C8C985215A8D7B00C831F0 /* Theme.swift */,
 				D4C8C989215A8DC700C831F0 /* ScaledFont.swift */,
+				D4C8C99A215AA22500C831F0 /* Appearance.swift */,
 			);
 			path = Appearance;
 			sourceTree = "<group>";
@@ -992,6 +1000,7 @@
 				D4C8C963215A30DB00C831F0 /* ClientStartViewController.swift in Sources */,
 				D4C8C9512158E6E300C831F0 /* ProductCollectionViewCell.swift in Sources */,
 				D443CDA5214AA46500A7100F /* NibBackedCell.swift in Sources */,
+				D4C8C99B215AA22500C831F0 /* Appearance.swift in Sources */,
 				D429F8AF21401049004427F0 /* Result.swift in Sources */,
 				D4C8C95D2159370200C831F0 /* PriceListViewModel+Client.swift in Sources */,
 				D429F8C12141724C004427F0 /* TokenType.swift in Sources */,
@@ -1038,6 +1047,7 @@
 				D4C8C9312153D88200C831F0 /* NetworkManager.swift in Sources */,
 				D4C8C94A2158D37200C831F0 /* MainViewController+Client.swift in Sources */,
 				D4C8C994215A9E6500C831F0 /* Label.swift in Sources */,
+				D4C8C998215AA1BD00C831F0 /* View.swift in Sources */,
 				D4C8C9232153A4FA00C831F0 /* PriceList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1109,7 +1119,9 @@
 				D429F8BC21416D9D004427F0 /* TokenFactory.swift in Sources */,
 				D4C5CD982147DA2700AB67D7 /* QRCodeReaderView.swift in Sources */,
 				D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */,
+				D4C8C99C215AA22500C831F0 /* Appearance.swift in Sources */,
 				D4C5CD9B2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */,
+				D4C8C999215AA1BD00C831F0 /* View.swift in Sources */,
 				D4C8C9282153B7CF00C831F0 /* Product.swift in Sources */,
 				D4C8C94C2158D5A800C831F0 /* AdminPriceListViewController.swift in Sources */,
 			);
