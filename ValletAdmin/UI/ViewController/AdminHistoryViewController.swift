@@ -13,6 +13,12 @@ class AdminHistoryViewController: UIViewController {
 	@IBOutlet private var tableView: UITableView!
 	@IBOutlet private var totalSupplyLabel: UILabel!
 
+	private lazy var refreshControl: UIRefreshControl = {
+		let refreshControl = UIRefreshControl()
+		refreshControl.addTarget(self, action: #selector(reloadData), for: UIControlEvents.valueChanged)
+		return refreshControl
+	}()
+
 	var historyViewModel: HistoryViewModel?
 	var shop: Shop?
 	weak var container: UIViewController?
@@ -51,6 +57,8 @@ class AdminHistoryViewController: UIViewController {
 
 		AdminHistoryEventTableViewCell.register(for: tableView)
 
+		tableView.addSubview(refreshControl)
+
 		reloadData()
 	}
 
@@ -60,12 +68,13 @@ class AdminHistoryViewController: UIViewController {
 		updateTotalSupply()
 	}
 
-	private func reloadData() {
+	@objc private func reloadData() {
 		historyViewModel?.reload(completion: { [weak self] (result) in
 			guard case .success = result
 				else {
 					return
 			}
+			self?.refreshControl.endRefreshing()
 			self?.tableView.reloadData()
 		})
 	}

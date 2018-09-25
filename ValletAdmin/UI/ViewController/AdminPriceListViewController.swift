@@ -12,6 +12,12 @@ class AdminPriceListViewController: UIViewController {
 
 	@IBOutlet private var collectionView: UICollectionView!
 
+	private lazy var refreshControl: UIRefreshControl = {
+		let refreshControl = UIRefreshControl()
+		refreshControl.addTarget(self, action: #selector(reloadData), for: UIControlEvents.valueChanged)
+		return refreshControl
+	}()
+
 	private let cellSpacing: CGFloat = 5
 	private var numCellsPerRow = 2
 
@@ -43,11 +49,18 @@ class AdminPriceListViewController: UIViewController {
 
 		ProductCollectionViewCell.register(for: collectionView)
 
+		collectionView.addSubview(refreshControl)
+
 		priceListViewModel = PriceListViewModel(shop: shop)
 		priceListViewModel?.newDataBlock = { [weak self] in
-			self?.collectionView?.reloadData()
+			self?.refreshControl.endRefreshing()
+			self?.collectionView.reloadData()
 		}
 
+		reloadData()
+	}
+
+	@objc private func reloadData() {
 		priceListViewModel?.reload()
 	}
 
