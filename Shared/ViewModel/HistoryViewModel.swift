@@ -55,11 +55,15 @@ class HistoryViewModel {
 
 	func updateEvents() {
 		// update events from the database
-		guard let updatedEvents = (try? managedObjectContext?.fetch(ValueEvent.fetchRequest())) as? [ValueEvent]
+		guard var updatedEvents = (try? managedObjectContext?.fetch(ValueEvent.fetchRequest())) as? [ValueEvent]
 			else {
 				return
 		}
-		events = updatedEvents.filter { $0.shop == shop }
+		updatedEvents = updatedEvents.filter { $0.shop == shop }
+		if updatedEvents.count != events.count {
+			NotificationCenter.default.post(name: Constants.Notification.newValueEvent, object: nil)
+		}
+		events = updatedEvents
 		fetchDateFor(events: events) { (result) in
 			print("Fetch date events result: \(result)")
 		}
