@@ -19,18 +19,18 @@ class CreateShopViewController: UIViewController {
 
 	@IBOutlet private var nameInputView: TextInputView!
 	@IBOutlet private var submitButton: UIButton!
-	@IBOutlet private var closeButton: UIButton!
 
 	weak var delegate: CreateShopDelegate?
 
 	@discardableResult
 	static func present(over viewController: UIViewController) -> CreateShopViewController? {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-		guard let createShopViewController = storyboard.instantiateViewController(withIdentifier: "CreateShopViewController") as? CreateShopViewController
+		guard let createShopNavigationController = storyboard.instantiateViewController(withIdentifier: "CreateShopNavigationController") as? UINavigationController,
+			let createShopViewController = createShopNavigationController.topViewController as? CreateShopViewController
 			else {
 				return nil
 		}
-		viewController.present(createShopViewController, animated: false)
+		viewController.present(createShopNavigationController, animated: false)
 		return createShopViewController
 	}
 
