@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="93G-m7-1Nu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -299,6 +299,61 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3543.1999999999998" y="1634.9325337331336"/>
+        </scene>
+        <!--Client Start View Controller-->
+        <scene sceneID="6YQ-sP-SYA">
+            <objects>
+                <viewController storyboardIdentifier="ClientStartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="93G-m7-1Nu" customClass="ClientStartViewController" customModule="Vallet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3jj-rb-Bmp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! Enter your name and get started" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7Q-NN-6Na">
+                                <rect key="frame" x="52" y="60" width="271" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KsM-6B-Vdr" customClass="TextInputView" customModule="ValletAdmin" customModuleProvider="target">
+                                <rect key="frame" x="20" y="133" width="335" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="lcd-zc-VfV"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Username"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRequired" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ae-kr-lI3">
+                                <rect key="frame" x="145" y="219" width="84" height="30"/>
+                                <state key="normal" title="Get Started!"/>
+                                <connections>
+                                    <action selector="submit:" destination="93G-m7-1Nu" eventType="touchUpInside" id="yBx-Jo-tkg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KsM-6B-Vdr" firstAttribute="top" secondItem="L7Q-NN-6Na" secondAttribute="bottom" constant="32" id="Cwn-Ae-8Gq"/>
+                            <constraint firstItem="agJ-cj-Yx5" firstAttribute="trailing" secondItem="L7Q-NN-6Na" secondAttribute="trailing" constant="52" id="JHc-69-5VJ"/>
+                            <constraint firstItem="L7Q-NN-6Na" firstAttribute="leading" secondItem="agJ-cj-Yx5" secondAttribute="leading" constant="52" id="MAc-HM-wxV"/>
+                            <constraint firstItem="5ae-kr-lI3" firstAttribute="centerX" secondItem="KsM-6B-Vdr" secondAttribute="centerX" id="P4r-vn-fsC"/>
+                            <constraint firstItem="KsM-6B-Vdr" firstAttribute="leading" secondItem="agJ-cj-Yx5" secondAttribute="leading" constant="20" id="bAd-32-b2t"/>
+                            <constraint firstItem="L7Q-NN-6Na" firstAttribute="top" secondItem="agJ-cj-Yx5" secondAttribute="top" constant="40" id="bwM-01-nxB"/>
+                            <constraint firstItem="agJ-cj-Yx5" firstAttribute="trailing" secondItem="KsM-6B-Vdr" secondAttribute="trailing" constant="20" id="gIq-9c-XbO"/>
+                            <constraint firstItem="5ae-kr-lI3" firstAttribute="top" secondItem="KsM-6B-Vdr" secondAttribute="bottom" constant="26" id="ssn-Kp-eD2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="agJ-cj-Yx5"/>
+                    </view>
+                    <connections>
+                        <outlet property="nameInputView" destination="KsM-6B-Vdr" id="Gvt-3c-tPG"/>
+                        <outlet property="submitButton" destination="5ae-kr-lI3" id="xuz-VE-ST0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7bS-jf-pH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1625" y="-763"/>
         </scene>
     </scenes>
     <resources>

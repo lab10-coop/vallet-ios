@@ -55,6 +55,7 @@ struct Constants {
 	struct UserDefaultsKey {
 
 		static let selectedShopAddress = "selectedShopAddress"
+		static let userName = "userName"
 
 	}
 

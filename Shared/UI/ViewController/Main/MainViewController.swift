@@ -20,10 +20,6 @@ class MainViewController: UIViewController {
 
 	var shop: Shop? {
 		didSet {
-			guard let shop = shop
-				else {
-					return
-			}
 			setupContent(for: shop)
 		}
 	}
@@ -32,6 +28,9 @@ class MainViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
+		shopNameLabel.text = ""
+		clientBalanceLabel.text = ""
 
 		self.shop = ShopManager.selectedShop
 	}

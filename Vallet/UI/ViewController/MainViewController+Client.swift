@@ -10,7 +10,13 @@ import UIKit
 
 extension MainViewController {
 
-	func setupContent(for shop: Shop) {
+	func setupContent(for shop: Shop?) {
+		guard let shop = shop
+			else {
+				shopNameLabel.text = ""
+				return
+		}
+
 		shopNameLabel.text = shop.name
 
 		clientBalanceLabel.isHidden = false
