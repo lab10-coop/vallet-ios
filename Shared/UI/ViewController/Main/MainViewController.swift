@@ -36,6 +36,17 @@ class MainViewController: UIViewController {
 		self.shop = ShopManager.selectedShop
 	}
 
+	static func makeAppRootViewController() {
+		let storyboard = UIStoryboard(name: "Shared", bundle: Bundle.main)
+		guard let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController,
+			let appDelegate = UIApplication.shared.delegate as? AppDelegate
+			else {
+				return
+		}
+
+		appDelegate.window?.rootViewController = mainViewController
+	}
+
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		switch segue.identifier {
 		case "EmbedContentSegue":

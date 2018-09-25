@@ -1,37 +1,28 @@
 //
-//  CreateShopViewController.swift
-//  Vallet
+//  AdminStartViewController.swift
+//  ValletAdmin
 //
-//  Created by Matija Kregar on 14/09/2018.
+//  Created by Matija Kregar on 25/09/2018.
 //  Copyright © 2018 Matija Kregar. All rights reserved.
 //
 
 import UIKit
-import web3swift
 
-protocol CreateShopDelegate: class {
-
-	func didCreate(shop: Shop)
-
-}
-
-class CreateShopViewController: UIViewController {
+class AdminStartViewController: UIViewController {
 
 	@IBOutlet private var nameInputView: TextInputView!
 	@IBOutlet private var submitButton: UIButton!
 
-	weak var delegate: CreateShopDelegate?
 
-	@discardableResult
-	static func present(over viewController: UIViewController) -> CreateShopViewController? {
+	static func makeAppRootViewController() {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-		guard let createShopNavigationController = storyboard.instantiateViewController(withIdentifier: "CreateShopNavigationController") as? UINavigationController,
-			let createShopViewController = createShopNavigationController.topViewController as? CreateShopViewController
+		guard let startViewController = storyboard.instantiateViewController(withIdentifier: "AdminStartViewController") as? AdminStartViewController,
+			let appDelegate = UIApplication.shared.delegate as? AppDelegate
 			else {
-				return nil
+				return
 		}
-		viewController.present(createShopNavigationController, animated: false)
-		return createShopViewController
+
+		appDelegate.window?.rootViewController = startViewController
 	}
 
 	override func viewDidLoad() {
@@ -40,10 +31,10 @@ class CreateShopViewController: UIViewController {
 		nameInputView.type = .name
 		nameInputView.returnKeyType = .send
 		nameInputView.delegate = self
-	}
 
-	@IBAction func close(_ sender: Any? = nil) {
-		dismiss(animated: true, completion: nil)
+		FaucetManager.getFunds(for: Wallet.address) { result in
+			print("Get funds result: \(result)")
+		}
 	}
 
 	@IBAction func submit(_ sender: Any? = nil) {
@@ -61,11 +52,11 @@ class CreateShopViewController: UIViewController {
 
 	private func createShop(named name: String) {
 		showActivityIndicator()
+		
 		ShopManager.createShop(named: name) { [weak self] (result) in
 			switch result {
-			case .success(let shop):
-				self?.delegate?.didCreate(shop: shop)
-				self?.close()
+			case .success:
+				self?.continueToApp()
 			case .failure(let error):
 				print("Create shop error: \(error)")
 			}
@@ -73,16 +64,21 @@ class CreateShopViewController: UIViewController {
 		}
 	}
 
+	func continueToApp() {
+		MainViewController.makeAppRootViewController()
+	}
+
 }
 
 
 // MARK: - TextInputDelegate
 
-extension CreateShopViewController: TextInputDelegate {
+extension AdminStartViewController: TextInputDelegate {
 
 	func inputFieldHitReturnKey(_ inputField: TextInputView) {
 		submit(inputField)
 	}
 
 }
+
 

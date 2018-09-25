@@ -270,6 +270,61 @@
             </objects>
             <point key="canvasLocation" x="1934" y="937"/>
         </scene>
+        <!--Admin Start View Controller-->
+        <scene sceneID="vsM-7h-JEp">
+            <objects>
+                <viewController storyboardIdentifier="AdminStartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lC8-Wi-pbD" customClass="AdminStartViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0ZT-L7-dmj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome shop owner! Name your shop and get started" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5z-HR-jRA">
+                                <rect key="frame" x="52" y="60" width="271" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhL-lk-unF" customClass="TextInputView" customModule="ValletAdmin" customModuleProvider="target">
+                                <rect key="frame" x="20" y="133" width="335" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="t6w-Gt-EXQ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Shop name"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRequired" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aG3-GW-K2T">
+                                <rect key="frame" x="145" y="219" width="84" height="30"/>
+                                <state key="normal" title="Get Started!"/>
+                                <connections>
+                                    <action selector="submit:" destination="lC8-Wi-pbD" eventType="touchUpInside" id="xZ6-Jj-Z3Y"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zhL-lk-unF" firstAttribute="top" secondItem="J5z-HR-jRA" secondAttribute="bottom" constant="32" id="8pg-3I-Vdu"/>
+                            <constraint firstItem="RpZ-Cr-xI5" firstAttribute="trailing" secondItem="zhL-lk-unF" secondAttribute="trailing" constant="20" id="9Q9-89-MXY"/>
+                            <constraint firstItem="J5z-HR-jRA" firstAttribute="top" secondItem="RpZ-Cr-xI5" secondAttribute="top" constant="40" id="AU2-h0-mJe"/>
+                            <constraint firstItem="aG3-GW-K2T" firstAttribute="top" secondItem="zhL-lk-unF" secondAttribute="bottom" constant="26" id="OMF-r4-BPl"/>
+                            <constraint firstItem="aG3-GW-K2T" firstAttribute="centerX" secondItem="zhL-lk-unF" secondAttribute="centerX" id="RjK-yd-a7L"/>
+                            <constraint firstItem="RpZ-Cr-xI5" firstAttribute="trailing" secondItem="J5z-HR-jRA" secondAttribute="trailing" constant="52" id="UU5-dR-UD1"/>
+                            <constraint firstItem="J5z-HR-jRA" firstAttribute="leading" secondItem="RpZ-Cr-xI5" secondAttribute="leading" constant="52" id="X0b-IJ-2lS"/>
+                            <constraint firstItem="zhL-lk-unF" firstAttribute="leading" secondItem="RpZ-Cr-xI5" secondAttribute="leading" constant="20" id="jHy-pE-NXT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RpZ-Cr-xI5"/>
+                    </view>
+                    <connections>
+                        <outlet property="nameInputView" destination="zhL-lk-unF" id="vSn-0R-QVs"/>
+                        <outlet property="submitButton" destination="aG3-GW-K2T" id="XQf-md-0sB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nwv-mT-rlU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141.59999999999999" y="-1444.2278860569716"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="cl2-c0-qdx">
             <objects>

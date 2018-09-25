@@ -132,6 +132,7 @@
 		D4C8C95B215936AF00C831F0 /* ClientPriceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C95A215936AF00C831F0 /* ClientPriceListViewController.swift */; };
 		D4C8C95D2159370200C831F0 /* PriceListViewModel+Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C95C2159370200C831F0 /* PriceListViewModel+Client.swift */; };
 		D4C8C95F21596BE100C831F0 /* PaymentConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C95E21596BE100C831F0 /* PaymentConfirmationViewController.swift */; };
+		D4C8C961215A105100C831F0 /* AdminStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C960215A105100C831F0 /* AdminStartViewController.swift */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -237,6 +238,7 @@
 		D4C8C95A215936AF00C831F0 /* ClientPriceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientPriceListViewController.swift; sourceTree = "<group>"; };
 		D4C8C95C2159370200C831F0 /* PriceListViewModel+Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PriceListViewModel+Client.swift"; sourceTree = "<group>"; };
 		D4C8C95E21596BE100C831F0 /* PaymentConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentConfirmationViewController.swift; sourceTree = "<group>"; };
+		D4C8C960215A105100C831F0 /* AdminStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminStartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -434,6 +436,7 @@
 			children = (
 				D48D95652151104000840707 /* SideMenuViewController+Admin.swift */,
 				D4C8C9472158D31F00C831F0 /* MainViewController+Admin.swift */,
+				D4C8C960215A105100C831F0 /* AdminStartViewController.swift */,
 				D443CDAB214BAB5A00A7100F /* CreateShopViewController.swift */,
 				D443CDC4214C00C500A7100F /* ShopAddressViewController.swift */,
 				D443CDC7214C190900A7100F /* IssueAddressViewController.swift */,
@@ -1009,6 +1012,7 @@
 				D429F8A921400F1C004427F0 /* FaucetManager.swift in Sources */,
 				D4C8C92F2153D87400C831F0 /* NetworkRequest.swift in Sources */,
 				D429F89121400A5A004427F0 /* AppDelegate.swift in Sources */,
+				D4C8C961215A105100C831F0 /* AdminStartViewController.swift in Sources */,
 				D443CD99214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
 				D48D958A215290C100840707 /* UserDefaultsManager.swift in Sources */,
 				D443CDBB214BDABE00A7100F /* UIViewController.swift in Sources */,

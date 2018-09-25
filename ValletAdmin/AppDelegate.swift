@@ -17,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		Web3Manager.start()
+
+		if ShopManager.shops.count > 0 {
+			MainViewController.makeAppRootViewController()
+		}
+		else {
+			AdminStartViewController.makeAppRootViewController()
+		}
 		
 		return true
 	}
