@@ -36,13 +36,18 @@ enum NetworkRequest: URLRequestConvertible {
 	}
 
 	private var host: String {
-		return Constants.Network.apiHost
+		switch self {
+		case .getFunds:
+			return Constants.BlockChain.faucetServerAddress
+		default:
+			return Constants.Network.apiHost
+		}
 	}
 
 	private var path: String {
 		switch self {
 		case .getFunds(let address):
-			return "\(Constants.BlockChain.faucetServerAddress)addr/\(address)"
+			return "addr/\(address)"
 
 		case .getPriceList(let address):
 			return "/price_lists/\(address)"
