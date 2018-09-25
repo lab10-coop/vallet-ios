@@ -56,6 +56,7 @@ class Web3Manager {
 					switch result {
 					case .success(let receiptResult):
 						timer.invalidate()
+						remove(timer: timer)
 						completion(Result.success(receiptResult))
 					case .failure(let error):
 						repeatCount += 1
