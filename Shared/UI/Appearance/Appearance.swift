@@ -17,6 +17,14 @@ struct Appearance {
 
 		UITableView.appearance().backgroundColor = Theme.Color.background
 		UICollectionView.appearance().backgroundColor = Theme.Color.background
+
+		UINavigationBar.appearance().backgroundColor = Theme.Color.navigationBar
+		UINavigationBar.appearance().barTintColor = Theme.Color.navigationBar
+		UINavigationBar.appearance().tintColor = Theme.Color.navigationBarButton
+		UINavigationBar.appearance().shadowImage = UIImage()
+		UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+		UINavigationBar.appearance().isTranslucent = true
+		UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: Theme.Color.darkText, NSAttributedStringKey.font: Theme.Font.largeTitleFont]
 	}
 
 }

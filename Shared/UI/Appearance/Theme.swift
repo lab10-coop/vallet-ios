@@ -14,6 +14,9 @@ struct Theme {
 
 	struct Color {
 
+		static let navigationBar = UIColor.clear
+		static let navigationBarButton = UIColor(red:0.61, green:0.62, blue:0.63, alpha:1.0) //#9B9EA0
+
 		static let lightText = UIColor(red:0.61, green:0.62, blue:0.63, alpha:1.0) //#9B9EA0
 		static let darkText = UIColor(red:0.20, green:0.20, blue:0.20, alpha:1.0) //#333333
 
@@ -31,6 +34,7 @@ struct Theme {
 		static let defaultButtonContent = accent
 
 		static let largeButtonContent = UIColor.white
+
 	}
 
 	// MARK: - Fonts
