@@ -349,55 +349,95 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! Enter your name and get started" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7Q-NN-6Na">
-                                <rect key="frame" x="52" y="60" width="271" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KsM-6B-Vdr" customClass="TextInputView" customModule="ValletAdmin" customModuleProvider="target">
-                                <rect key="frame" x="20" y="133" width="335" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3c4-CB-Gs8">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoLarge" translatesAutoresizingMaskIntoConstraints="NO" id="KYu-pI-FDQ">
+                                        <rect key="frame" x="112" y="60" width="150" height="110"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="110" id="Ivz-iB-6kC"/>
+                                            <constraint firstAttribute="width" constant="150" id="Xk0-S1-atG"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="3iz-aW-M7Y">
+                                        <rect key="frame" x="16" y="230" width="343" height="141"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7Q-NN-6Na" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="41"/>
+                                                <string key="text">Welcome!
+Enter your name and get started</string>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KsM-6B-Vdr" customClass="TextInputView" customModule="Vallet" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="77" width="343" height="64"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="64" id="lcd-zc-VfV"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Username"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRequired" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ae-kr-lI3" customClass="PrimaryRoundedButton" customModule="Vallet" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="597" width="343" height="34"/>
+                                        <color key="backgroundColor" red="0.0" green="0.75294117647058822" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Get Started"/>
+                                        <connections>
+                                            <action selector="submit:" destination="93G-m7-1Nu" eventType="touchUpInside" id="yBx-Jo-tkg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="lcd-zc-VfV"/>
+                                    <constraint firstItem="5ae-kr-lI3" firstAttribute="leading" secondItem="3c4-CB-Gs8" secondAttribute="leading" constant="16" id="3pw-oh-zCj"/>
+                                    <constraint firstItem="3iz-aW-M7Y" firstAttribute="top" secondItem="KYu-pI-FDQ" secondAttribute="bottom" priority="755" constant="60" id="6Bf-tC-xYH"/>
+                                    <constraint firstItem="KYu-pI-FDQ" firstAttribute="top" secondItem="3c4-CB-Gs8" secondAttribute="top" priority="749" constant="60" id="7xa-0n-1gT"/>
+                                    <constraint firstItem="3iz-aW-M7Y" firstAttribute="top" relation="greaterThanOrEqual" secondItem="KYu-pI-FDQ" secondAttribute="bottom" id="8GZ-Y0-zuZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="3iz-aW-M7Y" secondAttribute="trailing" constant="16" id="UVs-dv-qkU"/>
+                                    <constraint firstAttribute="trailing" secondItem="5ae-kr-lI3" secondAttribute="trailing" constant="16" id="aYg-Hr-cye"/>
+                                    <constraint firstItem="3iz-aW-M7Y" firstAttribute="leading" secondItem="3c4-CB-Gs8" secondAttribute="leading" constant="16" id="dSR-OK-FaP"/>
+                                    <constraint firstItem="5ae-kr-lI3" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3iz-aW-M7Y" secondAttribute="bottom" constant="16" id="o9c-uZ-xJF"/>
+                                    <constraint firstItem="KYu-pI-FDQ" firstAttribute="centerX" secondItem="3c4-CB-Gs8" secondAttribute="centerX" id="qs4-BA-6Qb"/>
+                                    <constraint firstAttribute="bottom" secondItem="5ae-kr-lI3" secondAttribute="bottom" constant="16" id="yR6-IW-TcL"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Username"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRequired" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ae-kr-lI3">
-                                <rect key="frame" x="145" y="219" width="84" height="30"/>
-                                <state key="normal" title="Get Started!"/>
                                 <connections>
-                                    <action selector="submit:" destination="93G-m7-1Nu" eventType="touchUpInside" id="yBx-Jo-tkg"/>
+                                    <outletCollection property="gestureRecognizers" destination="dAT-t8-dby" appends="YES" id="QPH-hM-KIn"/>
                                 </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KsM-6B-Vdr" firstAttribute="top" secondItem="L7Q-NN-6Na" secondAttribute="bottom" constant="32" id="Cwn-Ae-8Gq"/>
-                            <constraint firstItem="agJ-cj-Yx5" firstAttribute="trailing" secondItem="L7Q-NN-6Na" secondAttribute="trailing" constant="52" id="JHc-69-5VJ"/>
-                            <constraint firstItem="L7Q-NN-6Na" firstAttribute="leading" secondItem="agJ-cj-Yx5" secondAttribute="leading" constant="52" id="MAc-HM-wxV"/>
-                            <constraint firstItem="5ae-kr-lI3" firstAttribute="centerX" secondItem="KsM-6B-Vdr" secondAttribute="centerX" id="P4r-vn-fsC"/>
-                            <constraint firstItem="KsM-6B-Vdr" firstAttribute="leading" secondItem="agJ-cj-Yx5" secondAttribute="leading" constant="20" id="bAd-32-b2t"/>
-                            <constraint firstItem="L7Q-NN-6Na" firstAttribute="top" secondItem="agJ-cj-Yx5" secondAttribute="top" constant="40" id="bwM-01-nxB"/>
-                            <constraint firstItem="agJ-cj-Yx5" firstAttribute="trailing" secondItem="KsM-6B-Vdr" secondAttribute="trailing" constant="20" id="gIq-9c-XbO"/>
-                            <constraint firstItem="5ae-kr-lI3" firstAttribute="top" secondItem="KsM-6B-Vdr" secondAttribute="bottom" constant="26" id="ssn-Kp-eD2"/>
+                            <constraint firstItem="agJ-cj-Yx5" firstAttribute="bottom" secondItem="3c4-CB-Gs8" secondAttribute="bottom" id="2ZV-Yf-2u3"/>
+                            <constraint firstItem="agJ-cj-Yx5" firstAttribute="trailing" secondItem="3c4-CB-Gs8" secondAttribute="trailing" id="Gmx-J7-9WL"/>
+                            <constraint firstItem="3c4-CB-Gs8" firstAttribute="leading" secondItem="agJ-cj-Yx5" secondAttribute="leading" id="e56-Wp-4sb"/>
+                            <constraint firstItem="3c4-CB-Gs8" firstAttribute="top" secondItem="agJ-cj-Yx5" secondAttribute="top" id="qe7-ew-Njh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="agJ-cj-Yx5"/>
                     </view>
                     <connections>
+                        <outlet property="containerView" destination="3c4-CB-Gs8" id="VFN-0y-HLT"/>
                         <outlet property="nameInputView" destination="KsM-6B-Vdr" id="Gvt-3c-tPG"/>
                         <outlet property="submitButton" destination="5ae-kr-lI3" id="xuz-VE-ST0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7bS-jf-pH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dAT-t8-dby">
+                    <connections>
+                        <action selector="hideKeyboard:" destination="93G-m7-1Nu" id="VqP-JU-yeE"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1625" y="-763"/>
         </scene>
     </scenes>
     <resources>
         <image name="CloseIcon" width="20" height="20"/>
+        <image name="LogoLarge" width="115" height="87"/>
     </resources>
 </document>
