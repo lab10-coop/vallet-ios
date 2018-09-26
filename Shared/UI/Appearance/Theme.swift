@@ -27,6 +27,10 @@ struct Theme {
 		static let accentGradientStart = UIColor(red:0.00, green:0.75, blue:0.99, alpha:1.0) //#00C0FD
 		static let accentGradientEnd = UIColor(red:0.13, green:0.29, blue:0.95, alpha:1.0) //#224AF2
 
+		static let defaultButtonBackground = UIColor.clear
+		static let defaultButtonContent = accent
+
+		static let largeButtonContent = UIColor.white
 	}
 
 	// MARK: - Fonts
