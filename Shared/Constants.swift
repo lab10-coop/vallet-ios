@@ -19,6 +19,7 @@ struct Constants {
 	struct BlockChain {
 
 		// TODO: move the addresses to the xcconfig file
+		static let IPFSAddress = "http://ipfs.mars.lab10.io:5001/api/v0/"
 		static let faucetServerAddress = "http://faucet.t1.artis.lab10.io/"
 		static let nodeAddress = "http://rpc.t1.artis.lab10.io:10204/"
 		static let tokenFactoryContractAddress = "0x0fd1fa8112f205d5c2754ece65eb43deb3592214"
