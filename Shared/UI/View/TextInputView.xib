@@ -22,13 +22,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xd-8K-D4x" customClass="SmallTitleLabel" customModule="Vallet" customModuleProvider="target">
-                    <rect key="frame" x="8" y="0.0" width="25" height="14.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="25" height="14.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XMy-lb-tS9">
-                    <rect key="frame" x="8" y="29" width="359" height="21"/>
+                    <rect key="frame" x="0.0" y="29" width="375" height="21"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -42,10 +42,10 @@
             <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="XMy-lb-tS9" secondAttribute="bottom" constant="8" id="7SD-JI-NYo"/>
-                <constraint firstItem="6xd-8K-D4x" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="HSc-pt-Sad"/>
+                <constraint firstItem="6xd-8K-D4x" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="HSc-pt-Sad"/>
                 <constraint firstItem="6xd-8K-D4x" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="WRM-gq-zgO"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="XMy-lb-tS9" secondAttribute="trailing" constant="8" id="pcY-Sy-vX3"/>
-                <constraint firstItem="XMy-lb-tS9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="ucu-xY-NQ6"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="XMy-lb-tS9" secondAttribute="trailing" id="pcY-Sy-vX3"/>
+                <constraint firstItem="XMy-lb-tS9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ucu-xY-NQ6"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
