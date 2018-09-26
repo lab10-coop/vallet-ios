@@ -1,5 +1,5 @@
 //
-//  SideMenuViewController.swift
+//  ShopMenuViewController.swift
 //  Vallet
 //
 //  Created by Matija Kregar on 11/09/2018.
@@ -9,7 +9,7 @@
 import UIKit
 import web3swift
 
-protocol SideMenuDelegate: class {
+protocol ShopMenuDelegate: class {
 
 	func didSelect(shop: Shop)
 
@@ -21,7 +21,7 @@ protocol ShopAddable {
 
 }
 
-class SideMenuViewController: UIViewController {
+class ShopMenuViewController: UIViewController {
 
 	@IBOutlet var shopsTableView: UITableView!
 	@IBOutlet private var logoImageView: UIImageView!
@@ -29,12 +29,12 @@ class SideMenuViewController: UIViewController {
 	@IBOutlet private var containerView: UIView!
 	@IBOutlet private var leftConstraint: NSLayoutConstraint!
 
-	weak var delegate: SideMenuDelegate?
+	weak var delegate: ShopMenuDelegate?
 
 	@discardableResult
-	static func present(over viewController: UIViewController) -> SideMenuViewController? {
+	static func present(over viewController: UIViewController) -> ShopMenuViewController? {
 		let storyboard = UIStoryboard(name: "Shared", bundle: Bundle.main)
-		guard let sideMenuViewController = storyboard.instantiateViewController(withIdentifier: "SideMenuViewController") as? SideMenuViewController
+		guard let sideMenuViewController = storyboard.instantiateViewController(withIdentifier: "ShopMenuViewController") as? ShopMenuViewController
 			else {
 				return nil
 		}
@@ -93,7 +93,7 @@ class SideMenuViewController: UIViewController {
 
 }
 
-extension SideMenuViewController: UITableViewDataSource {
+extension ShopMenuViewController: UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return ShopManager.shops.count
@@ -110,7 +110,7 @@ extension SideMenuViewController: UITableViewDataSource {
 
 }
 
-extension SideMenuViewController: UITableViewDelegate {
+extension ShopMenuViewController: UITableViewDelegate {
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let shop = ShopManager.shops[indexPath.row]

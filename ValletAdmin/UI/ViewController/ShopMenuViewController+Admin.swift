@@ -1,5 +1,5 @@
 //
-//  SideMenuViewController+Admin.swift
+//  ShopMenuViewController+Admin.swift
 //  ValletAdmin
 //
 //  Created by Matija Kregar on 18/09/2018.

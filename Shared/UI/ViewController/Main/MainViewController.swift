@@ -89,7 +89,7 @@ class MainViewController: UIViewController {
 	}
 
 	@IBAction func shopShopMenu(_ sender: Any? = nil) {
-		let shopMenuViewController = SideMenuViewController.present(over: self)
+		let shopMenuViewController = ShopMenuViewController.present(over: self)
 		shopMenuViewController?.delegate = self
 	}
 
@@ -136,7 +136,7 @@ extension MainViewController: UIPageViewControllerDelegate {
 
 }
 
-extension MainViewController: SideMenuDelegate {
+extension MainViewController: ShopMenuDelegate {
 
 	func didSelect(shop: Shop) {
 		self.shop = shop

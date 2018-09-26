@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Side Menu View Controller-->
+        <!--Shop Menu View Controller-->
         <scene sceneID="fxo-8r-WQn">
             <objects>
-                <viewController storyboardIdentifier="SideMenuViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="y3i-IW-dkB" customClass="SideMenuViewController" customModule="Vallet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShopMenuViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="y3i-IW-dkB" customClass="ShopMenuViewController" customModule="Vallet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yAJ-iz-ObT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
