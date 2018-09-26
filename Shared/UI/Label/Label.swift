@@ -83,7 +83,16 @@ class TitleLabel: BaseLabel {
 	}
 }
 
-class SmallTitleLabel: BaseLabel {
+class SmallDarkTitleLabel: BaseLabel {
+	override var mode: LabelMode {
+		return .normal
+	}
+	override var customFont: UIFont? {
+		return Theme.Font.smallTitleFont
+	}
+}
+
+class SmallLightTitleLabel: BaseLabel {
 	override var mode: LabelMode {
 		return .light
 	}

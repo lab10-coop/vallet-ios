@@ -26,8 +26,6 @@ class ShopMenuViewController: UIViewController {
 	@IBOutlet var shopsTableView: UITableView!
 	@IBOutlet private var logoImageView: UIImageView!
 	@IBOutlet private var createShopButton: UIButton!
-	@IBOutlet private var containerView: UIView!
-	@IBOutlet private var leftConstraint: NSLayoutConstraint!
 
 	weak var delegate: ShopMenuDelegate?
 
@@ -38,16 +36,13 @@ class ShopMenuViewController: UIViewController {
 			else {
 				return nil
 		}
-		viewController.present(sideMenuViewController, animated: false) {
-			sideMenuViewController.show()
+		viewController.present(sideMenuViewController, animated: true) {
 		}
 		return sideMenuViewController
 	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		leftConstraint.constant = -containerView.bounds.size.width
-		self.view.backgroundColor = .clear
 
 		ShopTableViewCell.register(for: shopsTableView)
 		shopsTableView.delegate = self
@@ -64,31 +59,12 @@ class ShopMenuViewController: UIViewController {
 		}
 	}
 
-	func show() {
-		leftConstraint.constant = 0
-		UIView.animate(withDuration: Constants.Animation.shortDuration) {
-			self.view.backgroundColor = UIColor(white: 0, alpha: 0.75)
-			self.view.layoutIfNeeded()
-		}
-	}
-
-	func hide() {
-		leftConstraint.constant = -containerView.bounds.size.width
-		UIView.animate(withDuration: Constants.Animation.shortDuration, animations: {
-			self.view.backgroundColor = .clear
-			self.view.layoutIfNeeded()
-		}) { (success) in
-			self.dismiss(animated: false, completion: nil)
-		}
-	}
-
-	@IBAction func createShop(_ sender: UIButton) {
+	@IBAction func createShop(_ sender: UIButton? = nil) {
 		addShop()
 	}
 
-	@IBAction func didTapBackgorund(_ sender: Any) {
-		print("tap bg")
-		hide()
+	@IBAction func close(_ sender: Any? = nil) {
+		dismiss(animated: true, completion: nil)
 	}
 
 }
@@ -103,7 +79,6 @@ extension ShopMenuViewController: UITableViewDataSource {
 		let cell = tableView.dequeueReusableCell(withIdentifier: ShopTableViewCell.reuseIdentifier, for: indexPath)
 		if let shopCell = cell as? ShopTableViewCell {
 			shopCell.shop = ShopManager.shops[indexPath.row]
-//			shopCell.isSelected = ShopManager.selectedShop == shopCell.shop
 		}
 		return cell
 	}
@@ -117,7 +92,7 @@ extension ShopMenuViewController: UITableViewDelegate {
 		ShopManager.selectedShop = shop
 
 		delegate?.didSelect(shop: shop)
-		hide()
+		close()
 	}
 	
 }
