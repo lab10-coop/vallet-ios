@@ -2,6 +2,7 @@ PODS:
   - BigInt (3.1.0):
     - SipHash (~> 1.2)
   - CryptoSwift (0.12.0)
+  - "Keyboard+LayoutGuide (1.2.3)"
   - PromiseKit (6.4.0):
     - PromiseKit/CorePromise (= 6.4.0)
     - PromiseKit/Foundation (= 6.4.0)
@@ -25,12 +26,14 @@ PODS:
     - secp256k1_ios (~> 0.1)
 
 DEPENDENCIES:
+  - "Keyboard+LayoutGuide"
   - web3swift (~> 1.1.5)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BigInt
     - CryptoSwift
+    - "Keyboard+LayoutGuide"
     - PromiseKit
     - Result
     - scrypt
@@ -41,6 +44,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   BigInt: 76b5dfdfa3e2e478d4ffdf161aeede5502e2742f
   CryptoSwift: 1c07ca50843dd48bc54e6ea53d7a4dba3b645716
+  "Keyboard+LayoutGuide": dd88e39e7dfaeefdf18ffcad2e11b5a90b0459bb
   PromiseKit: ae3616f45d7bb9bf4ff1e91abc9b7a8c48a340e0
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   scrypt: cc8333b4338b9d4127743e3f7b1304e309d8061c
@@ -48,6 +52,6 @@ SPEC CHECKSUMS:
   SipHash: fad90a4683e420c52ef28063063dbbce248ea6d4
   web3swift: e39ddb21627fcc6b47881b49583f589cae128902
 
-PODFILE CHECKSUM: 1aac750243b969e98f819611d5e3adc3e82228a7
+PODFILE CHECKSUM: e2a834a0317400645a6044d7d72f9224b32e4867
 
 COCOAPODS: 1.5.3
