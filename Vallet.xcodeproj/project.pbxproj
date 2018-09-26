@@ -81,8 +81,6 @@
 		D48D958521525B0000840707 /* AdminHistoryEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48D958321525B0000840707 /* AdminHistoryEventTableViewCell.xib */; };
 		D48D9589215283A500840707 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D9588215283A500840707 /* UserDefaultsManager.swift */; };
 		D48D958A215290C100840707 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D9588215283A500840707 /* UserDefaultsManager.swift */; };
-		D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
-		D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD932147D34200AB67D7 /* UIImage.swift */; };
 		D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */; };
 		D4C5CD982147DA2700AB67D7 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */; };
 		D4C5CD9A2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */; };
@@ -157,6 +155,12 @@
 		D4C8C999215AA1BD00C831F0 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C997215AA1BD00C831F0 /* View.swift */; };
 		D4C8C99B215AA22500C831F0 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C99A215AA22500C831F0 /* Appearance.swift */; };
 		D4C8C99C215AA22500C831F0 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C99A215AA22500C831F0 /* Appearance.swift */; };
+		D4C8C9AA215AABC200C831F0 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9A9215AABC200C831F0 /* UIButton.swift */; };
+		D4C8C9AB215AABC200C831F0 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9A9215AABC200C831F0 /* UIButton.swift */; };
+		D4C8C9AD215AAC1500C831F0 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9AC215AAC1500C831F0 /* UIColor.swift */; };
+		D4C8C9AE215AAC1500C831F0 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9AC215AAC1500C831F0 /* UIColor.swift */; };
+		D4C8C9B9215AC19A00C831F0 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9B8215AC19A00C831F0 /* UIImage.swift */; };
+		D4C8C9BA215AC19A00C831F0 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9B8215AC19A00C831F0 /* UIImage.swift */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -233,7 +237,6 @@
 		D48D958221525B0000840707 /* AdminHistoryEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHistoryEventTableViewCell.swift; sourceTree = "<group>"; };
 		D48D958321525B0000840707 /* AdminHistoryEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminHistoryEventTableViewCell.xib; sourceTree = "<group>"; };
 		D48D9588215283A500840707 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
-		D4C5CD932147D34200AB67D7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
 		D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLinkedView.swift; sourceTree = "<group>"; };
 		D4C5CD9C2147DBAC00AB67D7 /* QRCodeReaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeReaderView.xib; sourceTree = "<group>"; };
@@ -276,6 +279,9 @@
 		D4C8C993215A9E6500C831F0 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		D4C8C997215AA1BD00C831F0 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		D4C8C99A215AA22500C831F0 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		D4C8C9A9215AABC200C831F0 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		D4C8C9AC215AAC1500C831F0 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		D4C8C9B8215AC19A00C831F0 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -442,6 +448,9 @@
 				D443CDB9214BDABE00A7100F /* UIViewController.swift */,
 				D4C8C9242153B3C200C831F0 /* CodingUserInfoKey.swift */,
 				D4C8C9292153C73B00C831F0 /* JSONDecoder.swift */,
+				D4C8C9A9215AABC200C831F0 /* UIButton.swift */,
+				D4C8C9AC215AAC1500C831F0 /* UIColor.swift */,
+				D4C8C9B8215AC19A00C831F0 /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -566,7 +575,6 @@
 		D4C5CD922147D31600AB67D7 /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
-				D4C5CD932147D34200AB67D7 /* UIImage.swift */,
 				D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */,
 				D4C5CD9C2147DBAC00AB67D7 /* QRCodeReaderView.xib */,
 			);
@@ -1012,6 +1020,7 @@
 				D4C8C95B215936AF00C831F0 /* ClientPriceListViewController.swift in Sources */,
 				D4C8C986215A8D7B00C831F0 /* Theme.swift in Sources */,
 				D4C8C98E215A9D7300C831F0 /* BaseLabel.swift in Sources */,
+				D4C8C9AD215AAC1500C831F0 /* UIColor.swift in Sources */,
 				D4C8C9552158ECC900C831F0 /* PriceListViewModel.swift in Sources */,
 				D4C5CDB521490DC500AB67D7 /* Shop.swift in Sources */,
 				D4C5CDAA2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
@@ -1022,6 +1031,7 @@
 				D4C8C92A2153C73B00C831F0 /* JSONDecoder.swift in Sources */,
 				D4C8C9212153A4EF00C831F0 /* Product.swift in Sources */,
 				D4C5CDBB2149410800AB67D7 /* DataBaseManager.swift in Sources */,
+				D4C8C9AA215AABC200C831F0 /* UIButton.swift in Sources */,
 				D429F8BE21416F91004427F0 /* ContractProtocol.swift in Sources */,
 				D4C8C991215A9D9F00C831F0 /* LabelCustomizable.swift in Sources */,
 				D4C8C94521552DA200C831F0 /* MainViewController.swift in Sources */,
@@ -1032,6 +1042,7 @@
 				D4C8C95F21596BE100C831F0 /* PaymentConfirmationViewController.swift in Sources */,
 				D4C8C92E2153D87400C831F0 /* NetworkRequest.swift in Sources */,
 				D48D95622150FD7700840707 /* ScanShopAddressViewController.swift in Sources */,
+				D4C8C9B9215AC19A00C831F0 /* UIImage.swift in Sources */,
 				D443CDBA214BDABE00A7100F /* UIViewController.swift in Sources */,
 				D48D957D2152515900840707 /* PendingValueEvent.swift in Sources */,
 				D48D95682151130700840707 /* SideMenuViewController+Client.swift in Sources */,
@@ -1040,7 +1051,6 @@
 				D48D9589215283A500840707 /* UserDefaultsManager.swift in Sources */,
 				D4C8C9342153DA7C00C831F0 /* HTTPMethod.swift in Sources */,
 				D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */,
-				D4C5CD942147D34200AB67D7 /* UIImage.swift in Sources */,
 				D48D957421523BBD00840707 /* ClientHistoryViewController.swift in Sources */,
 				D429F84F21400572004427F0 /* AppDelegate.swift in Sources */,
 				D4C5CD9A2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */,
@@ -1068,6 +1078,7 @@
 				D443CD93214A93E400A7100F /* ShopManager.swift in Sources */,
 				D443CDAA214AA73700A7100F /* NSObject.swift in Sources */,
 				D4C5CDA3214819AD00AB67D7 /* SideMenuViewController.swift in Sources */,
+				D4C8C9AE215AAC1500C831F0 /* UIColor.swift in Sources */,
 				D4C8C98B215A8DC700C831F0 /* ScaledFont.swift in Sources */,
 				D429F8B821411FA2004427F0 /* Web3Manager.swift in Sources */,
 				D443CDA6214AA46500A7100F /* NibBackedCell.swift in Sources */,
@@ -1115,10 +1126,11 @@
 				D443CDB4214BB2DE00A7100F /* UIView.swift in Sources */,
 				D48D957021512BDE00840707 /* ValueEvent.swift in Sources */,
 				D443CDC8214C190900A7100F /* IssueAddressViewController.swift in Sources */,
+				D4C8C9BA215AC19A00C831F0 /* UIImage.swift in Sources */,
+				D4C8C9AB215AABC200C831F0 /* UIButton.swift in Sources */,
 				D48D956421510ECB00840707 /* ShopManager+Admin.swift in Sources */,
 				D429F8BC21416D9D004427F0 /* TokenFactory.swift in Sources */,
 				D4C5CD982147DA2700AB67D7 /* QRCodeReaderView.swift in Sources */,
-				D4C5CD952147D34200AB67D7 /* UIImage.swift in Sources */,
 				D4C8C99C215AA22500C831F0 /* Appearance.swift in Sources */,
 				D4C5CD9B2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */,
 				D4C8C999215AA1BD00C831F0 /* View.swift in Sources */,
