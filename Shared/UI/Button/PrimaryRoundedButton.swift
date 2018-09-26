@@ -30,7 +30,7 @@ class PrimaryRoundedButton: BaseButton {
 	let disabledGradientColors = [Theme.Color.accentGradientStart.lightened, Theme.Color.accentGradientEnd.lightened]
 
 	override var cornerRadius: CGFloat {
-		return 0.5 * bounds.size.height
+		return 6.0
 	}
 
 	override var titleFont: UIFont? {

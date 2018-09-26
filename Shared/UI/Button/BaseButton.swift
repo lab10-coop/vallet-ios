@@ -58,11 +58,6 @@ public class BaseButton: UIButton, ButtonCustomizable {
 		return normalBackgroundColor?.lightened
 	}
 
-	// MARK: - ButtonCustomizable Functions
-	func customize(title: String?) -> String? {
-		return title?.uppercased()
-	}
-
 	// MARK: - Overrides
 	override func setTitle(_ title: String?) {
 		allStates.forEach {
