@@ -19,32 +19,50 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="arn-1T-f5O">
-                        <rect key="frame" x="10" y="11" width="242" height="21"/>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IncomingArrowIcon" translatesAutoresizingMaskIntoConstraints="NO" id="CPL-04-L44">
+                        <rect key="frame" x="16" y="17" width="10" height="10"/>
+                    </imageView>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OutgoingArrowIcon" translatesAutoresizingMaskIntoConstraints="NO" id="dNS-HC-jLe">
+                        <rect key="frame" x="16" y="17" width="10" height="10"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="arn-1T-f5O" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
+                        <rect key="frame" x="34" y="8" width="218" height="27.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mo2-Re-IfX">
-                        <rect key="frame" x="262" y="12" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mo2-Re-IfX" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
+                        <rect key="frame" x="262" y="11.5" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Mo2-Re-IfX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="G5r-0Z-7yp"/>
+                    <constraint firstItem="arn-1T-f5O" firstAttribute="centerY" secondItem="CPL-04-L44" secondAttribute="centerY" id="5ao-Dh-tuR"/>
+                    <constraint firstItem="dNS-HC-jLe" firstAttribute="centerY" secondItem="CPL-04-L44" secondAttribute="centerY" id="6PB-gA-b74"/>
                     <constraint firstItem="arn-1T-f5O" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Gj6-7W-RZ1"/>
+                    <constraint firstItem="arn-1T-f5O" firstAttribute="leading" secondItem="CPL-04-L44" secondAttribute="trailing" constant="8" id="Lwa-9o-8R4"/>
+                    <constraint firstItem="CPL-04-L44" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="NdX-ry-35t"/>
+                    <constraint firstItem="arn-1T-f5O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Rfe-uc-nVt"/>
                     <constraint firstAttribute="trailing" secondItem="Mo2-Re-IfX" secondAttribute="trailing" constant="16" id="UWg-wm-wKm"/>
-                    <constraint firstItem="arn-1T-f5O" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="cdn-aF-OpN"/>
+                    <constraint firstItem="dNS-HC-jLe" firstAttribute="centerX" secondItem="CPL-04-L44" secondAttribute="centerX" id="YZj-fi-cvl"/>
+                    <constraint firstAttribute="bottom" secondItem="arn-1T-f5O" secondAttribute="bottom" constant="8" id="r16-Ax-YfY"/>
                     <constraint firstItem="Mo2-Re-IfX" firstAttribute="leading" secondItem="arn-1T-f5O" secondAttribute="trailing" constant="10" id="rzl-pf-a67"/>
+                    <constraint firstItem="Mo2-Re-IfX" firstAttribute="centerY" secondItem="arn-1T-f5O" secondAttribute="centerY" id="spv-pe-ksw"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="descriptionLabel" destination="arn-1T-f5O" id="j5c-jF-VDD"/>
+                <outlet property="incomingImageView" destination="CPL-04-L44" id="Qdl-gj-DsI"/>
+                <outlet property="outgoingImageView" destination="dNS-HC-jLe" id="LdX-kN-sep"/>
                 <outlet property="valueLabel" destination="Mo2-Re-IfX" id="nTD-aK-ACk"/>
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="IncomingArrowIcon" width="10" height="10"/>
+        <image name="OutgoingArrowIcon" width="10" height="10"/>
+    </resources>
 </document>
