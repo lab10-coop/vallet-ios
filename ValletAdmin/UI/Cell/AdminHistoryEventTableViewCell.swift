@@ -41,6 +41,8 @@ class AdminHistoryEventTableViewCell: UITableViewCell, NibBackedTableViewCell {
 	}
 
 	override func prepareForReuse() {
+		incomingImageView.isHidden = true
+		outgoingImageView.isHidden = true
 		descriptionLabel.text = ""
 		valueLabel.text = ""
 	}
