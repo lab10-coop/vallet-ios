@@ -126,49 +126,82 @@
             </objects>
             <point key="canvasLocation" x="142" y="937"/>
         </scene>
-        <!--Issue Address View Controller-->
+        <!--Send Money-->
         <scene sceneID="NZx-vz-6A0">
             <objects>
                 <viewController storyboardIdentifier="IssueAddressViewController" id="3g6-jh-7dW" customClass="IssueAddressViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="d85-I8-jeU">
+                    <view key="view" contentMode="scaleToFill" id="d85-I8-jeU" customClass="BackgroundView" customModule="ValletAdmin" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUQ-cy-gBk" customClass="QRCodeReaderView" customModule="ValletAdmin" customModuleProvider="target">
-                                <rect key="frame" x="67" y="245.5" width="240" height="240"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="QUQ-cy-gBk" secondAttribute="height" multiplier="1:1" id="HDQ-vm-a8x"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Client address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="obp-mc-1my">
-                                <rect key="frame" x="41" y="505.5" width="297" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 1 of 2: User selection" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jm-BW-rqU" customClass="SmallTextLabel" customModule="ValletAdmin" customModuleProvider="target">
+                                <rect key="frame" x="87" y="64" width="200.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDt-uZ-FgV">
-                                <rect key="frame" x="156.5" y="617" width="62" height="30"/>
-                                <state key="normal" title="Continue"/>
-                                <connections>
-                                    <segue destination="Bjh-Ss-7BC" kind="show" identifier="ShowIssueAmountViewControllerSegue" id="HfX-sb-lqG"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan the user's QR code." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOR-Aw-WSE" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
+                                <rect key="frame" x="16" y="116.5" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U0C-gf-ppy" customClass="ContentBackgroundView" customModule="Vallet" customModuleProvider="target">
+                                <rect key="frame" x="48" y="169" width="279" height="279"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4i1-wG-oep" customClass="QRCodeReaderView" customModule="Vallet" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="16" width="247" height="247"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="4i1-wG-oep" secondAttribute="height" multiplier="1:1" id="1Mf-yE-th4"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="4i1-wG-oep" secondAttribute="trailing" constant="16" id="3u2-Vf-eSA"/>
+                                    <constraint firstAttribute="bottom" secondItem="4i1-wG-oep" secondAttribute="bottom" constant="16" id="BSa-Ik-qDW"/>
+                                    <constraint firstItem="4i1-wG-oep" firstAttribute="leading" secondItem="U0C-gf-ppy" secondAttribute="leading" constant="16" id="TuC-7M-7Ov"/>
+                                    <constraint firstItem="4i1-wG-oep" firstAttribute="top" secondItem="U0C-gf-ppy" secondAttribute="top" constant="16" id="aOu-CU-pEn"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="QAp-bI-Nh9">
+                                <rect key="frame" x="16" y="575" width="343" height="76"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQA-5T-7Se" customClass="SecondaryButton" customModule="ValletAdmin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <state key="normal" title="Scan again"/>
+                                        <connections>
+                                            <action selector="scanAgain:" destination="3g6-jh-7dW" eventType="touchUpInside" id="eeI-yX-XGR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDt-uZ-FgV" customClass="PrimaryRoundedButton" customModule="ValletAdmin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="46" width="343" height="30"/>
+                                        <state key="normal" title="Continue"/>
+                                        <connections>
+                                            <segue destination="Bjh-Ss-7BC" kind="show" identifier="ShowIssueAmountViewControllerSegue" id="HfX-sb-lqG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="oWD-uB-4j0" firstAttribute="bottom" secondItem="uDt-uZ-FgV" secondAttribute="bottom" constant="20" id="2fE-BQ-mOb"/>
-                            <constraint firstItem="oWD-uB-4j0" firstAttribute="trailing" secondItem="obp-mc-1my" secondAttribute="trailing" constant="37" id="72p-Hm-6r1"/>
-                            <constraint firstItem="uDt-uZ-FgV" firstAttribute="centerX" secondItem="oWD-uB-4j0" secondAttribute="centerX" id="BKh-ra-TDh"/>
-                            <constraint firstItem="obp-mc-1my" firstAttribute="top" secondItem="QUQ-cy-gBk" secondAttribute="bottom" constant="20" id="HxL-vr-fqO"/>
-                            <constraint firstItem="oWD-uB-4j0" firstAttribute="trailing" secondItem="QUQ-cy-gBk" secondAttribute="trailing" constant="68" id="OKn-UV-WW0"/>
-                            <constraint firstItem="QUQ-cy-gBk" firstAttribute="centerY" secondItem="oWD-uB-4j0" secondAttribute="centerY" id="fm6-YZ-dez"/>
-                            <constraint firstItem="QUQ-cy-gBk" firstAttribute="leading" secondItem="oWD-uB-4j0" secondAttribute="leading" constant="67" id="hsn-ak-dB0"/>
-                            <constraint firstItem="obp-mc-1my" firstAttribute="leading" secondItem="oWD-uB-4j0" secondAttribute="leading" constant="41" id="m3c-dH-U1y"/>
+                            <constraint firstItem="U0C-gf-ppy" firstAttribute="top" secondItem="DOR-Aw-WSE" secondAttribute="bottom" constant="32" id="0LS-W9-FU4"/>
+                            <constraint firstItem="DOR-Aw-WSE" firstAttribute="leading" secondItem="oWD-uB-4j0" secondAttribute="leading" constant="16" id="IbT-h9-XoP"/>
+                            <constraint firstItem="3Jm-BW-rqU" firstAttribute="top" secondItem="oWD-uB-4j0" secondAttribute="top" id="SBm-nJ-1LP"/>
+                            <constraint firstItem="oWD-uB-4j0" firstAttribute="bottom" secondItem="QAp-bI-Nh9" secondAttribute="bottom" constant="16" id="U6T-an-4PL"/>
+                            <constraint firstItem="3Jm-BW-rqU" firstAttribute="centerX" secondItem="oWD-uB-4j0" secondAttribute="centerX" id="ina-Mi-AHH"/>
+                            <constraint firstItem="U0C-gf-ppy" firstAttribute="leading" secondItem="oWD-uB-4j0" secondAttribute="leading" constant="48" id="jW0-Mf-n08"/>
+                            <constraint firstItem="oWD-uB-4j0" firstAttribute="trailing" secondItem="QAp-bI-Nh9" secondAttribute="trailing" constant="16" id="kMH-Rz-Po7"/>
+                            <constraint firstItem="oWD-uB-4j0" firstAttribute="trailing" secondItem="U0C-gf-ppy" secondAttribute="trailing" constant="48" id="oWw-zi-hHc"/>
+                            <constraint firstItem="DOR-Aw-WSE" firstAttribute="top" secondItem="3Jm-BW-rqU" secondAttribute="bottom" constant="32" id="sND-8T-az7"/>
+                            <constraint firstItem="oWD-uB-4j0" firstAttribute="trailing" secondItem="DOR-Aw-WSE" secondAttribute="trailing" constant="16" id="srV-jW-XUy"/>
+                            <constraint firstItem="QAp-bI-Nh9" firstAttribute="leading" secondItem="oWD-uB-4j0" secondAttribute="leading" constant="16" id="zAK-xB-Xcx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oWD-uB-4j0"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NBD-0i-EBb">
+                    <navigationItem key="navigationItem" title="Send Money" id="NBD-0i-EBb">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Yh1-Ms-GcF">
                             <connections>
                                 <action selector="close:" destination="3g6-jh-7dW" id="jJ4-xI-ORS"/>
@@ -176,9 +209,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addressLabel" destination="obp-mc-1my" id="U3t-13-aC8"/>
                         <outlet property="continueButton" destination="uDt-uZ-FgV" id="9YW-H6-NIq"/>
-                        <outlet property="qrCodeReaderView" destination="QUQ-cy-gBk" id="Bfq-cH-Xgk"/>
+                        <outlet property="qrCodeReaderBackgroundView" destination="U0C-gf-ppy" id="xVG-LM-csn"/>
+                        <outlet property="qrCodeReaderView" destination="4i1-wG-oep" id="9Mr-PO-awY"/>
+                        <outlet property="scanAgainButton" destination="kQA-5T-7Se" id="yok-p5-VxO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oD3-t1-96k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -314,7 +348,7 @@
             </objects>
             <point key="canvasLocation" x="1033" y="1685"/>
         </scene>
-        <!--Issue Amount View Controller-->
+        <!--Send Money-->
         <scene sceneID="o6w-Uy-zr7">
             <objects>
                 <viewController storyboardIdentifier="IssueAmountViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bjh-Ss-7BC" customClass="IssueAmountViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
@@ -322,19 +356,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 2 of 2: Amount" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQ0-73-A6H" customClass="SmallTextLabel" customModule="ValletAdmin" customModuleProvider="target">
+                                <rect key="frame" x="111" y="64" width="153" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ga9-WC-gs1" customClass="TextInputView" customModule="ValletAdmin" customModuleProvider="target">
-                                <rect key="frame" x="20" y="94" width="335" height="60"/>
+                                <rect key="frame" x="16" y="116.5" width="343" height="64"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="TUp-c2-Uzr"/>
+                                    <constraint firstAttribute="height" constant="64" id="TUp-c2-Uzr"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Amount"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isRequired" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGz-aA-owU">
-                                <rect key="frame" x="169" y="185" width="36" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGz-aA-owU" customClass="PrimaryRoundedButton" customModule="ValletAdmin" customModuleProvider="target">
+                                <rect key="frame" x="16" y="212.5" width="343" height="30"/>
                                 <state key="normal" title="Issue"/>
                                 <connections>
                                     <action selector="issue:" destination="Bjh-Ss-7BC" eventType="touchUpInside" id="JnQ-vM-ZUm"/>
@@ -343,14 +383,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="jGz-aA-owU" firstAttribute="centerX" secondItem="Ga9-WC-gs1" secondAttribute="centerX" id="136-2M-xbC"/>
-                            <constraint firstItem="Ga9-WC-gs1" firstAttribute="top" secondItem="zbz-ES-zpV" secondAttribute="top" constant="30" id="OGh-qM-oWd"/>
-                            <constraint firstItem="jGz-aA-owU" firstAttribute="top" secondItem="Ga9-WC-gs1" secondAttribute="bottom" constant="31" id="Xao-hx-jMc"/>
-                            <constraint firstItem="Ga9-WC-gs1" firstAttribute="leading" secondItem="zbz-ES-zpV" secondAttribute="leading" constant="20" id="cI9-Ui-PFf"/>
-                            <constraint firstItem="zbz-ES-zpV" firstAttribute="trailing" secondItem="Ga9-WC-gs1" secondAttribute="trailing" constant="20" id="v7W-dQ-QV7"/>
+                            <constraint firstItem="Ga9-WC-gs1" firstAttribute="top" secondItem="qQ0-73-A6H" secondAttribute="bottom" constant="32" id="04j-du-G3V"/>
+                            <constraint firstItem="qQ0-73-A6H" firstAttribute="top" secondItem="zbz-ES-zpV" secondAttribute="top" id="0CR-pO-Y1g"/>
+                            <constraint firstItem="jGz-aA-owU" firstAttribute="leading" secondItem="zbz-ES-zpV" secondAttribute="leading" constant="16" id="86r-3C-piT"/>
+                            <constraint firstItem="zbz-ES-zpV" firstAttribute="trailing" secondItem="jGz-aA-owU" secondAttribute="trailing" constant="16" id="P40-eA-JWR"/>
+                            <constraint firstItem="jGz-aA-owU" firstAttribute="top" secondItem="Ga9-WC-gs1" secondAttribute="bottom" constant="32" id="Xao-hx-jMc"/>
+                            <constraint firstItem="Ga9-WC-gs1" firstAttribute="leading" secondItem="zbz-ES-zpV" secondAttribute="leading" constant="16" id="cI9-Ui-PFf"/>
+                            <constraint firstItem="qQ0-73-A6H" firstAttribute="centerX" secondItem="zbz-ES-zpV" secondAttribute="centerX" id="uu0-xN-LpE"/>
+                            <constraint firstItem="zbz-ES-zpV" firstAttribute="trailing" secondItem="Ga9-WC-gs1" secondAttribute="trailing" constant="16" id="v7W-dQ-QV7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zbz-ES-zpV"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Send Money" id="F9r-qz-a8g">
+                        <barButtonItem key="backBarButtonItem" title="User selection" id="pmD-7C-n5O"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="amountTextInputView" destination="Ga9-WC-gs1" id="X0m-fn-Cyb"/>
                         <outlet property="issueButton" destination="jGz-aA-owU" id="uQX-Ou-Cvx"/>
