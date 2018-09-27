@@ -32,13 +32,14 @@ class ShopMenuViewController: UIViewController {
 	@discardableResult
 	static func present(over viewController: UIViewController) -> ShopMenuViewController? {
 		let storyboard = UIStoryboard(name: "Shared", bundle: Bundle.main)
-		guard let sideMenuViewController = storyboard.instantiateViewController(withIdentifier: "ShopMenuViewController") as? ShopMenuViewController
+		guard let navigationController = storyboard.instantiateViewController(withIdentifier: "ShopMenuNavigationController") as? UINavigationController,
+			let shopMenuViewController = navigationController.topViewController as? ShopMenuViewController
 			else {
 				return nil
 		}
-		viewController.present(sideMenuViewController, animated: true) {
+		viewController.present(navigationController, animated: true) {
 		}
-		return sideMenuViewController
+		return shopMenuViewController
 	}
 
 	override func viewDidLoad() {
