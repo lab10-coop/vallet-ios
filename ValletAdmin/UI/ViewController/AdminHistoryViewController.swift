@@ -23,6 +23,8 @@ class AdminHistoryViewController: UIViewController {
 	var shop: Shop?
 	weak var container: UIViewController?
 
+	private var groupedEvents = [EventsGroup]()
+
 	static func instance(for shop: Shop) -> AdminHistoryViewController? {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
@@ -56,6 +58,8 @@ class AdminHistoryViewController: UIViewController {
 		historyViewModel = HistoryViewModel(shop: shop)
 
 		AdminHistoryEventTableViewCell.register(for: tableView)
+		HistoryTableSectionHeaderView.register(for: tableView)
+		HistoryTableSectionFooterView.register(for: tableView)
 
 		tableView.addSubview(refreshControl)
 
@@ -64,8 +68,18 @@ class AdminHistoryViewController: UIViewController {
 
 	override func viewWillAppear(_ animated: Bool) {
 		historyViewModel?.updateEvents()
-		tableView.reloadData()
+		reloadTableView()
 		updateTotalSupply()
+	}
+
+	private func reloadTableView() {
+		historyViewModel?.updateEvents()
+		guard let groupedEvents = historyViewModel?.groupedEvents
+			else {
+				return
+		}
+		self.groupedEvents = groupedEvents
+		tableView.reloadData()
 	}
 
 	@objc private func reloadData() {
@@ -75,7 +89,7 @@ class AdminHistoryViewController: UIViewController {
 					return
 			}
 			self?.refreshControl.endRefreshing()
-			self?.tableView.reloadData()
+			self?.reloadTableView()
 		})
 	}
 
@@ -87,7 +101,7 @@ class AdminHistoryViewController: UIViewController {
 		ShopManager.totalSupply(for: shop) { [weak self] (result) in
 			switch result {
 			case .success(let balance):
-				self?.totalSupplyLabel.text = "Total supply: \(balance.description)"
+				self?.totalSupplyLabel.text = balance.description
 			case .failure(let error):
 				print("Load total supply error: \(error)")
 			}
@@ -111,17 +125,17 @@ class AdminHistoryViewController: UIViewController {
 extension AdminHistoryViewController: UITableViewDataSource {
 
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return 1
+		return groupedEvents.count
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return historyViewModel?.events.count ?? 0
+		return groupedEvents[section].events.count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: AdminHistoryEventTableViewCell.reuseIdentifier, for: indexPath)
 		if let historyEventCell = cell as? AdminHistoryEventTableViewCell {
-			historyEventCell.event = historyViewModel?.events[indexPath.row]
+			historyEventCell.event = groupedEvents[indexPath.section].events[indexPath.row]
 		}
 		return cell
 	}
@@ -132,6 +146,19 @@ extension AdminHistoryViewController: UITableViewDataSource {
 // MARK: - Table view delegate
 
 extension AdminHistoryViewController: UITableViewDelegate {
+
+	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: HistoryTableSectionHeaderView.reuseIdentifier)
+		if let historyHeaderView = headerView as? HistoryTableSectionHeaderView {
+			historyHeaderView.date = groupedEvents[section].date
+		}
+		return headerView
+	}
+
+	func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+		let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: HistoryTableSectionFooterView.reuseIdentifier)
+		return footerView
+	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 

@@ -99,7 +99,7 @@ extension ClientHistoryViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: ClientHistoryEventTableViewCell.reuseIdentifier, for: indexPath)
 		if let historyEventCell = cell as? ClientHistoryEventTableViewCell {
-			historyEventCell.event = historyViewModel?.events[indexPath.row]
+			historyEventCell.event = groupedEvents[indexPath.section].events[indexPath.row]
 		}
 		return cell
 	}

@@ -12,26 +12,31 @@ class AdminHistoryEventTableViewCell: UITableViewCell, NibBackedTableViewCell {
 
 	@IBOutlet var descriptionLabel: UILabel!
 	@IBOutlet var valueLabel: UILabel!
-
-	private var dateOutput: String {
-		let dateFormatter = DateFormatter()
-		dateFormatter.dateStyle = .short
-		var dateString = "no date"
-		if let date = event?.date {
-			dateString = dateFormatter.string(from: date)
-		}
-		return dateString
-	}
+	@IBOutlet var incomingImageView: UIImageView!
+	@IBOutlet var outgoingImageView: UIImageView!
 
 	var event: ValueEvent? {
 		didSet {
-			guard let event = event
+			guard let event = event,
+				let type = event.resolvedType
 				else {
 					prepareForReuse()
 					return
 			}
-			descriptionLabel.text = "\(event.type.description) \(dateOutput)"
-			valueLabel.text = event.type == ValueEventType.issue.rawValue ? "- \(event.value)" : "+ \(event.value)"
+
+			switch type {
+			case .issue:
+				outgoingImageView.tintColor = Theme.Color.accent
+				outgoingImageView.isHidden = false
+				descriptionLabel.text = NSLocalizedString("Sent", comment: "Admin issue event description")
+				valueLabel.text = "- \(event.value)"
+			case .redeem:
+				incomingImageView.tintColor = Theme.Color.accent
+				incomingImageView.isHidden = false
+				descriptionLabel.text = NSLocalizedString("Received", comment: "Admin receive event description")
+				valueLabel.text = "+ \(event.value)"
+				valueLabel.textColor = Theme.Color.accent
+			}
 		}
 	}
 
