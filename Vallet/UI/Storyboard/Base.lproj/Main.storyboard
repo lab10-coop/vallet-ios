@@ -27,30 +27,51 @@
             </objects>
             <point key="canvasLocation" x="1625" y="47"/>
         </scene>
-        <!--My Address-->
+        <!--My QR Code-->
         <scene sceneID="5jB-bj-lO7">
             <objects>
                 <viewController storyboardIdentifier="ClientAddressViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8Aw-0A-R4M" customClass="ClientAddressViewController" customModule="Vallet" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EL2-aS-n8f">
+                    <view key="view" contentMode="scaleToFill" id="EL2-aS-n8f" customClass="BackgroundView" customModule="Vallet" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tm9-at-pI1">
-                                <rect key="frame" x="60" y="238" width="255" height="255"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show this QR code to the shop owner to receive money." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oy-qg-fwd" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
+                                <rect key="frame" x="16" y="96" width="343" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9h-zl-x5f" customClass="ContentBackgroundView" customModule="Vallet" customModuleProvider="target">
+                                <rect key="frame" x="48" y="169" width="279" height="279"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tm9-at-pI1">
+                                        <rect key="frame" x="16" y="16" width="247" height="247"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="tm9-at-pI1" secondAttribute="height" id="OOb-6r-y70"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="tm9-at-pI1" secondAttribute="height" id="OOb-6r-y70"/>
+                                    <constraint firstAttribute="bottom" secondItem="tm9-at-pI1" secondAttribute="bottom" constant="16" id="M8K-hd-sNs"/>
+                                    <constraint firstAttribute="trailing" secondItem="tm9-at-pI1" secondAttribute="trailing" constant="16" id="UG4-Ye-Jfx"/>
+                                    <constraint firstItem="tm9-at-pI1" firstAttribute="leading" secondItem="d9h-zl-x5f" secondAttribute="leading" constant="16" id="ZfW-qT-OOw"/>
+                                    <constraint firstItem="tm9-at-pI1" firstAttribute="top" secondItem="d9h-zl-x5f" secondAttribute="top" constant="16" id="hnf-7A-nhU"/>
                                 </constraints>
-                            </imageView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mZS-9e-8QS" firstAttribute="trailing" secondItem="tm9-at-pI1" secondAttribute="trailing" constant="60" id="Eoc-q1-mce"/>
-                            <constraint firstItem="tm9-at-pI1" firstAttribute="leading" secondItem="mZS-9e-8QS" secondAttribute="leading" constant="60" id="aa2-Pb-CIy"/>
-                            <constraint firstItem="tm9-at-pI1" firstAttribute="centerY" secondItem="mZS-9e-8QS" secondAttribute="centerY" id="eid-Gv-XQS"/>
+                            <constraint firstItem="mZS-9e-8QS" firstAttribute="trailing" secondItem="0oy-qg-fwd" secondAttribute="trailing" constant="16" id="5oX-T1-y5m"/>
+                            <constraint firstItem="d9h-zl-x5f" firstAttribute="leading" secondItem="mZS-9e-8QS" secondAttribute="leading" constant="48" id="B5y-Xe-8Vg"/>
+                            <constraint firstItem="0oy-qg-fwd" firstAttribute="top" secondItem="mZS-9e-8QS" secondAttribute="top" constant="32" id="S73-6x-bll"/>
+                            <constraint firstItem="0oy-qg-fwd" firstAttribute="leading" secondItem="mZS-9e-8QS" secondAttribute="leading" constant="16" id="fLH-EG-tqB"/>
+                            <constraint firstItem="mZS-9e-8QS" firstAttribute="trailing" secondItem="d9h-zl-x5f" secondAttribute="trailing" constant="48" id="n97-se-vyt"/>
+                            <constraint firstItem="d9h-zl-x5f" firstAttribute="top" secondItem="0oy-qg-fwd" secondAttribute="bottom" constant="32" id="zo4-Sl-cUK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mZS-9e-8QS"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Address" id="UYC-u9-mSs">
+                    <navigationItem key="navigationItem" title="My QR Code" id="UYC-u9-mSs">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="fgX-sG-cQg">
                             <connections>
                                 <action selector="close:" destination="8Aw-0A-R4M" id="2n3-rs-LrO"/>
@@ -59,11 +80,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addressQRCodeImageView" destination="tm9-at-pI1" id="HM6-yF-Z05"/>
+                        <outlet property="contentBackgroundView" destination="d9h-zl-x5f" id="7AH-eY-3g5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N70-R3-DnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2574" y="46"/>
+            <point key="canvasLocation" x="2573.5999999999999" y="45.42728635682159"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zzH-AV-8nM">

@@ -11,6 +11,7 @@ import UIKit
 class ClientAddressViewController: UIViewController {
 
 	@IBOutlet private var addressQRCodeImageView: UIImageView!
+	@IBOutlet private var contentBackgroundView: UIView!
 
 	static func present(over viewController: UIViewController) {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -24,6 +25,9 @@ class ClientAddressViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
+		contentBackgroundView.addShadow()
+		contentBackgroundView.addRoundedCorners()
 
 		addressQRCodeImageView.image = UIImage.qrCode(from: Wallet.address.address, size: addressQRCodeImageView.bounds.size)
 	}
