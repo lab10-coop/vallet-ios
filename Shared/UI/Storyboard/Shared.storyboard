@@ -60,7 +60,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XzM-bQ-KLV" customClass="SeparatorView" customModule="Vallet" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="-1" width="320" height="1"/>
+                                                    <rect key="frame" x="0.0" y="-1" width="375" height="1"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="dVr-IP-X2g"/>
@@ -126,7 +126,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43w-Hg-OjD">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43w-Hg-OjD">
                                 <rect key="frame" x="0.0" y="149" width="375" height="629"/>
                                 <connections>
                                     <segue destination="pDq-cy-8vN" kind="embed" identifier="EmbedContentSegue" id="k05-vS-WN7"/>
