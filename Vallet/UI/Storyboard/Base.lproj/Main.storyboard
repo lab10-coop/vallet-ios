@@ -419,7 +419,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7Q-NN-6Na" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="41"/>
                                                 <string key="text">Welcome!
-Enter your name and get started</string>
+Enter your name and get started.</string>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -467,7 +467,7 @@ Enter your name and get started</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="agJ-cj-Yx5" firstAttribute="bottom" secondItem="3c4-CB-Gs8" secondAttribute="bottom" id="2ZV-Yf-2u3"/>
+                            <constraint firstItem="agJ-cj-Yx5" firstAttribute="bottom" secondItem="3c4-CB-Gs8" secondAttribute="bottom" placeholder="YES" id="2ZV-Yf-2u3"/>
                             <constraint firstItem="agJ-cj-Yx5" firstAttribute="trailing" secondItem="3c4-CB-Gs8" secondAttribute="trailing" id="Gmx-J7-9WL"/>
                             <constraint firstItem="3c4-CB-Gs8" firstAttribute="leading" secondItem="agJ-cj-Yx5" secondAttribute="leading" id="e56-Wp-4sb"/>
                             <constraint firstItem="3c4-CB-Gs8" firstAttribute="top" secondItem="agJ-cj-Yx5" secondAttribute="top" id="qe7-ew-Njh"/>
