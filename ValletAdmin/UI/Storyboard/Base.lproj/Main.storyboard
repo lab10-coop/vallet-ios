@@ -385,9 +385,9 @@
                                     <outlet property="delegate" destination="lI6-Jt-LVj" id="6I7-XY-05N"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53B-s6-eWs">
-                                <rect key="frame" x="144" y="607" width="86" height="30"/>
-                                <state key="normal" title="Send Money"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53B-s6-eWs" customClass="PrimaryRoundedButton" customModule="ValletAdmin" customModuleProvider="target">
+                                <rect key="frame" x="131.5" y="629" width="111" height="22"/>
+                                <state key="normal" title="Send money" image="OutgoingArrowIcon"/>
                                 <connections>
                                     <action selector="sendMoney:" destination="lI6-Jt-LVj" eventType="touchUpInside" id="geo-mW-6tQ"/>
                                 </connections>
@@ -396,7 +396,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="53B-s6-eWs" firstAttribute="centerX" secondItem="1aI-kQ-E56" secondAttribute="centerX" id="T8M-QL-Zcz"/>
-                            <constraint firstItem="1aI-kQ-E56" firstAttribute="bottom" secondItem="53B-s6-eWs" secondAttribute="bottom" constant="30" id="a43-13-0ec"/>
+                            <constraint firstItem="1aI-kQ-E56" firstAttribute="bottom" secondItem="53B-s6-eWs" secondAttribute="bottom" constant="16" id="a43-13-0ec"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1aI-kQ-E56"/>
                     </view>
@@ -432,9 +432,9 @@
                                     <outlet property="delegate" destination="tsT-3K-oep" id="LBp-Aa-af9"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9E-hZ-RLo">
-                                <rect key="frame" x="138" y="607" width="98" height="30"/>
-                                <state key="normal" title="Add a Product"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9E-hZ-RLo" customClass="PrimaryRoundedButton" customModule="ValletAdmin" customModuleProvider="target">
+                                <rect key="frame" x="125" y="629" width="125" height="22"/>
+                                <state key="normal" title="Add a product" image="PlusIcon"/>
                                 <connections>
                                     <action selector="addNewProduct:" destination="tsT-3K-oep" eventType="touchUpInside" id="bQG-V4-Kdp"/>
                                 </connections>
@@ -442,7 +442,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="uEP-zv-bYi" firstAttribute="bottom" secondItem="R9E-hZ-RLo" secondAttribute="bottom" constant="30" id="Fk8-aR-vRo"/>
+                            <constraint firstItem="uEP-zv-bYi" firstAttribute="bottom" secondItem="R9E-hZ-RLo" secondAttribute="bottom" constant="16" id="Fk8-aR-vRo"/>
                             <constraint firstItem="uEP-zv-bYi" firstAttribute="top" secondItem="fxx-zd-wso" secondAttribute="top" id="Sby-dF-D2j"/>
                             <constraint firstItem="uEP-zv-bYi" firstAttribute="trailing" secondItem="fxx-zd-wso" secondAttribute="trailing" id="VkR-we-oqV"/>
                             <constraint firstItem="fxx-zd-wso" firstAttribute="bottom" secondItem="uEP-zv-bYi" secondAttribute="bottom" id="WvX-Yf-pB3"/>
@@ -556,5 +556,7 @@ Enter your shop name and get started.</string>
     </scenes>
     <resources>
         <image name="LogoLarge" width="115" height="87"/>
+        <image name="OutgoingArrowIcon" width="10" height="10"/>
+        <image name="PlusIcon" width="10" height="10"/>
     </resources>
 </document>
