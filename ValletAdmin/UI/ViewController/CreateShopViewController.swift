@@ -30,7 +30,7 @@ class CreateShopViewController: UIViewController {
 			else {
 				return nil
 		}
-		viewController.present(createShopNavigationController, animated: false)
+		viewController.present(createShopNavigationController, animated: true)
 		return createShopViewController
 	}
 

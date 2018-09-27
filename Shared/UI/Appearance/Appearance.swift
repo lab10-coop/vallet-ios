@@ -19,6 +19,7 @@ struct Appearance {
 		UICollectionView.appearance().backgroundColor = Theme.Color.background
 
 		UIButton.appearance().tintColor = Theme.Color.navigationBarButton
+		UITextField.appearance().tintColor = Theme.Color.accent
 
 		UINavigationBar.appearance().backgroundColor = Theme.Color.navigationBar
 		UINavigationBar.appearance().barTintColor = Theme.Color.navigationBar
