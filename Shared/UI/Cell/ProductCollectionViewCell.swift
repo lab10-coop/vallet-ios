@@ -10,9 +10,11 @@ import UIKit
 
 class ProductCollectionViewCell: UICollectionViewCell, NibBackedCollectionViewCell {
 
+	@IBOutlet private var containerView: UIView!
 	@IBOutlet private var nameLabel: UILabel!
 	@IBOutlet private var priceLabel: UILabel!
 	@IBOutlet private var imageView: UIImageView!
+	@IBOutlet private var placeholderImageView: UIImageView!
 
 	static let aspectRatio: CGFloat = 1.2
 
@@ -25,6 +27,14 @@ class ProductCollectionViewCell: UICollectionViewCell, NibBackedCollectionViewCe
 
 	override func awakeFromNib() {
 		super.awakeFromNib()
+
+		backgroundColor = Theme.Color.background
+
+		containerView.layer.borderColor = Theme.Color.separator.cgColor
+		containerView.layer.borderWidth = 1.0
+
+		placeholderImageView.tintColor = Theme.Color.separator
+		
 		prepareForReuse()
 	}
 

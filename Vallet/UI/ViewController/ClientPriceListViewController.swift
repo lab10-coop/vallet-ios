@@ -18,7 +18,7 @@ class ClientPriceListViewController: UIViewController {
 		return refreshControl
 	}()
 
-	private let cellSpacing: CGFloat = 5
+	private let cellSpacing: CGFloat = 16
 	private var numCellsPerRow = 2
 
 	var shop: Shop?
