@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import KeyboardLayoutGuide
 
 class AdminStartViewController: UIViewController {
 
+	@IBOutlet private var containerView: UIView!
 	@IBOutlet private var nameInputView: TextInputView!
 	@IBOutlet private var submitButton: UIButton!
-
 
 	static func makeAppRootViewController() {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -35,6 +36,12 @@ class AdminStartViewController: UIViewController {
 		FaucetManager.getFunds(for: Wallet.address) { result in
 			print("Get funds result: \(result)")
 		}
+
+		containerView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor).isActive = true
+	}
+
+	@IBAction func hideKeyboard(_ sender: Any? = nil) {
+		nameInputView.resignFirstResponder()
 	}
 
 	@IBAction func submit(_ sender: Any? = nil) {
