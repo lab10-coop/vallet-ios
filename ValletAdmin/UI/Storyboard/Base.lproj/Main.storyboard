@@ -201,58 +201,95 @@
             </objects>
             <point key="canvasLocation" x="142" y="1685"/>
         </scene>
-        <!--Create Product View Controller-->
+        <!--Add a Product-->
         <scene sceneID="al5-7I-nAQ">
             <objects>
                 <viewController storyboardIdentifier="CreateProductViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ezM-hd-YWz" customClass="CreateProductViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5ZQ-AA-xF1">
+                    <view key="view" contentMode="scaleToFill" id="5ZQ-AA-xF1" customClass="BackgroundView" customModule="ValletAdmin" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="e48-XY-vw1">
-                                <rect key="frame" x="16" y="96" width="343" height="182"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejA-Ce-Q2d" userLabel="Container view">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KyD-zD-etp" customClass="TextInputView" customModule="ValletAdmin" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ctC-Kc-EEq" customClass="ContentBackgroundView" customModule="ValletAdmin" customModuleProvider="target">
+                                        <rect key="frame" x="112" y="32" width="150" height="150"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CameraIcon" translatesAutoresizingMaskIntoConstraints="NO" id="uGI-V6-sjo">
+                                                <rect key="frame" x="45" y="55" width="60" height="40"/>
+                                            </imageView>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="jgk-E8-YZ9"/>
+                                            <constraint firstAttribute="width" secondItem="ctC-Kc-EEq" secondAttribute="height" id="0o9-Oh-08l"/>
+                                            <constraint firstItem="uGI-V6-sjo" firstAttribute="centerX" secondItem="ctC-Kc-EEq" secondAttribute="centerX" id="C5E-KT-PLm"/>
+                                            <constraint firstItem="uGI-V6-sjo" firstAttribute="centerY" secondItem="ctC-Kc-EEq" secondAttribute="centerY" id="LWZ-Sv-gpn"/>
+                                            <constraint firstAttribute="height" constant="150" id="dta-7w-xDO"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Name"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRequired" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFe-k4-bf2" customClass="TextInputView" customModule="ValletAdmin" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="76" width="343" height="60"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="Ptr-AO-7yh"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Price"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRequired" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJO-xO-Ktm">
-                                        <rect key="frame" x="0.0" y="152" width="343" height="30"/>
-                                        <state key="normal" title="Add a product"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="e48-XY-vw1">
+                                        <rect key="frame" x="16" y="214" width="343" height="144"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KyD-zD-etp" customClass="TextInputView" customModule="ValletAdmin" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="64"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="64" id="jgk-E8-YZ9"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Name"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRequired" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFe-k4-bf2" customClass="TextInputView" customModule="ValletAdmin" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="80" width="343" height="64"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="64" id="Ptr-AO-7yh"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Price"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRequired" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJO-xO-Ktm" customClass="PrimaryRoundedButton" customModule="ValletAdmin" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="557" width="343" height="30"/>
+                                        <state key="normal" title="Submit"/>
                                         <connections>
                                             <action selector="submit:" destination="ezM-hd-YWz" eventType="touchUpInside" id="vQY-Nw-Nkr"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="aJO-xO-Ktm" secondAttribute="bottom" constant="16" id="2n1-pe-c9d"/>
+                                    <constraint firstItem="ctC-Kc-EEq" firstAttribute="top" secondItem="ejA-Ce-Q2d" secondAttribute="top" priority="745" constant="32" id="9lA-8W-PNN"/>
+                                    <constraint firstItem="aJO-xO-Ktm" firstAttribute="leading" secondItem="ejA-Ce-Q2d" secondAttribute="leading" constant="16" id="Cr0-VI-8Pr"/>
+                                    <constraint firstItem="ctC-Kc-EEq" firstAttribute="centerX" secondItem="ejA-Ce-Q2d" secondAttribute="centerX" id="GFG-0l-kXH"/>
+                                    <constraint firstAttribute="trailing" secondItem="e48-XY-vw1" secondAttribute="trailing" constant="16" id="MwW-4b-JWC"/>
+                                    <constraint firstAttribute="trailing" secondItem="aJO-xO-Ktm" secondAttribute="trailing" constant="16" id="YoI-jp-xkq"/>
+                                    <constraint firstItem="aJO-xO-Ktm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="e48-XY-vw1" secondAttribute="bottom" constant="32" id="Z4A-s8-eOt"/>
+                                    <constraint firstItem="e48-XY-vw1" firstAttribute="leading" secondItem="ejA-Ce-Q2d" secondAttribute="leading" constant="16" id="egc-gJ-L3D"/>
+                                    <constraint firstItem="e48-XY-vw1" firstAttribute="top" secondItem="ctC-Kc-EEq" secondAttribute="bottom" constant="32" id="hjJ-Fg-nIa"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="wEZ-Vn-PAC" appends="YES" id="6F0-eL-Qya"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="JeG-Cq-ll6" firstAttribute="trailing" secondItem="e48-XY-vw1" secondAttribute="trailing" constant="16" id="AoR-OJ-pjE"/>
-                            <constraint firstItem="e48-XY-vw1" firstAttribute="leading" secondItem="JeG-Cq-ll6" secondAttribute="leading" constant="16" id="EMJ-AT-ent"/>
-                            <constraint firstItem="e48-XY-vw1" firstAttribute="top" secondItem="JeG-Cq-ll6" secondAttribute="top" constant="32" id="qN9-jw-ZT5"/>
+                            <constraint firstItem="ejA-Ce-Q2d" firstAttribute="leading" secondItem="JeG-Cq-ll6" secondAttribute="leading" id="MAK-Ck-1OS"/>
+                            <constraint firstItem="ejA-Ce-Q2d" firstAttribute="top" secondItem="JeG-Cq-ll6" secondAttribute="top" id="VfK-s1-rpy"/>
+                            <constraint firstItem="JeG-Cq-ll6" firstAttribute="trailing" secondItem="ejA-Ce-Q2d" secondAttribute="trailing" id="k6X-Yr-yDX"/>
+                            <constraint firstItem="JeG-Cq-ll6" firstAttribute="bottom" secondItem="ejA-Ce-Q2d" secondAttribute="bottom" placeholder="YES" id="pFJ-WN-KzS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JeG-Cq-ll6"/>
                     </view>
-                    <navigationItem key="navigationItem" id="p4a-39-y6H">
+                    <navigationItem key="navigationItem" title="Add a Product" id="p4a-39-y6H">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="FQg-Aj-srp">
                             <connections>
                                 <action selector="close:" destination="ezM-hd-YWz" id="JCk-NJ-Pby"/>
@@ -260,12 +297,20 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cameraIconView" destination="uGI-V6-sjo" id="LNw-0i-MHY"/>
+                        <outlet property="containerView" destination="ejA-Ce-Q2d" id="dX5-rZ-vMw"/>
                         <outlet property="nameInputView" destination="KyD-zD-etp" id="JCr-eq-hYa"/>
+                        <outlet property="photoBackgroundView" destination="ctC-Kc-EEq" id="0HP-uY-jFd"/>
                         <outlet property="priceInputView" destination="aFe-k4-bf2" id="ehQ-Y9-19h"/>
                         <outlet property="submitButton" destination="aJO-xO-Ktm" id="U9a-wh-B8B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p0i-sF-jIT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="wEZ-Vn-PAC">
+                    <connections>
+                        <action selector="hideKeyboard:" destination="ezM-hd-YWz" id="cbN-sk-BN4"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1033" y="1685"/>
         </scene>
@@ -633,6 +678,7 @@ Enter your shop name and get started.</string>
         </scene>
     </scenes>
     <resources>
+        <image name="CameraIcon" width="60" height="40"/>
         <image name="LogoLarge" width="115" height="87"/>
         <image name="OutgoingArrowIcon" width="10" height="10"/>
         <image name="PlusIcon" width="10" height="10"/>

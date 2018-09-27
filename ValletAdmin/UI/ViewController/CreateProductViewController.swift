@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import KeyboardLayoutGuide
 
 class CreateProductViewController: UIViewController {
 
+	@IBOutlet private var containerView: UIView!
+	@IBOutlet private var photoBackgroundView: UIView!
 	@IBOutlet private var nameInputView: TextInputView!
 	@IBOutlet private var priceInputView: TextInputView!
 	@IBOutlet private var submitButton: UIButton!
+	@IBOutlet private var cameraIconView: UIImageView!
 
 	var priceListViewModel: PriceListViewModel?
 
@@ -40,6 +44,18 @@ class CreateProductViewController: UIViewController {
 
 		priceInputView.returnKeyType = .send
 		priceInputView.type = .integer
+
+		photoBackgroundView.addRoundedCorners()
+		photoBackgroundView.addShadow()
+
+		cameraIconView.tintColor = Theme.Color.lightText
+		
+		containerView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor).isActive = true
+	}
+
+	@IBAction func hideKeyboard(_ sender: Any? = nil) {
+		nameInputView.resignFirstResponder()
+		priceInputView.resignFirstResponder()
 	}
 
 	@IBAction func close(_ sender: Any? = nil) {
