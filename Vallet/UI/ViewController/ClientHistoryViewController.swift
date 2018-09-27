@@ -22,6 +22,13 @@ class ClientHistoryViewController: UIViewController {
 	var shop: Shop?
 	weak var container: UIViewController?
 
+	private var groupedEvents = [EventsGroup]()
+	private lazy var dateFormatter: DateFormatter = {
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateStyle = .short
+		return dateFormatter
+	}()
+
 	static func instance(for shop: Shop) -> ClientHistoryViewController? {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
@@ -53,7 +60,16 @@ class ClientHistoryViewController: UIViewController {
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
+		reloadTableView()
+	}
+
+	private func reloadTableView() {
 		historyViewModel?.updateEvents()
+		guard let groupedEvents = historyViewModel?.groupedEvents
+			else {
+				return
+		}
+		self.groupedEvents = groupedEvents
 		tableView.reloadData()
 	}
 
@@ -64,7 +80,7 @@ class ClientHistoryViewController: UIViewController {
 					return
 			}
 			self?.refreshControl.endRefreshing()
-			self?.tableView.reloadData()
+			self?.reloadTableView()
 		})
 	}
 
@@ -76,11 +92,15 @@ class ClientHistoryViewController: UIViewController {
 extension ClientHistoryViewController: UITableViewDataSource {
 
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return 1
+		return groupedEvents.count
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return historyViewModel?.events.count ?? 0
+		return groupedEvents[section].events.count
+	}
+
+	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		return dateFormatter.string(from: groupedEvents[section].date)
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
