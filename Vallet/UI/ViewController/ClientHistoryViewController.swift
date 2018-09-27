@@ -23,11 +23,6 @@ class ClientHistoryViewController: UIViewController {
 	weak var container: UIViewController?
 
 	private var groupedEvents = [EventsGroup]()
-	private lazy var dateFormatter: DateFormatter = {
-		let dateFormatter = DateFormatter()
-		dateFormatter.dateStyle = .short
-		return dateFormatter
-	}()
 
 	static func instance(for shop: Shop) -> ClientHistoryViewController? {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -53,6 +48,7 @@ class ClientHistoryViewController: UIViewController {
 		historyViewModel = HistoryViewModel(shop: shop, clientAddress: Wallet.address)
 
 		ClientHistoryEventTableViewCell.register(for: tableView)
+		HistoryTableSectionHeaderView.register(for: tableView)
 
 		tableView.addSubview(refreshControl)
 
@@ -99,10 +95,6 @@ extension ClientHistoryViewController: UITableViewDataSource {
 		return groupedEvents[section].events.count
 	}
 
-	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		return dateFormatter.string(from: groupedEvents[section].date)
-	}
-
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: ClientHistoryEventTableViewCell.reuseIdentifier, for: indexPath)
 		if let historyEventCell = cell as? ClientHistoryEventTableViewCell {
@@ -117,6 +109,14 @@ extension ClientHistoryViewController: UITableViewDataSource {
 // MARK: - Table view delegate
 
 extension ClientHistoryViewController: UITableViewDelegate {
+
+	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: HistoryTableSectionHeaderView.reuseIdentifier)
+		if let historyHeaderView = headerView as? HistoryTableSectionHeaderView {
+			historyHeaderView.date = groupedEvents[section].date
+		}
+		return headerView
+	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		
