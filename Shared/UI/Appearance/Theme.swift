@@ -10,6 +10,13 @@ import UIKit
 
 struct Theme {
 
+	struct Constants {
+
+		static let cornerRadius: CGFloat = 6.0
+		static let shadowRadius: CGFloat = 5.0
+
+	}
+
 	// MARK: - Colors
 
 	struct Color {

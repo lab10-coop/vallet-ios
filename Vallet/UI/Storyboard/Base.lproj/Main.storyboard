@@ -81,49 +81,61 @@
             </objects>
             <point key="canvasLocation" x="1625" y="840"/>
         </scene>
-        <!--Scan Shop Address View Controller-->
+        <!--Add a New Shop-->
         <scene sceneID="SWG-DO-anR">
             <objects>
                 <viewController storyboardIdentifier="ScanShopAddressViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IaT-Uf-uc0" customClass="ScanShopAddressViewController" customModule="Vallet" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Nth-Wx-GrB">
+                    <view key="view" contentMode="scaleToFill" id="Nth-Wx-GrB" customClass="BackgroundView" customModule="Vallet" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLa-SE-AlK" customClass="QRCodeReaderView" customModule="Vallet" customModuleProvider="target">
-                                <rect key="frame" x="65" y="245.5" width="240" height="240"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="WLa-SE-AlK" secondAttribute="height" multiplier="1:1" id="pY7-8Q-LvG"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pGz-Cm-QXT">
-                                <rect key="frame" x="39" y="505.5" width="297" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan the shop's QR code." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHk-FV-g5A" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
+                                <rect key="frame" x="16" y="96" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="73y-Fa-wNn" customClass="ContentBackgroundView" customModule="Vallet" customModuleProvider="target">
+                                <rect key="frame" x="48" y="149" width="279" height="279"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLa-SE-AlK" customClass="QRCodeReaderView" customModule="Vallet" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="16" width="247" height="247"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="WLa-SE-AlK" secondAttribute="height" multiplier="1:1" id="pY7-8Q-LvG"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="WLa-SE-AlK" firstAttribute="top" secondItem="73y-Fa-wNn" secondAttribute="top" constant="16" id="4Zd-vB-kH4"/>
+                                    <constraint firstItem="WLa-SE-AlK" firstAttribute="leading" secondItem="73y-Fa-wNn" secondAttribute="leading" constant="16" id="Yrr-2G-kR2"/>
+                                    <constraint firstAttribute="bottom" secondItem="WLa-SE-AlK" secondAttribute="bottom" constant="16" id="iFz-9D-gi3"/>
+                                    <constraint firstAttribute="trailing" secondItem="WLa-SE-AlK" secondAttribute="trailing" constant="16" id="iYJ-hY-CyG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="WLa-SE-AlK" firstAttribute="centerY" secondItem="xre-Tg-r0B" secondAttribute="centerY" id="ML8-yO-FiY"/>
-                            <constraint firstItem="pGz-Cm-QXT" firstAttribute="leading" secondItem="xre-Tg-r0B" secondAttribute="leading" constant="39" id="MRw-ru-HEu"/>
-                            <constraint firstItem="pGz-Cm-QXT" firstAttribute="top" secondItem="WLa-SE-AlK" secondAttribute="bottom" constant="20" id="ThE-5q-xvr"/>
-                            <constraint firstItem="WLa-SE-AlK" firstAttribute="leading" secondItem="xre-Tg-r0B" secondAttribute="leading" constant="65" id="Y0E-CL-w7U"/>
-                            <constraint firstItem="xre-Tg-r0B" firstAttribute="trailing" secondItem="pGz-Cm-QXT" secondAttribute="trailing" constant="39" id="m9S-cs-U0r"/>
-                            <constraint firstItem="WLa-SE-AlK" firstAttribute="width" secondItem="WLa-SE-AlK" secondAttribute="height" multiplier="1:1" id="pjQ-jp-lex"/>
-                            <constraint firstItem="xre-Tg-r0B" firstAttribute="trailing" secondItem="WLa-SE-AlK" secondAttribute="trailing" constant="70" id="ue2-tq-8EU"/>
+                            <constraint firstItem="uHk-FV-g5A" firstAttribute="leading" secondItem="xre-Tg-r0B" secondAttribute="leading" constant="16" id="4jZ-UX-qN2"/>
+                            <constraint firstItem="73y-Fa-wNn" firstAttribute="leading" secondItem="xre-Tg-r0B" secondAttribute="leading" constant="48" id="Fa7-bb-cjD"/>
+                            <constraint firstItem="73y-Fa-wNn" firstAttribute="top" secondItem="uHk-FV-g5A" secondAttribute="bottom" constant="32" id="Ilf-oH-Qts"/>
+                            <constraint firstItem="xre-Tg-r0B" firstAttribute="trailing" secondItem="73y-Fa-wNn" secondAttribute="trailing" constant="48" id="JVg-9B-0ve"/>
+                            <constraint firstItem="xre-Tg-r0B" firstAttribute="trailing" secondItem="uHk-FV-g5A" secondAttribute="trailing" constant="16" id="fvi-01-Zfn"/>
+                            <constraint firstItem="uHk-FV-g5A" firstAttribute="top" secondItem="xre-Tg-r0B" secondAttribute="top" constant="32" id="pw1-Z0-VDd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xre-Tg-r0B"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NHg-sf-1C2">
+                    <navigationItem key="navigationItem" title="Add a New Shop" id="NHg-sf-1C2">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="ybT-mY-eDv">
                             <connections>
                                 <action selector="close:" destination="IaT-Uf-uc0" id="G9k-Dq-WFm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="addressLabel" destination="pGz-Cm-QXT" id="o16-zM-jV1"/>
+                        <outlet property="contentBackgroundView" destination="73y-Fa-wNn" id="36Q-Sn-mIl"/>
                         <outlet property="qrCodeReaderView" destination="WLa-SE-AlK" id="7O2-dj-q6y"/>
                     </connections>
                 </viewController>
