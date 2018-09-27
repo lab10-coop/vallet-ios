@@ -15,16 +15,6 @@ class ClientHistoryEventTableViewCell: UITableViewCell, NibBackedTableViewCell {
 	@IBOutlet var incomingImageView: UIImageView!
 	@IBOutlet var outgoingImageView: UIImageView!
 
-	private var dateOutput: String {
-		let dateFormatter = DateFormatter()
-		dateFormatter.dateStyle = .short
-		var dateString = "no date"
-		if let date = event?.date {
-			dateString = dateFormatter.string(from: date)
-		}
-		return dateString
-	}
-
 	var event: ValueEvent? {
 		didSet {
 			guard let event = event,
