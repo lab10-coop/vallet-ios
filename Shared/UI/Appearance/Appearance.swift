@@ -18,6 +18,8 @@ struct Appearance {
 		UITableView.appearance().backgroundColor = Theme.Color.background
 		UICollectionView.appearance().backgroundColor = Theme.Color.background
 
+		UIButton.appearance().tintColor = Theme.Color.navigationBarButton
+
 		UINavigationBar.appearance().backgroundColor = Theme.Color.navigationBar
 		UINavigationBar.appearance().barTintColor = Theme.Color.navigationBar
 		UINavigationBar.appearance().tintColor = Theme.Color.navigationBarButton

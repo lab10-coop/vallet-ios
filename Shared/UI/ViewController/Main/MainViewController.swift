@@ -13,7 +13,9 @@ class MainViewController: UIViewController {
 	@IBOutlet var contentSegmentedControl: UISegmentedControl!
 	@IBOutlet var containerView: UIView!
 	@IBOutlet var shopNameLabel: UILabel!
+	@IBOutlet var dropMenuIconView: UIImageView!
 	@IBOutlet var clientBalanceLabel: UILabel!
+	@IBOutlet var qrCodeButton: UIButton!
 
 	var pageViewController: UIPageViewController?
 	var viewControllers = [UIViewController]()
@@ -28,6 +30,8 @@ class MainViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
+		dropMenuIconView.tintColor = Theme.Color.navigationBarButton
 
 		shopNameLabel.text = ""
 		clientBalanceLabel.text = ""
