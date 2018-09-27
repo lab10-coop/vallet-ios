@@ -12,6 +12,7 @@ class PaymentConfirmationViewController: UIViewController {
 
 	@IBOutlet private var priceLabel: UILabel!
 	@IBOutlet private var nameLabel: UILabel!
+	@IBOutlet private var contentBackgroundView: UIView!
 
 	private var product: Product?
 	var confirmation: (() -> Void) = {}
@@ -30,6 +31,8 @@ class PaymentConfirmationViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
+		contentBackgroundView.addRoundedCorners()
 
 		priceLabel.text = product?.price.description
 		nameLabel.text = product?.name
