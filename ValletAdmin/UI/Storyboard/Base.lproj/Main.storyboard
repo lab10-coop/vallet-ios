@@ -31,22 +31,65 @@
         <scene sceneID="nPQ-ly-zbO">
             <objects>
                 <viewController storyboardIdentifier="ShopAddressViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GhV-pr-1Ge" customClass="ShopAddressViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1yj-MP-Cbp">
+                    <view key="view" contentMode="scaleToFill" id="1yj-MP-Cbp" customClass="BackgroundView" customModule="ValletAdmin" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DBI-UM-voQ">
-                                <rect key="frame" x="60" y="238" width="255" height="255"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="gO7-EN-SS5">
+                                <rect key="frame" x="16" y="96" width="343" height="98"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vs9-t2-fPb">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="41"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the QR code for the shop:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJt-us-8ET" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfQ-Ha-YXF" customClass="SmallDarkTitleLabel" customModule="ValletAdmin" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="20.5" width="343" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show this QR code to your client for them to add your shop to their app." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRU-tg-UXF" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="57" width="343" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A4r-mx-140" customClass="ContentBackgroundView" customModule="ValletAdmin" customModuleProvider="target">
+                                <rect key="frame" x="48" y="226" width="279" height="279"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DBI-UM-voQ">
+                                        <rect key="frame" x="16" y="16" width="247" height="247"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="DBI-UM-voQ" secondAttribute="height" id="xq8-Hr-j0i"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="DBI-UM-voQ" secondAttribute="height" id="xq8-Hr-j0i"/>
+                                    <constraint firstAttribute="trailing" secondItem="DBI-UM-voQ" secondAttribute="trailing" constant="16" id="56O-Pq-VG3"/>
+                                    <constraint firstAttribute="bottom" secondItem="DBI-UM-voQ" secondAttribute="bottom" constant="16" id="Ojy-WI-ZnV"/>
+                                    <constraint firstItem="DBI-UM-voQ" firstAttribute="top" secondItem="A4r-mx-140" secondAttribute="top" constant="16" id="aQf-rA-3a8"/>
+                                    <constraint firstItem="DBI-UM-voQ" firstAttribute="leading" secondItem="A4r-mx-140" secondAttribute="leading" constant="16" id="pCb-i0-Eod"/>
                                 </constraints>
-                            </imageView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="DBI-UM-voQ" firstAttribute="leading" secondItem="tVa-YZ-sFk" secondAttribute="leading" constant="60" id="uLt-z0-WJ5"/>
-                            <constraint firstItem="DBI-UM-voQ" firstAttribute="centerY" secondItem="tVa-YZ-sFk" secondAttribute="centerY" id="yhJ-Aq-XDD"/>
-                            <constraint firstItem="tVa-YZ-sFk" firstAttribute="trailing" secondItem="DBI-UM-voQ" secondAttribute="trailing" constant="60" id="yx5-fO-dKM"/>
+                            <constraint firstItem="A4r-mx-140" firstAttribute="leading" secondItem="tVa-YZ-sFk" secondAttribute="leading" constant="48" id="7VL-Jo-tfB"/>
+                            <constraint firstItem="A4r-mx-140" firstAttribute="top" secondItem="gO7-EN-SS5" secondAttribute="bottom" constant="32" id="EU4-77-3mF"/>
+                            <constraint firstItem="gO7-EN-SS5" firstAttribute="leading" secondItem="tVa-YZ-sFk" secondAttribute="leading" constant="16" id="Zp0-9s-PVg"/>
+                            <constraint firstItem="tVa-YZ-sFk" firstAttribute="trailing" secondItem="gO7-EN-SS5" secondAttribute="trailing" constant="16" id="cSy-MT-mVX"/>
+                            <constraint firstItem="tVa-YZ-sFk" firstAttribute="trailing" secondItem="A4r-mx-140" secondAttribute="trailing" constant="48" id="dIb-vz-1u6"/>
+                            <constraint firstItem="gO7-EN-SS5" firstAttribute="top" secondItem="tVa-YZ-sFk" secondAttribute="top" constant="32" id="g5l-85-72v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tVa-YZ-sFk"/>
                     </view>
@@ -58,7 +101,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="contentBackgroundView" destination="A4r-mx-140" id="KWu-Ac-vPF"/>
                         <outlet property="qrCodeImageView" destination="DBI-UM-voQ" id="bT7-Dz-iTQ"/>
+                        <outlet property="shopNameLabel" destination="pfQ-Ha-YXF" id="ktg-BI-pXm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="an9-G4-aD9" userLabel="First Responder" sceneMemberID="firstResponder"/>

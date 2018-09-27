@@ -10,7 +10,9 @@ import UIKit
 
 class ShopAddressViewController: UIViewController {
 
+	@IBOutlet private var shopNameLabel: UILabel!
 	@IBOutlet private var qrCodeImageView: UIImageView!
+	@IBOutlet private var contentBackgroundView: UIView!
 
 	var shop: Shop? {
 		didSet {
@@ -36,6 +38,9 @@ class ShopAddressViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
+		contentBackgroundView.addShadow()
+		contentBackgroundView.addRoundedCorners()
 		
 		setQRCodeImage(for: shop)
 	}
@@ -47,6 +52,7 @@ class ShopAddressViewController: UIViewController {
 				qrCodeImageView.image = nil
 				return
 		}
+		shopNameLabel.text = shop.name
 		qrCodeImageView.image = UIImage.qrCode(from: shopAddress, size: qrCodeImageView.bounds.size)
 	}
 
