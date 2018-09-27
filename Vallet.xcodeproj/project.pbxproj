@@ -855,6 +855,7 @@
 					};
 					D429F86121400573004427F0 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = D429F84A21400572004427F0;
 					};
 					D429F88D21400A5A004427F0 = {
@@ -1419,7 +1420,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.matijakregar.ValletTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vallet.app/Vallet";
 			};
@@ -1440,7 +1441,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.matijakregar.ValletTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vallet.app/Vallet";
 			};
