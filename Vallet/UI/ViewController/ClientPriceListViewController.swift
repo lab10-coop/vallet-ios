@@ -50,6 +50,7 @@ class ClientPriceListViewController: UIViewController {
 		ProductCollectionViewCell.register(for: collectionView)
 
 		collectionView.addSubview(refreshControl)
+		collectionView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 16.0, right: 0.0)
 
 		priceListViewModel = PriceListViewModel(shop: shop)
 		priceListViewModel?.newDataBlock = { [weak self] in

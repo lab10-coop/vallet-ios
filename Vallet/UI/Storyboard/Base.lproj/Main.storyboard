@@ -185,6 +185,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="16"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="aV3-3Q-GzR" customClass="BackgroundView" customModule="Vallet" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="16" width="375" height="16"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
                                 <connections>
                                     <outlet property="dataSource" destination="Du6-La-X5F" id="CNC-8D-Axh"/>
                                     <outlet property="delegate" destination="Du6-La-X5F" id="E7J-Mh-UaO"/>

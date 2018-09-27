@@ -548,6 +548,11 @@
                                         <constraint firstAttribute="trailing" secondItem="PcF-D3-qy4" secondAttribute="trailing" id="zOg-Ep-zq7"/>
                                     </constraints>
                                 </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="eCr-jX-4Wb" customClass="BackgroundView" customModule="ValletAdmin" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="120" width="375" height="76"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
                                 <connections>
                                     <outlet property="dataSource" destination="lI6-Jt-LVj" id="sFT-XO-ihn"/>
                                     <outlet property="delegate" destination="lI6-Jt-LVj" id="6I7-XY-05N"/>
