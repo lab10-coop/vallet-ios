@@ -32,6 +32,10 @@ class HistoryTableSectionHeaderView: UITableViewHeaderFooterView, NibBackedTable
 			if dateString == dateFormatter.string(from: Date()) {
 				titleLabel.text = NSLocalizedString("Today", comment: "Date title")
 			}
+			// TODO: Do better matching
+			else if dateString == "01.01.0001" {
+				titleLabel.text = NSLocalizedString("Unknown date", comment: "Unknown date title")
+			}
 			else {
 				titleLabel.text = dateString
 			}
