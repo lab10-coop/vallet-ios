@@ -69,7 +69,7 @@ class MainViewController: UIViewController {
 		contentSegmentedControl.selectedSegmentIndex = selectedIndex
 	}
 
-	private func updatePageViewContoller(direction: UIPageViewControllerNavigationDirection) {
+	private func updatePageViewContoller(direction: UIPageViewController.NavigationDirection) {
 		guard selectedIndex < viewControllers.count
 			else {
 				return
@@ -86,7 +86,7 @@ class MainViewController: UIViewController {
 				return
 		}
 
-		let direction: UIPageViewControllerNavigationDirection = selectedIndex < contentSegmentedControl.selectedSegmentIndex ? .forward : .reverse
+		let direction: UIPageViewController.NavigationDirection = selectedIndex < contentSegmentedControl.selectedSegmentIndex ? .forward : .reverse
 		selectedIndex = contentSegmentedControl.selectedSegmentIndex
 
 		updatePageViewContoller(direction: direction)

@@ -27,7 +27,7 @@ struct Appearance {
 		UINavigationBar.appearance().shadowImage = UIImage()
 		UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
 		UINavigationBar.appearance().isTranslucent = true
-		UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: Theme.Color.darkText, NSAttributedStringKey.font: Theme.Font.largeTitleFont]
+		UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.Color.darkText, NSAttributedString.Key.font: Theme.Font.largeTitleFont]
 	}
 
 }

@@ -15,7 +15,7 @@ class AdminHistoryViewController: UIViewController {
 
 	private lazy var refreshControl: UIRefreshControl = {
 		let refreshControl = UIRefreshControl()
-		refreshControl.addTarget(self, action: #selector(reloadData), for: UIControlEvents.valueChanged)
+		refreshControl.addTarget(self, action: #selector(reloadData), for: UIControl.Event.valueChanged)
 		return refreshControl
 	}()
 

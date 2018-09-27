@@ -15,7 +15,7 @@ public final class ScaledFont {
 		let fontName: String
 	}
 
-	private typealias StyleDictionary = [UIFontTextStyle.RawValue: FontDescription]
+	private typealias StyleDictionary = [UIFont.TextStyle.RawValue: FontDescription]
 	private var styleDictionary: StyleDictionary?
 
 	public init(fontName: String? = nil) {
@@ -30,7 +30,7 @@ public final class ScaledFont {
 		styleDictionary = try? decoder.decode(StyleDictionary.self, from: data)
 	}
 
-	public func font(for textStyle: UIFontTextStyle) -> UIFont {
+	public func font(for textStyle: UIFont.TextStyle) -> UIFont {
 		// If custom settings parsing failed, system font/style mapping is used.
 		guard let fontDescription = styleDictionary?[textStyle.rawValue],
 			let font = UIFont(name: fontDescription.fontName, size: fontDescription.fontSize)

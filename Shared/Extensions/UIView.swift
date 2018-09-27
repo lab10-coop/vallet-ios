@@ -22,8 +22,8 @@ extension UIView {
 
 		border.translatesAutoresizingMaskIntoConstraints = false
 		let views = ["border": border]
-		addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[border(\(width))]-(0)-|", options: NSLayoutFormatOptions.alignAllBottom, metrics: nil, views: views))
-		addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[border]-(0)-|", options: NSLayoutFormatOptions.alignAllBottom, metrics: nil, views: views))
+		addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[border(\(width))]-(0)-|", options: NSLayoutConstraint.FormatOptions.alignAllBottom, metrics: nil, views: views))
+		addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[border]-(0)-|", options: NSLayoutConstraint.FormatOptions.alignAllBottom, metrics: nil, views: views))
 	}
 
 	func bottomBorder() -> UIView? {

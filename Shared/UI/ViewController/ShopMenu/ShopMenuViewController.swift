@@ -56,7 +56,7 @@ class ShopMenuViewController: UIViewController {
 
 		if let selectedShop = ShopManager.selectedShop,
 			let selectedIndex = ShopManager.shops.index(of: selectedShop) {
-			shopsTableView.selectRow(at: IndexPath(row: selectedIndex, section: 0), animated: true, scrollPosition: UITableViewScrollPosition.none)
+			shopsTableView.selectRow(at: IndexPath(row: selectedIndex, section: 0), animated: true, scrollPosition: UITableView.ScrollPosition.none)
 		}
 	}
 

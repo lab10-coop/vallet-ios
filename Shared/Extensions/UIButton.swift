@@ -10,7 +10,7 @@ import UIKit
 
 extension UIButton {
 
-	var allStates: [UIControlState] {
+	var allStates: [UIControl.State] {
 		return [.normal, .selected, .highlighted, .disabled]
 	}
 
