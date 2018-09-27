@@ -484,9 +484,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="40" sectionHeaderHeight="44" estimatedSectionHeaderHeight="44" sectionFooterHeight="25" estimatedSectionFooterHeight="25" translatesAutoresizingMaskIntoConstraints="NO" id="jKM-qB-Afb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="40" sectionHeaderHeight="44" estimatedSectionHeaderHeight="44" sectionFooterHeight="25" estimatedSectionFooterHeight="25" translatesAutoresizingMaskIntoConstraints="NO" id="jKM-qB-Afb">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="LJx-VQ-XLK" customClass="BackgroundView" customModule="ValletAdmin" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
@@ -564,8 +563,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="jKM-qB-Afb" firstAttribute="leading" secondItem="1aI-kQ-E56" secondAttribute="leading" id="7GO-69-9ab"/>
+                            <constraint firstItem="1aI-kQ-E56" firstAttribute="top" secondItem="jKM-qB-Afb" secondAttribute="top" id="DUj-vW-bR3"/>
+                            <constraint firstItem="1aI-kQ-E56" firstAttribute="bottom" secondItem="jKM-qB-Afb" secondAttribute="bottom" id="HA1-OD-Fy5"/>
                             <constraint firstItem="53B-s6-eWs" firstAttribute="centerX" secondItem="1aI-kQ-E56" secondAttribute="centerX" id="T8M-QL-Zcz"/>
                             <constraint firstItem="1aI-kQ-E56" firstAttribute="bottom" secondItem="53B-s6-eWs" secondAttribute="bottom" constant="16" id="a43-13-0ec"/>
+                            <constraint firstItem="1aI-kQ-E56" firstAttribute="trailing" secondItem="jKM-qB-Afb" secondAttribute="trailing" id="qPO-QE-UeY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1aI-kQ-E56"/>
                     </view>
