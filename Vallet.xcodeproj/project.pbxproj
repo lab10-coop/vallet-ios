@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2C34255CC06607463FE40399 /* Pods_Vallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63CA453DC703DB1A613E81CD /* Pods_Vallet.framework */; };
+		D41A8E22215CF90E00B0E8AE /* HistoryTableSectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41A8E21215CF90E00B0E8AE /* HistoryTableSectionFooterView.xib */; };
+		D41A8E23215CF90E00B0E8AE /* HistoryTableSectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41A8E21215CF90E00B0E8AE /* HistoryTableSectionFooterView.xib */; };
+		D41A8E25215CF94800B0E8AE /* HistoryTableSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41A8E24215CF94800B0E8AE /* HistoryTableSectionFooterView.swift */; };
+		D41A8E26215CF94800B0E8AE /* HistoryTableSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41A8E24215CF94800B0E8AE /* HistoryTableSectionFooterView.swift */; };
 		D429F84F21400572004427F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F84E21400572004427F0 /* AppDelegate.swift */; };
 		D429F85421400572004427F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D429F85221400572004427F0 /* Main.storyboard */; };
 		D429F85C21400573004427F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D429F85A21400573004427F0 /* LaunchScreen.storyboard */; };
@@ -195,6 +199,8 @@
 		BC427D9B2FFCD9CA48489E79 /* Pods-Vallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vallet/Pods-Vallet.debug.xcconfig"; sourceTree = "<group>"; };
 		C9683045E8DE422BEFE13276 /* Pods-ValletAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValletAdmin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ValletAdmin/Pods-ValletAdmin.debug.xcconfig"; sourceTree = "<group>"; };
 		CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ValletAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D41A8E21215CF90E00B0E8AE /* HistoryTableSectionFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableSectionFooterView.xib; sourceTree = "<group>"; };
+		D41A8E24215CF94800B0E8AE /* HistoryTableSectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableSectionFooterView.swift; sourceTree = "<group>"; };
 		D429F84B21400572004427F0 /* Vallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D429F84E21400572004427F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D429F85321400572004427F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -459,6 +465,8 @@
 				D4C8C94E2158E6DF00C831F0 /* ProductCollectionViewCell.xib */,
 				D4DA57DB215CD71E00942ED7 /* HistoryTableSectionHeaderView.swift */,
 				D4DA57DE215CD73100942ED7 /* HistoryTableSectionHeaderView.xib */,
+				D41A8E24215CF94800B0E8AE /* HistoryTableSectionFooterView.swift */,
+				D41A8E21215CF90E00B0E8AE /* HistoryTableSectionFooterView.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -884,6 +892,7 @@
 				D4C5CDA6214819EC00AB67D7 /* Shared.storyboard in Resources */,
 				D4C5CD9D2147DBAC00AB67D7 /* QRCodeReaderView.xib in Resources */,
 				D4C8C9392155249300C831F0 /* Assets.xcassets in Resources */,
+				D41A8E22215CF90E00B0E8AE /* HistoryTableSectionFooterView.xib in Resources */,
 				D4C8C9522158E6EC00C831F0 /* ProductCollectionViewCell.xib in Resources */,
 				D443CDB6214BB3EE00A7100F /* TextInputView.xib in Resources */,
 				D429F85421400572004427F0 /* Main.storyboard in Resources */,
@@ -914,6 +923,7 @@
 				D4C5CDA7214819EC00AB67D7 /* Shared.storyboard in Resources */,
 				D4C5CD9E2147DBAC00AB67D7 /* QRCodeReaderView.xib in Resources */,
 				D429F89B21400A5B004427F0 /* Assets.xcassets in Resources */,
+				D41A8E23215CF90E00B0E8AE /* HistoryTableSectionFooterView.xib in Resources */,
 				D4C8C9502158E6DF00C831F0 /* ProductCollectionViewCell.xib in Resources */,
 				D443CDB7214BB3EE00A7100F /* TextInputView.xib in Resources */,
 				D429F89621400A5A004427F0 /* Main.storyboard in Resources */,
@@ -1049,6 +1059,7 @@
 				D4C8C98A215A8DC700C831F0 /* ScaledFont.swift in Sources */,
 				D4C8C963215A30DB00C831F0 /* ClientStartViewController.swift in Sources */,
 				D4C8C9512158E6E300C831F0 /* ProductCollectionViewCell.swift in Sources */,
+				D41A8E25215CF94800B0E8AE /* HistoryTableSectionFooterView.swift in Sources */,
 				D443CDA5214AA46500A7100F /* NibBackedCell.swift in Sources */,
 				D4C8C99B215AA22500C831F0 /* Appearance.swift in Sources */,
 				D429F8AF21401049004427F0 /* Result.swift in Sources */,
@@ -1141,6 +1152,7 @@
 				D4C8C94621552DA200C831F0 /* MainViewController.swift in Sources */,
 				D4C8C92B2153C73B00C831F0 /* JSONDecoder.swift in Sources */,
 				D429F8C92142BF87004427F0 /* Token.swift in Sources */,
+				D41A8E26215CF94800B0E8AE /* HistoryTableSectionFooterView.swift in Sources */,
 				D429F8B521401528004427F0 /* Wallet.swift in Sources */,
 				D4C8C9B4215ABFE600C831F0 /* SecondaryButton.swift in Sources */,
 				D429F8AA21400F20004427F0 /* Constants.swift in Sources */,

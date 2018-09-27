@@ -49,6 +49,7 @@ class ClientHistoryViewController: UIViewController {
 
 		ClientHistoryEventTableViewCell.register(for: tableView)
 		HistoryTableSectionHeaderView.register(for: tableView)
+		HistoryTableSectionFooterView.register(for: tableView)
 
 		tableView.addSubview(refreshControl)
 
@@ -116,6 +117,11 @@ extension ClientHistoryViewController: UITableViewDelegate {
 			historyHeaderView.date = groupedEvents[section].date
 		}
 		return headerView
+	}
+
+	func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+		let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: HistoryTableSectionFooterView.reuseIdentifier)
+		return footerView
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
