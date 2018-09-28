@@ -29,7 +29,12 @@ class ClientAddressViewController: UIViewController {
 		contentBackgroundView.addShadow()
 		contentBackgroundView.addRoundedCorners()
 
-		addressQRCodeImageView.image = UIImage.qrCode(from: Wallet.address.address, size: addressQRCodeImageView.bounds.size)
+		guard let userAddress = QRCodeManager.userAddressCode(for: Wallet.address.address, userName: UserDefaultsManager.userName)
+			else {
+				return
+		}
+
+		addressQRCodeImageView.image = UIImage.qrCode(from: userAddress, size: addressQRCodeImageView.bounds.size)
 	}
 
 	@IBAction func close(_ sender: Any? = nil) {

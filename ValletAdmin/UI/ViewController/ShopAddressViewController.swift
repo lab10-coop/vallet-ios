@@ -53,7 +53,9 @@ class ShopAddressViewController: UIViewController {
 				return
 		}
 		shopNameLabel.text = shop.name
-		qrCodeImageView.image = UIImage.qrCode(from: shopAddress, size: qrCodeImageView.bounds.size)
+
+		let shopAddressCode = QRCodeManager.shopAddressCode(for: shopAddress)
+		qrCodeImageView.image = UIImage.qrCode(from: shopAddressCode, size: qrCodeImageView.bounds.size)
 	}
 
 	@IBAction func close(_ sender: Any? = nil) {

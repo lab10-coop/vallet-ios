@@ -22,7 +22,6 @@ class ScanShopAddressViewController: UIViewController {
 	weak var delegate: ScanShopAddressViewControllerDelegate?
 
 	var shop: Shop?
-	var shopAddress: String?
 
 	@discardableResult
 	static func present(over viewController: UIViewController) -> ScanShopAddressViewController? {
@@ -66,8 +65,11 @@ class ScanShopAddressViewController: UIViewController {
 extension ScanShopAddressViewController: QRCodeReaderViewDelegate {
 
 	func didReadQRCode(value: String) {
-		shopAddress = value
-		addShop(with: value)
+		guard let shopAddress = QRCodeManager.shopAddress(from: value)
+			else {
+				return
+		}
+		addShop(with: shopAddress)
 	}
 
 }

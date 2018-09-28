@@ -94,9 +94,14 @@ class IssueAddressViewController: UIViewController {
 extension IssueAddressViewController: QRCodeReaderViewDelegate {
 
 	func didReadQRCode(value: String) {
+		guard let userAddress = QRCodeManager.userAddress(from: value)
+			else {
+				return
+		}
+
 		continueButton.isEnabled = true
 		scanAgainButton.isEnabled = true
-		clientAddress = value
+		clientAddress = userAddress
 	}
 
 }
