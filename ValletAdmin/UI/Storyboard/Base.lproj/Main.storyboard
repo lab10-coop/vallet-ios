@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uKv-Se-QIs">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uKv-Se-QIs">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +15,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ShopAddressNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="E6I-a8-pMN" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ego-8w-Seh">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -32,31 +31,31 @@
             <objects>
                 <viewController storyboardIdentifier="ShopAddressViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GhV-pr-1Ge" customClass="ShopAddressViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1yj-MP-Cbp" customClass="BackgroundView" customModule="ValletAdmin" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="gO7-EN-SS5">
-                                <rect key="frame" x="16" y="96" width="343" height="98"/>
+                                <rect key="frame" x="16" y="120" width="343" height="97.333333333333314"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vs9-t2-fPb">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="40.666666666666664"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the QR code for the shop:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJt-us-8ET" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the QR code for the shop:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJt-us-8ET" customClass="BodyLabel" customModule="ValletAdmin" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfQ-Ha-YXF" customClass="SmallDarkTitleLabel" customModule="ValletAdmin" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="20.5" width="343" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="20.333333333333343" width="343" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show this QR code to your client for them to add your shop to their app." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRU-tg-UXF" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="57" width="343" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show this QR code to your client for them to add your shop to their app." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRU-tg-UXF" customClass="BodyLabel" customModule="ValletAdmin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="56.666666666666657" width="343" height="40.666666666666657"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -64,10 +63,10 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A4r-mx-140" customClass="ContentBackgroundView" customModule="ValletAdmin" customModuleProvider="target">
-                                <rect key="frame" x="48" y="226" width="279" height="279"/>
+                                <rect key="frame" x="48" y="249.33333333333337" width="279" height="279"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DBI-UM-voQ">
-                                        <rect key="frame" x="16" y="16" width="247" height="247"/>
+                                        <rect key="frame" x="16" y="15.999999999999972" width="247" height="247.00000000000003"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="DBI-UM-voQ" secondAttribute="height" id="xq8-Hr-j0i"/>
                                         </constraints>
@@ -115,7 +114,7 @@
             <objects>
                 <navigationController storyboardIdentifier="IssueNavigationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xbQ-Wm-r2m" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j1n-gi-eOK">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -131,25 +130,25 @@
             <objects>
                 <viewController storyboardIdentifier="IssueAddressViewController" id="3g6-jh-7dW" customClass="IssueAddressViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d85-I8-jeU" customClass="BackgroundView" customModule="ValletAdmin" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 1 of 2: User selection" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jm-BW-rqU" customClass="SmallTextLabel" customModule="ValletAdmin" customModuleProvider="target">
-                                <rect key="frame" x="87" y="64" width="200.5" height="20.5"/>
+                                <rect key="frame" x="87.333333333333329" y="88" width="200.33333333333337" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan the user's QR code." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOR-Aw-WSE" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
-                                <rect key="frame" x="16" y="116.5" width="343" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan the user's QR code." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOR-Aw-WSE" customClass="BodyLabel" customModule="ValletAdmin" customModuleProvider="target">
+                                <rect key="frame" x="16" y="140.33333333333334" width="343" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U0C-gf-ppy" customClass="ContentBackgroundView" customModule="Vallet" customModuleProvider="target">
-                                <rect key="frame" x="48" y="169" width="279" height="279"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U0C-gf-ppy" customClass="ContentBackgroundView" customModule="ValletAdmin" customModuleProvider="target">
+                                <rect key="frame" x="48" y="192.66666666666663" width="279" height="279"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4i1-wG-oep" customClass="QRCodeReaderView" customModule="Vallet" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4i1-wG-oep" customClass="QRCodeReaderView" customModule="ValletAdmin" customModuleProvider="target">
                                         <rect key="frame" x="16" y="16" width="247" height="247"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -166,7 +165,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="QAp-bI-Nh9">
-                                <rect key="frame" x="16" y="575" width="343" height="76"/>
+                                <rect key="frame" x="16" y="686" width="343" height="76"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQA-5T-7Se" customClass="SecondaryButton" customModule="ValletAdmin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -224,7 +223,7 @@
             <objects>
                 <navigationController storyboardIdentifier="CreateProductNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZbP-Zn-CM8" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vlu-3A-Wgv">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -240,17 +239,17 @@
             <objects>
                 <viewController storyboardIdentifier="CreateProductViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ezM-hd-YWz" customClass="CreateProductViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5ZQ-AA-xF1" customClass="BackgroundView" customModule="ValletAdmin" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejA-Ce-Q2d" userLabel="Container view">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ctC-Kc-EEq" customClass="ContentBackgroundView" customModule="ValletAdmin" customModuleProvider="target">
-                                        <rect key="frame" x="112" y="32" width="150" height="150"/>
+                                        <rect key="frame" x="112.66666666666669" y="32" width="150" height="150"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CameraIcon" translatesAutoresizingMaskIntoConstraints="NO" id="uGI-V6-sjo">
-                                                <rect key="frame" x="45" y="55" width="60" height="40"/>
+                                                <rect key="frame" x="44.999999999999986" y="55" width="60" height="40"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -289,7 +288,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJO-xO-Ktm" customClass="PrimaryRoundedButton" customModule="ValletAdmin" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="557" width="343" height="30"/>
+                                        <rect key="frame" x="16" y="644" width="343" height="30"/>
                                         <state key="normal" title="Submit"/>
                                         <connections>
                                             <action selector="submit:" destination="ezM-hd-YWz" eventType="touchUpInside" id="vQY-Nw-Nkr"/>
@@ -353,17 +352,17 @@
             <objects>
                 <viewController storyboardIdentifier="IssueAmountViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bjh-Ss-7BC" customClass="IssueAmountViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fha-DP-RN0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 2 of 2: Amount" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQ0-73-A6H" customClass="SmallTextLabel" customModule="ValletAdmin" customModuleProvider="target">
-                                <rect key="frame" x="111" y="64" width="153" height="20.5"/>
+                                <rect key="frame" x="111" y="88" width="153" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ga9-WC-gs1" customClass="TextInputView" customModule="ValletAdmin" customModuleProvider="target">
-                                <rect key="frame" x="16" y="116.5" width="343" height="64"/>
+                                <rect key="frame" x="16" y="140.33333333333334" width="343" height="64"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="TUp-c2-Uzr"/>
@@ -374,7 +373,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGz-aA-owU" customClass="PrimaryRoundedButton" customModule="ValletAdmin" customModuleProvider="target">
-                                <rect key="frame" x="16" y="212.5" width="343" height="30"/>
+                                <rect key="frame" x="16" y="236.33333333333334" width="343" height="30.000000000000028"/>
                                 <state key="normal" title="Issue"/>
                                 <connections>
                                     <action selector="issue:" destination="Bjh-Ss-7BC" eventType="touchUpInside" id="JnQ-vM-ZUm"/>
@@ -411,7 +410,7 @@
             <objects>
                 <navigationController storyboardIdentifier="CreateShopNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5JT-F5-OdF" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vR6-dm-V3O">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -427,18 +426,18 @@
             <objects>
                 <viewController storyboardIdentifier="CreateShopViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qm1-lP-tJ1" customClass="CreateShopViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aYG-0O-fWu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKH-xB-Gn1" customClass="PrimaryRoundedButton" customModule="ValletAdmin" customModuleProvider="target">
-                                <rect key="frame" x="16" y="192" width="343" height="30"/>
+                                <rect key="frame" x="16" y="216" width="343" height="30"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submit:" destination="qm1-lP-tJ1" eventType="touchUpInside" id="eF2-nN-9Df"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVg-kP-Wrp" customClass="TextInputView" customModule="ValletAdmin" customModuleProvider="target">
-                                <rect key="frame" x="16" y="96" width="343" height="64"/>
+                                <rect key="frame" x="16" y="120" width="343" height="64"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="jKk-Ud-fx9"/>
@@ -481,11 +480,11 @@
             <objects>
                 <viewController storyboardIdentifier="AdminHistoryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lI6-Jt-LVj" customClass="AdminHistoryViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bCb-CH-6fH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="40" sectionHeaderHeight="44" estimatedSectionHeaderHeight="44" sectionFooterHeight="25" estimatedSectionFooterHeight="25" translatesAutoresizingMaskIntoConstraints="NO" id="jKM-qB-Afb">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="LJx-VQ-XLK" customClass="BackgroundView" customModule="ValletAdmin" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
@@ -499,19 +498,19 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="azm-Q3-cne" customClass="ContentBackgroundView" customModule="ValletAdmin" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="17" width="375" height="73"/>
+                                            <rect key="frame" x="0.0" y="17" width="375" height="72.666666666666671"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="AuZ-u4-tCJ">
-                                                    <rect key="frame" x="16" y="16" width="343" height="41"/>
+                                                    <rect key="frame" x="16" y="15.999999999999996" width="343" height="40.666666666666657"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Circulating vouchers:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3Z-2h-eV3" customClass="SmallLightTitleLabel" customModule="ValletAdmin" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="161.5" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="161.66666666666666" height="20.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubr-j2-YBC" customClass="LargeTextLabel" customModule="ValletAdmin" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="20.5" width="28" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="20.333333333333336" width="28" height="20.333333333333336"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -528,7 +527,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3p-aT-uBe" customClass="SeparatorView" customModule="ValletAdmin" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="90" width="375" height="1"/>
+                                            <rect key="frame" x="0.0" y="89.666666666666671" width="375" height="1"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="1Tv-gG-E27"/>
@@ -559,7 +558,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53B-s6-eWs" customClass="PrimaryRoundedButton" customModule="ValletAdmin" customModuleProvider="target">
-                                <rect key="frame" x="131.5" y="629" width="111" height="22"/>
+                                <rect key="frame" x="132" y="740" width="111" height="22"/>
                                 <state key="normal" title="Send money" image="OutgoingArrowIcon"/>
                                 <connections>
                                     <action selector="sendMoney:" destination="lI6-Jt-LVj" eventType="touchUpInside" id="geo-mW-6tQ"/>
@@ -570,7 +569,7 @@
                         <constraints>
                             <constraint firstItem="jKM-qB-Afb" firstAttribute="leading" secondItem="1aI-kQ-E56" secondAttribute="leading" id="7GO-69-9ab"/>
                             <constraint firstItem="1aI-kQ-E56" firstAttribute="top" secondItem="jKM-qB-Afb" secondAttribute="top" id="DUj-vW-bR3"/>
-                            <constraint firstItem="1aI-kQ-E56" firstAttribute="bottom" secondItem="jKM-qB-Afb" secondAttribute="bottom" id="HA1-OD-Fy5"/>
+                            <constraint firstAttribute="bottom" secondItem="jKM-qB-Afb" secondAttribute="bottom" id="HA1-OD-Fy5"/>
                             <constraint firstItem="53B-s6-eWs" firstAttribute="centerX" secondItem="1aI-kQ-E56" secondAttribute="centerX" id="T8M-QL-Zcz"/>
                             <constraint firstItem="1aI-kQ-E56" firstAttribute="bottom" secondItem="53B-s6-eWs" secondAttribute="bottom" constant="16" id="a43-13-0ec"/>
                             <constraint firstItem="1aI-kQ-E56" firstAttribute="trailing" secondItem="jKM-qB-Afb" secondAttribute="trailing" id="qPO-QE-UeY"/>
@@ -591,11 +590,11 @@
             <objects>
                 <viewController storyboardIdentifier="AdminPriceListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tsT-3K-oep" customClass="AdminPriceListViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Voa-cU-hKL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fxx-zd-wso">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
                                 <color key="backgroundColor" white="0.98375108506944442" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fz8-fL-mVg">
                                     <size key="itemSize" width="50" height="50"/>
@@ -610,7 +609,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9E-hZ-RLo" customClass="PrimaryRoundedButton" customModule="ValletAdmin" customModuleProvider="target">
-                                <rect key="frame" x="125" y="629" width="125" height="22"/>
+                                <rect key="frame" x="125" y="740" width="125" height="22"/>
                                 <state key="normal" title="Add a product" image="PlusIcon"/>
                                 <connections>
                                     <action selector="addNewProduct:" destination="tsT-3K-oep" eventType="touchUpInside" id="bQG-V4-Kdp"/>
@@ -622,7 +621,7 @@
                             <constraint firstItem="uEP-zv-bYi" firstAttribute="bottom" secondItem="R9E-hZ-RLo" secondAttribute="bottom" constant="16" id="Fk8-aR-vRo"/>
                             <constraint firstItem="uEP-zv-bYi" firstAttribute="top" secondItem="fxx-zd-wso" secondAttribute="top" id="Sby-dF-D2j"/>
                             <constraint firstItem="uEP-zv-bYi" firstAttribute="trailing" secondItem="fxx-zd-wso" secondAttribute="trailing" id="VkR-we-oqV"/>
-                            <constraint firstItem="fxx-zd-wso" firstAttribute="bottom" secondItem="uEP-zv-bYi" secondAttribute="bottom" id="WvX-Yf-pB3"/>
+                            <constraint firstAttribute="bottom" secondItem="fxx-zd-wso" secondAttribute="bottom" id="WvX-Yf-pB3"/>
                             <constraint firstItem="fxx-zd-wso" firstAttribute="leading" secondItem="uEP-zv-bYi" secondAttribute="leading" id="ltk-uM-MZ1"/>
                             <constraint firstItem="R9E-hZ-RLo" firstAttribute="centerX" secondItem="uEP-zv-bYi" secondAttribute="centerX" id="nC1-5A-jqb"/>
                         </constraints>
@@ -641,32 +640,32 @@
             <objects>
                 <viewController storyboardIdentifier="AdminStartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uKv-Se-QIs" customClass="AdminStartViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t0d-pa-JGD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iXb-vV-zLD">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8ea-8k-lz3">
-                                        <rect key="frame" x="112" y="60" width="150" height="110"/>
+                                        <rect key="frame" x="112.66666666666669" y="60" width="150" height="110"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="JJb-Id-uHx"/>
                                             <constraint firstAttribute="height" constant="110" id="zdF-zH-5yI"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="0zC-pX-u8K">
-                                        <rect key="frame" x="16" y="230" width="343" height="141"/>
+                                        <rect key="frame" x="16" y="230" width="343" height="140.66666666666663"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYd-7Z-r9u" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="41"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYd-7Z-r9u" customClass="BodyLabel" customModule="ValletAdmin" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="40.666666666666664"/>
                                                 <string key="text">Welcome shop owner!
 Enter your shop name and get started.</string>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XoZ-Xg-hfa" customClass="TextInputView" customModule="Vallet" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="77" width="343" height="64"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XoZ-Xg-hfa" customClass="TextInputView" customModule="ValletAdmin" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="76.666666666666686" width="343" height="64"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="64" id="zBi-g6-Qtq"/>
@@ -678,8 +677,8 @@ Enter your shop name and get started.</string>
                                             </view>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JS-3T-teL" customClass="PrimaryRoundedButton" customModule="Vallet" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="597" width="343" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JS-3T-teL" customClass="PrimaryRoundedButton" customModule="ValletAdmin" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="684" width="343" height="34"/>
                                         <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Get Started"/>
                                         <connections>
