@@ -89,6 +89,8 @@
 		D4BE2B57215DF62400146566 /* SegmentedControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4BE2B54215DF62300146566 /* SegmentedControlView.xib */; };
 		D4BE2B58215DF62400146566 /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BE2B55215DF62300146566 /* SegmentedControlView.swift */; };
 		D4BE2B59215DF62400146566 /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BE2B55215DF62300146566 /* SegmentedControlView.swift */; };
+		D4BE2B5B215E011D00146566 /* QRCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BE2B5A215E011D00146566 /* QRCodeManager.swift */; };
+		D4BE2B5C215E011D00146566 /* QRCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BE2B5A215E011D00146566 /* QRCodeManager.swift */; };
 		D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */; };
 		D4C5CD982147DA2700AB67D7 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */; };
 		D4C5CD9A2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */; };
@@ -263,6 +265,7 @@
 		D48D9588215283A500840707 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		D4BE2B54215DF62300146566 /* SegmentedControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegmentedControlView.xib; sourceTree = "<group>"; };
 		D4BE2B55215DF62300146566 /* SegmentedControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlView.swift; sourceTree = "<group>"; };
+		D4BE2B5A215E011D00146566 /* QRCodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeManager.swift; sourceTree = "<group>"; };
 		D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
 		D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLinkedView.swift; sourceTree = "<group>"; };
 		D4C5CD9C2147DBAC00AB67D7 /* QRCodeReaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeReaderView.xib; sourceTree = "<group>"; };
@@ -617,6 +620,7 @@
 			children = (
 				D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */,
 				D4C5CD9C2147DBAC00AB67D7 /* QRCodeReaderView.xib */,
+				D4BE2B5A215E011D00146566 /* QRCodeManager.swift */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -1112,6 +1116,7 @@
 				D4C8C9B9215AC19A00C831F0 /* UIImage.swift in Sources */,
 				D4C8C9A4215AAB3200C831F0 /* ButtonCustomizable.swift in Sources */,
 				D443CDBA214BDABE00A7100F /* UIViewController.swift in Sources */,
+				D4BE2B5B215E011D00146566 /* QRCodeManager.swift in Sources */,
 				D48D957D2152515900840707 /* PendingValueEvent.swift in Sources */,
 				D4C8C9B3215ABFE600C831F0 /* SecondaryButton.swift in Sources */,
 				D48D95682151130700840707 /* ShopMenuViewController+Client.swift in Sources */,
@@ -1149,6 +1154,7 @@
 				D4C8C957215901C900C831F0 /* CreateProductViewController.swift in Sources */,
 				D443CD93214A93E400A7100F /* ShopManager.swift in Sources */,
 				D443CDAA214AA73700A7100F /* NSObject.swift in Sources */,
+				D4BE2B5C215E011D00146566 /* QRCodeManager.swift in Sources */,
 				D4C5CDA3214819AD00AB67D7 /* ShopMenuViewController.swift in Sources */,
 				D4C8C9A8215AAB4000C831F0 /* BaseButton.swift in Sources */,
 				D4C8C9AE215AAC1500C831F0 /* UIColor.swift in Sources */,

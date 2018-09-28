@@ -10,6 +10,22 @@ import Foundation
 
 struct Constants {
 
+	struct Deeplink {
+
+		static let adminScheme = "valletadmin://"
+		static let clientScheme = "vallet://"
+
+		static let shop = "shop"
+		static let user = "user"
+
+		struct QueryKey {
+
+			static let userName = "user_name"
+
+		}
+
+	}
+
 	struct Network {
 
 		static let apiHost = "https://vallet.mars.lab10.io"
