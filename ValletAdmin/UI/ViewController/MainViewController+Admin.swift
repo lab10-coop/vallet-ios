@@ -10,6 +10,10 @@ import UIKit
 
 extension MainViewController {
 
+	func setupMenu() {
+		contentSegmentedView.segmentNames = [NSLocalizedString("History", comment: "Tab name"), NSLocalizedString("Pricelist", comment: "Tab name")]
+	}
+
 	func setupContent(for shop: Shop?) {
 		guard let shop = shop
 			else {

@@ -31,7 +31,7 @@ class MainViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		contentSegmentedView.segmentNames = [NSLocalizedString("History", comment: "Tab name"), NSLocalizedString("Pricelist", comment: "Tab name")]
+		setupMenu()
 		contentSegmentedView.delegate = self
 
 		dropMenuIconView.tintColor = Theme.Color.navigationBarButton
