@@ -10,10 +10,11 @@ import UIKit
 
 class AdminHistoryEventTableViewCell: UITableViewCell, NibBackedTableViewCell {
 
-	@IBOutlet var descriptionLabel: UILabel!
-	@IBOutlet var valueLabel: UILabel!
-	@IBOutlet var incomingImageView: UIImageView!
-	@IBOutlet var outgoingImageView: UIImageView!
+	@IBOutlet private var descriptionLabel: UILabel!
+	@IBOutlet private var valueLabel: UILabel!
+	@IBOutlet private var incomingImageView: UIImageView!
+	@IBOutlet private var outgoingImageView: UIImageView!
+	@IBOutlet private var shadowView: UIView!
 
 	var event: ValueEvent? {
 		didSet {
@@ -39,6 +40,15 @@ class AdminHistoryEventTableViewCell: UITableViewCell, NibBackedTableViewCell {
 				valueLabel.textColor = Theme.Color.accent
 			}
 		}
+	}
+
+	override func awakeFromNib() {
+		super.awakeFromNib()
+
+		shadowView.addRoundedCorners()
+		shadowView.addShadow()
+
+		prepareForReuse()
 	}
 
 	override func prepareForReuse() {

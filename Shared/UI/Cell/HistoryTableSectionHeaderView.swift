@@ -11,6 +11,7 @@ import UIKit
 class HistoryTableSectionHeaderView: UITableViewHeaderFooterView, NibBackedTableHeaderFooterView {
 
 	@IBOutlet private var titleLabel: UILabel!
+	@IBOutlet private var containerView: UIView!
 
 	var title: String? {
 		get {
@@ -50,6 +51,9 @@ class HistoryTableSectionHeaderView: UITableViewHeaderFooterView, NibBackedTable
 
 	override func awakeFromNib() {
 		super.awakeFromNib()
+
+		containerView.addRoundedCorners()
+		containerView.addShadow()
 
 		prepareForReuse()
 	}

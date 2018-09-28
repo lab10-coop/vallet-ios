@@ -12,6 +12,7 @@ class AdminHistoryViewController: UIViewController {
 
 	@IBOutlet private var tableView: UITableView!
 	@IBOutlet private var totalSupplyLabel: UILabel!
+	@IBOutlet private var totalSupplyContainerView: UIView!
 
 	private lazy var refreshControl: UIRefreshControl = {
 		let refreshControl = UIRefreshControl()
@@ -62,6 +63,9 @@ class AdminHistoryViewController: UIViewController {
 		HistoryTableSectionFooterView.register(for: tableView)
 
 		tableView.addSubview(refreshControl)
+
+		totalSupplyContainerView.addShadow()
+		totalSupplyContainerView.addRoundedCorners()
 
 		reloadData()
 	}

@@ -1,64 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AdminHistoryEventTableViewCell" id="y6H-yj-T8V" userLabel="AdminHistoryEventTableViewCell" customClass="AdminHistoryEventTableViewCell" customModule="ValletAdmin" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AdminHistoryEventTableViewCell" id="y6H-yj-T8V" userLabel="AdminHistoryEventTableViewCell" customClass="AdminHistoryEventTableViewCell" customModule="ValletAdmin" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y6H-yj-T8V" id="Npy-eb-Rgn">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0AL-dz-N1l">
+                        <rect key="frame" x="16" y="-8" width="288" height="59.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IncomingArrowIcon" translatesAutoresizingMaskIntoConstraints="NO" id="HMQ-Jp-zxC">
-                        <rect key="frame" x="16" y="17" width="10" height="10"/>
+                        <rect key="frame" x="32" y="17" width="10" height="10"/>
                     </imageView>
                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OutgoingArrowIcon" translatesAutoresizingMaskIntoConstraints="NO" id="YmH-kH-eeb">
-                        <rect key="frame" x="16" y="17" width="10" height="10"/>
+                        <rect key="frame" x="32" y="17" width="10" height="10"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gce-Ju-xhI" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
-                        <rect key="frame" x="34" y="8" width="218" height="27.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gce-Ju-xhI" customClass="BodyLabel" customModule="ValletAdmin" customModuleProvider="target">
+                        <rect key="frame" x="50" y="12" width="188" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCf-iv-FDc" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
-                        <rect key="frame" x="262" y="11.5" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCf-iv-FDc" customClass="BodyLabel" customModule="ValletAdmin" customModuleProvider="target">
+                        <rect key="frame" x="246" y="11.5" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="HMQ-Jp-zxC" firstAttribute="leading" secondItem="Npy-eb-Rgn" secondAttribute="leading" constant="16" id="6Bu-re-GT9"/>
+                    <constraint firstItem="HMQ-Jp-zxC" firstAttribute="leading" secondItem="Npy-eb-Rgn" secondAttribute="leading" constant="32" id="6Bu-re-GT9"/>
                     <constraint firstItem="oCf-iv-FDc" firstAttribute="centerY" secondItem="gce-Ju-xhI" secondAttribute="centerY" id="6eN-LT-I0z"/>
                     <constraint firstItem="gce-Ju-xhI" firstAttribute="centerY" secondItem="Npy-eb-Rgn" secondAttribute="centerY" id="8Nv-7o-Iqo"/>
+                    <constraint firstItem="0AL-dz-N1l" firstAttribute="leading" secondItem="Npy-eb-Rgn" secondAttribute="leading" constant="16" id="8jn-uP-Pwz"/>
+                    <constraint firstAttribute="trailing" secondItem="0AL-dz-N1l" secondAttribute="trailing" constant="16" id="FXr-9A-dpw"/>
+                    <constraint firstItem="0AL-dz-N1l" firstAttribute="top" secondItem="Npy-eb-Rgn" secondAttribute="top" constant="-8" id="Fw0-Yr-bR0"/>
                     <constraint firstItem="gce-Ju-xhI" firstAttribute="centerY" secondItem="HMQ-Jp-zxC" secondAttribute="centerY" id="JZ3-fx-nGE"/>
                     <constraint firstItem="YmH-kH-eeb" firstAttribute="centerY" secondItem="HMQ-Jp-zxC" secondAttribute="centerY" id="KZ4-wQ-qzq"/>
-                    <constraint firstAttribute="trailing" secondItem="oCf-iv-FDc" secondAttribute="trailing" constant="16" id="NZy-t3-aG1"/>
-                    <constraint firstItem="gce-Ju-xhI" firstAttribute="top" secondItem="Npy-eb-Rgn" secondAttribute="top" constant="8" id="Th0-e0-iyd"/>
+                    <constraint firstAttribute="trailing" secondItem="oCf-iv-FDc" secondAttribute="trailing" constant="32" id="NZy-t3-aG1"/>
+                    <constraint firstItem="gce-Ju-xhI" firstAttribute="top" secondItem="Npy-eb-Rgn" secondAttribute="top" constant="12" id="Th0-e0-iyd"/>
                     <constraint firstItem="gce-Ju-xhI" firstAttribute="leading" secondItem="HMQ-Jp-zxC" secondAttribute="trailing" constant="8" id="fG4-ip-EoH"/>
-                    <constraint firstItem="oCf-iv-FDc" firstAttribute="leading" secondItem="gce-Ju-xhI" secondAttribute="trailing" constant="10" id="uH2-PL-D1B"/>
-                    <constraint firstAttribute="bottom" secondItem="gce-Ju-xhI" secondAttribute="bottom" constant="8" id="wb5-a5-aOJ"/>
+                    <constraint firstItem="oCf-iv-FDc" firstAttribute="leading" secondItem="gce-Ju-xhI" secondAttribute="trailing" constant="8" id="uH2-PL-D1B"/>
+                    <constraint firstAttribute="bottom" secondItem="gce-Ju-xhI" secondAttribute="bottom" constant="12" id="wb5-a5-aOJ"/>
                     <constraint firstItem="YmH-kH-eeb" firstAttribute="centerX" secondItem="HMQ-Jp-zxC" secondAttribute="centerX" id="x5i-Lg-P2v"/>
+                    <constraint firstAttribute="bottom" secondItem="0AL-dz-N1l" secondAttribute="bottom" constant="-8" id="xy2-7P-yjW"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="5Bw-e7-Zw3"/>
             <connections>
                 <outlet property="descriptionLabel" destination="gce-Ju-xhI" id="ibI-vj-5uu"/>
                 <outlet property="incomingImageView" destination="HMQ-Jp-zxC" id="C9P-hs-Kln"/>
                 <outlet property="outgoingImageView" destination="YmH-kH-eeb" id="Jfs-fa-2U6"/>
+                <outlet property="shadowView" destination="0AL-dz-N1l" id="AuD-aK-H0k"/>
                 <outlet property="valueLabel" destination="oCf-iv-FDc" id="Diy-MZ-Oi5"/>
             </connections>
+            <point key="canvasLocation" x="140.80000000000001" y="154.72263868065968"/>
         </tableViewCell>
     </objects>
     <resources>

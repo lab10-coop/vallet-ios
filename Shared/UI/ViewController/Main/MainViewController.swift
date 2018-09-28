@@ -16,6 +16,7 @@ class MainViewController: UIViewController {
 	@IBOutlet var dropMenuIconView: UIImageView!
 	@IBOutlet var clientBalanceLabel: UILabel!
 	@IBOutlet var qrCodeButton: UIButton!
+	@IBOutlet var headerContainerView: UIView!
 
 	var pageViewController: UIPageViewController?
 	var viewControllers = [UIViewController]()
@@ -30,6 +31,8 @@ class MainViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
+		headerContainerView.addShadow()
 
 		setupMenu()
 		contentSegmentedView.delegate = self

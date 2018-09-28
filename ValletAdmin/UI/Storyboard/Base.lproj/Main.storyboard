@@ -483,25 +483,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="40" sectionHeaderHeight="44" estimatedSectionHeaderHeight="44" sectionFooterHeight="25" estimatedSectionFooterHeight="25" translatesAutoresizingMaskIntoConstraints="NO" id="jKM-qB-Afb">
+                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="48" sectionHeaderHeight="52" estimatedSectionHeaderHeight="52" sectionFooterHeight="17" estimatedSectionFooterHeight="17" translatesAutoresizingMaskIntoConstraints="NO" id="jKM-qB-Afb">
                                 <rect key="frame" x="0.0" y="44" width="375" height="768"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="LJx-VQ-XLK" customClass="BackgroundView" customModule="ValletAdmin" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PcF-D3-qy4" customClass="SeparatorView" customModule="ValletAdmin" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="16" width="375" height="1"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="1" id="QJ1-UB-7bb"/>
-                                            </constraints>
-                                        </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="azm-Q3-cne" customClass="ContentBackgroundView" customModule="ValletAdmin" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="17" width="375" height="72.666666666666671"/>
+                                            <rect key="frame" x="16" y="16" width="343" height="72.666666666666671"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="AuZ-u4-tCJ">
-                                                    <rect key="frame" x="16" y="15.999999999999996" width="343" height="40.666666666666657"/>
+                                                    <rect key="frame" x="16" y="15.999999999999996" width="311" height="40.666666666666657"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Circulating vouchers:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3Z-2h-eV3" customClass="SmallLightTitleLabel" customModule="ValletAdmin" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="161.66666666666666" height="20.333333333333332"/>
@@ -526,29 +519,16 @@
                                                 <constraint firstItem="AuZ-u4-tCJ" firstAttribute="top" secondItem="azm-Q3-cne" secondAttribute="top" constant="16" id="gwW-P8-XQm"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3p-aT-uBe" customClass="SeparatorView" customModule="ValletAdmin" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="89.666666666666671" width="375" height="1"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="1" id="1Tv-gG-E27"/>
-                                            </constraints>
-                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="g3p-aT-uBe" firstAttribute="top" secondItem="azm-Q3-cne" secondAttribute="bottom" id="7TL-gP-ZR6"/>
-                                        <constraint firstAttribute="trailing" secondItem="azm-Q3-cne" secondAttribute="trailing" id="7mV-rT-Nta"/>
-                                        <constraint firstItem="azm-Q3-cne" firstAttribute="top" secondItem="PcF-D3-qy4" secondAttribute="bottom" id="EAJ-lN-obv"/>
-                                        <constraint firstItem="PcF-D3-qy4" firstAttribute="top" secondItem="LJx-VQ-XLK" secondAttribute="top" constant="16" id="Kbg-12-4zZ"/>
-                                        <constraint firstAttribute="trailing" secondItem="g3p-aT-uBe" secondAttribute="trailing" id="Xcl-6Q-Ijp"/>
-                                        <constraint firstItem="g3p-aT-uBe" firstAttribute="leading" secondItem="LJx-VQ-XLK" secondAttribute="leading" id="cgV-LO-lYw"/>
-                                        <constraint firstItem="PcF-D3-qy4" firstAttribute="leading" secondItem="LJx-VQ-XLK" secondAttribute="leading" id="kUy-AA-YOH"/>
-                                        <constraint firstItem="azm-Q3-cne" firstAttribute="leading" secondItem="LJx-VQ-XLK" secondAttribute="leading" id="srR-Fg-b7H"/>
-                                        <constraint firstAttribute="trailing" secondItem="PcF-D3-qy4" secondAttribute="trailing" id="zOg-Ep-zq7"/>
+                                        <constraint firstAttribute="trailing" secondItem="azm-Q3-cne" secondAttribute="trailing" constant="16" id="7mV-rT-Nta"/>
+                                        <constraint firstItem="azm-Q3-cne" firstAttribute="top" secondItem="LJx-VQ-XLK" secondAttribute="top" constant="16" id="gtN-my-viL"/>
+                                        <constraint firstItem="azm-Q3-cne" firstAttribute="leading" secondItem="LJx-VQ-XLK" secondAttribute="leading" constant="16" id="srR-Fg-b7H"/>
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="eCr-jX-4Wb" customClass="BackgroundView" customModule="ValletAdmin" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="120" width="375" height="76"/>
+                                    <rect key="frame" x="0.0" y="112" width="375" height="76"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
@@ -578,6 +558,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="jKM-qB-Afb" id="BMq-Yh-6vV"/>
+                        <outlet property="totalSupplyContainerView" destination="azm-Q3-cne" id="4bx-DR-TeK"/>
                         <outlet property="totalSupplyLabel" destination="Ubr-j2-YBC" id="JJE-42-0SQ"/>
                     </connections>
                 </viewController>

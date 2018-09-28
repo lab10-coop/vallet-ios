@@ -10,5 +10,14 @@ import UIKit
 
 class HistoryTableSectionFooterView: UITableViewHeaderFooterView, NibBackedTableHeaderFooterView {
 
+	@IBOutlet private var containerView: UIView!
+
+	override func awakeFromNib() {
+		super.awakeFromNib()
+
+		containerView.addRoundedCorners()
+		containerView.addShadow()
+	}
+	
 }
 

@@ -1,64 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ClientHistoryEventTableViewCell" id="KGk-i7-Jjw" customClass="ClientHistoryEventTableViewCell" customModule="Vallet" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ClientHistoryEventTableViewCell" id="KGk-i7-Jjw" customClass="ClientHistoryEventTableViewCell" customModule="Vallet" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGE-Xe-dO7" customClass="ContentBackgroundView" customModule="Vallet" customModuleProvider="target">
+                        <rect key="frame" x="16" y="-8" width="288" height="59.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IncomingArrowIcon" translatesAutoresizingMaskIntoConstraints="NO" id="CPL-04-L44">
-                        <rect key="frame" x="16" y="17" width="10" height="10"/>
+                        <rect key="frame" x="32" y="17" width="10" height="10"/>
                     </imageView>
                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OutgoingArrowIcon" translatesAutoresizingMaskIntoConstraints="NO" id="dNS-HC-jLe">
-                        <rect key="frame" x="16" y="17" width="10" height="10"/>
+                        <rect key="frame" x="32" y="17" width="10" height="10"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="arn-1T-f5O" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
-                        <rect key="frame" x="34" y="8" width="218" height="27.5"/>
+                        <rect key="frame" x="50" y="12" width="186" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mo2-Re-IfX" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
-                        <rect key="frame" x="262" y="11.5" width="42" height="21"/>
+                        <rect key="frame" x="246" y="11.5" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="arn-1T-f5O" firstAttribute="centerY" secondItem="CPL-04-L44" secondAttribute="centerY" id="5ao-Dh-tuR"/>
                     <constraint firstItem="dNS-HC-jLe" firstAttribute="centerY" secondItem="CPL-04-L44" secondAttribute="centerY" id="6PB-gA-b74"/>
+                    <constraint firstAttribute="bottom" secondItem="SGE-Xe-dO7" secondAttribute="bottom" constant="-8" id="9bb-bn-mAy"/>
                     <constraint firstItem="arn-1T-f5O" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Gj6-7W-RZ1"/>
                     <constraint firstItem="arn-1T-f5O" firstAttribute="leading" secondItem="CPL-04-L44" secondAttribute="trailing" constant="8" id="Lwa-9o-8R4"/>
-                    <constraint firstItem="CPL-04-L44" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="NdX-ry-35t"/>
-                    <constraint firstItem="arn-1T-f5O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Rfe-uc-nVt"/>
-                    <constraint firstAttribute="trailing" secondItem="Mo2-Re-IfX" secondAttribute="trailing" constant="16" id="UWg-wm-wKm"/>
+                    <constraint firstItem="CPL-04-L44" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="NdX-ry-35t"/>
+                    <constraint firstItem="SGE-Xe-dO7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Qqf-nl-3Ob"/>
+                    <constraint firstItem="arn-1T-f5O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="Rfe-uc-nVt"/>
+                    <constraint firstAttribute="trailing" secondItem="Mo2-Re-IfX" secondAttribute="trailing" constant="32" id="UWg-wm-wKm"/>
                     <constraint firstItem="dNS-HC-jLe" firstAttribute="centerX" secondItem="CPL-04-L44" secondAttribute="centerX" id="YZj-fi-cvl"/>
-                    <constraint firstAttribute="bottom" secondItem="arn-1T-f5O" secondAttribute="bottom" constant="8" id="r16-Ax-YfY"/>
+                    <constraint firstAttribute="trailing" secondItem="SGE-Xe-dO7" secondAttribute="trailing" constant="16" id="dUC-u9-PH5"/>
+                    <constraint firstItem="SGE-Xe-dO7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="-8" id="gF3-WC-Xlx"/>
+                    <constraint firstAttribute="bottom" secondItem="arn-1T-f5O" secondAttribute="bottom" constant="12" id="r16-Ax-YfY"/>
                     <constraint firstItem="Mo2-Re-IfX" firstAttribute="leading" secondItem="arn-1T-f5O" secondAttribute="trailing" constant="10" id="rzl-pf-a67"/>
                     <constraint firstItem="Mo2-Re-IfX" firstAttribute="centerY" secondItem="arn-1T-f5O" secondAttribute="centerY" id="spv-pe-ksw"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="descriptionLabel" destination="arn-1T-f5O" id="j5c-jF-VDD"/>
                 <outlet property="incomingImageView" destination="CPL-04-L44" id="Qdl-gj-DsI"/>
                 <outlet property="outgoingImageView" destination="dNS-HC-jLe" id="LdX-kN-sep"/>
+                <outlet property="shadowView" destination="SGE-Xe-dO7" id="dGQ-GC-t6k"/>
                 <outlet property="valueLabel" destination="Mo2-Re-IfX" id="nTD-aK-ACk"/>
             </connections>
+            <point key="canvasLocation" x="140.80000000000001" y="154.72263868065968"/>
         </tableViewCell>
     </objects>
     <resources>

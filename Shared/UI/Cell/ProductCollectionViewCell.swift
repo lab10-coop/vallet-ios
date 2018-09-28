@@ -30,8 +30,8 @@ class ProductCollectionViewCell: UICollectionViewCell, NibBackedCollectionViewCe
 
 		backgroundColor = Theme.Color.background
 
-		containerView.layer.borderColor = Theme.Color.separator.cgColor
-		containerView.layer.borderWidth = 1.0
+		containerView.addShadow()
+		containerView.addRoundedCorners()
 
 		placeholderImageView.tintColor = Theme.Color.separator
 		
