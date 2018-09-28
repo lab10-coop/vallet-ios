@@ -30,6 +30,7 @@ class AdminHistoryEventTableViewCell: UITableViewCell, NibBackedTableViewCell {
 				outgoingImageView.isHidden = false
 				descriptionLabel.text = NSLocalizedString("Sent", comment: "Admin issue event description")
 				valueLabel.text = "- \(event.value)"
+				valueLabel.textColor = Theme.Color.darkText
 			case .redeem:
 				incomingImageView.tintColor = Theme.Color.accent
 				incomingImageView.isHidden = false
