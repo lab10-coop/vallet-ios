@@ -38,9 +38,10 @@ class HistoryViewModel {
 			return calendar.startOfDay(for: date)
 		})
 
-		let groups = grouped.map { (entry) -> EventsGroup in
+		var groups = grouped.map { (entry) -> EventsGroup in
 			return EventsGroup(date: entry.key, events: entry.value)
 		}
+		groups.sort(by: { $0.date > $1.date })
 
 		return groups
 	}
