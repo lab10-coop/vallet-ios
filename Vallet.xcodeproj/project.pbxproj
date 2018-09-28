@@ -181,6 +181,8 @@
 		D4C8C9B7215AC02300C831F0 /* SecondaryDesctructiveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9B5215AC02300C831F0 /* SecondaryDesctructiveButton.swift */; };
 		D4C8C9B9215AC19A00C831F0 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9B8215AC19A00C831F0 /* UIImage.swift */; };
 		D4C8C9BA215AC19A00C831F0 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9B8215AC19A00C831F0 /* UIImage.swift */; };
+		D4CE256B215E912C00D41449 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE256A215E912C00D41449 /* User.swift */; };
+		D4CE256C215E942E00D41449 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE256A215E912C00D41449 /* User.swift */; };
 		D4DA57DC215CD71E00942ED7 /* HistoryTableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DA57DB215CD71E00942ED7 /* HistoryTableSectionHeaderView.swift */; };
 		D4DA57DD215CD72200942ED7 /* HistoryTableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DA57DB215CD71E00942ED7 /* HistoryTableSectionHeaderView.swift */; };
 		D4DA57DF215CD73100942ED7 /* HistoryTableSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4DA57DE215CD73100942ED7 /* HistoryTableSectionHeaderView.xib */; };
@@ -316,6 +318,7 @@
 		D4C8C9B2215ABFE600C831F0 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		D4C8C9B5215AC02300C831F0 /* SecondaryDesctructiveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryDesctructiveButton.swift; sourceTree = "<group>"; };
 		D4C8C9B8215AC19A00C831F0 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		D4CE256A215E912C00D41449 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D4DA57DB215CD71E00942ED7 /* HistoryTableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableSectionHeaderView.swift; sourceTree = "<group>"; };
 		D4DA57DE215CD73100942ED7 /* HistoryTableSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableSectionHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -659,6 +662,7 @@
 				D48D957C2152515900840707 /* PendingValueEvent.swift */,
 				D4C8C9202153A4EF00C831F0 /* Product.swift */,
 				D4C8C9222153A4FA00C831F0 /* PriceList.swift */,
+				D4CE256A215E912C00D41449 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1115,6 +1119,7 @@
 				D48D95622150FD7700840707 /* ScanShopAddressViewController.swift in Sources */,
 				D4C8C9B9215AC19A00C831F0 /* UIImage.swift in Sources */,
 				D4C8C9A4215AAB3200C831F0 /* ButtonCustomizable.swift in Sources */,
+				D4CE256B215E912C00D41449 /* User.swift in Sources */,
 				D443CDBA214BDABE00A7100F /* UIViewController.swift in Sources */,
 				D4BE2B5B215E011D00146566 /* QRCodeManager.swift in Sources */,
 				D48D957D2152515900840707 /* PendingValueEvent.swift in Sources */,
@@ -1219,6 +1224,7 @@
 				D4C5CD982147DA2700AB67D7 /* QRCodeReaderView.swift in Sources */,
 				D4C8C99C215AA22500C831F0 /* Appearance.swift in Sources */,
 				D4C5CD9B2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */,
+				D4CE256C215E942E00D41449 /* User.swift in Sources */,
 				D4C8C999215AA1BD00C831F0 /* View.swift in Sources */,
 				D4C8C9282153B7CF00C831F0 /* Product.swift in Sources */,
 				D4C8C94C2158D5A800C831F0 /* AdminPriceListViewController.swift in Sources */,

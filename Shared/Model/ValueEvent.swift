@@ -129,6 +129,7 @@ extension ValueEvent {
 	@NSManaged public var storedDate: NSDate?
 	@NSManaged public var productName: String?
 	@NSManaged public var shop: Shop?
+	@NSManaged public var client: User?
 
 }
 
