@@ -10,6 +10,10 @@ import UIKit
 
 extension MainViewController {
 
+	func setupMenu() {
+		contentSegmentedView.segmentNames = [NSLocalizedString("Pricelist", comment: "Tab name"), NSLocalizedString("History", comment: "Tab name")]
+	}
+
 	func setupContent(for shop: Shop?) {
 		guard let shop = shop
 			else {
@@ -35,8 +39,8 @@ extension MainViewController {
 		historyViewController.container = self
 		priceListViewController.container = self
 
-		viewControllers.append(historyViewController)
 		viewControllers.append(priceListViewController)
+		viewControllers.append(historyViewController)
 
 		let currentViewController = viewControllers[selectedIndex]
 

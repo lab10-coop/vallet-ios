@@ -17,20 +17,11 @@ protocol ScanShopAddressViewControllerDelegate: class {
 class ScanShopAddressViewController: UIViewController {
 
 	@IBOutlet private var qrCodeReaderView: QRCodeReaderView!
-	@IBOutlet private var addressLabel: UILabel!
+	@IBOutlet private var contentBackgroundView: UIView!
 
 	weak var delegate: ScanShopAddressViewControllerDelegate?
 
 	var shop: Shop?
-	var shopAddress: String? {
-		didSet {
-			guard addressLabel != nil
-				else {
-					return
-			}
-			addressLabel.text = shopAddress
-		}
-	}
 
 	@discardableResult
 	static func present(over viewController: UIViewController) -> ScanShopAddressViewController? {
@@ -48,6 +39,9 @@ class ScanShopAddressViewController: UIViewController {
 		super.viewDidLoad()
 
 		qrCodeReaderView.delegate = self
+		
+		contentBackgroundView.addShadow()
+		contentBackgroundView.addRoundedCorners()
 	}
 
 	@IBAction func close(_ sender: Any? = nil) {
@@ -71,8 +65,11 @@ class ScanShopAddressViewController: UIViewController {
 extension ScanShopAddressViewController: QRCodeReaderViewDelegate {
 
 	func didReadQRCode(value: String) {
-		shopAddress = value
-		addShop(with: value)
+		guard let shopAddress = QRCodeManager.shopAddress(from: value)
+			else {
+				return
+		}
+		addShop(with: shopAddress)
 	}
 
 }

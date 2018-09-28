@@ -14,11 +14,11 @@ class ClientPriceListViewController: UIViewController {
 
 	private lazy var refreshControl: UIRefreshControl = {
 		let refreshControl = UIRefreshControl()
-		refreshControl.addTarget(self, action: #selector(reloadData), for: UIControlEvents.valueChanged)
+		refreshControl.addTarget(self, action: #selector(reloadData), for: UIControl.Event.valueChanged)
 		return refreshControl
 	}()
 
-	private let cellSpacing: CGFloat = 5
+	private let cellSpacing: CGFloat = 16
 	private var numCellsPerRow = 2
 
 	var shop: Shop?
@@ -50,6 +50,7 @@ class ClientPriceListViewController: UIViewController {
 		ProductCollectionViewCell.register(for: collectionView)
 
 		collectionView.addSubview(refreshControl)
+		collectionView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 16.0, right: 0.0)
 
 		priceListViewModel = PriceListViewModel(shop: shop)
 		priceListViewModel?.newDataBlock = { [weak self] in

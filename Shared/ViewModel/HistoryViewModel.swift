@@ -10,6 +10,13 @@ import Foundation
 import web3swift
 import CoreData
 
+struct EventsGroup {
+
+	var date = Date()
+	var events = [ValueEvent]()
+
+}
+
 class HistoryViewModel {
 
 	var token: Token
@@ -18,6 +25,26 @@ class HistoryViewModel {
 	var managedObjectContext: NSManagedObjectContext?
 
 	var events: [ValueEvent] = [ValueEvent]()
+
+	var groupedEvents: [EventsGroup] {
+
+		let calendar = Calendar.current
+
+		let grouped = Dictionary(grouping: events, by: { (event) -> Date in
+			guard let date = event.date
+				else {
+					return calendar.startOfDay(for: Date.distantPast)
+			}
+			return calendar.startOfDay(for: date)
+		})
+
+		var groups = grouped.map { (entry) -> EventsGroup in
+			return EventsGroup(date: entry.key, events: entry.value)
+		}
+		groups.sort(by: { $0.date > $1.date })
+
+		return groups
+	}
 
 	init?(shop: Shop, clientAddress: EthereumAddress? = nil) {
 		guard let shopAddress = shop.address,

@@ -136,13 +136,14 @@ class TextInputView: NibLinkedView {
 
 	override func setup() {
 		titleLabel.text = ""
-		titleLabel.textColor = .blue
+		titleLabel.textColor = Theme.Color.accent
 		valueTextField.placeholder = ""
 		valueTextField.text = ""
-		valueTextField.textColor = .black
+		valueTextField.font = Theme.Font.inputFieldFont
+		valueTextField.textColor = Theme.Color.darkText
 		valueTextField.returnKeyType = .next
 
-		addBottomBorder(0.5, color: .gray)
+		addBottomBorder(1.0, color: Theme.Color.separator)
 	}
 
 	@IBAction func didTapTextInputView(_ sender: Any) {
@@ -168,7 +169,7 @@ class TextInputView: NibLinkedView {
 	// MARK: - Validators
 
 	func validate() {
-		titleLabel.textColor = isValid ? .blue : .red
+		titleLabel.textColor = isValid ? Theme.Color.accent : Theme.Color.error
 	}
 
 	private var requiredValueValidator: (String?) -> Bool = {

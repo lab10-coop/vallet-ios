@@ -11,6 +11,7 @@ import UIKit
 class ShopTableViewCell: UITableViewCell, NibBackedTableViewCell {	
 
 	@IBOutlet private var nameLabel: UILabel!
+	@IBOutlet private var selectionView: UIView!
 
 	var shop: Shop? {
 		didSet {
@@ -22,8 +23,21 @@ class ShopTableViewCell: UITableViewCell, NibBackedTableViewCell {
 		}
 	}
 
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		selectionView.backgroundColor = Theme.Color.accent
+		selectionView.alpha = 0.15
+		selectionView.layer.cornerRadius = 6.0
+		prepareForReuse()
+	}
+
 	override func prepareForReuse() {
 		nameLabel.text = ""
+		selectionView.isHidden = true
+	}
+
+	override func setSelected(_ selected: Bool, animated: Bool) {
+		selectionView.isHidden = !selected
 	}
 
 }

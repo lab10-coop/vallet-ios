@@ -1,5 +1,5 @@
 //
-//  SideMenuViewController+Admin.swift
+//  ShopMenuViewController+Admin.swift
 //  ValletAdmin
 //
 //  Created by Matija Kregar on 18/09/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension SideMenuViewController: ShopAddable {
+extension ShopMenuViewController: ShopAddable {
 
 	func addShop() {
 		guard let createShopViewController = CreateShopViewController.present(over: self)
@@ -20,7 +20,7 @@ extension SideMenuViewController: ShopAddable {
 
 }
 
-extension SideMenuViewController: CreateShopDelegate {
+extension ShopMenuViewController: CreateShopDelegate {
 
 	func didCreate(shop: Shop) {
 		shopsTableView.reloadData()

@@ -12,15 +12,19 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShopTableViewCell" id="KGk-i7-Jjw" customClass="ShopTableViewCell" customModule="Vallet" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ShopTableViewCell" rowHeight="60" id="KGk-i7-Jjw" customClass="ShopTableViewCell" customModule="Vallet" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1D-q3-HVW">
-                        <rect key="frame" x="16" y="12" width="288" height="21"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQs-fI-ejp">
+                        <rect key="frame" x="8" y="8" width="304" height="43.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1D-q3-HVW" customClass="SmallDarkTitleLabel" customModule="Vallet" customModuleProvider="target">
+                        <rect key="frame" x="16" y="19.5" width="288" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -28,14 +32,20 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="l1D-q3-HVW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="5gb-d5-AqE"/>
+                    <constraint firstItem="YQs-fI-ejp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="BaD-Lq-sM2"/>
+                    <constraint firstAttribute="bottom" secondItem="YQs-fI-ejp" secondAttribute="bottom" constant="8" id="KxW-xx-4CY"/>
                     <constraint firstItem="l1D-q3-HVW" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="PeR-dL-psc"/>
+                    <constraint firstItem="YQs-fI-ejp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="TjA-H9-wgn"/>
                     <constraint firstAttribute="trailing" secondItem="l1D-q3-HVW" secondAttribute="trailing" constant="16" id="fxD-Mk-UG8"/>
+                    <constraint firstAttribute="trailing" secondItem="YQs-fI-ejp" secondAttribute="trailing" constant="8" id="j6q-Qa-wat"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="nameLabel" destination="l1D-q3-HVW" id="a91-Co-6jz"/>
+                <outlet property="selectionView" destination="YQs-fI-ejp" id="Xjq-M6-LvQ"/>
             </connections>
+            <point key="canvasLocation" x="34" y="46"/>
         </tableViewCell>
     </objects>
 </document>

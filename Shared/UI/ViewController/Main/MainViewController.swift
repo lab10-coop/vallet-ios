@@ -10,10 +10,12 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-	@IBOutlet var contentSegmentedControl: UISegmentedControl!
+	@IBOutlet var contentSegmentedView: SegmentedControlView!
 	@IBOutlet var containerView: UIView!
 	@IBOutlet var shopNameLabel: UILabel!
+	@IBOutlet var dropMenuIconView: UIImageView!
 	@IBOutlet var clientBalanceLabel: UILabel!
+	@IBOutlet var qrCodeButton: UIButton!
 
 	var pageViewController: UIPageViewController?
 	var viewControllers = [UIViewController]()
@@ -28,6 +30,11 @@ class MainViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
+		setupMenu()
+		contentSegmentedView.delegate = self
+
+		dropMenuIconView.tintColor = Theme.Color.navigationBarButton
 
 		shopNameLabel.text = ""
 		clientBalanceLabel.text = ""
@@ -62,10 +69,10 @@ class MainViewController: UIViewController {
 	}
 
 	private func updateSegmentedControl() {
-		contentSegmentedControl.selectedSegmentIndex = selectedIndex
+		contentSegmentedView.selectedIndex = selectedIndex
 	}
 
-	private func updatePageViewContoller(direction: UIPageViewControllerNavigationDirection) {
+	private func updatePageViewContoller(direction: UIPageViewController.NavigationDirection) {
 		guard selectedIndex < viewControllers.count
 			else {
 				return
@@ -76,20 +83,8 @@ class MainViewController: UIViewController {
 		})
 	}
 
-	@IBAction func didChangeContent(_ sender: Any? = nil) {
-		guard contentSegmentedControl.selectedSegmentIndex != selectedIndex
-			else {
-				return
-		}
-
-		let direction: UIPageViewControllerNavigationDirection = selectedIndex < contentSegmentedControl.selectedSegmentIndex ? .forward : .reverse
-		selectedIndex = contentSegmentedControl.selectedSegmentIndex
-
-		updatePageViewContoller(direction: direction)
-	}
-
 	@IBAction func shopShopMenu(_ sender: Any? = nil) {
-		let shopMenuViewController = SideMenuViewController.present(over: self)
+		let shopMenuViewController = ShopMenuViewController.present(over: self)
 		shopMenuViewController?.delegate = self
 	}
 
@@ -136,10 +131,26 @@ extension MainViewController: UIPageViewControllerDelegate {
 
 }
 
-extension MainViewController: SideMenuDelegate {
+extension MainViewController: ShopMenuDelegate {
 
 	func didSelect(shop: Shop) {
 		self.shop = shop
+	}
+
+}
+
+extension MainViewController: SegmentedControlViewDelegate {
+
+	func didChangeSelected(to index: Int) {
+		guard index != selectedIndex
+			else {
+				return
+		}
+
+		let direction: UIPageViewController.NavigationDirection = selectedIndex < index ? .forward : .reverse
+		selectedIndex = index
+
+		updatePageViewContoller(direction: direction)
 	}
 
 }

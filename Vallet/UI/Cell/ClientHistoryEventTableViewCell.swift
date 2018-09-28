@@ -12,30 +12,43 @@ class ClientHistoryEventTableViewCell: UITableViewCell, NibBackedTableViewCell {
 
 	@IBOutlet var descriptionLabel: UILabel!
 	@IBOutlet var valueLabel: UILabel!
-
-	private var dateOutput: String {
-		let dateFormatter = DateFormatter()
-		dateFormatter.dateStyle = .short
-		var dateString = "no date"
-		if let date = event?.date {
-			dateString = dateFormatter.string(from: date)
-		}
-		return dateString
-	}
+	@IBOutlet var incomingImageView: UIImageView!
+	@IBOutlet var outgoingImageView: UIImageView!
 
 	var event: ValueEvent? {
 		didSet {
-			guard let event = event
+			guard let event = event,
+				let type = event.resolvedType
 				else {
 					prepareForReuse()
 					return
 			}
-			descriptionLabel.text = "\(event.type.description) \(event.productName ?? "unknown item") \(dateOutput)"
-			valueLabel.text = event.type == ValueEventType.issue.rawValue ? "+ \(event.value)" : "- \(event.value)"
+
+			switch type {
+			case .redeem:
+				outgoingImageView.tintColor = Theme.Color.accent
+				outgoingImageView.isHidden = false
+				descriptionLabel.text = event.productName ?? NSLocalizedString("Unknow Item", comment: "Unknown item name")
+				valueLabel.text = "- \(event.value)"
+				valueLabel.textColor = Theme.Color.darkText
+			case .issue:
+				incomingImageView.tintColor = Theme.Color.accent
+				incomingImageView.isHidden = false
+				descriptionLabel.text = NSLocalizedString("Incoming", comment: "Issue event description")
+				valueLabel.text = "+ \(event.value)"
+				valueLabel.textColor = Theme.Color.accent
+			}
 		}
 	}
 
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		prepareForReuse()
+	}
+
 	override func prepareForReuse() {
+		incomingImageView.isHidden = true
+		outgoingImageView.isHidden = true
 		descriptionLabel.text = ""
 		valueLabel.text = ""
 	}

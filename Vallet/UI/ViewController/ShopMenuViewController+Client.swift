@@ -1,5 +1,5 @@
 //
-//  SideMenuViewController+Client.swift
+//  ShopMenuViewController+Client.swift
 //  Vallet
 //
 //  Created by Matija Kregar on 18/09/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension SideMenuViewController: ShopAddable {
+extension ShopMenuViewController: ShopAddable {
 
 	func addShop() {
 		guard let scanShopAddressViewController = ScanShopAddressViewController.present(over: self)
@@ -20,7 +20,7 @@ extension SideMenuViewController: ShopAddable {
 
 }
 
-extension SideMenuViewController: ScanShopAddressViewControllerDelegate {
+extension ShopMenuViewController: ScanShopAddressViewControllerDelegate {
 
 	func didScan(shop: Shop) {
 		shopsTableView.reloadData()

@@ -11,7 +11,7 @@ import UIKit
 class NoShopsViewController: UIViewController {
 
 	weak var container: UIViewController?
-	weak var delegate: SideMenuDelegate?
+	weak var delegate: ShopMenuDelegate?
 
 	static func instance() -> NoShopsViewController? {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)

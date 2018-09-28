@@ -14,7 +14,7 @@ struct ViewTag {
 
 extension UIView {
 
-	public func addBottomBorder(_ width: CGFloat, color: UIColor?) {
+	func addBottomBorder(_ width: CGFloat, color: UIColor?) {
 		let border = UIView()
 		border.tag = ViewTag.bottomBorder
 		border.backgroundColor = color
@@ -22,12 +22,23 @@ extension UIView {
 
 		border.translatesAutoresizingMaskIntoConstraints = false
 		let views = ["border": border]
-		addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[border(\(width))]-(0)-|", options: NSLayoutFormatOptions.alignAllBottom, metrics: nil, views: views))
-		addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[border]-(0)-|", options: NSLayoutFormatOptions.alignAllBottom, metrics: nil, views: views))
+		addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[border(\(width))]-(0)-|", options: NSLayoutConstraint.FormatOptions.alignAllBottom, metrics: nil, views: views))
+		addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[border]-(0)-|", options: NSLayoutConstraint.FormatOptions.alignAllBottom, metrics: nil, views: views))
 	}
 
-	public func bottomBorder() -> UIView? {
+	func bottomBorder() -> UIView? {
 		return viewWithTag(ViewTag.bottomBorder)
+	}
+
+	func addRoundedCorners(with radius: CGFloat = Theme.Constants.cornerRadius) {
+		layer.cornerRadius = radius
+	}
+
+	func addShadow() {
+		layer.shadowRadius = Theme.Constants.shadowRadius
+		layer.shadowColor = UIColor.black.cgColor
+		layer.shadowOpacity = 0.05
+		layer.shadowOffset = CGSize.zero
 	}
 
 	func fadeIn(withDuration duration: TimeInterval = 0.4, completion: ((Bool) -> Void)? = nil) {

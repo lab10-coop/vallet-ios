@@ -11,19 +11,15 @@ import UIKit
 class IssueAddressViewController: UIViewController {
 
 	@IBOutlet private var qrCodeReaderView: QRCodeReaderView!
-	@IBOutlet private var addressLabel: UILabel!
+	@IBOutlet private var qrCodeReaderBackgroundView: UIView!
 	@IBOutlet private var continueButton: UIButton!
+	@IBOutlet private var scanAgainButton: UIButton!
 
 	var issueViewModel: IssueViewModel?
 
 	var shop: Shop?
 	var clientAddress: String? {
 		didSet {
-			guard addressLabel != nil
-				else {
-					return
-			}
-			addressLabel.text = clientAddress
 			issueViewModel?.clientAddress = clientAddress
 		}
 	}
@@ -50,7 +46,12 @@ class IssueAddressViewController: UIViewController {
 				return
 		}
 
+		qrCodeReaderBackgroundView.addRoundedCorners()
+		qrCodeReaderBackgroundView.addShadow()
+
+		scanAgainButton.isEnabled = false
 		continueButton.isEnabled = false
+
 		qrCodeReaderView.delegate = self
 
 		issueViewModel = IssueViewModel(with: shop)
@@ -58,6 +59,11 @@ class IssueAddressViewController: UIViewController {
 
 	@IBAction func close(_ sender: Any? = nil) {
 		dismiss(animated: true, completion: nil)
+	}
+
+	@IBAction func scanAgain(_ sender: Any? = nil) {
+		qrCodeReaderView.startScanning()
+		continueButton.isEnabled = false
 	}
 
 
@@ -88,8 +94,14 @@ class IssueAddressViewController: UIViewController {
 extension IssueAddressViewController: QRCodeReaderViewDelegate {
 
 	func didReadQRCode(value: String) {
+		guard let userAddress = QRCodeManager.userAddress(from: value)
+			else {
+				return
+		}
+
 		continueButton.isEnabled = true
-		clientAddress = value
+		scanAgainButton.isEnabled = true
+		clientAddress = userAddress
 	}
 
 }

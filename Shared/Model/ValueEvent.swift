@@ -52,6 +52,11 @@ public class ValueEvent: NSManagedObject {
 		return storedTransactionHash as Data
 	}
 
+	// TODO: refactor resolvedType -> type and type -> storedType 
+	var resolvedType: ValueEventType? {
+		return ValueEventType(rawValue: type)
+	}
+
 	convenience init?(in managedContext: NSManagedObjectContext, shop: Shop, intermediate: ValueEventIntermediate) {
 		self.init(
 			in: managedContext,
