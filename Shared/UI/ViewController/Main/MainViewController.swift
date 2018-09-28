@@ -10,7 +10,7 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-	@IBOutlet var contentSegmentedControl: UISegmentedControl!
+	@IBOutlet var contentSegmentedView: SegmentedControlView!
 	@IBOutlet var containerView: UIView!
 	@IBOutlet var shopNameLabel: UILabel!
 	@IBOutlet var dropMenuIconView: UIImageView!
@@ -30,6 +30,9 @@ class MainViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
+		contentSegmentedView.segmentNames = [NSLocalizedString("History", comment: "Tab name"), NSLocalizedString("Pricelist", comment: "Tab name")]
+		contentSegmentedView.delegate = self
 
 		dropMenuIconView.tintColor = Theme.Color.navigationBarButton
 
@@ -66,7 +69,7 @@ class MainViewController: UIViewController {
 	}
 
 	private func updateSegmentedControl() {
-		contentSegmentedControl.selectedSegmentIndex = selectedIndex
+		contentSegmentedView.selectedIndex = selectedIndex
 	}
 
 	private func updatePageViewContoller(direction: UIPageViewController.NavigationDirection) {
@@ -78,18 +81,6 @@ class MainViewController: UIViewController {
 
 		pageViewController?.setViewControllers([viewController], direction: direction, animated: true, completion: { (success) in
 		})
-	}
-
-	@IBAction func didChangeContent(_ sender: Any? = nil) {
-		guard contentSegmentedControl.selectedSegmentIndex != selectedIndex
-			else {
-				return
-		}
-
-		let direction: UIPageViewController.NavigationDirection = selectedIndex < contentSegmentedControl.selectedSegmentIndex ? .forward : .reverse
-		selectedIndex = contentSegmentedControl.selectedSegmentIndex
-
-		updatePageViewContoller(direction: direction)
 	}
 
 	@IBAction func shopShopMenu(_ sender: Any? = nil) {
@@ -144,6 +135,22 @@ extension MainViewController: ShopMenuDelegate {
 
 	func didSelect(shop: Shop) {
 		self.shop = shop
+	}
+
+}
+
+extension MainViewController: SegmentedControlViewDelegate {
+
+	func didChangeSelected(to index: Int) {
+		guard index != selectedIndex
+			else {
+				return
+		}
+
+		let direction: UIPageViewController.NavigationDirection = selectedIndex < index ? .forward : .reverse
+		selectedIndex = index
+
+		updatePageViewContoller(direction: direction)
 	}
 
 }

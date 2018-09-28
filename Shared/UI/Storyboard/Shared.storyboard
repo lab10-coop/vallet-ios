@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fV0-dP-h2U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fV0-dP-h2U">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -127,16 +127,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43w-Hg-OjD">
-                                <rect key="frame" x="0.0" y="149" width="375" height="629"/>
+                                <rect key="frame" x="0.0" y="141.33333333333331" width="375" height="636.66666666666674"/>
                                 <connections>
                                     <segue destination="pDq-cy-8vN" kind="embed" identifier="EmbedContentSegue" id="k05-vS-WN7"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ov7-Jm-YmF" customClass="ContentBackgroundView" customModule="Vallet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="149"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="141.33333333333334"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zRf-bP-RgQ">
-                                        <rect key="frame" x="133" y="60.000000000000007" width="107.33333333333331" height="20.333333333333336"/>
+                                        <rect key="frame" x="134" y="60.000000000000007" width="107.33333333333331" height="20.333333333333336"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="HrJ-cs-Bz4">
                                                 <rect key="frame" x="0.0" y="0.0" width="107.33333333333333" height="20.333333333333332"/>
@@ -153,7 +153,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="749" verticalHuggingPriority="749" horizontalCompressionResistancePriority="754" verticalCompressionResistancePriority="754" text="Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Up-lT-TrN" customClass="LargerTextLabel" customModule="Vallet" customModuleProvider="target">
-                                                <rect key="frame" x="23.333333333333339" y="-60" width="60.666666666666657" height="0.0"/>
+                                                <rect key="frame" x="23.333333333333339" y="0.0" width="60.666666666666657" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -161,24 +161,20 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBi-kq-gNy">
-                                        <rect key="frame" x="125" y="52" width="123.33333333333331" height="36.333333333333343"/>
+                                        <rect key="frame" x="126" y="52" width="123.33333333333331" height="36.333333333333343"/>
                                         <connections>
                                             <action selector="shopShopMenu:" destination="fV0-dP-h2U" eventType="touchUpInside" id="H2U-M3-zxQ"/>
                                         </connections>
                                     </button>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="obT-o8-DvS">
-                                        <rect key="frame" x="16" y="104" width="343" height="29"/>
-                                        <segments>
-                                            <segment title="History"/>
-                                            <segment title="Pricelist"/>
-                                        </segments>
-                                        <color key="tintColor" red="0.039215686274509803" green="0.62352941176470589" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <action selector="didChangeContent:" destination="fV0-dP-h2U" eventType="valueChanged" id="vGP-Pn-jNh"/>
-                                        </connections>
-                                    </segmentedControl>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qva-MT-EBa" customClass="SegmentedControlView" customModule="Vallet" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="96.333333333333329" width="359" height="43.999999999999986"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="LHh-Zo-xn8"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMY-hE-Zob" customClass="SeparatorView" customModule="Vallet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="148" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="140.33333333333334" width="375" height="1"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="hOh-MM-JR9"/>
@@ -195,19 +191,19 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qva-MT-EBa" secondAttribute="trailing" constant="8" id="1Qd-Sq-oli"/>
                                     <constraint firstAttribute="trailing" secondItem="HMY-hE-Zob" secondAttribute="trailing" id="40A-qp-WCq"/>
                                     <constraint firstItem="FBi-kq-gNy" firstAttribute="width" secondItem="HrJ-cs-Bz4" secondAttribute="width" constant="16" id="6mX-l6-Lu7"/>
                                     <constraint firstItem="FBi-kq-gNy" firstAttribute="height" secondItem="HrJ-cs-Bz4" secondAttribute="height" constant="16" id="7PI-Xd-CAk"/>
-                                    <constraint firstItem="HMY-hE-Zob" firstAttribute="top" secondItem="obT-o8-DvS" secondAttribute="bottom" constant="16" id="KGw-AK-qlt"/>
-                                    <constraint firstItem="obT-o8-DvS" firstAttribute="leading" secondItem="ov7-Jm-YmF" secondAttribute="leading" constant="16" id="KdH-gW-7RU"/>
+                                    <constraint firstItem="qva-MT-EBa" firstAttribute="leading" secondItem="ov7-Jm-YmF" secondAttribute="leading" constant="8" id="Kcf-jb-JzO"/>
                                     <constraint firstItem="zRf-bP-RgQ" firstAttribute="centerX" secondItem="ov7-Jm-YmF" secondAttribute="centerX" id="Ky0-ti-kMQ"/>
+                                    <constraint firstItem="qva-MT-EBa" firstAttribute="top" secondItem="zRf-bP-RgQ" secondAttribute="bottom" constant="16" id="R6A-KR-qIX"/>
                                     <constraint firstAttribute="trailing" secondItem="KOy-Rz-xnh" secondAttribute="trailing" constant="10" id="X9z-ZK-pIr"/>
                                     <constraint firstAttribute="bottom" secondItem="HMY-hE-Zob" secondAttribute="bottom" id="f0m-Bq-9PG"/>
                                     <constraint firstItem="KOy-Rz-xnh" firstAttribute="centerY" secondItem="HrJ-cs-Bz4" secondAttribute="centerY" id="jtV-XA-FU5"/>
+                                    <constraint firstItem="HMY-hE-Zob" firstAttribute="top" secondItem="qva-MT-EBa" secondAttribute="bottom" id="m3D-0Y-Sw2"/>
                                     <constraint firstItem="FBi-kq-gNy" firstAttribute="centerX" secondItem="HrJ-cs-Bz4" secondAttribute="centerX" id="t0d-74-5Vd"/>
-                                    <constraint firstItem="obT-o8-DvS" firstAttribute="top" secondItem="zRf-bP-RgQ" secondAttribute="bottom" constant="23.666666666666679" id="v3n-ZC-2iY"/>
                                     <constraint firstItem="HMY-hE-Zob" firstAttribute="leading" secondItem="ov7-Jm-YmF" secondAttribute="leading" id="xQU-E6-Ng1"/>
-                                    <constraint firstAttribute="trailing" secondItem="obT-o8-DvS" secondAttribute="trailing" constant="16" id="yhw-bk-r3J"/>
                                     <constraint firstItem="FBi-kq-gNy" firstAttribute="centerY" secondItem="HrJ-cs-Bz4" secondAttribute="centerY" id="yqi-23-3iQ"/>
                                 </constraints>
                             </view>
@@ -227,8 +223,8 @@
                     </view>
                     <connections>
                         <outlet property="clientBalanceLabel" destination="3Up-lT-TrN" id="J8r-ES-KOw"/>
-                        <outlet property="containerView" destination="43w-Hg-OjD" id="4a6-oh-iKG"/>
-                        <outlet property="contentSegmentedControl" destination="obT-o8-DvS" id="mmU-Nv-MXV"/>
+                        <outlet property="containerView" destination="43w-Hg-OjD" id="P7I-4Q-jI3"/>
+                        <outlet property="contentSegmentedView" destination="qva-MT-EBa" id="ckN-Ek-pcG"/>
                         <outlet property="dropMenuIconView" destination="MwD-s5-aTj" id="mw3-pb-GMh"/>
                         <outlet property="qrCodeButton" destination="KOy-Rz-xnh" id="4Jq-Mx-wc3"/>
                         <outlet property="shopNameLabel" destination="vdQ-CW-E16" id="xZE-bV-f9q"/>
@@ -236,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7W4-1s-XNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1052" y="145.27736131934034"/>
+            <point key="canvasLocation" x="1052" y="144.82758620689657"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="amy-iD-Zo3">

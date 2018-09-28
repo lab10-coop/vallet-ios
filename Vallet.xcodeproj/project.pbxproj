@@ -85,6 +85,10 @@
 		D48D958521525B0000840707 /* AdminHistoryEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48D958321525B0000840707 /* AdminHistoryEventTableViewCell.xib */; };
 		D48D9589215283A500840707 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D9588215283A500840707 /* UserDefaultsManager.swift */; };
 		D48D958A215290C100840707 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D9588215283A500840707 /* UserDefaultsManager.swift */; };
+		D4BE2B56215DF62400146566 /* SegmentedControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4BE2B54215DF62300146566 /* SegmentedControlView.xib */; };
+		D4BE2B57215DF62400146566 /* SegmentedControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4BE2B54215DF62300146566 /* SegmentedControlView.xib */; };
+		D4BE2B58215DF62400146566 /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BE2B55215DF62300146566 /* SegmentedControlView.swift */; };
+		D4BE2B59215DF62400146566 /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BE2B55215DF62300146566 /* SegmentedControlView.swift */; };
 		D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */; };
 		D4C5CD982147DA2700AB67D7 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */; };
 		D4C5CD9A2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */; };
@@ -257,6 +261,8 @@
 		D48D958221525B0000840707 /* AdminHistoryEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHistoryEventTableViewCell.swift; sourceTree = "<group>"; };
 		D48D958321525B0000840707 /* AdminHistoryEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminHistoryEventTableViewCell.xib; sourceTree = "<group>"; };
 		D48D9588215283A500840707 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		D4BE2B54215DF62300146566 /* SegmentedControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegmentedControlView.xib; sourceTree = "<group>"; };
+		D4BE2B55215DF62300146566 /* SegmentedControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlView.swift; sourceTree = "<group>"; };
 		D4C5CD962147DA2600AB67D7 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
 		D4C5CD992147DB2A00AB67D7 /* NibLinkedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLinkedView.swift; sourceTree = "<group>"; };
 		D4C5CD9C2147DBAC00AB67D7 /* QRCodeReaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeReaderView.xib; sourceTree = "<group>"; };
@@ -495,6 +501,8 @@
 				D443CDB5214BB3EE00A7100F /* TextInputView.xib */,
 				D443CDBC214BDAF900A7100F /* ActivityIndicatorView.swift */,
 				D443CDBF214BDB1600A7100F /* ActivityIndicatorView.xib */,
+				D4BE2B55215DF62300146566 /* SegmentedControlView.swift */,
+				D4BE2B54215DF62300146566 /* SegmentedControlView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -895,6 +903,7 @@
 				D4C5CD9D2147DBAC00AB67D7 /* QRCodeReaderView.xib in Resources */,
 				D4C8C9392155249300C831F0 /* Assets.xcassets in Resources */,
 				D41A8E22215CF90E00B0E8AE /* HistoryTableSectionFooterView.xib in Resources */,
+				D4BE2B56215DF62400146566 /* SegmentedControlView.xib in Resources */,
 				D4C8C9522158E6EC00C831F0 /* ProductCollectionViewCell.xib in Resources */,
 				D443CDB6214BB3EE00A7100F /* TextInputView.xib in Resources */,
 				D429F85421400572004427F0 /* Main.storyboard in Resources */,
@@ -926,6 +935,7 @@
 				D4C5CD9E2147DBAC00AB67D7 /* QRCodeReaderView.xib in Resources */,
 				D429F89B21400A5B004427F0 /* Assets.xcassets in Resources */,
 				D41A8E23215CF90E00B0E8AE /* HistoryTableSectionFooterView.xib in Resources */,
+				D4BE2B57215DF62400146566 /* SegmentedControlView.xib in Resources */,
 				D4C8C9502158E6DF00C831F0 /* ProductCollectionViewCell.xib in Resources */,
 				D443CDB7214BB3EE00A7100F /* TextInputView.xib in Resources */,
 				D429F89621400A5A004427F0 /* Main.storyboard in Resources */,
@@ -1118,6 +1128,7 @@
 				D4C8C9312153D88200C831F0 /* NetworkManager.swift in Sources */,
 				D4C8C94A2158D37200C831F0 /* MainViewController+Client.swift in Sources */,
 				D4C8C994215A9E6500C831F0 /* Label.swift in Sources */,
+				D4BE2B58215DF62400146566 /* SegmentedControlView.swift in Sources */,
 				D4C8C998215AA1BD00C831F0 /* View.swift in Sources */,
 				D4C8C9232153A4FA00C831F0 /* PriceList.swift in Sources */,
 			);
@@ -1170,6 +1181,7 @@
 				D4C8C9352153DA7D00C831F0 /* HTTPMethod.swift in Sources */,
 				D4C8C9A5215AAB3200C831F0 /* ButtonCustomizable.swift in Sources */,
 				D4DA57DD215CD72200942ED7 /* HistoryTableSectionHeaderView.swift in Sources */,
+				D4BE2B59215DF62400146566 /* SegmentedControlView.swift in Sources */,
 				D4C8C9262153B3C200C831F0 /* CodingUserInfoKey.swift in Sources */,
 				D4C8C987215A8D7B00C831F0 /* Theme.swift in Sources */,
 				D4C8C98F215A9D7300C831F0 /* BaseLabel.swift in Sources */,
