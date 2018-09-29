@@ -66,6 +66,29 @@ class IssueAddressViewController: UIViewController {
 		continueButton.isEnabled = false
 	}
 
+	// MARK: - User
+
+	func saveUser(from code: String) {
+		guard let address = QRCodeManager.userAddress(from: code),
+			let name = QRCodeManager.userName(from: code)
+			else {
+				return
+		}
+		let managedObjectContext = DataBaseManager.managedContext
+
+		if let existingUser = User.user(in: managedObjectContext, with: address) {
+			existingUser.name = name
+			DataBaseManager.save(managedContext: managedObjectContext)
+			return
+		}
+
+		guard let newUser = User(in: managedObjectContext, address: address, name: name)
+			else {
+				return
+		}
+
+		DataBaseManager.save(managedContext: managedObjectContext)
+	}
 
 	// MARK: - Navigation
 
@@ -98,6 +121,8 @@ extension IssueAddressViewController: QRCodeReaderViewDelegate {
 			else {
 				return
 		}
+
+		saveUser(from: value)
 
 		continueButton.isEnabled = true
 		scanAgainButton.isEnabled = true

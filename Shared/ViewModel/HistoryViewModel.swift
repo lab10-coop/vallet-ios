@@ -99,12 +99,15 @@ class HistoryViewModel {
 		}
 
 		events = updatedEvents
+
+		attachUser(for: events)
+		
 		fetchDateFor(events: events) { (result) in
 			print("Fetch date events result: \(result)")
 		}
 	}
 
-	func fetchDateFor(events: [ValueEvent], completion: @escaping (Result<Bool>) -> Void) {
+	private func fetchDateFor(events: [ValueEvent], completion: @escaping (Result<Bool>) -> Void) {
 		let events = events.filter { $0.date == nil }
 
 		// TODO: Find a more elegant way of doing this.
@@ -126,6 +129,20 @@ class HistoryViewModel {
 				}
 			}
 		}
+	}
+
+	private func attachUser(for events: [ValueEvent]) {
+		guard let managedObjectContext = managedObjectContext
+			else {
+				return
+		}
+		for event in events {
+			if event.client == nil,
+				let user = User.user(in: managedObjectContext, with: event.clientAddress) {
+				event.client = user
+			}
+		}
+		DataBaseManager.save(managedContext: managedObjectContext)
 	}
 
 }

@@ -30,12 +30,18 @@ class AdminHistoryEventTableViewCell: UITableViewCell, NibBackedTableViewCell {
 				outgoingImageView.tintColor = Theme.Color.accent
 				outgoingImageView.isHidden = false
 				descriptionLabel.text = NSLocalizedString("Sent", comment: "Admin issue event description")
+				if let clientName = event.client?.name {
+					descriptionLabel.text?.append(" \(NSLocalizedString("to", comment: "")) \(clientName)")
+				}
 				valueLabel.text = "- \(event.value)"
 				valueLabel.textColor = Theme.Color.darkText
 			case .redeem:
 				incomingImageView.tintColor = Theme.Color.accent
 				incomingImageView.isHidden = false
 				descriptionLabel.text = NSLocalizedString("Received", comment: "Admin receive event description")
+				if let clientName = event.client?.name {
+					descriptionLabel.text?.append(" \(NSLocalizedString("from", comment: "")) \(clientName)")
+				}
 				valueLabel.text = "+ \(event.value)"
 				valueLabel.textColor = Theme.Color.accent
 			}
