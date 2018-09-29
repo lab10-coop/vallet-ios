@@ -46,7 +46,7 @@ class IssueViewModel {
 			case .success(let receipt):
 				let success = receipt.status == .ok
 				guard let strongSelf = self,
-					let _ = ValueEvent(from: pendingEvent, transactionHash: receipt.transactionHash, blockHash: receipt.blockHash, status: ValueEventStatus(from: receipt.status))
+					let _ = ValueEvent(from: pendingEvent, transactionHash: receipt.transactionHash, blockHash: receipt.blockHash, blockNumber: Int64(receipt.blockNumber), status: ValueEventStatus(from: receipt.status))
 					else {
 						completion(Result.failure(Web3Error.dataError))
 						return

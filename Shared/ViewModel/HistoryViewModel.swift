@@ -26,8 +26,15 @@ class HistoryViewModel {
 
 	var events: [ValueEvent] = [ValueEvent]()
 
-	var groupedEvents: [EventsGroup] {
+	var lastBlockNumber: UInt64 {
+		guard let lastBlockNumber = events.last?.blockNumber
+		else {
+			return 0
+		}
+		return lastBlockNumber
+	}
 
+	var groupedEvents: [EventsGroup] {
 		let calendar = Calendar.current
 
 		let grouped = Dictionary(grouping: events, by: { (event) -> Date in
@@ -61,7 +68,7 @@ class HistoryViewModel {
 	}
 
 	func reload(completion: @escaping (Result<[ValueEvent]>) -> Void) {
-		token.loadHistory(for: clientAddress) { [weak self] (eventsResult) in
+		token.loadHistory(for: clientAddress, fromBlock: lastBlockNumber) { [weak self] (eventsResult) in
 			guard let strongSelf = self,
 				let managedObjectContext = strongSelf.managedObjectContext
 				else {
@@ -86,10 +93,11 @@ class HistoryViewModel {
 			else {
 				return
 		}
-		updatedEvents = updatedEvents.filter { $0.shop == shop }
+		updatedEvents = updatedEvents.filter({ $0.shop == shop }).sorted(by: { $0.blockNumber > $1.blockNumber })
 		if updatedEvents.count != events.count {
 			NotificationCenter.default.post(name: Constants.Notification.newValueEvent, object: nil)
 		}
+
 		events = updatedEvents
 		fetchDateFor(events: events) { (result) in
 			print("Fetch date events result: \(result)")

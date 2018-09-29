@@ -210,7 +210,7 @@ class Token: ContractProtocol {
 
 	// MARK: - Events
 
-	func loadRedeemEvents(for clientAddress: EthereumAddress? = nil, completion: @escaping (Result<[ValueEventIntermediate]>) -> Void) {
+	func loadRedeemEvents(for clientAddress: EthereumAddress? = nil, fromBlock: UInt64 = 0, completion: @escaping (Result<[ValueEventIntermediate]>) -> Void) {
 		guard let contract = contract,
 			let contractAddress = address
 			else {
@@ -219,7 +219,7 @@ class Token: ContractProtocol {
 		}
 
 		var events = [ValueEventIntermediate]()
-		let eventFilter = EventFilter(fromBlock: .blockNumber(0), toBlock: .latest, addresses: [contractAddress])
+		let eventFilter = EventFilter(fromBlock: .blockNumber(fromBlock), toBlock: .latest, addresses: [contractAddress])
 
 		DispatchQueue.global(qos: .background).async {
 			let eventsResult = contract.getIndexedEvents(eventName: Constants.BlockChain.Event.redeem, filter: eventFilter, joinWithReceipts: true)
@@ -243,7 +243,7 @@ class Token: ContractProtocol {
 		}
 	}
 
-	func loadTransferEvents(for clientAddress: EthereumAddress? = nil, completion: @escaping (Result<[ValueEventIntermediate]>) -> Void) {
+	func loadTransferEvents(for clientAddress: EthereumAddress? = nil, fromBlock: UInt64 = 0, completion: @escaping (Result<[ValueEventIntermediate]>) -> Void) {
 		guard let contract = contract,
 			let contractAddress = address
 			else {
@@ -252,7 +252,7 @@ class Token: ContractProtocol {
 		}
 
 		var events = [ValueEventIntermediate]()
-		let eventFilter = EventFilter(fromBlock: .blockNumber(0), toBlock: .latest, addresses: [contractAddress])
+		let eventFilter = EventFilter(fromBlock: .blockNumber(fromBlock), toBlock: .latest, addresses: [contractAddress])
 
 		DispatchQueue.global(qos: .background).async {
 			let eventsResult = contract.getIndexedEvents(eventName: Constants.BlockChain.Event.transfer, filter: eventFilter, joinWithReceipts: true)
@@ -276,23 +276,22 @@ class Token: ContractProtocol {
 		}
 	}
 
-	func loadHistory(for clientAddress: EthereumAddress? = nil, completion: @escaping (Result<[ValueEventIntermediate]>) -> Void) {
+	func loadHistory(for clientAddress: EthereumAddress? = nil, fromBlock: UInt64 = 0, completion: @escaping (Result<[ValueEventIntermediate]>) -> Void) {
 		var events = [ValueEventIntermediate]()
 		// TODO: investigate the retain cycle in this case
-		loadTransferEvents(for: clientAddress) { (transferResult) in
+		loadTransferEvents(for: clientAddress, fromBlock: fromBlock) { (transferResult) in
 			switch transferResult {
 			case .success(let transfers):
 				events.append(contentsOf: transfers)
-				self.loadRedeemEvents(for: clientAddress, completion: { (redeemResult) in
+				self.loadRedeemEvents(for: clientAddress, fromBlock: fromBlock) { (redeemResult) in
 					switch redeemResult {
 					case .success(let redeems):
 						events.append(contentsOf: redeems)
-//						events.sort(by: { $0.receipt.blockNumber < $1.receipt.blockNumber })
 						completion(Result.success(events))
 					case .failure:
 						completion(redeemResult)
 					}
-				})
+				}
 			case .failure:
 				completion(transferResult)
 			}
@@ -309,6 +308,7 @@ struct ValueEventIntermediate: CustomStringConvertible {
 	var type: ValueEventType
 	var status: ValueEventStatus
 	var blockHash: Data
+	var blockNumber: Int64
 	var date: Date?
 
 	init?(issueResult: EventParserResultProtocol) {
@@ -324,6 +324,7 @@ struct ValueEventIntermediate: CustomStringConvertible {
 		self.type = .issue
 		self.transactionHash = transactionReceipt.transactionHash
 		self.blockHash = transactionReceipt.blockHash
+		self.blockNumber = Int64(transactionReceipt.blockNumber)
 		switch transactionReceipt.status {
 		case .ok:
 			self.status = .ok
@@ -347,6 +348,7 @@ struct ValueEventIntermediate: CustomStringConvertible {
 		self.type = .redeem
 		self.transactionHash = transactionReceipt.transactionHash
 		self.blockHash = transactionReceipt.blockHash
+		self.blockNumber = Int64(transactionReceipt.blockNumber)
 		switch transactionReceipt.status {
 		case .ok:
 			self.status = .ok
