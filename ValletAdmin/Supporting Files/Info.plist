@@ -46,6 +46,12 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Camera access needed to scan QR codes.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>WorkSans-Regular.ttf</string>
+		<string>WorkSans-Medium.ttf</string>
+		<string>WorkSans-Bold.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -64,12 +70,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>WorkSans-Regular.ttf</string>
-		<string>WorkSans-Medium.ttf</string>
-		<string>WorkSans-Bold.ttf</string>
 	</array>
 </dict>
 </plist>
