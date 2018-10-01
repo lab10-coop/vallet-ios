@@ -1494,7 +1494,7 @@
 			baseConfigurationReference = BC427D9B2FFCD9CA48489E79 /* Pods-Vallet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = JHR7UBB5A7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1507,6 +1507,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.lab10.vallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Vallet Development";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1517,7 +1518,8 @@
 			baseConfigurationReference = 3453223FDAEFCCEA65DA70F2 /* Pods-Vallet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = JHR7UBB5A7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1530,6 +1532,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.lab10.vallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Vallet AppStore";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1582,7 +1585,7 @@
 			baseConfigurationReference = C9683045E8DE422BEFE13276 /* Pods-ValletAdmin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = JHR7UBB5A7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1595,6 +1598,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.lab10.valletadmin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Vallet Admin Development";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1605,7 +1609,8 @@
 			baseConfigurationReference = 978EBDBF8DA054E50C13A3CC /* Pods-ValletAdmin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = JHR7UBB5A7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1618,6 +1623,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.lab10.valletadmin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Valled Admin AppStore";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
