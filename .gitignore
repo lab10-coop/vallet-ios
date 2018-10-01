@@ -75,6 +75,10 @@ Pods
 !Podfile
 !Podfile.lock
 
+#### TEMP
+# Fastlane
+fastlane
+
 ####
 # Carthage
 Carthage/Build.rbenv-vars
