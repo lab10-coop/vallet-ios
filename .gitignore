@@ -65,43 +65,41 @@ xcuserdata
 ####
 # Other Xcode files
 profile
-!Sources/**/*profile*
 *.hmap
 *.ipa
 
 ####
 # CocoaPods
-Pods
+Pods/
 !Podfile
 !Podfile.lock
-
-#### TEMP
-# Fastlane
-fastlane
 
 ####
 # Carthage
 Carthage/Build.rbenv-vars
-Carthage/Build
-!Carthage/Checkouts
 !Cartfile
 !Cartfile.private
 !Cartfile.resolved
 
 ####
-# rbenv
-.rbenv-vars
-
-####
 # Fastlane
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/test_output
+# Temporary profiling data
+/fastlane/report.xml
+# Deliver temporary error output
+/fastlane/Error*.png
+# Deliver temporary preview output
+/fastlane/Preview.html
+# Snapshot generated screenshots
+/fastlane/screenshots/*/*-portrait.png
+/fastlane/screenshots/*/*-landscape.png
+/fastlane/screenshots/screenshots.html
+# Frameit generated screenshots
+/fastlane/screenshots/*/*-portrait_framed.png
+/fastlane/screenshots/*/*-landscape_framed.png
+
+#TEMP
+fastlane
 
 ####
-# BuddyBuild
-buddybuild_release_notes.txt
-
-####
-#LocalKit.rb is for personal use
-LocalKit.rb
+# rbenv
+#.rbenv-vars
