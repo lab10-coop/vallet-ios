@@ -11,7 +11,7 @@ import UIKit
 class SecondaryButton: BaseButton {
 
 	override var titleFont: UIFont? {
-		return Theme.Font.largeButtonFont
+		return Theme.Font.smallButtonFont
 	}
 
 	override var normalBackgroundColor: UIColor? {
@@ -41,6 +41,10 @@ class SecondaryButton: BaseButton {
 			return UIEdgeInsets(top: 0.0, left: 3.0, bottom: 0.0, right: -3.0)
 		}
 		return UIEdgeInsets.zero
+	}
+
+	override func customize(title: String?) -> String? {
+		return title?.uppercased()
 	}
 
 }
