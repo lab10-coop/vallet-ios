@@ -80,6 +80,7 @@
 		D460E633216283C600829198 /* SwiftMultiaddr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D460E625216283BC00829198 /* SwiftMultiaddr.framework */; };
 		D460E634216283C600829198 /* SwiftMultihash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D460E623216283BC00829198 /* SwiftMultihash.framework */; };
 		D460E635216283C600829198 /* VarInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D460E626216283BC00829198 /* VarInt.framework */; };
+		D460E63A2163757700829198 /* IPFSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D460E6392163757700829198 /* IPFSManager.swift */; };
 		D48D95602150F67000840707 /* ShopManager+Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D955F2150F67000840707 /* ShopManager+Client.swift */; };
 		D48D95622150FD7700840707 /* ScanShopAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D95612150FD7600840707 /* ScanShopAddressViewController.swift */; };
 		D48D956421510ECB00840707 /* ShopManager+Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D956321510ECB00840707 /* ShopManager+Admin.swift */; };
@@ -271,6 +272,7 @@
 		D460E625216283BC00829198 /* SwiftMultiaddr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftMultiaddr.framework; path = Carthage/Build/iOS/SwiftMultiaddr.framework; sourceTree = "<group>"; };
 		D460E626216283BC00829198 /* VarInt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VarInt.framework; path = Carthage/Build/iOS/VarInt.framework; sourceTree = "<group>"; };
 		D460E627216283BC00829198 /* SwiftGMP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftGMP.framework; path = Carthage/Build/iOS/SwiftGMP.framework; sourceTree = "<group>"; };
+		D460E6392163757700829198 /* IPFSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPFSManager.swift; sourceTree = "<group>"; };
 		D48D955F2150F67000840707 /* ShopManager+Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopManager+Client.swift"; sourceTree = "<group>"; };
 		D48D95612150FD7600840707 /* ScanShopAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanShopAddressViewController.swift; sourceTree = "<group>"; };
 		D48D956321510ECB00840707 /* ShopManager+Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopManager+Admin.swift"; sourceTree = "<group>"; };
@@ -458,9 +460,10 @@
 				D429F8A721400DAE004427F0 /* Constants.swift */,
 				D429F8AE21401049004427F0 /* Result.swift */,
 				D4C5CD912147D30200AB67D7 /* UI */,
-				D429F8A421400D34004427F0 /* BlockChain */,
 				D443CD94214AA01600A7100F /* ViewModel */,
 				D4C5CDAC214907A400AB67D7 /* Model */,
+				D429F8A421400D34004427F0 /* BlockChain */,
+				D460E6382163754D00829198 /* IPFS */,
 				D4C8C92C2153D81D00C831F0 /* Network */,
 				D443CDA7214AA72000A7100F /* Extensions */,
 				D4C8C93A215524AE00C831F0 /* Assets */,
@@ -599,6 +602,14 @@
 				D4C8C964215A36B700C831F0 /* NoShopsViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D460E6382163754D00829198 /* IPFS */ = {
+			isa = PBXGroup;
+			children = (
+				D460E6392163757700829198 /* IPFSManager.swift */,
+			);
+			path = IPFS;
 			sourceTree = "<group>";
 		};
 		D48D955E2150F65F00840707 /* ViewModel */ = {
@@ -1212,6 +1223,7 @@
 				D4C8C92E2153D87400C831F0 /* NetworkRequest.swift in Sources */,
 				D48D95622150FD7700840707 /* ScanShopAddressViewController.swift in Sources */,
 				D4C8C9B9215AC19A00C831F0 /* UIImage.swift in Sources */,
+				D460E63A2163757700829198 /* IPFSManager.swift in Sources */,
 				D4C8C9A4215AAB3200C831F0 /* ButtonCustomizable.swift in Sources */,
 				D4CE256B215E912C00D41449 /* User.swift in Sources */,
 				D443CDBA214BDABE00A7100F /* UIViewController.swift in Sources */,
