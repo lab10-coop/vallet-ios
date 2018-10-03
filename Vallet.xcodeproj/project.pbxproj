@@ -38,6 +38,10 @@
 		D429F8C22141724C004427F0 /* TokenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8C02141724C004427F0 /* TokenType.swift */; };
 		D429F8C82142BF86004427F0 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8C72142BF86004427F0 /* Token.swift */; };
 		D429F8C92142BF87004427F0 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = D429F8C72142BF86004427F0 /* Token.swift */; };
+		D42DD9432164EE320015261A /* StoredImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42DD9422164EE320015261A /* StoredImage.swift */; };
+		D42DD9442164EE320015261A /* StoredImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42DD9422164EE320015261A /* StoredImage.swift */; };
+		D42DD9462164EE400015261A /* ExternalImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42DD9452164EE400015261A /* ExternalImage.swift */; };
+		D42DD9472164EE400015261A /* ExternalImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42DD9452164EE400015261A /* ExternalImage.swift */; };
 		D443CD92214A93E400A7100F /* ShopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CD91214A93E400A7100F /* ShopManager.swift */; };
 		D443CD93214A93E400A7100F /* ShopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CD91214A93E400A7100F /* ShopManager.swift */; };
 		D443CD98214AA0A500A7100F /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CD96214AA0A500A7100F /* ShopTableViewCell.swift */; };
@@ -248,6 +252,8 @@
 		D429F8BD21416F91004427F0 /* ContractProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractProtocol.swift; sourceTree = "<group>"; };
 		D429F8C02141724C004427F0 /* TokenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenType.swift; sourceTree = "<group>"; };
 		D429F8C72142BF86004427F0 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		D42DD9422164EE320015261A /* StoredImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredImage.swift; sourceTree = "<group>"; };
+		D42DD9452164EE400015261A /* ExternalImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalImage.swift; sourceTree = "<group>"; };
 		D443CD91214A93E400A7100F /* ShopManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopManager.swift; sourceTree = "<group>"; };
 		D443CD96214AA0A500A7100F /* ShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
 		D443CD97214AA0A500A7100F /* ShopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopTableViewCell.xib; sourceTree = "<group>"; };
@@ -709,6 +715,8 @@
 				D4C8C9202153A4EF00C831F0 /* Product.swift */,
 				D4C8C9222153A4FA00C831F0 /* PriceList.swift */,
 				D4CE256A215E912C00D41449 /* User.swift */,
+				D42DD9422164EE320015261A /* StoredImage.swift */,
+				D42DD9452164EE400015261A /* ExternalImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1202,6 +1210,7 @@
 				D4C8C9AD215AAC1500C831F0 /* UIColor.swift in Sources */,
 				D4C8C9552158ECC900C831F0 /* PriceListViewModel.swift in Sources */,
 				D4C5CDB521490DC500AB67D7 /* Shop.swift in Sources */,
+				D42DD9462164EE400015261A /* ExternalImage.swift in Sources */,
 				D4C5CDAA2149079500AB67D7 /* Model.xcdatamodeld in Sources */,
 				D443CDB0214BB26400A7100F /* TextInputView.swift in Sources */,
 				D48D956C2151192A00840707 /* HistoryViewModel.swift in Sources */,
@@ -1216,6 +1225,7 @@
 				D4C8C991215A9D9F00C831F0 /* LabelCustomizable.swift in Sources */,
 				D4C8C94521552DA200C831F0 /* MainViewController.swift in Sources */,
 				D429F8A621400D87004427F0 /* FaucetManager.swift in Sources */,
+				D42DD9432164EE320015261A /* StoredImage.swift in Sources */,
 				D429F8BB21416D9D004427F0 /* TokenFactory.swift in Sources */,
 				D443CDD0214F925000A7100F /* ClientAddressViewController.swift in Sources */,
 				D443CD98214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
@@ -1268,6 +1278,7 @@
 				D4BE2B5C215E011D00146566 /* QRCodeManager.swift in Sources */,
 				D4C5CDA3214819AD00AB67D7 /* ShopMenuViewController.swift in Sources */,
 				D4C8C9A8215AAB4000C831F0 /* BaseButton.swift in Sources */,
+				D42DD9472164EE400015261A /* ExternalImage.swift in Sources */,
 				D4C8C9AE215AAC1500C831F0 /* UIColor.swift in Sources */,
 				D4C8C98B215A8DC700C831F0 /* ScaledFont.swift in Sources */,
 				D429F8B821411FA2004427F0 /* Web3Manager.swift in Sources */,
@@ -1289,6 +1300,7 @@
 				D443CDAD214BAB5A00A7100F /* CreateShopViewController.swift in Sources */,
 				D4C8C9482158D31F00C831F0 /* MainViewController+Admin.swift in Sources */,
 				D4C5CDB621490DC500AB67D7 /* Shop.swift in Sources */,
+				D42DD9442164EE320015261A /* StoredImage.swift in Sources */,
 				D443CDCD214F7EFA00A7100F /* IssueViewModel.swift in Sources */,
 				D48D957E2152515900840707 /* PendingValueEvent.swift in Sources */,
 				D48D95662151104000840707 /* ShopMenuViewController+Admin.swift in Sources */,

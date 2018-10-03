@@ -80,6 +80,7 @@ extension Product {
 	@NSManaged public var imagePath: String?
 	@NSManaged public var nfcTagId: String?
 	@NSManaged public var priceList: PriceList?
+	@NSManaged public var externalImage: ExternalImage?
 
 }
 
