@@ -52,7 +52,7 @@ class IPFSManager {
 	}
 
 	static func upload(image: UIImage, completion: @escaping (Result<String>) -> Void) {
-		guard let imageData = image.jpegData(compressionQuality: 0.7)
+		guard let imageData = image.jpegData(compressionQuality: Constants.Image.jpegCompression)
 			else {
 				completion(Result.failure(Web3Error.dataError))
 				return

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 struct Constants {
 
@@ -83,7 +84,7 @@ struct Constants {
 
 	struct Image {
 
-		static let defaultJPEGCompression: CGFloat = 0.7
+		static let jpegCompression: CGFloat = 0.7
 		
 	}
 
