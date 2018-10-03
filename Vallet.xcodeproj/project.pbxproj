@@ -66,6 +66,21 @@
 		D443CDCA214F7E4200A7100F /* IssueAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDC9214F7E4200A7100F /* IssueAmountViewController.swift */; };
 		D443CDCD214F7EFA00A7100F /* IssueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDCC214F7EFA00A7100F /* IssueViewModel.swift */; };
 		D443CDD0214F925000A7100F /* ClientAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CDCF214F925000A7100F /* ClientAddressViewController.swift */; };
+		D460E628216283BC00829198 /* SwiftHex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D460E621216283BC00829198 /* SwiftHex.framework */; };
+		D460E629216283BC00829198 /* SwiftBase58.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D460E622216283BC00829198 /* SwiftBase58.framework */; };
+		D460E62A216283BC00829198 /* SwiftMultihash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D460E623216283BC00829198 /* SwiftMultihash.framework */; };
+		D460E62B216283BC00829198 /* SwiftIpfsApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D460E624216283BC00829198 /* SwiftIpfsApi.framework */; };
+		D460E62C216283BC00829198 /* SwiftMultiaddr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D460E625216283BC00829198 /* SwiftMultiaddr.framework */; };
+		D460E62D216283BC00829198 /* VarInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D460E626216283BC00829198 /* VarInt.framework */; };
+		D460E62E216283BC00829198 /* SwiftGMP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D460E627216283BC00829198 /* SwiftGMP.framework */; };
+		D460E62F216283C600829198 /* SwiftBase58.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D460E622216283BC00829198 /* SwiftBase58.framework */; };
+		D460E630216283C600829198 /* SwiftGMP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D460E627216283BC00829198 /* SwiftGMP.framework */; };
+		D460E631216283C600829198 /* SwiftHex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D460E621216283BC00829198 /* SwiftHex.framework */; };
+		D460E632216283C600829198 /* SwiftIpfsApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D460E624216283BC00829198 /* SwiftIpfsApi.framework */; };
+		D460E633216283C600829198 /* SwiftMultiaddr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D460E625216283BC00829198 /* SwiftMultiaddr.framework */; };
+		D460E634216283C600829198 /* SwiftMultihash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D460E623216283BC00829198 /* SwiftMultihash.framework */; };
+		D460E635216283C600829198 /* VarInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D460E626216283BC00829198 /* VarInt.framework */; };
+		D460E63A2163757700829198 /* IPFSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D460E6392163757700829198 /* IPFSManager.swift */; };
 		D48D95602150F67000840707 /* ShopManager+Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D955F2150F67000840707 /* ShopManager+Client.swift */; };
 		D48D95622150FD7700840707 /* ScanShopAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D95612150FD7600840707 /* ScanShopAddressViewController.swift */; };
 		D48D956421510ECB00840707 /* ShopManager+Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D956321510ECB00840707 /* ShopManager+Admin.swift */; };
@@ -250,6 +265,14 @@
 		D443CDC9214F7E4200A7100F /* IssueAmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueAmountViewController.swift; sourceTree = "<group>"; };
 		D443CDCC214F7EFA00A7100F /* IssueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueViewModel.swift; sourceTree = "<group>"; };
 		D443CDCF214F925000A7100F /* ClientAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientAddressViewController.swift; sourceTree = "<group>"; };
+		D460E621216283BC00829198 /* SwiftHex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHex.framework; path = Carthage/Build/iOS/SwiftHex.framework; sourceTree = "<group>"; };
+		D460E622216283BC00829198 /* SwiftBase58.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftBase58.framework; path = Carthage/Build/iOS/SwiftBase58.framework; sourceTree = "<group>"; };
+		D460E623216283BC00829198 /* SwiftMultihash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftMultihash.framework; path = Carthage/Build/iOS/SwiftMultihash.framework; sourceTree = "<group>"; };
+		D460E624216283BC00829198 /* SwiftIpfsApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftIpfsApi.framework; path = Carthage/Build/iOS/SwiftIpfsApi.framework; sourceTree = "<group>"; };
+		D460E625216283BC00829198 /* SwiftMultiaddr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftMultiaddr.framework; path = Carthage/Build/iOS/SwiftMultiaddr.framework; sourceTree = "<group>"; };
+		D460E626216283BC00829198 /* VarInt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VarInt.framework; path = Carthage/Build/iOS/VarInt.framework; sourceTree = "<group>"; };
+		D460E627216283BC00829198 /* SwiftGMP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftGMP.framework; path = Carthage/Build/iOS/SwiftGMP.framework; sourceTree = "<group>"; };
+		D460E6392163757700829198 /* IPFSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPFSManager.swift; sourceTree = "<group>"; };
 		D48D955F2150F67000840707 /* ShopManager+Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopManager+Client.swift"; sourceTree = "<group>"; };
 		D48D95612150FD7600840707 /* ScanShopAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanShopAddressViewController.swift; sourceTree = "<group>"; };
 		D48D956321510ECB00840707 /* ShopManager+Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopManager+Admin.swift"; sourceTree = "<group>"; };
@@ -329,6 +352,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C34255CC06607463FE40399 /* Pods_Vallet.framework in Frameworks */,
+				D460E628216283BC00829198 /* SwiftHex.framework in Frameworks */,
+				D460E629216283BC00829198 /* SwiftBase58.framework in Frameworks */,
+				D460E62A216283BC00829198 /* SwiftMultihash.framework in Frameworks */,
+				D460E62B216283BC00829198 /* SwiftIpfsApi.framework in Frameworks */,
+				D460E62C216283BC00829198 /* SwiftMultiaddr.framework in Frameworks */,
+				D460E62D216283BC00829198 /* VarInt.framework in Frameworks */,
+				D460E62E216283BC00829198 /* SwiftGMP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +374,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */,
+				D460E62F216283C600829198 /* SwiftBase58.framework in Frameworks */,
+				D460E630216283C600829198 /* SwiftGMP.framework in Frameworks */,
+				D460E631216283C600829198 /* SwiftHex.framework in Frameworks */,
+				D460E632216283C600829198 /* SwiftIpfsApi.framework in Frameworks */,
+				D460E633216283C600829198 /* SwiftMultiaddr.framework in Frameworks */,
+				D460E634216283C600829198 /* SwiftMultihash.framework in Frameworks */,
+				D460E635216283C600829198 /* VarInt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,9 +460,10 @@
 				D429F8A721400DAE004427F0 /* Constants.swift */,
 				D429F8AE21401049004427F0 /* Result.swift */,
 				D4C5CD912147D30200AB67D7 /* UI */,
-				D429F8A421400D34004427F0 /* BlockChain */,
 				D443CD94214AA01600A7100F /* ViewModel */,
 				D4C5CDAC214907A400AB67D7 /* Model */,
+				D429F8A421400D34004427F0 /* BlockChain */,
+				D460E6382163754D00829198 /* IPFS */,
 				D4C8C92C2153D81D00C831F0 /* Network */,
 				D443CDA7214AA72000A7100F /* Extensions */,
 				D4C8C93A215524AE00C831F0 /* Assets */,
@@ -564,6 +602,14 @@
 				D4C8C964215A36B700C831F0 /* NoShopsViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D460E6382163754D00829198 /* IPFS */ = {
+			isa = PBXGroup;
+			children = (
+				D460E6392163757700829198 /* IPFSManager.swift */,
+			);
+			path = IPFS;
 			sourceTree = "<group>";
 		};
 		D48D955E2150F65F00840707 /* ViewModel */ = {
@@ -790,6 +836,13 @@
 		F210E04398A1C2678A4653B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D460E622216283BC00829198 /* SwiftBase58.framework */,
+				D460E627216283BC00829198 /* SwiftGMP.framework */,
+				D460E621216283BC00829198 /* SwiftHex.framework */,
+				D460E624216283BC00829198 /* SwiftIpfsApi.framework */,
+				D460E625216283BC00829198 /* SwiftMultiaddr.framework */,
+				D460E623216283BC00829198 /* SwiftMultihash.framework */,
+				D460E626216283BC00829198 /* VarInt.framework */,
 				63CA453DC703DB1A613E81CD /* Pods_Vallet.framework */,
 				CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */,
 			);
@@ -808,6 +861,7 @@
 				D429F84821400572004427F0 /* Frameworks */,
 				D429F84921400572004427F0 /* Resources */,
 				ECC15447057A33DA80E4C899 /* [CP] Embed Pods Frameworks */,
+				D460E637216284FA00829198 /* Carthage script */,
 			);
 			buildRules = (
 			);
@@ -845,6 +899,7 @@
 				D429F88B21400A5A004427F0 /* Frameworks */,
 				D429F88C21400A5A004427F0 /* Resources */,
 				3510BC3F3CA5CF3C2F70A87D /* [CP] Embed Pods Frameworks */,
+				D460E6362162841100829198 /* Carthage script */,
 			);
 			buildRules = (
 			);
@@ -1030,6 +1085,56 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D460E6362162841100829198 /* Carthage script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftBase58.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftGMP.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftHex.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftIpfsApi.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftMultiaddr.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftMultihash.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/VarInt.framework",
+			);
+			name = "Carthage script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		D460E637216284FA00829198 /* Carthage script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftBase58.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftGMP.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftHex.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftIpfsApi.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftMultiaddr.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftMultihash.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/VarInt.framework",
+			);
+			name = "Carthage script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 		ECC15447057A33DA80E4C899 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1118,6 +1223,7 @@
 				D4C8C92E2153D87400C831F0 /* NetworkRequest.swift in Sources */,
 				D48D95622150FD7700840707 /* ScanShopAddressViewController.swift in Sources */,
 				D4C8C9B9215AC19A00C831F0 /* UIImage.swift in Sources */,
+				D460E63A2163757700829198 /* IPFSManager.swift in Sources */,
 				D4C8C9A4215AAB3200C831F0 /* ButtonCustomizable.swift in Sources */,
 				D4CE256B215E912C00D41449 /* User.swift in Sources */,
 				D443CDBA214BDABE00A7100F /* UIViewController.swift in Sources */,
@@ -1400,8 +1506,12 @@
 			baseConfigurationReference = BC427D9B2FFCD9CA48489E79 /* Pods-Vallet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = JHR7UBB5A7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Vallet/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1409,6 +1519,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.lab10.vallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Vallet Development";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1419,8 +1530,13 @@
 			baseConfigurationReference = 3453223FDAEFCCEA65DA70F2 /* Pods-Vallet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = JHR7UBB5A7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Vallet/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1428,6 +1544,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.lab10.vallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Vallet AppStore";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1480,8 +1597,12 @@
 			baseConfigurationReference = C9683045E8DE422BEFE13276 /* Pods-ValletAdmin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = JHR7UBB5A7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "ValletAdmin/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1489,6 +1610,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.lab10.valletadmin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Vallet Admin Development";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1499,8 +1621,13 @@
 			baseConfigurationReference = 978EBDBF8DA054E50C13A3CC /* Pods-ValletAdmin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = JHR7UBB5A7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "ValletAdmin/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1508,6 +1635,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.lab10.valletadmin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Valled Admin AppStore";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

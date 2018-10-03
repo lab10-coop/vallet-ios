@@ -1,0 +1,21 @@
+[submodule "Carthage/Checkouts/SwiftBase58"]
+	path = Carthage/Checkouts/SwiftBase58
+	url = ssh://git@github.com/NeoTeo/SwiftBase58.git
+[submodule "Carthage/Checkouts/SwiftMultihash"]
+	path = Carthage/Checkouts/SwiftMultihash
+	url = ssh://git@github.com/NeoTeo/SwiftMultihash.git
+[submodule "Carthage/Checkouts/SwiftMultiaddr"]
+	path = Carthage/Checkouts/SwiftMultiaddr
+	url = ssh://git@github.com/NeoTeo/SwiftMultiaddr.git
+[submodule "Carthage/Checkouts/SwiftHex"]
+	path = Carthage/Checkouts/SwiftHex
+	url = ssh://git@github.com/NeoTeo/SwiftHex.git
+[submodule "Carthage/Checkouts/swift-ipfs-api"]
+	path = Carthage/Checkouts/swift-ipfs-api
+	url = ssh://git@github.com/ipfs/swift-ipfs-api.git
+[submodule "Carthage/Checkouts/SwiftGMP"]
+	path = Carthage/Checkouts/SwiftGMP
+	url = ssh://git@github.com/NeoTeo/SwiftGMP.git
+[submodule "Carthage/Checkouts/VarInt"]
+	path = Carthage/Checkouts/VarInt
+	url = ssh://git@github.com/NeoTeo/VarInt.git
