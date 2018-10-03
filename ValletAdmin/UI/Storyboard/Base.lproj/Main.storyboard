@@ -637,7 +637,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="0zC-pX-u8K">
                                         <rect key="frame" x="16" y="230" width="343" height="140.66666666666663"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYd-7Z-r9u" customClass="BodyLabel" customModule="ValletAdmin" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYd-7Z-r9u" customClass="BodyLabel" customModule="ValletAdmin" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="40.666666666666664"/>
                                                 <string key="text">Welcome shop owner!
 Enter your shop name and get started.</string>
