@@ -42,6 +42,7 @@
 		D42DD9442164EE320015261A /* StoredImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42DD9422164EE320015261A /* StoredImage.swift */; };
 		D42DD9462164EE400015261A /* ExternalImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42DD9452164EE400015261A /* ExternalImage.swift */; };
 		D42DD9472164EE400015261A /* ExternalImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42DD9452164EE400015261A /* ExternalImage.swift */; };
+		D42DD94B2165FAED0015261A /* IPFSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D460E6392163757700829198 /* IPFSManager.swift */; };
 		D443CD92214A93E400A7100F /* ShopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CD91214A93E400A7100F /* ShopManager.swift */; };
 		D443CD93214A93E400A7100F /* ShopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CD91214A93E400A7100F /* ShopManager.swift */; };
 		D443CD98214AA0A500A7100F /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CD96214AA0A500A7100F /* ShopTableViewCell.swift */; };
@@ -1320,6 +1321,7 @@
 				D443CDCA214F7E4200A7100F /* IssueAmountViewController.swift in Sources */,
 				D4C5CDBC2149410800AB67D7 /* DataBaseManager.swift in Sources */,
 				D4C8C9B1215AAF3900C831F0 /* PrimaryRoundedButton.swift in Sources */,
+				D42DD94B2165FAED0015261A /* IPFSManager.swift in Sources */,
 				D443CDC6214C00C500A7100F /* ShopAddressViewController.swift in Sources */,
 				D4C8C9322153D88200C831F0 /* NetworkManager.swift in Sources */,
 				D48D956D2151192A00840707 /* HistoryViewModel.swift in Sources */,

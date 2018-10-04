@@ -36,18 +36,22 @@ class IPFSManager {
 
 		do {
 			try api.get(dataHash) { (dataArray) in
-				let imageData = Data(bytes: dataArray)
-				guard let image = UIImage.init(data: imageData)
-					else {
-						completion(Result.failure(Web3Error.dataError))
-						return
+				DispatchQueue.main.async {
+					let imageData = Data(bytes: dataArray)
+					guard let image = UIImage.init(data: imageData)
+						else {
+							completion(Result.failure(Web3Error.dataError))
+							return
+					}
+					completion(Result.success(image))
 				}
-				completion(Result.success(image))
 			}
 		}
 		catch {
-			print("IPFSManager load image error: \(error.localizedDescription)")
-			completion(Result.failure(error))
+			DispatchQueue.main.async {
+				print("IPFSManager load image error: \(error.localizedDescription)")
+				completion(Result.failure(error))
+			}
 		}
 	}
 
@@ -68,18 +72,22 @@ class IPFSManager {
 		}
 		do {
 			try api.add(data) { (merkleArray) in
-				guard let merkleNode = merkleArray.first,
-					let hashString = merkleNode.hashString
-					else {
-						completion(Result.failure(Web3Error.dataError))
-						return
+				DispatchQueue.main.async {
+					guard let merkleNode = merkleArray.first,
+						let hashString = merkleNode.hashString
+						else {
+							completion(Result.failure(Web3Error.dataError))
+							return
+					}
+					completion(Result.success(hashString))
 				}
-				completion(Result.success(hashString))
 			}
 		}
 		catch {
-			print("IPFSManager add error: \(error.localizedDescription)")
-			completion(Result.failure(error))
+			DispatchQueue.main.async {
+				print("IPFSManager add error: \(error.localizedDescription)")
+				completion(Result.failure(error))
+			}
 		}
 	}
 
