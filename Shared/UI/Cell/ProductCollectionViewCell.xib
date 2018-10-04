@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,25 +19,29 @@
                 <rect key="frame" x="0.0" y="0.0" width="150" height="180"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1r-J5-D9G">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4K-5n-CqO" customClass="ContentBackgroundView" customModule="Vallet" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="180"/>
+                    </view>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1r-J5-D9G" customClass="ContentBackgroundView" customModule="Vallet" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="180"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PhotoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="6o9-Uc-XzJ">
                                 <rect key="frame" x="60" y="48.5" width="30" height="22"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yMV-hw-qMF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="745" verticalCompressionResistancePriority="745" translatesAutoresizingMaskIntoConstraints="NO" id="yMV-hw-qMF">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="119"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="NI3-8U-xDx">
                                 <rect key="frame" x="8" y="127" width="134" height="45"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3hq-Lg-XhP" customClass="SmallLightTitleLabel" customModule="Vallet" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Product name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3hq-Lg-XhP" customClass="SmallLightTitleLabel" customModule="Vallet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="134" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Z01-CO-xQL" customClass="LargerTextLabel" customModule="Vallet" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Z01-CO-xQL" customClass="LargerTextLabel" customModule="Vallet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="134" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -47,7 +51,6 @@
                                 <viewLayoutGuide key="safeArea" id="gL3-RK-5Y7"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NI3-8U-xDx" firstAttribute="leading" secondItem="F1r-J5-D9G" secondAttribute="leading" constant="8" id="0vA-j3-DMM"/>
                             <constraint firstAttribute="trailing" secondItem="NI3-8U-xDx" secondAttribute="trailing" constant="8" id="KWR-vo-4sl"/>
@@ -64,10 +67,14 @@
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="X4K-5n-CqO" firstAttribute="top" secondItem="F1r-J5-D9G" secondAttribute="top" id="47Y-Zg-Nj7"/>
+                <constraint firstItem="X4K-5n-CqO" firstAttribute="leading" secondItem="F1r-J5-D9G" secondAttribute="leading" id="94r-XE-xoX"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="leading" secondItem="F1r-J5-D9G" secondAttribute="leading" id="EFy-3I-rDn"/>
                 <constraint firstItem="F1r-J5-D9G" firstAttribute="trailing" secondItem="ZTg-uK-7eu" secondAttribute="trailing" id="I3Y-8B-ExE"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="F1r-J5-D9G" secondAttribute="bottom" id="I6S-G1-BPE"/>
+                <constraint firstItem="X4K-5n-CqO" firstAttribute="bottom" secondItem="F1r-J5-D9G" secondAttribute="bottom" id="YWC-T1-hUA"/>
                 <constraint firstItem="F1r-J5-D9G" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" id="k2e-BL-8EH"/>
+                <constraint firstItem="X4K-5n-CqO" firstAttribute="trailing" secondItem="F1r-J5-D9G" secondAttribute="trailing" id="yVn-ay-bdu"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="150" height="180"/>
@@ -77,6 +84,7 @@
                 <outlet property="nameLabel" destination="3hq-Lg-XhP" id="JxX-6N-zd8"/>
                 <outlet property="placeholderImageView" destination="6o9-Uc-XzJ" id="qHU-tu-o8Q"/>
                 <outlet property="priceLabel" destination="Z01-CO-xQL" id="GCZ-nS-fPW"/>
+                <outlet property="shadowView" destination="X4K-5n-CqO" id="yFZ-x6-AhE"/>
             </connections>
             <point key="canvasLocation" x="84" y="119"/>
         </collectionViewCell>
