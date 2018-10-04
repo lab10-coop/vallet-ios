@@ -148,23 +148,39 @@ extension PriceList {
 				return false
 		}
 		self.name = priceListData.name
-		deletaAllProducts()
-		for productData in priceListData.products {
-			if let product = Product(in: managedObjectContext, data: productData) {
-				self.addToProducts(product)
-			}
-		}
+		updateProducts(with: priceListData.products)
+
 		DataBaseManager.save(managedContext: managedObjectContext)
 		return true
 	}
 
-	func deletaAllProducts() {
+	private func updateProducts(with newProductsData: [ProductData]) {
+		// Only transfer images from the existing products
 		guard let managedObjectContext = self.managedObjectContext,
-			let products = products
+			let existingProducts = self.products?.copy() as? NSOrderedSet?
+			else{
+				return
+		}
+
+		for productData in newProductsData {
+			if let product = Product(in: managedObjectContext, data: productData) {
+				if let imagePath = product.imagePath,
+					let image = ExternalImage.image(in: managedObjectContext, with: imagePath) {
+					product.externalImage = image
+				}
+				self.addToProducts(product)
+			}
+		}
+		delete(products: existingProducts)
+	}
+
+	func delete(products set: NSOrderedSet?) {
+		guard let managedObjectContext = self.managedObjectContext,
+			let set = set
 			else {
 				return
 		}
-		for case let product as NSManagedObject in products {
+		for case let product as NSManagedObject in set {
 			managedObjectContext.delete(product)
 		}
 		DataBaseManager.save(managedContext: managedObjectContext)
