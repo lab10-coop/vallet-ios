@@ -54,3 +54,16 @@ extension ExternalImage {
 
 }
 
+// MARK: - Query
+
+extension ExternalImage {
+
+	static func image(in managedContext: NSManagedObjectContext, with imagePath: String) -> ExternalImage? {
+		let fetchRequest: NSFetchRequest<ExternalImage> = ExternalImage.fetchRequest()
+		fetchRequest.predicate = NSPredicate(format: "imagePath == %@", imagePath)
+		let images = try? managedContext.fetch(fetchRequest)
+		return images?.first
+	}
+
+}
+
