@@ -3,7 +3,7 @@
     <entity name="ExternalImage" representedClassName="ExternalImage" syncable="YES">
         <attribute name="imagePath" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="externalImage" inverseEntity="Product" syncable="YES"/>
-        <relationship name="storedImage" maxCount="1" deletionRule="Nullify" destinationEntity="StoredImage" inverseName="externalImage" inverseEntity="StoredImage" syncable="YES"/>
+        <relationship name="storedImage" maxCount="1" deletionRule="Cascade" destinationEntity="StoredImage" inverseName="externalImage" inverseEntity="StoredImage" syncable="YES"/>
     </entity>
     <entity name="PendingValueEvent" representedClassName="PendingValueEvent" syncable="YES">
         <attribute name="clientAddress" attributeType="String" syncable="YES"/>
@@ -16,7 +16,7 @@
     <entity name="PriceList" representedClassName="PriceList" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="secret" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="products" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Product" inverseName="priceList" inverseEntity="Product" syncable="YES"/>
+        <relationship name="products" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Product" inverseName="priceList" inverseEntity="Product" syncable="YES"/>
         <relationship name="shop" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Shop" inverseName="priceList" inverseEntity="Shop" syncable="YES"/>
     </entity>
     <entity name="Product" representedClassName="Product" syncable="YES">
@@ -24,7 +24,7 @@
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="nfcTagId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="externalImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExternalImage" inverseName="product" inverseEntity="ExternalImage" syncable="YES"/>
+        <relationship name="externalImage" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ExternalImage" inverseName="product" inverseEntity="ExternalImage" syncable="YES"/>
         <relationship name="priceList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PriceList" inverseName="products" inverseEntity="PriceList" syncable="YES"/>
     </entity>
     <entity name="Shop" representedClassName="Shop" syncable="YES">
@@ -33,9 +33,9 @@
         <attribute name="decimals" attributeType="Integer 16" defaultValueString="12" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="symbol" attributeType="String" syncable="YES"/>
-        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ValueEvent" inverseName="shop" inverseEntity="ValueEvent" syncable="YES"/>
-        <relationship name="pendingEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PendingValueEvent" inverseName="shop" inverseEntity="PendingValueEvent" syncable="YES"/>
-        <relationship name="priceList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PriceList" inverseName="shop" inverseEntity="PriceList" syncable="YES"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ValueEvent" inverseName="shop" inverseEntity="ValueEvent" syncable="YES"/>
+        <relationship name="pendingEvents" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PendingValueEvent" inverseName="shop" inverseEntity="PendingValueEvent" syncable="YES"/>
+        <relationship name="priceList" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="PriceList" inverseName="shop" inverseEntity="PriceList" syncable="YES"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="address"/>
@@ -76,10 +76,10 @@
     </entity>
     <elements>
         <element name="ExternalImage" positionX="-558.34765625" positionY="27.1640625" width="128" height="88"/>
-        <element name="PendingValueEvent" positionX="187" positionY="177" width="128" height="135"/>
-        <element name="PriceList" positionX="-63" positionY="135" width="128" height="105"/>
+        <element name="PendingValueEvent" positionX="188.28125" positionY="218.4296875" width="128" height="135"/>
+        <element name="PriceList" positionX="-64.14453125" positionY="203.6796875" width="128" height="103"/>
         <element name="Product" positionX="-326" positionY="-18" width="128" height="133"/>
-        <element name="Shop" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Shop" positionX="-63" positionY="-18" width="128" height="163"/>
         <element name="StoredImage" positionX="-558.74609375" positionY="160.640625" width="128" height="75"/>
         <element name="User" positionX="432.72265625" positionY="169.703125" width="128" height="90"/>
         <element name="ValueEvent" positionX="187" positionY="-18" width="128" height="210"/>
