@@ -30,11 +30,11 @@ class PrimaryRoundedButton: BaseButton {
 	let disabledGradientColors = [Theme.Color.accentGradientStart.lightened, Theme.Color.accentGradientEnd.lightened]
 
 	override var cornerRadius: CGFloat {
-		return 6.0
+		return 0.5 * bounds.size.height
 	}
 
 	override var titleFont: UIFont? {
-		return Theme.Font.largeButtonFont
+		return Theme.Font.smallButtonFont
 	}
 
 	override var normalContentColor: UIColor? {
@@ -55,9 +55,9 @@ class PrimaryRoundedButton: BaseButton {
 
 	override var customContentEdgeInsets: UIEdgeInsets {
 		if image(for: .normal) != nil {
-			return UIEdgeInsets(top: 16.0, left: 35.0, bottom: 16.0, right: 35.0)
+			return UIEdgeInsets(top: 16.0, left: 25.0, bottom: 16.0, right: 25.0)
 		}
-		return UIEdgeInsets(top: 16.0, left: 32.0, bottom: 16.0, right: 32.0)
+		return UIEdgeInsets(top: 16.0, left: 22.0, bottom: 16.0, right: 22.0)
 	}
 
 	override var customImageEdgeInsets: UIEdgeInsets {
@@ -101,6 +101,10 @@ class PrimaryRoundedButton: BaseButton {
 		super.layoutSubviews()
 
 		updateAppearance()
+	}
+
+	override func customize(title: String?) -> String? {
+		return title?.uppercased()
 	}
 
 	private func gradientLayer(with colors: [UIColor]) -> CAGradientLayer {

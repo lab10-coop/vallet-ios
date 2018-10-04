@@ -88,6 +88,13 @@ struct Constants {
 		
 	}
 
+	struct Content {
+
+		static let maxShopNameLength = 10
+		static let productImageSize = CGSize(width: 500, height: 500)
+
+	}
+
 	// do not deploy with these values !!!
 	struct Temp {
 

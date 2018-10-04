@@ -11,6 +11,7 @@ import UIKit
 class ProductCollectionViewCell: UICollectionViewCell, NibBackedCollectionViewCell {
 
 	@IBOutlet private var containerView: UIView!
+	@IBOutlet private var shadowView: UIView!
 	@IBOutlet private var nameLabel: UILabel!
 	@IBOutlet private var priceLabel: UILabel!
 	@IBOutlet private var imageView: UIImageView!
@@ -22,6 +23,20 @@ class ProductCollectionViewCell: UICollectionViewCell, NibBackedCollectionViewCe
 		didSet {
 			nameLabel.text = product?.name
 			priceLabel.text = product?.price.description
+			if let image = product?.image {
+				imageView.image = image
+				imageView.fadeIn()
+			}
+			else {
+				product?.updateImage(completion: { [weak self] (imageResult) in
+					guard case .success(let image) = imageResult
+						else {
+							return
+					}
+					self?.imageView.image = image
+					self?.imageView.fadeIn()
+				})
+			}
 		}
 	}
 
@@ -30,7 +45,9 @@ class ProductCollectionViewCell: UICollectionViewCell, NibBackedCollectionViewCe
 
 		backgroundColor = Theme.Color.background
 
-		containerView.addShadow()
+		shadowView.addShadow()
+		shadowView.addRoundedCorners()
+		
 		containerView.addRoundedCorners()
 
 		placeholderImageView.tintColor = Theme.Color.separator
@@ -42,6 +59,7 @@ class ProductCollectionViewCell: UICollectionViewCell, NibBackedCollectionViewCe
 		nameLabel.text = ""
 		priceLabel.text = ""
 		imageView.image = nil
+		imageView.alpha = 0.0
 	}
 
 }

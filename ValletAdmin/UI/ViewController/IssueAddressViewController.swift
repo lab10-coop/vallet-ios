@@ -82,7 +82,7 @@ class IssueAddressViewController: UIViewController {
 			return
 		}
 
-		guard let newUser = User(in: managedObjectContext, address: address, name: name)
+		guard User(in: managedObjectContext, address: address, name: name) != nil
 			else {
 				return
 		}

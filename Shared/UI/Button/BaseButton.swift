@@ -58,6 +58,10 @@ public class BaseButton: UIButton, ButtonCustomizable {
 		return normalBackgroundColor?.lightened
 	}
 
+	func customize(title: String?) -> String? {
+		return title
+	}
+
 	// MARK: - Overrides
 	override func setTitle(_ title: String?) {
 		allStates.forEach {

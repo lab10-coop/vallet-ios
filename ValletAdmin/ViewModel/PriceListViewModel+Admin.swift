@@ -7,12 +7,29 @@
 //
 
 import Foundation
+import UIKit
 
 extension PriceListViewModel {
 
-	func createNewProduct(named name: String, price: Int, completion: @escaping (Result<Bool>) -> Void) {
+	func createNewProduct(named name: String, price: Int, image: UIImage?, completion: @escaping (Result<Bool>) -> Void) {
+		if let image = image {
+			IPFSManager.upload(image: image) { [weak self] (hashResult) in
+				switch hashResult {
+				case .success(let imagePath):
+					self?.createNewProduct(named: name, price: price, imagePath: imagePath, image: image, completion: completion)
+				case .failure(let error):
+					completion(Result.failure(error))
+				}
+			}
+		}
+		else {
+			createNewProduct(named: name, price: price, imagePath: nil, image: nil,  completion: completion)
+		}
+	}
+
+	private func createNewProduct(named name: String, price: Int, imagePath: String?, image: UIImage?, completion: @escaping (Result<Bool>) -> Void) {
 		guard let managedObjectContext = managedObjectContext,
-			let product = Product(in: managedObjectContext, name: name, price: Int64(price), imagePath: nil, nfcTagId: nil)
+			let product = Product(in: managedObjectContext, name: name, price: Int64(price), imagePath: imagePath, nfcTagId: nil, image: image)
 			else {
 				// TODO: Send an error to the completion block.
 				return

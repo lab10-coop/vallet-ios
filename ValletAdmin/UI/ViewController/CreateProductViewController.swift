@@ -17,8 +17,15 @@ class CreateProductViewController: UIViewController {
 	@IBOutlet private var priceInputView: TextInputView!
 	@IBOutlet private var submitButton: UIButton!
 	@IBOutlet private var cameraIconView: UIImageView!
+	@IBOutlet private var productImageView: UIImageView!
 
 	var priceListViewModel: PriceListViewModel?
+
+	var productImage: UIImage? {
+		didSet {
+			productImageView.image = productImage
+		}
+	}
 
 	static func present(for viewModel: PriceListViewModel, over presenter: UIViewController) {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -79,7 +86,7 @@ class CreateProductViewController: UIViewController {
 
 		showActivityIndicator()
 
-		priceListViewModel.createNewProduct(named: nameInput, price: price) { [weak self] (result) in
+		priceListViewModel.createNewProduct(named: nameInput, price: price, image: productImage) { [weak self] (result) in
 			switch result {
 			case .success:
 				self?.hideActivityIndicator()
@@ -105,6 +112,54 @@ extension CreateProductViewController: TextInputDelegate {
 		default:
 			inputField.resignFirstResponder()
 		}
+	}
+
+}
+
+extension CreateProductViewController: UINavigationControllerDelegate {
+	// Required for UIImagePickerController
+}
+
+extension CreateProductViewController {
+
+	@IBAction func addPhoto(_ sender: Any? = nil) {
+		let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+		let cameraAction = UIAlertAction(title: NSLocalizedString("Camera", comment: "Image source option"), style: .default) { [weak self] (action) in
+			self?.presentImagePicker(source: .camera)
+		}
+		let libraryAction = UIAlertAction(title: NSLocalizedString("Photo Library", comment: "Image source option"), style: .default) { [weak self] (action) in
+			self?.presentImagePicker(source: .photoLibrary)
+		}
+		let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { _ in	}
+		actionSheetController.addAction(cameraAction)
+		actionSheetController.addAction(libraryAction)
+		actionSheetController.addAction(cancelAction)
+		present(actionSheetController, animated: true, completion: nil)
+		actionSheetController.view.tintColor = Theme.Color.accent
+	}
+
+	private func presentImagePicker(source: UIImagePickerController.SourceType) {
+		let imagePickerController = UIImagePickerController()
+		imagePickerController.sourceType = source
+		imagePickerController.allowsEditing = true
+		imagePickerController.delegate = self
+
+		present(imagePickerController, animated: true)
+	}
+
+}
+
+extension CreateProductViewController: UIImagePickerControllerDelegate {
+
+	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+		picker.dismiss(animated: true)
+
+		guard let image = info[.editedImage] as? UIImage
+			else {
+				return
+		}
+
+		productImage = image.resized(to: Constants.Content.productImageSize)
 	}
 
 }

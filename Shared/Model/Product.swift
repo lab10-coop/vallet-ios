@@ -8,6 +8,8 @@
 
 import Foundation
 import CoreData
+import UIKit
+import web3swift
 
 @objc(Product)
 public class Product: NSManagedObject, Codable {
@@ -16,7 +18,7 @@ public class Product: NSManagedObject, Codable {
 		self.init(in: managedContext, name: data.name, price: data.price, imagePath: data.imagePath, nfcTagId: data.nfcTagId)
 	}
 
-	convenience init?(in managedContext: NSManagedObjectContext, name: String, price: Int64, imagePath: String?, nfcTagId: String?) {
+	convenience init?(in managedContext: NSManagedObjectContext, name: String, price: Int64, imagePath: String?, nfcTagId: String?, image: UIImage? = nil) {
 		guard let entity = Product.entity(in: managedContext)
 			else {
 				return nil
@@ -26,6 +28,10 @@ public class Product: NSManagedObject, Codable {
 		self.price = price
 		self.imagePath = imagePath
 		self.nfcTagId = nfcTagId
+
+		if let image = image {
+			self.externalImage = ExternalImage(in: managedContext, image: image, path: imagePath)
+		}
 	}
 
 	// MARK: - Codable
@@ -80,6 +86,50 @@ extension Product {
 	@NSManaged public var imagePath: String?
 	@NSManaged public var nfcTagId: String?
 	@NSManaged public var priceList: PriceList?
+	@NSManaged public var externalImage: ExternalImage?
+
+}
+
+// MARK: - Image loading
+
+extension Product {
+
+	// Only return image if it is saved and up to date.
+	var image: UIImage? {
+		if let externalImage = externalImage,
+			let savedImagePath = externalImage.imagePath,
+			savedImagePath == imagePath {
+			return externalImage.image
+		}
+		return nil
+	}
+
+	func updateImage(completion: @escaping (Result<UIImage>) -> Void) {
+		// Image is saved and up to date.
+		if let image = image {
+			completion(Result.success(image))
+		}
+		// Image has to be loaded.
+		else if let imagePath = imagePath {
+			IPFSManager.loadImage(hash: imagePath) { [weak self] (imageResult) in
+				switch imageResult {
+				case .success(let loadedImage):
+					completion(Result.success(loadedImage))
+					if let managedContext = self?.managedObjectContext {
+						let newImage = ExternalImage(in: managedContext, image: loadedImage, path: imagePath)
+						self?.externalImage = newImage
+						DataBaseManager.save(managedContext: managedContext)
+					}
+				case .failure(let error):
+					completion(Result.failure(error))
+				}
+			}
+		}
+		// There is no image
+		else {
+			completion(Result.failure(Web3Error.dataError))
+		}
+	}
 
 }
 

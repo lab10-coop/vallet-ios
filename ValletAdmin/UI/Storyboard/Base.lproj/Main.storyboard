@@ -251,13 +251,31 @@
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CameraIcon" translatesAutoresizingMaskIntoConstraints="NO" id="uGI-V6-sjo">
                                                 <rect key="frame" x="44.999999999999986" y="55" width="60" height="40"/>
                                             </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wOm-On-gt4">
+                                                <rect key="frame" x="15.999999999999986" y="16" width="118.00000000000001" height="118"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usN-NZ-ZFL">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                <connections>
+                                                    <action selector="addPhoto:" destination="ezM-hd-YWz" eventType="touchUpInside" id="nA7-Bk-ZQi"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="wOm-On-gt4" secondAttribute="trailing" constant="16" id="0gn-wx-J8V"/>
                                             <constraint firstAttribute="width" secondItem="ctC-Kc-EEq" secondAttribute="height" id="0o9-Oh-08l"/>
+                                            <constraint firstAttribute="bottom" secondItem="wOm-On-gt4" secondAttribute="bottom" constant="16" id="6t8-87-k8F"/>
                                             <constraint firstItem="uGI-V6-sjo" firstAttribute="centerX" secondItem="ctC-Kc-EEq" secondAttribute="centerX" id="C5E-KT-PLm"/>
+                                            <constraint firstItem="wOm-On-gt4" firstAttribute="leading" secondItem="ctC-Kc-EEq" secondAttribute="leading" constant="16" id="HL2-oh-Rbc"/>
+                                            <constraint firstAttribute="trailing" secondItem="usN-NZ-ZFL" secondAttribute="trailing" id="HbM-M8-uDT"/>
                                             <constraint firstItem="uGI-V6-sjo" firstAttribute="centerY" secondItem="ctC-Kc-EEq" secondAttribute="centerY" id="LWZ-Sv-gpn"/>
+                                            <constraint firstItem="usN-NZ-ZFL" firstAttribute="leading" secondItem="ctC-Kc-EEq" secondAttribute="leading" id="bfS-Z8-Lem"/>
+                                            <constraint firstAttribute="bottom" secondItem="usN-NZ-ZFL" secondAttribute="bottom" id="dGe-Tw-6sF"/>
                                             <constraint firstAttribute="height" constant="150" id="dta-7w-xDO"/>
+                                            <constraint firstItem="wOm-On-gt4" firstAttribute="top" secondItem="ctC-Kc-EEq" secondAttribute="top" constant="16" id="md7-Fk-Mzy"/>
+                                            <constraint firstItem="usN-NZ-ZFL" firstAttribute="top" secondItem="ctC-Kc-EEq" secondAttribute="top" id="vRr-VD-S7f"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="e48-XY-vw1">
@@ -335,6 +353,7 @@
                         <outlet property="nameInputView" destination="KyD-zD-etp" id="JCr-eq-hYa"/>
                         <outlet property="photoBackgroundView" destination="ctC-Kc-EEq" id="0HP-uY-jFd"/>
                         <outlet property="priceInputView" destination="aFe-k4-bf2" id="ehQ-Y9-19h"/>
+                        <outlet property="productImageView" destination="wOm-On-gt4" id="Mwy-hq-YLb"/>
                         <outlet property="submitButton" destination="aJO-xO-Ktm" id="U9a-wh-B8B"/>
                     </connections>
                 </viewController>
@@ -345,7 +364,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1033" y="1685"/>
+            <point key="canvasLocation" x="1032.8" y="1684.729064039409"/>
         </scene>
         <!--Send Money-->
         <scene sceneID="o6w-Uy-zr7">
@@ -491,10 +510,10 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="azm-Q3-cne" customClass="ContentBackgroundView" customModule="ValletAdmin" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="16" width="343" height="72.666666666666671"/>
+                                            <rect key="frame" x="16" y="15.999999999999993" width="343" height="102.33333333333331"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="AuZ-u4-tCJ">
-                                                    <rect key="frame" x="16" y="15.999999999999996" width="311" height="40.666666666666657"/>
+                                                    <rect key="frame" x="16" y="16" width="311" height="70.333333333333329"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Circulating vouchers:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3Z-2h-eV3" customClass="SmallLightTitleLabel" customModule="ValletAdmin" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="161.66666666666666" height="20.333333333333332"/>
@@ -502,8 +521,8 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubr-j2-YBC" customClass="LargeTextLabel" customModule="ValletAdmin" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="20.333333333333336" width="28" height="20.333333333333336"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubr-j2-YBC" customClass="LargeTextLabel" customModule="ValletAdmin" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="20.333333333333336" width="50" height="50.000000000000007"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -637,7 +656,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="0zC-pX-u8K">
                                         <rect key="frame" x="16" y="230" width="343" height="140.66666666666663"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYd-7Z-r9u" customClass="BodyLabel" customModule="ValletAdmin" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYd-7Z-r9u" customClass="BodyLabel" customModule="ValletAdmin" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="40.666666666666664"/>
                                                 <string key="text">Welcome shop owner!
 Enter your shop name and get started.</string>
