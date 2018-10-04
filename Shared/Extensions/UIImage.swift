@@ -58,4 +58,14 @@ extension UIImage {
 		return coloredImage
 	}
 
+	func resized(to newSize: CGSize) -> UIImage? {
+		UIGraphicsBeginImageContextWithOptions(newSize, true, 1.0)
+		draw(in: CGRect(origin: CGPoint.zero, size: newSize))
+
+		let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+		UIGraphicsEndImageContext()
+
+		return scaledImage
+	}
+
 }
