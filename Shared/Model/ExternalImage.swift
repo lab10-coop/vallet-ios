@@ -17,16 +17,16 @@ public class ExternalImage: NSManagedObject {
 		return storedImage.image
 	}
 
-	convenience init?(in managedContext: NSManagedObjectContext, image: UIImage) {
+	convenience init?(in managedContext: NSManagedObjectContext, image: UIImage, path: String? = nil) {
 		guard let data = image.jpegData(compressionQuality: Constants.Image.jpegCompression)
 			else {
 				return nil
 		}
-		self.init(in: managedContext, data: data)
+		self.init(in: managedContext, data: data, path: path)
 	}
 
 	convenience init?(in managedContext: NSManagedObjectContext, data: Data, path: String? = nil) {
-		guard let entity = StoredImage.entity(in: managedContext),
+		guard let entity = ExternalImage.entity(in: managedContext),
 			let storedImage = StoredImage(in: managedContext, data: data)
 			else {
 				return nil
