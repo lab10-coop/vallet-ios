@@ -221,7 +221,7 @@
         <!--Navigation Controller-->
         <scene sceneID="4cP-4y-XPF">
             <objects>
-                <navigationController storyboardIdentifier="CreateProductNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZbP-Zn-CM8" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ProductDataNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZbP-Zn-CM8" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vlu-3A-Wgv">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -237,7 +237,7 @@
         <!--Add a Product-->
         <scene sceneID="al5-7I-nAQ">
             <objects>
-                <viewController storyboardIdentifier="CreateProductViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ezM-hd-YWz" customClass="CreateProductViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductDataViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ezM-hd-YWz" customClass="ProductDataViewController" customModule="ValletAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5ZQ-AA-xF1" customClass="BackgroundView" customModule="ValletAdmin" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -307,9 +307,9 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJO-xO-Ktm" customClass="PrimaryRoundedButton" customModule="ValletAdmin" customModuleProvider="target">
                                         <rect key="frame" x="16" y="644" width="343" height="30"/>
-                                        <state key="normal" title="Submit"/>
+                                        <state key="normal" title="Save"/>
                                         <connections>
-                                            <action selector="submit:" destination="ezM-hd-YWz" eventType="touchUpInside" id="vQY-Nw-Nkr"/>
+                                            <action selector="save:" destination="ezM-hd-YWz" eventType="touchUpInside" id="zcx-dD-JMT"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -354,7 +354,7 @@
                         <outlet property="photoBackgroundView" destination="ctC-Kc-EEq" id="0HP-uY-jFd"/>
                         <outlet property="priceInputView" destination="aFe-k4-bf2" id="ehQ-Y9-19h"/>
                         <outlet property="productImageView" destination="wOm-On-gt4" id="Mwy-hq-YLb"/>
-                        <outlet property="submitButton" destination="aJO-xO-Ktm" id="U9a-wh-B8B"/>
+                        <outlet property="saveButton" destination="aJO-xO-Ktm" id="U9a-wh-B8B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p0i-sF-jIT" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -9,13 +9,13 @@
 import UIKit
 import KeyboardLayoutGuide
 
-class CreateProductViewController: UIViewController {
+class ProductDataViewController: UIViewController {
 
 	@IBOutlet private var containerView: UIView!
 	@IBOutlet private var photoBackgroundView: UIView!
 	@IBOutlet private var nameInputView: TextInputView!
 	@IBOutlet private var priceInputView: TextInputView!
-	@IBOutlet private var submitButton: UIButton!
+	@IBOutlet private var saveButton: UIButton!
 	@IBOutlet private var cameraIconView: UIImageView!
 	@IBOutlet private var productImageView: UIImageView!
 
@@ -27,16 +27,24 @@ class CreateProductViewController: UIViewController {
 		}
 	}
 
-	static func present(for viewModel: PriceListViewModel, over presenter: UIViewController) {
+	var product: Product? {
+		didSet {
+			setup(product: product)
+		}
+	}
+
+	static func present(for viewModel: PriceListViewModel, product: Product? = nil, over presenter: UIViewController) {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
-		guard let navigationController = storyboard.instantiateViewController(withIdentifier: "CreateProductNavigationController") as? UINavigationController,
-			let createProductViewController = navigationController.topViewController as? CreateProductViewController
+		guard let navigationController = storyboard.instantiateViewController(withIdentifier: "ProductDataNavigationController") as? UINavigationController,
+			let productDataViewController = navigationController.topViewController as? ProductDataViewController
 			else {
 				return
 		}
 
-		createProductViewController.priceListViewModel = viewModel
+		productDataViewController.title = (product == nil) ? NSLocalizedString("Add a Product", comment: "Screen title") : NSLocalizedString("Edit the Product", comment: "Screen title")
+		productDataViewController.product = product
+		productDataViewController.priceListViewModel = viewModel
 
 		presenter.present(navigationController, animated: true) {
 			
@@ -56,8 +64,20 @@ class CreateProductViewController: UIViewController {
 		photoBackgroundView.addShadow()
 
 		cameraIconView.tintColor = Theme.Color.lightText
+
+		setup(product: self.product)
 		
 		containerView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor).isActive = true
+	}
+
+	private func setup(product: Product?) {
+		guard nameInputView != nil
+			else {
+				return
+		}
+		nameInputView.text = product?.name
+		priceInputView.text = product?.price.description
+		productImage = product?.image
 	}
 
 	@IBAction func hideKeyboard(_ sender: Any? = nil) {
@@ -69,14 +89,13 @@ class CreateProductViewController: UIViewController {
 		dismiss(animated: true, completion: nil)
 	}
 
-	@IBAction func submit(_ sender: Any? = nil) {
+	@IBAction func save(_ sender: Any? = nil) {
 		nameInputView.validate()
 		priceInputView.validate()
 
 		guard let nameInput = nameInputView.validatedText,
 		let priceInput = priceInputView.validatedText,
-		let price = Int(priceInput),
-		let priceListViewModel = priceListViewModel
+		let price = Int(priceInput)
 			else {
 				return
 		}
@@ -84,9 +103,42 @@ class CreateProductViewController: UIViewController {
 		nameInputView.resignFirstResponder()
 		priceInputView.resignFirstResponder()
 
+		if let product = product {
+			update(product: product, name: nameInput, price: price, image: productImage)
+		}
+		else {
+			createProduct(named: nameInput, price: price, image: productImage)
+		}
+	}
+
+	private func update(product: Product, name: String, price: Int, image: UIImage?) {
+		guard let priceListViewModel = priceListViewModel
+			else {
+				return
+		}
+
 		showActivityIndicator()
 
-		priceListViewModel.createNewProduct(named: nameInput, price: price, image: productImage) { [weak self] (result) in
+		priceListViewModel.saveModified(product: product, name: name, price: price, image: image) { [weak self] (result) in
+			switch result {
+			case .success:
+				self?.hideActivityIndicator()
+			case .failure(let error):
+				print("Update product error: \(error)")
+			}
+			self?.close()
+		}
+	}
+
+	private func createProduct(named name: String, price: Int, image: UIImage?) {
+		guard let priceListViewModel = priceListViewModel
+			else {
+				return
+		}
+
+		showActivityIndicator()
+
+		priceListViewModel.createNewProduct(named: name, price: price, image: image) { [weak self] (result) in
 			switch result {
 			case .success:
 				self?.hideActivityIndicator()
@@ -95,12 +147,11 @@ class CreateProductViewController: UIViewController {
 			}
 			self?.close()
 		}
-
 	}
 
 }
 
-extension CreateProductViewController: TextInputDelegate {
+extension ProductDataViewController: TextInputDelegate {
 
 	func inputFieldHitReturnKey(_ inputField: TextInputView) {
 		switch inputField {
@@ -108,7 +159,7 @@ extension CreateProductViewController: TextInputDelegate {
 			priceInputView.becomeFirstResponder()
 		case priceInputView:
 			priceInputView.resignFirstResponder()
-			submit()
+			save()
 		default:
 			inputField.resignFirstResponder()
 		}
@@ -116,11 +167,11 @@ extension CreateProductViewController: TextInputDelegate {
 
 }
 
-extension CreateProductViewController: UINavigationControllerDelegate {
+extension ProductDataViewController: UINavigationControllerDelegate {
 	// Required for UIImagePickerController
 }
 
-extension CreateProductViewController {
+extension ProductDataViewController {
 
 	@IBAction func addPhoto(_ sender: Any? = nil) {
 		let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -149,7 +200,7 @@ extension CreateProductViewController {
 
 }
 
-extension CreateProductViewController: UIImagePickerControllerDelegate {
+extension ProductDataViewController: UIImagePickerControllerDelegate {
 
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 		picker.dismiss(animated: true)

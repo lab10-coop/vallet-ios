@@ -71,7 +71,7 @@ class AdminPriceListViewController: UIViewController {
 			else {
 				return
 		}
-		CreateProductViewController.present(for: priceListViewModel, over: container)
+		ProductDataViewController.present(for: priceListViewModel, over: container)
 	}
 
 }
@@ -101,6 +101,27 @@ extension AdminPriceListViewController: UICollectionViewDataSource {
 	}
 
 }
+
+// MARK: - UICollectionView Delegate
+
+extension AdminPriceListViewController: UICollectionViewDelegate {
+
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		guard let container = container,
+			let priceListViewModel = priceListViewModel,
+			let products = priceListViewModel.products,
+			indexPath.row < products.count
+			else {
+				return
+		}
+		let product = products[indexPath.row]
+
+		ProductDataViewController.present(for: priceListViewModel, product: product, over: container)
+	}
+
+}
+
+// MARK: - UICollectionView Flow Layout
 
 extension AdminPriceListViewController: UICollectionViewDelegateFlowLayout {
 

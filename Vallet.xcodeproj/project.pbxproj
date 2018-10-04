@@ -155,7 +155,7 @@
 		D4C8C9522158E6EC00C831F0 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C8C94E2158E6DF00C831F0 /* ProductCollectionViewCell.xib */; };
 		D4C8C9542158ECC600C831F0 /* PriceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9532158ECC600C831F0 /* PriceListViewModel.swift */; };
 		D4C8C9552158ECC900C831F0 /* PriceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9532158ECC600C831F0 /* PriceListViewModel.swift */; };
-		D4C8C957215901C900C831F0 /* CreateProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C956215901C900C831F0 /* CreateProductViewController.swift */; };
+		D4C8C957215901C900C831F0 /* ProductDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C956215901C900C831F0 /* ProductDataViewController.swift */; };
 		D4C8C9592159058600C831F0 /* PriceListViewModel+Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9582159058600C831F0 /* PriceListViewModel+Admin.swift */; };
 		D4C8C95B215936AF00C831F0 /* ClientPriceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C95A215936AF00C831F0 /* ClientPriceListViewController.swift */; };
 		D4C8C95D2159370200C831F0 /* PriceListViewModel+Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C95C2159370200C831F0 /* PriceListViewModel+Client.swift */; };
@@ -321,7 +321,7 @@
 		D4C8C94D2158E6DF00C831F0 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		D4C8C94E2158E6DF00C831F0 /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		D4C8C9532158ECC600C831F0 /* PriceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceListViewModel.swift; sourceTree = "<group>"; };
-		D4C8C956215901C900C831F0 /* CreateProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductViewController.swift; sourceTree = "<group>"; };
+		D4C8C956215901C900C831F0 /* ProductDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDataViewController.swift; sourceTree = "<group>"; };
 		D4C8C9582159058600C831F0 /* PriceListViewModel+Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PriceListViewModel+Admin.swift"; sourceTree = "<group>"; };
 		D4C8C95A215936AF00C831F0 /* ClientPriceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientPriceListViewController.swift; sourceTree = "<group>"; };
 		D4C8C95C2159370200C831F0 /* PriceListViewModel+Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PriceListViewModel+Client.swift"; sourceTree = "<group>"; };
@@ -580,7 +580,7 @@
 				D443CDC9214F7E4200A7100F /* IssueAmountViewController.swift */,
 				D48D957F21525AE100840707 /* AdminHistoryViewController.swift */,
 				D4C8C94B2158D5A800C831F0 /* AdminPriceListViewController.swift */,
-				D4C8C956215901C900C831F0 /* CreateProductViewController.swift */,
+				D4C8C956215901C900C831F0 /* ProductDataViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1273,7 +1273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4C8C957215901C900C831F0 /* CreateProductViewController.swift in Sources */,
+				D4C8C957215901C900C831F0 /* ProductDataViewController.swift in Sources */,
 				D443CD93214A93E400A7100F /* ShopManager.swift in Sources */,
 				D443CDAA214AA73700A7100F /* NSObject.swift in Sources */,
 				D4BE2B5C215E011D00146566 /* QRCodeManager.swift in Sources */,
