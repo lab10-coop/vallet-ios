@@ -365,13 +365,13 @@
         <scene sceneID="ILK-Hc-CY6">
             <objects>
                 <viewController storyboardIdentifier="NoShopsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XTA-hU-lhG" customClass="NoShopsViewController" customModule="Vallet" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Hka-5I-KK2">
+                    <view key="view" contentMode="scaleToFill" id="Hka-5I-KK2" customClass="BackgroundView" customModule="Vallet" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xon-hB-jNe">
-                                <rect key="frame" x="148.66666666666666" y="396" width="78" height="30"/>
-                                <state key="normal" title="Add a shop"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xon-hB-jNe" customClass="PrimaryRoundedButton" customModule="Vallet" customModuleProvider="target">
+                                <rect key="frame" x="136.66666666666666" y="400" width="102" height="22"/>
+                                <state key="normal" title="Add a shop" image="PlusIcon"/>
                                 <connections>
                                     <action selector="addShop:" destination="XTA-hU-lhG" eventType="touchUpInside" id="6Fl-LP-RXj"/>
                                 </connections>
@@ -487,5 +487,6 @@ Enter your name and get started.</string>
     <resources>
         <image name="CloseIcon" width="20" height="20"/>
         <image name="LogoLarge" width="115" height="87"/>
+        <image name="PlusIcon" width="10" height="10"/>
     </resources>
 </document>
