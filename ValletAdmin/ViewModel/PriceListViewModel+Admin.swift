@@ -26,7 +26,7 @@ extension PriceListViewModel {
 				case .success(let imagePath):
 					product.imagePath = imagePath
 					product.externalImage = ExternalImage(in: managedObjectContext, image: image, path: imagePath)
-					self?.updatePricelist(completion: completion)
+					self?.uploadPricelist(completion: completion)
 					DataBaseManager.save(managedContext: managedObjectContext)
 				case .failure(let error):
 					completion(Result.failure(error))
@@ -34,7 +34,7 @@ extension PriceListViewModel {
 			}
 		}
 		else {
-			updatePricelist(completion: completion)
+			uploadPricelist(completion: completion)
 		}
 	}
 
@@ -63,12 +63,12 @@ extension PriceListViewModel {
 		}
 
 		ShopManager.add(product: product, to: shop)
-		updatePricelist(completion: completion)
+		uploadPricelist(completion: completion)
 	}
 
 	// Uploades latest pricelist data to the API endpoint
-	private func updatePricelist(completion: @escaping (Result<Bool>) -> Void) {
-		ShopManager.updatePriceList(for: shop) { (result) in
+	private func uploadPricelist(completion: @escaping (Result<Bool>) -> Void) {
+		ShopManager.uploadPriceList(for: shop) { (result) in
 			completion(result)
 		}
 
