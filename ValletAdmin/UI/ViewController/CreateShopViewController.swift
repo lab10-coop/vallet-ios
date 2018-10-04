@@ -39,7 +39,7 @@ class CreateShopViewController: UIViewController {
 
 		nameInputView.type = .name
 		nameInputView.returnKeyType = .send
-		nameInputView.maxCharacterCount = 10
+		nameInputView.maxCharacterCount = Constants.Content.maxShopNameLength
 		nameInputView.delegate = self
 	}
 

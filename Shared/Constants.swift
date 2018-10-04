@@ -88,6 +88,12 @@ struct Constants {
 		
 	}
 
+	struct Content {
+
+		static let maxShopNameLength = 10
+
+	}
+
 	// do not deploy with these values !!!
 	struct Temp {
 

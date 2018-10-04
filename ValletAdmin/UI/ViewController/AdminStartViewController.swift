@@ -30,6 +30,7 @@ class AdminStartViewController: UIViewController {
 		super.viewDidLoad()
 
 		nameInputView.type = .name
+		nameInputView.maxCharacterCount = Constants.Content.maxShopNameLength
 		nameInputView.returnKeyType = .send
 		nameInputView.delegate = self
 
