@@ -19,7 +19,8 @@ class AdminHistoryEventTableViewCell: UITableViewCell, NibBackedTableViewCell {
 	var event: ValueEvent? {
 		didSet {
 			guard let event = event,
-				let type = event.resolvedType
+				let type = event.resolvedType,
+				let value = ShopManager.displayString(for: event.value)
 				else {
 					prepareForReuse()
 					return
@@ -33,7 +34,7 @@ class AdminHistoryEventTableViewCell: UITableViewCell, NibBackedTableViewCell {
 				if let clientName = event.client?.name {
 					descriptionLabel.text?.append(" \(NSLocalizedString("to", comment: "")) \(clientName)")
 				}
-				valueLabel.text = "- \(event.value)"
+				valueLabel.text = "- \(value)"
 				valueLabel.textColor = Theme.Color.darkText
 			case .redeem:
 				incomingImageView.tintColor = Theme.Color.accent
@@ -42,7 +43,7 @@ class AdminHistoryEventTableViewCell: UITableViewCell, NibBackedTableViewCell {
 				if let clientName = event.client?.name {
 					descriptionLabel.text?.append(" \(NSLocalizedString("from", comment: "")) \(clientName)")
 				}
-				valueLabel.text = "+ \(event.value)"
+				valueLabel.text = "+ \(value)"
 				valueLabel.textColor = Theme.Color.accent
 			}
 		}

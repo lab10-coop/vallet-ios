@@ -87,7 +87,7 @@ class ShopManager {
 		return token
 	}
 
-	static func totalSupply(for shop: Shop? = nil, completion: @escaping (Result<Int>) -> Void) {
+	static func totalSupply(for shop: Shop? = nil, completion: @escaping (Result<Int64>) -> Void) {
 		guard let shop = shop ?? selectedShop,
 			let token = token(for: shop)
 			else {
@@ -99,7 +99,7 @@ class ShopManager {
 		}
 	}
 
-	static func balance(for address: EthereumAddress, in shop: Shop? = nil, completion: @escaping (Result<Int>) -> Void) {
+	static func balance(for address: EthereumAddress, in shop: Shop? = nil, completion: @escaping (Result<Int64>) -> Void) {
 		guard let shop = shop ?? selectedShop,
 			let token = token(for: shop)
 			else {
