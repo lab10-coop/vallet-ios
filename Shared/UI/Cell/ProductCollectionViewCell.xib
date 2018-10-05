@@ -50,6 +50,16 @@
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="gL3-RK-5Y7"/>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xz9-eW-6HU" customClass="PrimaryIconButton" customModule="Vallet" customModuleProvider="target">
+                                <rect key="frame" x="62" y="77" width="26" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xz9-eW-6HU" secondAttribute="height" id="nZU-qW-ZM8"/>
+                                </constraints>
+                                <state key="normal" image="TrashIcon"/>
+                                <connections>
+                                    <action selector="deleteProduct:" destination="gTV-IL-0wX" eventType="touchUpInside" id="znf-Te-cF0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="NI3-8U-xDx" firstAttribute="leading" secondItem="F1r-J5-D9G" secondAttribute="leading" constant="8" id="0vA-j3-DMM"/>
@@ -60,7 +70,9 @@
                             <constraint firstAttribute="trailing" secondItem="yMV-hw-qMF" secondAttribute="trailing" id="VSv-VX-E1l"/>
                             <constraint firstItem="NI3-8U-xDx" firstAttribute="top" secondItem="yMV-hw-qMF" secondAttribute="bottom" constant="8" id="Zc0-md-WSe"/>
                             <constraint firstAttribute="bottom" secondItem="NI3-8U-xDx" secondAttribute="bottom" constant="8" id="bcw-Vh-LFy"/>
+                            <constraint firstItem="xz9-eW-6HU" firstAttribute="centerX" secondItem="F1r-J5-D9G" secondAttribute="centerX" id="hFZ-gT-Z7o"/>
                             <constraint firstItem="yMV-hw-qMF" firstAttribute="top" secondItem="F1r-J5-D9G" secondAttribute="top" id="hbn-RQ-Mtr"/>
+                            <constraint firstItem="xz9-eW-6HU" firstAttribute="centerY" secondItem="F1r-J5-D9G" secondAttribute="centerY" id="waf-J9-2yv"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -80,6 +92,7 @@
             <size key="customSize" width="150" height="180"/>
             <connections>
                 <outlet property="containerView" destination="F1r-J5-D9G" id="jTI-Q4-2lQ"/>
+                <outlet property="deleteButton" destination="xz9-eW-6HU" id="qA4-e8-Fq0"/>
                 <outlet property="imageView" destination="yMV-hw-qMF" id="FA3-yZ-0QW"/>
                 <outlet property="nameLabel" destination="3hq-Lg-XhP" id="JxX-6N-zd8"/>
                 <outlet property="placeholderImageView" destination="6o9-Uc-XzJ" id="qHU-tu-o8Q"/>
@@ -91,5 +104,6 @@
     </objects>
     <resources>
         <image name="PhotoIcon" width="30" height="22"/>
+        <image name="TrashIcon" width="25" height="26"/>
     </resources>
 </document>
