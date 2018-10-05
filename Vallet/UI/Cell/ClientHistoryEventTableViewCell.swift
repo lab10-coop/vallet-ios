@@ -19,7 +19,8 @@ class ClientHistoryEventTableViewCell: UITableViewCell, NibBackedTableViewCell {
 	var event: ValueEvent? {
 		didSet {
 			guard let event = event,
-				let type = event.resolvedType
+				let type = event.resolvedType,
+				let value = ShopManager.displayString(for: event.value)
 				else {
 					prepareForReuse()
 					return
@@ -30,13 +31,13 @@ class ClientHistoryEventTableViewCell: UITableViewCell, NibBackedTableViewCell {
 				outgoingImageView.tintColor = Theme.Color.accent
 				outgoingImageView.isHidden = false
 				descriptionLabel.text = event.productName ?? NSLocalizedString("Unknow Item", comment: "Unknown item name")
-				valueLabel.text = "- \(event.value)"
+				valueLabel.text = "- \(value)"
 				valueLabel.textColor = Theme.Color.darkText
 			case .issue:
 				incomingImageView.tintColor = Theme.Color.accent
 				incomingImageView.isHidden = false
 				descriptionLabel.text = NSLocalizedString("Incoming", comment: "Issue event description")
-				valueLabel.text = "+ \(event.value)"
+				valueLabel.text = "+ \(value)"
 				valueLabel.textColor = Theme.Color.accent
 			}
 		}
