@@ -21,7 +21,12 @@ class IssueAmountViewController: UIViewController {
 		issueButton.isEnabled = false
 
 		amountTextInputView.delegate = self
-		amountTextInputView.type = .integer
+		switch ShopManager.selectedShop?.tokenType ?? .eur {
+			case .eur:
+			amountTextInputView.type = .currency
+			case .voucher:
+			amountTextInputView.type = .integer
+		}
 	}
 
 	@IBAction func issue(_ sender: Any? = nil) {
@@ -53,7 +58,7 @@ extension IssueAmountViewController: TextInputDelegate {
 	func inputFieldDidChange(_ inputField: TextInputView) {
 		guard let issueViewModel = issueViewModel,
 			let amountString = inputField.text,
-			let amount = Int(amountString),
+			let amount = CurrencyFormatter.amount(for: amountString),
 			amount > 0
 			else {
 				self.issueViewModel?.amount = 0

@@ -37,7 +37,7 @@ extension ShopManager {
 				return
 		}
 
-		tokenFactory.createShop(with: Wallet.address, name: name, type: .voucher) { (result) in
+		tokenFactory.createShop(with: Wallet.address, name: name, type: .eur) { (result) in
 			switch result {
 			case .success(let createdShop):
 				guard let shop = Shop(in: managedObjectContext, intermediate: createdShop)

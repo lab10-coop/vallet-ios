@@ -58,7 +58,13 @@ class ProductDataViewController: UIViewController {
 		nameInputView.type = .name
 
 		priceInputView.returnKeyType = .send
-		priceInputView.type = .integer
+
+		switch ShopManager.selectedShop?.tokenType ?? .eur {
+		case .eur:
+			priceInputView.type = .currency
+		case .voucher:
+			priceInputView.type = .integer
+		}
 
 		photoBackgroundView.addRoundedCorners()
 		photoBackgroundView.addShadow()
@@ -76,7 +82,9 @@ class ProductDataViewController: UIViewController {
 				return
 		}
 		nameInputView.text = product?.name
-		priceInputView.text = product?.price.description
+		if let price = product?.price {
+			priceInputView.text = CurrencyFormatter.inputString(for: price)
+		}
 		productImage = product?.image
 	}
 
@@ -95,7 +103,7 @@ class ProductDataViewController: UIViewController {
 
 		guard let nameInput = nameInputView.validatedText,
 		let priceInput = priceInputView.validatedText,
-		let price = Int(priceInput)
+		let price = CurrencyFormatter.amount(for: priceInput)
 			else {
 				return
 		}

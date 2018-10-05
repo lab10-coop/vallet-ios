@@ -105,6 +105,8 @@
 		D48D958521525B0000840707 /* AdminHistoryEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48D958321525B0000840707 /* AdminHistoryEventTableViewCell.xib */; };
 		D48D9589215283A500840707 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D9588215283A500840707 /* UserDefaultsManager.swift */; };
 		D48D958A215290C100840707 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D9588215283A500840707 /* UserDefaultsManager.swift */; };
+		D4B0860921678AAD00DB623B /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B0860821678AAD00DB623B /* CurrencyFormatter.swift */; };
+		D4B0860A21678AAD00DB623B /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B0860821678AAD00DB623B /* CurrencyFormatter.swift */; };
 		D4BE2B56215DF62400146566 /* SegmentedControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4BE2B54215DF62300146566 /* SegmentedControlView.xib */; };
 		D4BE2B57215DF62400146566 /* SegmentedControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4BE2B54215DF62300146566 /* SegmentedControlView.xib */; };
 		D4BE2B58215DF62400146566 /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BE2B55215DF62300146566 /* SegmentedControlView.swift */; };
@@ -299,6 +301,7 @@
 		D48D958221525B0000840707 /* AdminHistoryEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHistoryEventTableViewCell.swift; sourceTree = "<group>"; };
 		D48D958321525B0000840707 /* AdminHistoryEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminHistoryEventTableViewCell.xib; sourceTree = "<group>"; };
 		D48D9588215283A500840707 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		D4B0860821678AAD00DB623B /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		D4BE2B54215DF62300146566 /* SegmentedControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegmentedControlView.xib; sourceTree = "<group>"; };
 		D4BE2B55215DF62300146566 /* SegmentedControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlView.swift; sourceTree = "<group>"; };
 		D4BE2B5A215E011D00146566 /* QRCodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeManager.swift; sourceTree = "<group>"; };
@@ -825,6 +828,7 @@
 				D4C8C985215A8D7B00C831F0 /* Theme.swift */,
 				D4C8C989215A8DC700C831F0 /* ScaledFont.swift */,
 				D4C8C99A215AA22500C831F0 /* Appearance.swift */,
+				D4B0860821678AAD00DB623B /* CurrencyFormatter.swift */,
 			);
 			path = Appearance;
 			sourceTree = "<group>";
@@ -1200,6 +1204,7 @@
 				D443CDA9214AA73700A7100F /* NSObject.swift in Sources */,
 				D4C8C965215A36B700C831F0 /* NoShopsViewController.swift in Sources */,
 				D4C5CDA2214819AD00AB67D7 /* ShopMenuViewController.swift in Sources */,
+				D4B0860921678AAD00DB623B /* CurrencyFormatter.swift in Sources */,
 				D429F8B721411FA2004427F0 /* Web3Manager.swift in Sources */,
 				D4C8C98A215A8DC700C831F0 /* ScaledFont.swift in Sources */,
 				D4C8C963215A30DB00C831F0 /* ClientStartViewController.swift in Sources */,
@@ -1304,6 +1309,7 @@
 				D4C8C9272153B7CC00C831F0 /* PriceList.swift in Sources */,
 				D4C8C9B7215AC02300C831F0 /* SecondaryDesctructiveButton.swift in Sources */,
 				D4C8C94621552DA200C831F0 /* MainViewController.swift in Sources */,
+				D4B0860A21678AAD00DB623B /* CurrencyFormatter.swift in Sources */,
 				D4C7F76121667925006D85B1 /* PrimaryIconButton.swift in Sources */,
 				D4C8C92B2153C73B00C831F0 /* JSONDecoder.swift in Sources */,
 				D429F8C92142BF87004427F0 /* Token.swift in Sources */,

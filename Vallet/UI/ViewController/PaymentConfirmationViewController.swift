@@ -34,7 +34,9 @@ class PaymentConfirmationViewController: UIViewController {
 
 		contentBackgroundView.addRoundedCorners()
 
-		priceLabel.text = product?.price.description
+		if let price = product?.price {
+			priceLabel.text = CurrencyFormatter.displayString(for: price)
+		}
 		nameLabel.text = product?.name
 	}
 

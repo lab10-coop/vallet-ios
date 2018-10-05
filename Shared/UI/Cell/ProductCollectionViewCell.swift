@@ -37,7 +37,9 @@ class ProductCollectionViewCell: UICollectionViewCell, NibBackedCollectionViewCe
 	var product: Product? {
 		didSet {
 			nameLabel.text = product?.name
-			priceLabel.text = product?.price.description
+			if let price = product?.price {
+				priceLabel.text = CurrencyFormatter.displayString(for: price)
+			}
 			if let image = product?.image {
 				imageView.image = image
 			}

@@ -13,6 +13,10 @@ import web3swift
 @objc(Shop)
 public class Shop: NSManagedObject {
 
+	var tokenType: TokenType? {
+		return TokenType(rawValue: symbol)
+	}
+
 	convenience init?(in managedContext: NSManagedObjectContext, intermediate: ShopIntermediate) {
 		self.init(in: managedContext,
 							name: intermediate.name,

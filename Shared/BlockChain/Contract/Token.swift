@@ -72,7 +72,7 @@ class Token: ContractProtocol {
 		}
 	}
 
-	func balance(for address: EthereumAddress, completion: @escaping (Result<Int>) -> Void) {
+	func balance(for address: EthereumAddress, completion: @escaping (Result<Int64>) -> Void) {
 		guard let intermediate = transactionIntermediate(method: Method.balance.rawValue, parameters: [NSString(string: address.address)])
 			else {
 				completion(Result.failure(Web3Error.unknownError))
@@ -83,7 +83,7 @@ class Token: ContractProtocol {
 			switch result {
 			case .success(let resultDictionary):
 				guard let balanceValue = resultDictionary["balance"],
-					let balance = Int("\(balanceValue)")
+					let balance = Int64("\(balanceValue)")
 					else {
 						completion(Result.failure(Web3Error.dataError))
 						return
@@ -141,7 +141,7 @@ class Token: ContractProtocol {
 		}
 	}
 
-	func totalSupply(completion: @escaping (Result<Int>) -> Void) {
+	func totalSupply(completion: @escaping (Result<Int64>) -> Void) {
 		guard let intermediate = transactionIntermediate(method: Method.totalSupply.rawValue)
 			else {
 				completion(Result.failure(Web3Error.unknownError))
@@ -152,7 +152,7 @@ class Token: ContractProtocol {
 			switch result {
 			case .success(let resultDictionary):
 				guard let supplyValue = resultDictionary.first?.value,
-					let supply = Int("\(supplyValue)")
+					let supply = Int64("\(supplyValue)")
 					else {
 						completion(Result.failure(Web3Error.dataError))
 						return

@@ -23,10 +23,10 @@
                         <rect key="frame" x="16" y="-8" width="288" height="59.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IncomingArrowIcon" translatesAutoresizingMaskIntoConstraints="NO" id="CPL-04-L44">
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" image="IncomingArrowIcon" translatesAutoresizingMaskIntoConstraints="NO" id="CPL-04-L44">
                         <rect key="frame" x="32" y="17" width="10" height="10"/>
                     </imageView>
-                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OutgoingArrowIcon" translatesAutoresizingMaskIntoConstraints="NO" id="dNS-HC-jLe">
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" image="OutgoingArrowIcon" translatesAutoresizingMaskIntoConstraints="NO" id="dNS-HC-jLe">
                         <rect key="frame" x="32" y="17" width="10" height="10"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="arn-1T-f5O" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
