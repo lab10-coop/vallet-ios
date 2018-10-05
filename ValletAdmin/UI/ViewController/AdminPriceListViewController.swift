@@ -83,7 +83,13 @@ class AdminPriceListViewController: UIViewController {
 extension AdminPriceListViewController: ProductCollectionViewCellDelegate {
 
 	func didDelete(product: Product) {
-		priceListViewModel?.delete(product: product)
+		let message = String(format: NSLocalizedString("Are you sure you want to delete %@", comment: "Delete confirmation message"), product.name)
+		let deleteAction = UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive) { [weak self] _ in
+			self?.priceListViewModel?.delete(product: product)
+		}
+		let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
+
+		presentAlert(title: nil, message: message, actions: [deleteAction, cancelAction])
 	}
 
 }
