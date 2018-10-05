@@ -74,4 +74,18 @@ extension NibBackedTableHeaderFooterView where Self: UITableViewHeaderFooterView
 
 }
 
+protocol NibBackedCollectionReusableView: NibBackedCell {
+
+	static func register(for collectionView: UICollectionView)
+
+}
+
+extension NibBackedCollectionReusableView where Self: UICollectionReusableView {
+
+	static func register(for collectionView: UICollectionView) {
+		collectionView.register(nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: reuseIdentifier)
+	}
+
+}
+
 
