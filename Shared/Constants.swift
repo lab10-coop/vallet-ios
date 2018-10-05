@@ -92,6 +92,7 @@ struct Constants {
 
 		static let maxShopNameLength = 10
 		static let productImageSize = CGSize(width: 500, height: 500)
+		static let maxCurrencyDecimals = 2
 
 	}
 

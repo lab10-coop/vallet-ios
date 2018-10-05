@@ -12,6 +12,7 @@ public enum TextInputType {
 	case text
 	case name
 	case email
+	case currency
 	case decimal
 	case integer
 	case phone
@@ -109,6 +110,8 @@ class TextInputView: NibLinkedView {
 				keyboardType = .emailAddress
 			case .integer:
 				keyboardType = .numberPad
+			case .currency:
+				keyboardType = .decimalPad
 			case .password:
 				isSecureTextEntry = true
 				keyboardType = .default
@@ -197,6 +200,27 @@ extension TextInputView: UITextFieldDelegate {
 	}
 
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+		if case .currency? = type {
+			guard let decimalSeparator = Locale.current.decimalSeparator,
+			let text = textField.text
+				else {
+					return true
+			}
+			let newText = (text as NSString).replacingCharacters(in: range, with: string)
+			let split = newText.components(separatedBy: decimalSeparator)
+			
+			// Allow only one decimal separator.
+			if split.count > 2 {
+				return false
+			}
+			// Limit the number of decimals.
+			if split.count == 2 {
+				return split.last?.count ?? 0 <= Constants.Content.maxCurrencyDecimals
+			}
+			return true
+		}
+
+		// maxCharacterCount limit
 		guard let text = textField.text,
 			let maxCharacterCount = maxCharacterCount
 			else {
