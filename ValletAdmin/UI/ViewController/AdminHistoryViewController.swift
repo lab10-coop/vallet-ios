@@ -105,7 +105,7 @@ class AdminHistoryViewController: UIViewController {
 		ShopManager.totalSupply(for: shop) { [weak self] (result) in
 			switch result {
 			case .success(let balance):
-				self?.totalSupplyLabel.text = ShopManager.displayString(for: balance)
+				self?.totalSupplyLabel.text = CurrencyFormatter.displayString(for: balance)
 			case .failure(let error):
 				print("Load total supply error: \(error)")
 			}

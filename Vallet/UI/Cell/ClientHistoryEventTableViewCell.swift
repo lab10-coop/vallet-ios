@@ -20,7 +20,7 @@ class ClientHistoryEventTableViewCell: UITableViewCell, NibBackedTableViewCell {
 		didSet {
 			guard let event = event,
 				let type = event.resolvedType,
-				let value = ShopManager.displayString(for: event.value)
+				let value = CurrencyFormatter.displayString(for: event.value)
 				else {
 					prepareForReuse()
 					return

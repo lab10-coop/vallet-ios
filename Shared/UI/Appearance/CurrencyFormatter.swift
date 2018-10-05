@@ -25,7 +25,7 @@ struct CurrencyFormatter {
 		return formatter
 	}()
 
-	static func centsFrom(input: String) -> Int? {
+	private static func centsFrom(input: String) -> Int? {
 		guard let number = decimalFormatter.number(from: input)
 			else {
 				return nil
@@ -35,20 +35,64 @@ struct CurrencyFormatter {
 		return Int(cents)
 	}
 
-	static func inputStringFrom(cents: Int) -> String? {
+	private static func inputStringFrom(cents: Int) -> String? {
 		return decimalFormatter.string(from: NSNumber(value: Double(cents)/100))
 	}
 
-	static func currencyStringFrom(cents: Int) -> String? {
+	private static func currencyStringFrom(cents: Int) -> String? {
 		return currencyFormatter.string(from: NSNumber(value: Double(cents)/100))
 	}
 
-	static func currencyStringFrom(input: String) -> String? {
+	private static func currencyStringFrom(input: String) -> String? {
 		guard let cents = centsFrom(input: input)
 			else {
 				return nil
 		}
 		return currencyStringFrom(cents: cents)
+	}
+
+	// MARK: - Amount conversion
+
+	static func inputString(for amount: Int64, in shop: Shop? = nil) -> String? {
+		guard let shop = shop ?? ShopManager.selectedShop,
+			let tokenType = shop.tokenType
+			else {
+				return nil
+		}
+		switch tokenType  {
+		case .voucher:
+			return amount.description
+		case .eur:
+			return inputStringFrom(cents: Int(amount))
+		}
+	}
+
+	static func displayString(for amount: Int64, in shop: Shop? = nil) -> String? {
+		guard let shop = shop ?? ShopManager.selectedShop,
+			let tokenType = shop.tokenType
+			else {
+				return nil
+		}
+		switch tokenType {
+		case .voucher:
+			return amount.description
+		case .eur:
+			return currencyStringFrom(cents: Int(amount))
+		}
+	}
+
+	static func amount(for input: String, in shop: Shop? = nil) -> Int? {
+		guard let shop = shop ?? ShopManager.selectedShop,
+			let tokenType = shop.tokenType
+			else {
+				return nil
+		}
+		switch tokenType  {
+		case .voucher:
+			return Int(input)
+		case .eur:
+			return centsFrom(input: input)
+		}
 	}
 
 }

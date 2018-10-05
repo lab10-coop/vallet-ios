@@ -65,7 +65,7 @@ extension MainViewController {
 		ShopManager.balance(for: Wallet.address, in: shop) { [weak self] (result) in
 			switch result {
 			case .success(let balance):
-				self?.clientBalanceLabel.text = "Balance: \(ShopManager.displayString(for: balance) ?? "")"
+				self?.clientBalanceLabel.text = "Balance: \(CurrencyFormatter.displayString(for: balance) ?? "")"
 			case .failure(let error):
 				print("Load balance error: \(error)")
 			}

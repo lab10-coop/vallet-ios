@@ -58,7 +58,7 @@ extension IssueAmountViewController: TextInputDelegate {
 	func inputFieldDidChange(_ inputField: TextInputView) {
 		guard let issueViewModel = issueViewModel,
 			let amountString = inputField.text,
-			let amount = ShopManager.amount(for: amountString),
+			let amount = CurrencyFormatter.amount(for: amountString),
 			amount > 0
 			else {
 				self.issueViewModel?.amount = 0

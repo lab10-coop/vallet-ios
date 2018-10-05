@@ -149,48 +149,4 @@ class ShopManager {
 		}
 	}
 
-	// MARK: - Price conversion
-
-	static func inputString(for amount: Int64, in shop: Shop? = nil) -> String? {
-		guard let shop = shop ?? selectedShop,
-			let tokenType = shop.tokenType
-			else {
-				return nil
-		}
-		switch tokenType  {
-		case .voucher:
-			return amount.description
-		case .eur:
-			return CurrencyFormatter.inputStringFrom(cents: Int(amount))
-		}
-	}
-
-	static func displayString(for amount: Int64, in shop: Shop? = nil) -> String? {
-		guard let shop = shop ?? selectedShop,
-			let tokenType = shop.tokenType
-			else {
-				return nil
-		}
-		switch tokenType {
-		case .voucher:
-			return amount.description
-		case .eur:
-			return CurrencyFormatter.currencyStringFrom(cents: Int(amount))
-		}
-	}
-
-	static func amount(for input: String, in shop: Shop? = nil) -> Int? {
-		guard let shop = shop ?? selectedShop,
-			let tokenType = shop.tokenType
-			else {
-				return nil
-		}
-		switch tokenType  {
-		case .voucher:
-			return Int(input)
-		case .eur:
-			return CurrencyFormatter.centsFrom(input: input)
-		}
-	}
-
 }

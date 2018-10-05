@@ -83,7 +83,7 @@ class ProductDataViewController: UIViewController {
 		}
 		nameInputView.text = product?.name
 		if let price = product?.price {
-			priceInputView.text = ShopManager.inputString(for: price)
+			priceInputView.text = CurrencyFormatter.inputString(for: price)
 		}
 		productImage = product?.image
 	}
@@ -103,7 +103,7 @@ class ProductDataViewController: UIViewController {
 
 		guard let nameInput = nameInputView.validatedText,
 		let priceInput = priceInputView.validatedText,
-		let price = ShopManager.amount(for: priceInput)
+		let price = CurrencyFormatter.amount(for: priceInput)
 			else {
 				return
 		}
