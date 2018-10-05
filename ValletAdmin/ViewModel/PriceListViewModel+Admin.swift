@@ -66,8 +66,26 @@ extension PriceListViewModel {
 		uploadPricelist(completion: completion)
 	}
 
+	func delete(product: Product) {
+		guard let priceList = priceList
+			else {
+				return
+		}
+		ShopManager.remove(product: product, from: shop)
+		updateProducts(to: priceList)
+	}
+
+	func endEditing(completion: @escaping (Result<Bool>) -> Void) {
+		guard let managedObjectContext = managedObjectContext
+			else {
+				return
+		}
+		uploadPricelist(completion: completion)
+		DataBaseManager.save(managedContext: managedObjectContext)
+	}
+
 	// Uploades latest pricelist data to the API endpoint
-	private func uploadPricelist(completion: @escaping (Result<Bool>) -> Void) {
+	func uploadPricelist(completion: @escaping (Result<Bool>) -> Void) {
 		ShopManager.uploadPriceList(for: shop) { (result) in
 			completion(result)
 		}

@@ -141,6 +141,7 @@ extension ShopManager {
 		}
 
 		priceList.removeFromProducts(product)
+		product.delete()
 		DataBaseManager.save(managedContext: managedObjectContext)
 	}
 	
