@@ -39,4 +39,13 @@ extension UIViewController {
 		completion?()
 	}
 
+	func presentAlert(title: String?, message: String, actions: [UIAlertAction]) {
+		let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+		for action in actions {
+			alertController.addAction(action)
+		}
+		present(alertController, animated: true, completion: nil)
+		alertController.view.tintColor = Theme.Color.accent
+	}
+
 }

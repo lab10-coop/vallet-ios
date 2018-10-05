@@ -36,6 +36,10 @@ extension UIColor {
 		return UIColor(red: red, green: green, blue: blue, alpha: alpha)
 	}
 
+	func transparent(alpha: CGFloat) -> UIColor {
+		return UIColor(red: redValue, green: greenValue, blue: blueValue, alpha: alpha)
+	}
+
 	var darkened: UIColor {
 		// Overlay 20% black.
 		return self.overlay(with: UIColor(white: 0.0, alpha: 0.20))

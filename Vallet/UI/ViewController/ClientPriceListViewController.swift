@@ -52,11 +52,10 @@ class ClientPriceListViewController: UIViewController {
 		collectionView.addSubview(refreshControl)
 		collectionView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 16.0, right: 0.0)
 
-		priceListViewModel = PriceListViewModel(shop: shop)
-		priceListViewModel?.newDataBlock = { [weak self] in
+		priceListViewModel = PriceListViewModel(shop: shop, newDataBlock: { [weak self] in
 			self?.refreshControl.endRefreshing()
 			self?.collectionView.reloadData()
-		}
+		})
 
 		reloadData()
 	}
@@ -76,7 +75,7 @@ extension ClientPriceListViewController: UICollectionViewDataSource {
 	}
 
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return priceListViewModel?.products?.count ?? 0
+		return priceListViewModel?.products.count ?? 0
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -100,12 +99,11 @@ extension ClientPriceListViewController: UICollectionViewDelegate {
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		guard let container = container,
 			let priceListViewModel = priceListViewModel,
-			let products = priceListViewModel.products,
-			indexPath.row < products.count
+			indexPath.row < priceListViewModel.products.count
 			else {
 				return
 		}
-		let product = products[indexPath.row]
+		let product = priceListViewModel.products[indexPath.row]
 
 		PaymentConfirmationViewController.present(for: product, over: container) { [weak self] in
 			self?.container?.showActivityIndicator()

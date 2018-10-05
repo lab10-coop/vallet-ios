@@ -88,6 +88,14 @@ extension Product {
 	@NSManaged public var priceList: PriceList?
 	@NSManaged public var externalImage: ExternalImage?
 
+	func delete() {
+		guard let managedObjectContext = self.managedObjectContext
+			else {
+				return
+		}
+		managedObjectContext.delete(self)
+	}
+
 }
 
 // MARK: - Image loading

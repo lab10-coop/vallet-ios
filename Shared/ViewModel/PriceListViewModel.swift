@@ -23,11 +23,11 @@ class PriceListViewModel {
 		return shop.managedObjectContext
 	}
 
-	var products: [Product]?
+	var products = [Product]()
 
-	var newDataBlock: (() -> Void) = {}
+	var newDataBlock: (() -> Void)
 
-	init?(shop: Shop) {
+	init?(shop: Shop, newDataBlock: @escaping (() -> Void)) {
 		guard	let shopAddressValue = shop.address,
 			let shopAddress = EthereumAddress(shopAddressValue)
 			else {
@@ -36,7 +36,9 @@ class PriceListViewModel {
 		self.shop = shop
 		self.token = Token(address: shopAddress)
 
+		self.newDataBlock = newDataBlock
 		self.priceList = shop.priceList
+		updateProducts(to: priceList)
 	}
 
 	func reload() {
@@ -51,7 +53,12 @@ class PriceListViewModel {
 	}
 
 	func updateProducts(to priceList: PriceList?) {
-		self.products = priceList?.products?.array as? [Product]
+		guard let newProducts = priceList?.products?.array as? [Product]
+			else {
+				return
+		}
+		
+		products = newProducts
 		newDataBlock()
 	}
 

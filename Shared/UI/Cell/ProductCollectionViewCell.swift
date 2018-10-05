@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol ProductCollectionViewCellDelegate: class {
+
+	func didDelete(product: Product)
+
+}
+
 class ProductCollectionViewCell: UICollectionViewCell, NibBackedCollectionViewCell {
 
 	@IBOutlet private var containerView: UIView!
@@ -16,8 +22,17 @@ class ProductCollectionViewCell: UICollectionViewCell, NibBackedCollectionViewCe
 	@IBOutlet private var priceLabel: UILabel!
 	@IBOutlet private var imageView: UIImageView!
 	@IBOutlet private var placeholderImageView: UIImageView!
+	@IBOutlet private var deleteButton: UIButton!
 
 	static let aspectRatio: CGFloat = 1.2
+
+	weak var delegate: ProductCollectionViewCellDelegate?
+
+	var canDelete: Bool = false {
+		didSet {
+			deleteButton.isHidden = !canDelete
+		}
+	}
 
 	var product: Product? {
 		didSet {
@@ -25,9 +40,9 @@ class ProductCollectionViewCell: UICollectionViewCell, NibBackedCollectionViewCe
 			priceLabel.text = product?.price.description
 			if let image = product?.image {
 				imageView.image = image
-				imageView.fadeIn()
 			}
 			else {
+				imageView.alpha = 0.0
 				product?.updateImage(completion: { [weak self] (imageResult) in
 					guard case .success(let image) = imageResult
 						else {
@@ -59,7 +74,16 @@ class ProductCollectionViewCell: UICollectionViewCell, NibBackedCollectionViewCe
 		nameLabel.text = ""
 		priceLabel.text = ""
 		imageView.image = nil
-		imageView.alpha = 0.0
+		imageView.alpha = 1.0
+		deleteButton.isHidden = true
+	}
+
+	@IBAction func deleteProduct(_ sender: Any? = nil) {
+		guard let product = product
+			else {
+				return
+		}
+		delegate?.didDelete(product: product)
 	}
 
 }

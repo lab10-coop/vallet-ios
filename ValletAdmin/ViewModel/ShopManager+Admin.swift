@@ -96,7 +96,7 @@ extension ShopManager {
 		}
 	}
 
-	static func updatePriceList(for shop: Shop? = nil, completion: @escaping (Result<Bool>) -> Void) {
+	static func uploadPriceList(for shop: Shop? = nil, completion: @escaping (Result<Bool>) -> Void) {
 		guard let shop = shop ?? selectedShop,
 			let priceList = shop.priceList,
 			let jsonData = priceList.jsonData
@@ -141,6 +141,7 @@ extension ShopManager {
 		}
 
 		priceList.removeFromProducts(product)
+		product.delete()
 		DataBaseManager.save(managedContext: managedObjectContext)
 	}
 	

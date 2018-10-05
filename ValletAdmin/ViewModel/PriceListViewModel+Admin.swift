@@ -11,6 +11,33 @@ import UIKit
 
 extension PriceListViewModel {
 
+	func saveModified(product: Product, name: String, price: Int, image: UIImage?, completion: @escaping (Result<Bool>) -> Void) {
+		guard let managedObjectContext = product.managedObjectContext
+			else {
+				return
+		}
+
+		product.price = Int64(price)
+		product.name = name
+
+		if let image = image {
+			IPFSManager.upload(image: image) { [weak self] (hashResult) in
+				switch hashResult {
+				case .success(let imagePath):
+					product.imagePath = imagePath
+					product.externalImage = ExternalImage(in: managedObjectContext, image: image, path: imagePath)
+					self?.uploadPricelist(completion: completion)
+					DataBaseManager.save(managedContext: managedObjectContext)
+				case .failure(let error):
+					completion(Result.failure(error))
+				}
+			}
+		}
+		else {
+			uploadPricelist(completion: completion)
+		}
+	}
+
 	func createNewProduct(named name: String, price: Int, image: UIImage?, completion: @escaping (Result<Bool>) -> Void) {
 		if let image = image {
 			IPFSManager.upload(image: image) { [weak self] (hashResult) in
@@ -36,7 +63,30 @@ extension PriceListViewModel {
 		}
 
 		ShopManager.add(product: product, to: shop)
-		ShopManager.updatePriceList(for: shop) { (result) in
+		uploadPricelist(completion: completion)
+	}
+
+	func delete(product: Product) {
+		guard let priceList = priceList
+			else {
+				return
+		}
+		ShopManager.remove(product: product, from: shop)
+		updateProducts(to: priceList)
+	}
+
+	func endEditing(completion: @escaping (Result<Bool>) -> Void) {
+		guard let managedObjectContext = managedObjectContext
+			else {
+				return
+		}
+		uploadPricelist(completion: completion)
+		DataBaseManager.save(managedContext: managedObjectContext)
+	}
+
+	// Uploades latest pricelist data to the API endpoint
+	func uploadPricelist(completion: @escaping (Result<Bool>) -> Void) {
+		ShopManager.uploadPriceList(for: shop) { (result) in
 			completion(result)
 		}
 
