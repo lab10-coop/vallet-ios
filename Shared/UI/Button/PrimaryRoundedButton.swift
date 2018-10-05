@@ -24,10 +24,18 @@ class PrimaryRoundedButton: BaseButton {
 		}
 	}
 
-	let normalGradientColors = [Theme.Color.accentGradientStart, Theme.Color.accentGradientEnd]
-	let selectedGradientColors = [Theme.Color.accentGradientStart.darkened, Theme.Color.accentGradientEnd.darkened]
-	let highlightedGradientColors = [Theme.Color.accentGradientStart.darkened, Theme.Color.accentGradientEnd.darkened]
-	let disabledGradientColors = [Theme.Color.accentGradientStart.lightened, Theme.Color.accentGradientEnd.lightened]
+	var normalGradientColors: [UIColor] {
+		return [Theme.Color.accentGradientStart, Theme.Color.accentGradientEnd]
+	}
+	var selectedGradientColors: [UIColor] {
+		return [Theme.Color.accentGradientStart.darkened, Theme.Color.accentGradientEnd.darkened]
+	}
+	var highlightedGradientColors: [UIColor] {
+		return [Theme.Color.accentGradientStart.darkened, Theme.Color.accentGradientEnd.darkened]
+	}
+	var disabledGradientColors: [UIColor] {
+		return [Theme.Color.accentGradientStart.lightened, Theme.Color.accentGradientEnd.lightened]
+	}
 
 	override var cornerRadius: CGFloat {
 		return 0.5 * bounds.size.height

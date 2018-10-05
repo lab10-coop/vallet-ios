@@ -127,6 +127,8 @@
 		D4C5CDB621490DC500AB67D7 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CDB321490DC500AB67D7 /* Shop.swift */; };
 		D4C5CDBB2149410800AB67D7 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CDBA2149410800AB67D7 /* DataBaseManager.swift */; };
 		D4C5CDBC2149410800AB67D7 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5CDBA2149410800AB67D7 /* DataBaseManager.swift */; };
+		D4C7F76021667925006D85B1 /* PrimaryIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C7F75F21667925006D85B1 /* PrimaryIconButton.swift */; };
+		D4C7F76121667925006D85B1 /* PrimaryIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C7F75F21667925006D85B1 /* PrimaryIconButton.swift */; };
 		D4C8C9212153A4EF00C831F0 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9202153A4EF00C831F0 /* Product.swift */; };
 		D4C8C9232153A4FA00C831F0 /* PriceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9222153A4FA00C831F0 /* PriceList.swift */; };
 		D4C8C9252153B3C200C831F0 /* CodingUserInfoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9242153B3C200C831F0 /* CodingUserInfoKey.swift */; };
@@ -306,6 +308,7 @@
 		D4C5CDA92149079400AB67D7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		D4C5CDB321490DC500AB67D7 /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		D4C5CDBA2149410800AB67D7 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
+		D4C7F75F21667925006D85B1 /* PrimaryIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryIconButton.swift; sourceTree = "<group>"; };
 		D4C8C9202153A4EF00C831F0 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		D4C8C9222153A4FA00C831F0 /* PriceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceList.swift; sourceTree = "<group>"; };
 		D4C8C9242153B3C200C831F0 /* CodingUserInfoKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingUserInfoKey.swift; sourceTree = "<group>"; };
@@ -836,6 +839,7 @@
 				D4C8C9A3215AAB3100C831F0 /* ButtonCustomizable.swift */,
 				D4C8C9A6215AAB4000C831F0 /* BaseButton.swift */,
 				D4C8C9AF215AAF3900C831F0 /* PrimaryRoundedButton.swift */,
+				D4C7F75F21667925006D85B1 /* PrimaryIconButton.swift */,
 				D4C8C9B2215ABFE600C831F0 /* SecondaryButton.swift */,
 				D4C8C9B5215AC02300C831F0 /* SecondaryDesctructiveButton.swift */,
 			);
@@ -1202,6 +1206,7 @@
 				D429F8C82142BF86004427F0 /* Token.swift in Sources */,
 				D429F8B421401528004427F0 /* Wallet.swift in Sources */,
 				D48D957721523F6000840707 /* ClientHistoryEventTableViewCell.swift in Sources */,
+				D4C7F76021667925006D85B1 /* PrimaryIconButton.swift in Sources */,
 				D429F8A821400DAE004427F0 /* Constants.swift in Sources */,
 				D48D956F21512BDE00840707 /* ValueEvent.swift in Sources */,
 				D4C8C95B215936AF00C831F0 /* ClientPriceListViewController.swift in Sources */,
@@ -1292,6 +1297,7 @@
 				D4C8C9272153B7CC00C831F0 /* PriceList.swift in Sources */,
 				D4C8C9B7215AC02300C831F0 /* SecondaryDesctructiveButton.swift in Sources */,
 				D4C8C94621552DA200C831F0 /* MainViewController.swift in Sources */,
+				D4C7F76121667925006D85B1 /* PrimaryIconButton.swift in Sources */,
 				D4C8C92B2153C73B00C831F0 /* JSONDecoder.swift in Sources */,
 				D429F8C92142BF87004427F0 /* Token.swift in Sources */,
 				D41A8E26215CF94800B0E8AE /* HistoryTableSectionFooterView.swift in Sources */,
