@@ -55,6 +55,16 @@ class IssueAddressViewController: UIViewController {
 		qrCodeReaderView.delegate = self
 
 		issueViewModel = IssueViewModel(with: shop)
+
+		PrivacyPermissionsManager.getPermission(for: .camera) { [weak self] (type, isGranted) in
+			if !isGranted {
+				guard let strongSelf = self
+					else {
+						return
+				}
+				PrivacyPermissionsManager.presentSettingsAlert(for: type, in: strongSelf)
+			}
+		}
 	}
 
 	@IBAction func close(_ sender: Any? = nil) {
