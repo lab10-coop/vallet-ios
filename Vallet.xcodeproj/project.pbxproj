@@ -107,6 +107,8 @@
 		D48D958A215290C100840707 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D9588215283A500840707 /* UserDefaultsManager.swift */; };
 		D4B0860921678AAD00DB623B /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B0860821678AAD00DB623B /* CurrencyFormatter.swift */; };
 		D4B0860A21678AAD00DB623B /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B0860821678AAD00DB623B /* CurrencyFormatter.swift */; };
+		D4B0860E216944F600DB623B /* PrivacyPermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B0860D216944F500DB623B /* PrivacyPermissionsManager.swift */; };
+		D4B0860F216944F600DB623B /* PrivacyPermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B0860D216944F500DB623B /* PrivacyPermissionsManager.swift */; };
 		D4BE2B56215DF62400146566 /* SegmentedControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4BE2B54215DF62300146566 /* SegmentedControlView.xib */; };
 		D4BE2B57215DF62400146566 /* SegmentedControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4BE2B54215DF62300146566 /* SegmentedControlView.xib */; };
 		D4BE2B58215DF62400146566 /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BE2B55215DF62300146566 /* SegmentedControlView.swift */; };
@@ -302,6 +304,7 @@
 		D48D958321525B0000840707 /* AdminHistoryEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminHistoryEventTableViewCell.xib; sourceTree = "<group>"; };
 		D48D9588215283A500840707 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		D4B0860821678AAD00DB623B /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
+		D4B0860D216944F500DB623B /* PrivacyPermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPermissionsManager.swift; sourceTree = "<group>"; };
 		D4BE2B54215DF62300146566 /* SegmentedControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegmentedControlView.xib; sourceTree = "<group>"; };
 		D4BE2B55215DF62300146566 /* SegmentedControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlView.swift; sourceTree = "<group>"; };
 		D4BE2B5A215E011D00146566 /* QRCodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeManager.swift; sourceTree = "<group>"; };
@@ -518,6 +521,7 @@
 				D48D9588215283A500840707 /* UserDefaultsManager.swift */,
 				D48D956B2151192A00840707 /* HistoryViewModel.swift */,
 				D4C8C9532158ECC600C831F0 /* PriceListViewModel.swift */,
+				D4B0860D216944F500DB623B /* PrivacyPermissionsManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1243,6 +1247,7 @@
 				D4C8C991215A9D9F00C831F0 /* LabelCustomizable.swift in Sources */,
 				D4C8C94521552DA200C831F0 /* MainViewController.swift in Sources */,
 				D429F8A621400D87004427F0 /* FaucetManager.swift in Sources */,
+				D4B0860E216944F600DB623B /* PrivacyPermissionsManager.swift in Sources */,
 				D42DD9432164EE320015261A /* StoredImage.swift in Sources */,
 				D429F8BB21416D9D004427F0 /* TokenFactory.swift in Sources */,
 				D443CDD0214F925000A7100F /* ClientAddressViewController.swift in Sources */,
@@ -1350,6 +1355,7 @@
 				D4C8C92F2153D87400C831F0 /* NetworkRequest.swift in Sources */,
 				D429F89121400A5A004427F0 /* AppDelegate.swift in Sources */,
 				D4C8C961215A105100C831F0 /* AdminStartViewController.swift in Sources */,
+				D4B0860F216944F600DB623B /* PrivacyPermissionsManager.swift in Sources */,
 				D4C8C995215A9E6500C831F0 /* Label.swift in Sources */,
 				D443CD99214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
 				D48D958A215290C100840707 /* UserDefaultsManager.swift in Sources */,
