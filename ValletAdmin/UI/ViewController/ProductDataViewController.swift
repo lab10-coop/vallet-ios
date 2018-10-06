@@ -198,12 +198,34 @@ extension ProductDataViewController {
 	}
 
 	private func presentImagePicker(source: UIImagePickerController.SourceType) {
-		let imagePickerController = UIImagePickerController()
-		imagePickerController.sourceType = source
-		imagePickerController.allowsEditing = true
-		imagePickerController.delegate = self
+		let permissionType: PrivacyPermissionType
+		switch source {
+		case .camera:
+			permissionType = .camera
+		case .photoLibrary:
+			permissionType = .photoLibrary
+		default:
+			return
+		}
 
-		present(imagePickerController, animated: true)
+		PrivacyPermissionsManager.getPermission(for: permissionType) { [weak self] (type, isGranted) in
+			guard let strongSelf = self
+				else {
+					return
+			}
+
+			if isGranted {
+				let imagePickerController = UIImagePickerController()
+				imagePickerController.sourceType = source
+				imagePickerController.allowsEditing = true
+				imagePickerController.delegate = strongSelf
+
+				strongSelf.present(imagePickerController, animated: true)
+			}
+			else {
+				PrivacyPermissionsManager.presentSettingsAlert(for: type, in: strongSelf)
+			}
+		}
 	}
 
 }

@@ -46,8 +46,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Camera access needed to scan QR codes and take photos of the products.</string>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>Photo library access needed to attach photo to the product.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Photo library access needed to attach a photo to the product.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>WorkSans-Regular.ttf</string>

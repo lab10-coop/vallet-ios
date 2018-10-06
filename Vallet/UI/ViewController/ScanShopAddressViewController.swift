@@ -42,6 +42,16 @@ class ScanShopAddressViewController: UIViewController {
 		
 		contentBackgroundView.addShadow()
 		contentBackgroundView.addRoundedCorners()
+
+		PrivacyPermissionsManager.getPermission(for: .camera) { [weak self] (type, isGranted) in
+			if !isGranted {
+				guard let strongSelf = self
+					else {
+						return
+				}
+				PrivacyPermissionsManager.presentSettingsAlert(for: type, in: strongSelf)
+			}
+		}
 	}
 
 	@IBAction func close(_ sender: Any? = nil) {
