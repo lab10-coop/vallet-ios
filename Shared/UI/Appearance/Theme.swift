@@ -42,6 +42,9 @@ struct Theme {
 
 		static let largeButtonContent = UIColor.white
 
+		static let incomingGraph = accent
+		static let outgoingGraph = accent.transparent(alpha: 0.4)
+		
 	}
 
 	// MARK: - Fonts

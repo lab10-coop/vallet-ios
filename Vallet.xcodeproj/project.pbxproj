@@ -213,6 +213,10 @@
 		D4C9AFCC216B5BF400F029BC /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C9AFCA216B5BF400F029BC /* Calendar.swift */; };
 		D4C9AFD2216B5E2D00F029BC /* DashboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C9AFD0216B5E2D00F029BC /* DashboardManager.swift */; };
 		D4C9AFD4216B701100F029BC /* HistoryViewModel+Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C9AFD3216B701100F029BC /* HistoryViewModel+Admin.swift */; };
+		D4C9AFDA216B71AB00F029BC /* MonthsGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C9AFD6216B71AA00F029BC /* MonthsGraphView.swift */; };
+		D4C9AFDB216B71AB00F029BC /* MonthsGraphView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C9AFD7216B71AB00F029BC /* MonthsGraphView.xib */; };
+		D4C9AFDC216B71AB00F029BC /* MonthIOGraphView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C9AFD8216B71AB00F029BC /* MonthIOGraphView.xib */; };
+		D4C9AFDD216B71AB00F029BC /* MonthIOGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C9AFD9216B71AB00F029BC /* MonthIOGraphView.swift */; };
 		D4CE256B215E912C00D41449 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE256A215E912C00D41449 /* User.swift */; };
 		D4CE256C215E942E00D41449 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE256A215E912C00D41449 /* User.swift */; };
 		D4DA57DC215CD71E00942ED7 /* HistoryTableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DA57DB215CD71E00942ED7 /* HistoryTableSectionHeaderView.swift */; };
@@ -368,6 +372,10 @@
 		D4C9AFCA216B5BF400F029BC /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		D4C9AFD0216B5E2D00F029BC /* DashboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardManager.swift; sourceTree = "<group>"; };
 		D4C9AFD3216B701100F029BC /* HistoryViewModel+Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryViewModel+Admin.swift"; sourceTree = "<group>"; };
+		D4C9AFD6216B71AA00F029BC /* MonthsGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthsGraphView.swift; sourceTree = "<group>"; };
+		D4C9AFD7216B71AB00F029BC /* MonthsGraphView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthsGraphView.xib; sourceTree = "<group>"; };
+		D4C9AFD8216B71AB00F029BC /* MonthIOGraphView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthIOGraphView.xib; sourceTree = "<group>"; };
+		D4C9AFD9216B71AB00F029BC /* MonthIOGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthIOGraphView.swift; sourceTree = "<group>"; };
 		D4CE256A215E912C00D41449 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D4DA57DB215CD71E00942ED7 /* HistoryTableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableSectionHeaderView.swift; sourceTree = "<group>"; };
 		D4DA57DE215CD73100942ED7 /* HistoryTableSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableSectionHeaderView.xib; sourceTree = "<group>"; };
@@ -583,6 +591,7 @@
 		D443CDC2214C009400A7100F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D4C9AFD5216B717300F029BC /* View */,
 				D48D958121525AE800840707 /* Cell */,
 				D4C8C9362155242000C831F0 /* Storyboard */,
 				D443CDC3214C00A100A7100F /* ViewController */,
@@ -870,6 +879,17 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
+		D4C9AFD5216B717300F029BC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D4C9AFD9216B71AB00F029BC /* MonthIOGraphView.swift */,
+				D4C9AFD8216B71AB00F029BC /* MonthIOGraphView.xib */,
+				D4C9AFD6216B71AA00F029BC /* MonthsGraphView.swift */,
+				D4C9AFD7216B71AB00F029BC /* MonthsGraphView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F210E04398A1C2678A4653B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1038,12 +1058,14 @@
 				D41A8E23215CF90E00B0E8AE /* HistoryTableSectionFooterView.xib in Resources */,
 				D4BE2B57215DF62400146566 /* SegmentedControlView.xib in Resources */,
 				D4C8C9502158E6DF00C831F0 /* ProductCollectionViewCell.xib in Resources */,
+				D4C9AFDB216B71AB00F029BC /* MonthsGraphView.xib in Resources */,
 				D443CDB7214BB3EE00A7100F /* TextInputView.xib in Resources */,
 				D429F89621400A5A004427F0 /* Main.storyboard in Resources */,
 				D4C8C984215A8BF000C831F0 /* Work Sans.plist in Resources */,
 				D443CD9B214AA0A500A7100F /* ShopTableViewCell.xib in Resources */,
 				D48D958521525B0000840707 /* AdminHistoryEventTableViewCell.xib in Resources */,
 				D4C8C973215A844400C831F0 /* WorkSans-Medium.ttf in Resources */,
+				D4C9AFDC216B71AB00F029BC /* MonthIOGraphView.xib in Resources */,
 				D443CDC1214BDB1600A7100F /* ActivityIndicatorView.xib in Resources */,
 				D4C8C981215A844400C831F0 /* WorkSans-Regular.ttf in Resources */,
 				D4DA57E0215CD73100942ED7 /* HistoryTableSectionHeaderView.xib in Resources */,
@@ -1349,6 +1371,7 @@
 				D4C8C9A5215AAB3200C831F0 /* ButtonCustomizable.swift in Sources */,
 				D4DA57DD215CD72200942ED7 /* HistoryTableSectionHeaderView.swift in Sources */,
 				D4BE2B59215DF62400146566 /* SegmentedControlView.swift in Sources */,
+				D4C9AFDD216B71AB00F029BC /* MonthIOGraphView.swift in Sources */,
 				D4C8C9262153B3C200C831F0 /* CodingUserInfoKey.swift in Sources */,
 				D4C8C987215A8D7B00C831F0 /* Theme.swift in Sources */,
 				D4C8C98F215A9D7300C831F0 /* BaseLabel.swift in Sources */,
@@ -1368,6 +1391,7 @@
 				D429F8A921400F1C004427F0 /* FaucetManager.swift in Sources */,
 				D4C8C92F2153D87400C831F0 /* NetworkRequest.swift in Sources */,
 				D429F89121400A5A004427F0 /* AppDelegate.swift in Sources */,
+				D4C9AFDA216B71AB00F029BC /* MonthsGraphView.swift in Sources */,
 				D4C8C961215A105100C831F0 /* AdminStartViewController.swift in Sources */,
 				D4B0860F216944F600DB623B /* PrivacyPermissionsManager.swift in Sources */,
 				D4C8C995215A9E6500C831F0 /* Label.swift in Sources */,
