@@ -209,6 +209,8 @@
 		D4C8C9B7215AC02300C831F0 /* SecondaryDesctructiveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9B5215AC02300C831F0 /* SecondaryDesctructiveButton.swift */; };
 		D4C8C9B9215AC19A00C831F0 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9B8215AC19A00C831F0 /* UIImage.swift */; };
 		D4C8C9BA215AC19A00C831F0 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C8C9B8215AC19A00C831F0 /* UIImage.swift */; };
+		D4C9AFCB216B5BF400F029BC /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C9AFCA216B5BF400F029BC /* Calendar.swift */; };
+		D4C9AFCC216B5BF400F029BC /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C9AFCA216B5BF400F029BC /* Calendar.swift */; };
 		D4CE256B215E912C00D41449 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE256A215E912C00D41449 /* User.swift */; };
 		D4CE256C215E942E00D41449 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE256A215E912C00D41449 /* User.swift */; };
 		D4DA57DC215CD71E00942ED7 /* HistoryTableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DA57DB215CD71E00942ED7 /* HistoryTableSectionHeaderView.swift */; };
@@ -361,6 +363,7 @@
 		D4C8C9B2215ABFE600C831F0 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		D4C8C9B5215AC02300C831F0 /* SecondaryDesctructiveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryDesctructiveButton.swift; sourceTree = "<group>"; };
 		D4C8C9B8215AC19A00C831F0 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		D4C9AFCA216B5BF400F029BC /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		D4CE256A215E912C00D41449 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D4DA57DB215CD71E00942ED7 /* HistoryTableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableSectionHeaderView.swift; sourceTree = "<group>"; };
 		D4DA57DE215CD73100942ED7 /* HistoryTableSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableSectionHeaderView.xib; sourceTree = "<group>"; };
@@ -553,6 +556,7 @@
 				D4C8C9A9215AABC200C831F0 /* UIButton.swift */,
 				D4C8C9AC215AAC1500C831F0 /* UIColor.swift */,
 				D4C8C9B8215AC19A00C831F0 /* UIImage.swift */,
+				D4C9AFCA216B5BF400F029BC /* Calendar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1259,6 +1263,7 @@
 				D460E63A2163757700829198 /* IPFSManager.swift in Sources */,
 				D4C8C9A4215AAB3200C831F0 /* ButtonCustomizable.swift in Sources */,
 				D4CE256B215E912C00D41449 /* User.swift in Sources */,
+				D4C9AFCB216B5BF400F029BC /* Calendar.swift in Sources */,
 				D443CDBA214BDABE00A7100F /* UIViewController.swift in Sources */,
 				D4BE2B5B215E011D00146566 /* QRCodeManager.swift in Sources */,
 				D48D957D2152515900840707 /* PendingValueEvent.swift in Sources */,
@@ -1314,6 +1319,7 @@
 				D4C8C9272153B7CC00C831F0 /* PriceList.swift in Sources */,
 				D4C8C9B7215AC02300C831F0 /* SecondaryDesctructiveButton.swift in Sources */,
 				D4C8C94621552DA200C831F0 /* MainViewController.swift in Sources */,
+				D4C9AFCC216B5BF400F029BC /* Calendar.swift in Sources */,
 				D4B0860A21678AAD00DB623B /* CurrencyFormatter.swift in Sources */,
 				D4C7F76121667925006D85B1 /* PrimaryIconButton.swift in Sources */,
 				D4C8C92B2153C73B00C831F0 /* JSONDecoder.swift in Sources */,
