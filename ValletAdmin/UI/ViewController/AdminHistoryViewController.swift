@@ -13,6 +13,12 @@ class AdminHistoryViewController: UIViewController {
 	@IBOutlet private var tableView: UITableView!
 	@IBOutlet private var totalSupplyLabel: UILabel!
 	@IBOutlet private var totalSupplyContainerView: UIView!
+	@IBOutlet private var dashboardContainerView: UIView!
+	@IBOutlet private var monthsGraphView: MonthsGraphView!
+	@IBOutlet private var outgoingTitleLabel: UILabel!
+	@IBOutlet private var outgoingValueLabel: UILabel!
+	@IBOutlet private var incomingTitleLabel: UILabel!
+	@IBOutlet private var incomingValueLabel: UILabel!
 
 	private lazy var refreshControl: UIRefreshControl = {
 		let refreshControl = UIRefreshControl()
@@ -67,23 +73,34 @@ class AdminHistoryViewController: UIViewController {
 		totalSupplyContainerView.addShadow()
 		totalSupplyContainerView.addRoundedCorners()
 
+		dashboardContainerView.addShadow()
+		dashboardContainerView.addRoundedCorners()
+
+		outgoingTitleLabel.textColor = Theme.Color.outgoingGraph
+		incomingTitleLabel.textColor = Theme.Color.incomingGraph
+
 		reloadData()
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
 		historyViewModel?.updateEvents()
-		reloadTableView()
+		reloadView()
 		updateTotalSupply()
 	}
 
-	private func reloadTableView() {
-		historyViewModel?.updateEvents()
-		guard let groupedEvents = historyViewModel?.groupedEvents
+	private func reloadView() {
+		guard let historyViewModel = historyViewModel
 			else {
 				return
 		}
-		self.groupedEvents = groupedEvents
+		historyViewModel.updateEvents()
+		self.groupedEvents = historyViewModel.groupedEvents
 		tableView.reloadData()
+
+		monthsGraphView.monthsData = historyViewModel.dashboardMonths(preceedingCount: 5)
+
+		incomingValueLabel.text = CurrencyFormatter.displayString(for: historyViewModel.incomingSum)
+		outgoingValueLabel.text = CurrencyFormatter.displayString(for: historyViewModel.outgoingSum)
 	}
 
 	@objc private func reloadData() {
@@ -93,7 +110,7 @@ class AdminHistoryViewController: UIViewController {
 					return
 			}
 			self?.refreshControl.endRefreshing()
-			self?.reloadTableView()
+			self?.reloadView()
 		})
 	}
 

@@ -47,7 +47,16 @@ class LargerTextLabel: BaseLabel {
 	}
 }
 
-class SmallTextLabel: BaseLabel {
+class SmallLightTextLabel: BaseLabel {
+	override var mode: LabelMode {
+		return .light
+	}
+	override var customFont: UIFont? {
+		return Theme.Font.smallTextFont
+	}
+}
+
+class SmallDarkTextLabel: BaseLabel {
 	override var mode: LabelMode {
 		return .normal
 	}
