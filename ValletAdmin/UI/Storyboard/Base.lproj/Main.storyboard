@@ -506,23 +506,23 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="768"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="LJx-VQ-XLK" customClass="BackgroundView" customModule="ValletAdmin" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="azm-Q3-cne" customClass="ContentBackgroundView" customModule="ValletAdmin" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="15.999999999999993" width="343" height="102.33333333333331"/>
+                                            <rect key="frame" x="16" y="15.999999999999996" width="343" height="55.666666666666657"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="AuZ-u4-tCJ">
-                                                    <rect key="frame" x="16" y="16" width="311" height="70.333333333333329"/>
+                                                    <rect key="frame" x="16" y="16" width="311" height="23.666666666666671"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Circulating vouchers:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3Z-2h-eV3" customClass="SmallLightTitleLabel" customModule="ValletAdmin" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="161.66666666666666" height="20.333333333333332"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Circulating vouchers:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3Z-2h-eV3" customClass="SmallLightTitleLabel" customModule="ValletAdmin" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="161.66666666666666" height="0.0"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubr-j2-YBC" customClass="LargeTextLabel" customModule="ValletAdmin" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="20.333333333333336" width="50" height="50.000000000000007"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubr-j2-YBC" customClass="LargeTextLabel" customModule="ValletAdmin" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="23.666666666666668"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -538,16 +538,80 @@
                                                 <constraint firstItem="AuZ-u4-tCJ" firstAttribute="top" secondItem="azm-Q3-cne" secondAttribute="top" constant="16" id="gwW-P8-XQm"/>
                                             </constraints>
                                         </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwo-L8-NdI" customClass="ContentBackgroundView" customModule="ValletAdmin" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="87.666666666666671" width="343" height="224.33333333333331"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xA4-rY-TWm" customClass="MonthsGraphView" customModule="ValletAdmin" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="16" width="311" height="100"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="9Zf-Fp-QDh"/>
+                                                    </constraints>
+                                                </view>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="6R5-fh-CDZ">
+                                                    <rect key="frame" x="16" y="132" width="311" height="76.333333333333314"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="brg-L8-zwC">
+                                                            <rect key="frame" x="0.0" y="0.0" width="155.66666666666666" height="76.333333333333329"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outgoing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBR-XQ-D5m" customClass="SmallLightTitleLabel" customModule="ValletAdmin" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="155.66666666666666" height="20.333333333333332"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEH-0j-6PP">
+                                                                    <rect key="frame" x="0.0" y="26.333333333333343" width="155.66666666666666" height="50"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="FAV-B4-IIV">
+                                                            <rect key="frame" x="155.66666666666663" y="0.0" width="155.33333333333337" height="76.333333333333329"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incoming" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQD-u5-vsE" customClass="SmallLightTitleLabel" customModule="ValletAdmin" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="155.33333333333334" height="20.333333333333332"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0op-VV-6hz">
+                                                                    <rect key="frame" x="0.0" y="26.333333333333343" width="155.33333333333334" height="50"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6R5-fh-CDZ" firstAttribute="leading" secondItem="xA4-rY-TWm" secondAttribute="leading" id="Atp-S0-ONz"/>
+                                                <constraint firstAttribute="bottom" secondItem="6R5-fh-CDZ" secondAttribute="bottom" constant="16" id="BfY-3E-WlM"/>
+                                                <constraint firstItem="6R5-fh-CDZ" firstAttribute="trailing" secondItem="xA4-rY-TWm" secondAttribute="trailing" id="CtM-ea-3e0"/>
+                                                <constraint firstItem="6R5-fh-CDZ" firstAttribute="top" secondItem="xA4-rY-TWm" secondAttribute="bottom" constant="16" id="J4L-Wc-s2e"/>
+                                                <constraint firstAttribute="trailing" secondItem="xA4-rY-TWm" secondAttribute="trailing" constant="16" id="Xeh-cU-ef6"/>
+                                                <constraint firstItem="xA4-rY-TWm" firstAttribute="top" secondItem="kwo-L8-NdI" secondAttribute="top" constant="16" id="dVs-ro-myf"/>
+                                                <constraint firstItem="xA4-rY-TWm" firstAttribute="leading" secondItem="kwo-L8-NdI" secondAttribute="leading" constant="16" id="pyT-UF-s3Q"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="azm-Q3-cne" secondAttribute="trailing" constant="16" id="7mV-rT-Nta"/>
+                                        <constraint firstAttribute="bottom" secondItem="kwo-L8-NdI" secondAttribute="bottom" constant="8" id="AC4-BF-0DL"/>
+                                        <constraint firstItem="kwo-L8-NdI" firstAttribute="leading" secondItem="azm-Q3-cne" secondAttribute="leading" id="W6f-iw-gzG"/>
+                                        <constraint firstItem="kwo-L8-NdI" firstAttribute="trailing" secondItem="azm-Q3-cne" secondAttribute="trailing" id="Zjc-Fo-FO7"/>
                                         <constraint firstItem="azm-Q3-cne" firstAttribute="top" secondItem="LJx-VQ-XLK" secondAttribute="top" constant="16" id="gtN-my-viL"/>
                                         <constraint firstItem="azm-Q3-cne" firstAttribute="leading" secondItem="LJx-VQ-XLK" secondAttribute="leading" constant="16" id="srR-Fg-b7H"/>
+                                        <constraint firstItem="kwo-L8-NdI" firstAttribute="top" secondItem="azm-Q3-cne" secondAttribute="bottom" constant="16" id="vHA-N3-ohJ"/>
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="eCr-jX-4Wb" customClass="BackgroundView" customModule="ValletAdmin" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="112" width="375" height="76"/>
+                                    <rect key="frame" x="0.0" y="320" width="375" height="76"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
@@ -576,6 +640,12 @@
                         <viewLayoutGuide key="safeArea" id="1aI-kQ-E56"/>
                     </view>
                     <connections>
+                        <outlet property="dashboardContainerView" destination="kwo-L8-NdI" id="9Gi-4k-bk4"/>
+                        <outlet property="incomingTitleLabel" destination="aQD-u5-vsE" id="nFH-6u-rJF"/>
+                        <outlet property="incomingValueLabel" destination="0op-VV-6hz" id="CGK-Lz-mD4"/>
+                        <outlet property="monthsGraphView" destination="xA4-rY-TWm" id="YW1-RB-uQY"/>
+                        <outlet property="outgoingTitleLabel" destination="VBR-XQ-D5m" id="S4d-9I-idc"/>
+                        <outlet property="outgoingValueLabel" destination="yEH-0j-6PP" id="EvV-F0-VPh"/>
                         <outlet property="tableView" destination="jKM-qB-Afb" id="BMq-Yh-6vV"/>
                         <outlet property="totalSupplyContainerView" destination="azm-Q3-cne" id="4bx-DR-TeK"/>
                         <outlet property="totalSupplyLabel" destination="Ubr-j2-YBC" id="JJE-42-0SQ"/>
@@ -583,7 +653,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iWQ-Q1-iEE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2837.5999999999999" y="133.5832083958021"/>
+            <point key="canvasLocation" x="2837.5999999999999" y="133.00492610837438"/>
         </scene>
         <!--Admin Price List View Controller-->
         <scene sceneID="jWx-vb-p9T">
