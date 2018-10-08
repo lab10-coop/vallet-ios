@@ -7,14 +7,13 @@
 //
 
 import Foundation
-import web3swift
 
 class NetworkManager {
 
 	static func performDataRequest(request: URLRequestConvertible, completion: @escaping (Result<Data?>) -> Void) {
 		guard let urlRequest = request.asURLRequest()
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "urlRequest", object: "NetworkManager", function: #function)))
 				return
 		}
 

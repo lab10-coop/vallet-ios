@@ -8,7 +8,6 @@
 
 import Foundation
 import CoreData
-import web3swift
 
 @objc(Shop)
 public class Shop: NSManagedObject {

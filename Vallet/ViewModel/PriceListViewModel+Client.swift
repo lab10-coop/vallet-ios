@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import web3swift
 
 extension PriceListViewModel {
 
@@ -20,7 +19,7 @@ extension PriceListViewModel {
 			product.price > 0,
 			let pendingEvent = PendingValueEvent(in: managedObjectContext, shop: shop, type: .redeem, value: product.price, productName: product.name, clientAddress: clientAddress, date: Date())
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "pendingEvent", object: "PriceListViewModel", function: #function)))
 				return
 		}
 
@@ -33,7 +32,7 @@ extension PriceListViewModel {
 				guard let strongSelf = self,
 					let _ = ValueEvent(from: pendingEvent, transactionHash: receipt.transactionHash, blockHash: receipt.blockHash, blockNumber: Int64(receipt.blockNumber), status: ValueEventStatus(from: receipt.status))
 					else {
-						completion(Result.failure(Web3Error.dataError))
+						completion(Result.failure(ValletError.storeInsertion(object: "ValueEvent", function: #function)))
 						return
 				}
 				DataBaseManager.save(managedContext: strongSelf.managedObjectContext)

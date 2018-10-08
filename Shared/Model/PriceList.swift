@@ -22,13 +22,18 @@ public class PriceList: NSManagedObject, Codable {
 		self.name = shop.name
 	}
 
-	static func create(in managedContext: NSManagedObjectContext, jsonData: Data) -> PriceList? {
+	static func create(in managedContext: NSManagedObjectContext, jsonData: Data) throws -> PriceList {
 		guard let jsonDecoder = JSONDecoder(with: managedContext)
 			else {
-				return nil
+				throw ValletError.unwrapping(property: "jsonDecoder", object: "PriceList", function: #function)
 		}
-		let priceList = try? jsonDecoder.decode(PriceList.self, from: jsonData)
-		return priceList
+		do {
+			let priceList = try jsonDecoder.decode(PriceList.self, from: jsonData)
+			return priceList
+		}
+		catch {
+			throw error
+		}
 	}
 
 	// MARK: - Codable

@@ -10,7 +10,6 @@ import UIKit
 import SwiftIpfsApi
 import SwiftMultihash
 import SwiftHex
-import web3swift
 
 class IPFSManager {
 
@@ -27,20 +26,19 @@ class IPFSManager {
 	}
 
 	static func loadImage(hash: String, completion: @escaping (Result<UIImage>) -> Void) {
-		guard let api = shared.api,
-		let dataHash = Multihash.from(hashString: hash)
+		guard let api = shared.api
 			else {
-				completion(Result.failure(Web3Error.dataError))
+				completion(Result.failure(ValletError.unwrapping(property: "api", object: "IPFSManager", function: #function)))
 				return
 		}
-
 		do {
+			let dataHash = try Multihash.from(hashString: hash)
 			try api.get(dataHash) { (dataArray) in
 				DispatchQueue.main.async {
 					let imageData = Data(bytes: dataArray)
-					guard let image = UIImage.init(data: imageData)
+					guard let image = UIImage(data: imageData)
 						else {
-							completion(Result.failure(Web3Error.dataError))
+							completion(Result.failure(ValletError.dataDecoding(object: "image", function: #function)))
 							return
 					}
 					completion(Result.success(image))
@@ -48,17 +46,14 @@ class IPFSManager {
 			}
 		}
 		catch {
-			DispatchQueue.main.async {
-				print("IPFSManager load image error: \(error.localizedDescription)")
-				completion(Result.failure(error))
-			}
+			completion(Result.failure(error))
 		}
 	}
 
 	static func upload(image: UIImage, completion: @escaping (Result<String>) -> Void) {
 		guard let imageData = image.jpegData(compressionQuality: Constants.Image.jpegCompression)
 			else {
-				completion(Result.failure(Web3Error.dataError))
+				completion(Result.failure(ValletError.dataEncoding(object: "image", function: #function)))
 				return
 		}
 		upload(data: imageData, completion: completion)
@@ -67,7 +62,7 @@ class IPFSManager {
 	static func upload(data: Data, completion: @escaping (Result<String>) -> Void) {
 		guard let api = shared.api
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "api", object: "IPFSManager", function: #function)))
 				return
 		}
 		do {
@@ -76,7 +71,7 @@ class IPFSManager {
 					guard let merkleNode = merkleArray.first,
 						let hashString = merkleNode.hashString
 						else {
-							completion(Result.failure(Web3Error.dataError))
+							completion(Result.failure(ValletError.dataDecoding(object: "hashString", function: #function)))
 							return
 					}
 					completion(Result.success(hashString))
@@ -85,7 +80,6 @@ class IPFSManager {
 		}
 		catch {
 			DispatchQueue.main.async {
-				print("IPFSManager add error: \(error.localizedDescription)")
 				completion(Result.failure(error))
 			}
 		}
@@ -107,8 +101,13 @@ extension MerkleNode {
 
 extension Multihash {
 
-	static func from(hashString: String) -> Multihash? {
-		return try? SwiftMultihash.fromB58String(hashString)
+	static func from(hashString: String) throws -> Multihash {
+		do {
+			return try SwiftMultihash.fromB58String(hashString)
+		}
+		catch {
+			throw error
+		}
 	}
 
 }

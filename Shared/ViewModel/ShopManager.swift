@@ -91,7 +91,7 @@ class ShopManager {
 		guard let shop = shop ?? selectedShop,
 			let token = token(for: shop)
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "shop", object: "ShopManager", function: #function)))
 				return
 		}
 		token.totalSupply { (result) in
@@ -103,7 +103,7 @@ class ShopManager {
 		guard let shop = shop ?? selectedShop,
 			let token = token(for: shop)
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "shop", object: "ShopManager", function: #function)))
 				return
 		}
 		token.balance(for: address) { (result) in
@@ -117,7 +117,7 @@ class ShopManager {
 		guard let shop = shop ?? selectedShop,
 			let shopAddress = shop.address
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "shop", object: "ShopManager", function: #function)))
 				return
 		}
 
@@ -126,7 +126,7 @@ class ShopManager {
 			case .success(let listJSONData):
 				guard let listJSONData = listJSONData
 					else {
-						completion(Result.failure(Web3Error.dataError))
+						completion(Result.failure(ValletError.networkData(function: #function)))
 						return
 				}
 				// Update if the price list for the shop already exists.
@@ -136,13 +136,18 @@ class ShopManager {
 					return
 				}
 				// Create a new price list with the loaded data
-				guard let managedContext = shop.managedObjectContext,
-					let loadedPriceList = PriceList.create(in: managedContext, jsonData: listJSONData)
+				guard let managedContext = shop.managedObjectContext
 					else {
-						completion(Result.failure(Web3Error.dataError))
+						completion(Result.failure(ValletError.unwrapping(property: "managedObjectContext", object: "ShopManager", function: #function)))
 						return
 				}
-				completion(Result.success(loadedPriceList))
+				do {
+					let loadedPriceList = try PriceList.create(in: managedContext, jsonData: listJSONData)
+					completion(Result.success(loadedPriceList))
+				}
+				catch {
+					completion(Result.failure(error))
+				}
 			case .failure(let error):
 				completion(Result.failure(error))
 			}

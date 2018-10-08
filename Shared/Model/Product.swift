@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 import UIKit
-import web3swift
 
 @objc(Product)
 public class Product: NSManagedObject, Codable {
@@ -135,7 +134,7 @@ extension Product {
 		}
 		// There is no image
 		else {
-			completion(Result.failure(Web3Error.dataError))
+			completion(Result.failure(ValletError.nonexistingData(function: #function)))
 		}
 	}
 

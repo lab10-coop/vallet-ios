@@ -35,7 +35,7 @@ class IssueViewModel {
 			let clientEthAddress = EthereumAddress(clientAddress),
 			let pendingEvent = PendingValueEvent(in: managedObjectContext, shop: shop, type: .issue, value: Int64(amount), clientAddress: clientAddress, date: Date())
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "clientEthAddress, pendingEvent", object: "IssueViewModel", function: #function)))
 				return
 		}
 
@@ -48,7 +48,7 @@ class IssueViewModel {
 				guard let strongSelf = self,
 					let _ = ValueEvent(from: pendingEvent, transactionHash: receipt.transactionHash, blockHash: receipt.blockHash, blockNumber: Int64(receipt.blockNumber), status: ValueEventStatus(from: receipt.status))
 					else {
-						completion(Result.failure(Web3Error.dataError))
+						completion(Result.failure(ValletError.storeInsertion(object: "ValueEvent", function: #function)))
 						return
 				}
 				DataBaseManager.save(managedContext: strongSelf.managedObjectContext)

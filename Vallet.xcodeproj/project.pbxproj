@@ -217,6 +217,8 @@
 		D4C9AFDB216B71AB00F029BC /* MonthsGraphView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C9AFD7216B71AB00F029BC /* MonthsGraphView.xib */; };
 		D4C9AFDC216B71AB00F029BC /* MonthIOGraphView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C9AFD8216B71AB00F029BC /* MonthIOGraphView.xib */; };
 		D4C9AFDD216B71AB00F029BC /* MonthIOGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C9AFD9216B71AB00F029BC /* MonthIOGraphView.swift */; };
+		D4C9AFE0216B852D00F029BC /* ValletError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C9AFDF216B852D00F029BC /* ValletError.swift */; };
+		D4C9AFE1216B852D00F029BC /* ValletError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C9AFDF216B852D00F029BC /* ValletError.swift */; };
 		D4CE256B215E912C00D41449 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE256A215E912C00D41449 /* User.swift */; };
 		D4CE256C215E942E00D41449 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE256A215E912C00D41449 /* User.swift */; };
 		D4DA57DC215CD71E00942ED7 /* HistoryTableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DA57DB215CD71E00942ED7 /* HistoryTableSectionHeaderView.swift */; };
@@ -376,6 +378,7 @@
 		D4C9AFD7216B71AB00F029BC /* MonthsGraphView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthsGraphView.xib; sourceTree = "<group>"; };
 		D4C9AFD8216B71AB00F029BC /* MonthIOGraphView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthIOGraphView.xib; sourceTree = "<group>"; };
 		D4C9AFD9216B71AB00F029BC /* MonthIOGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthIOGraphView.swift; sourceTree = "<group>"; };
+		D4C9AFDF216B852D00F029BC /* ValletError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValletError.swift; sourceTree = "<group>"; };
 		D4CE256A215E912C00D41449 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D4DA57DB215CD71E00942ED7 /* HistoryTableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableSectionHeaderView.swift; sourceTree = "<group>"; };
 		D4DA57DE215CD73100942ED7 /* HistoryTableSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableSectionHeaderView.xib; sourceTree = "<group>"; };
@@ -500,6 +503,7 @@
 				D429F8A421400D34004427F0 /* BlockChain */,
 				D460E6382163754D00829198 /* IPFS */,
 				D4C8C92C2153D81D00C831F0 /* Network */,
+				D4C9AFDE216B850A00F029BC /* Error */,
 				D443CDA7214AA72000A7100F /* Extensions */,
 				D4C8C93A215524AE00C831F0 /* Assets */,
 			);
@@ -888,6 +892,14 @@
 				D4C9AFD7216B71AB00F029BC /* MonthsGraphView.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D4C9AFDE216B850A00F029BC /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				D4C9AFDF216B852D00F029BC /* ValletError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		F210E04398A1C2678A4653B5 /* Frameworks */ = {
@@ -1298,6 +1310,7 @@
 				D4C8C9B3215ABFE600C831F0 /* SecondaryButton.swift in Sources */,
 				D48D95682151130700840707 /* ShopMenuViewController+Client.swift in Sources */,
 				D443CDB3214BB2DE00A7100F /* UIView.swift in Sources */,
+				D4C9AFE0216B852D00F029BC /* ValletError.swift in Sources */,
 				D4C8C9A7215AAB4000C831F0 /* BaseButton.swift in Sources */,
 				D48D95602150F67000840707 /* ShopManager+Client.swift in Sources */,
 				D48D9589215283A500840707 /* UserDefaultsManager.swift in Sources */,
@@ -1349,6 +1362,7 @@
 				D4C8C94621552DA200C831F0 /* MainViewController.swift in Sources */,
 				D4C9AFCC216B5BF400F029BC /* Calendar.swift in Sources */,
 				D4B0860A21678AAD00DB623B /* CurrencyFormatter.swift in Sources */,
+				D4C9AFE1216B852D00F029BC /* ValletError.swift in Sources */,
 				D4C7F76121667925006D85B1 /* PrimaryIconButton.swift in Sources */,
 				D4C8C92B2153C73B00C831F0 /* JSONDecoder.swift in Sources */,
 				D429F8C92142BF87004427F0 /* Token.swift in Sources */,

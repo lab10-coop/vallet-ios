@@ -41,7 +41,7 @@ class TokenFactory: ContractProtocol {
 
 		guard let intermediate = transactionIntermediate(method: Method.createTokenContract.rawValue, parameters: [NSString(string: name), NSString(string: type.rawValue), BigUInt(decimals) as AnyObject], options: options)
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "transactionIntermediate", object: "TokenFactory", function: #function)))
 				return
 		}
 
@@ -50,7 +50,7 @@ class TokenFactory: ContractProtocol {
 			case .success(let transactionSendingResult):
 				guard let strongSelf = self
 					else {
-						completion(Result.failure(Web3Error.unknownError))
+						completion(Result.failure(ValletError.unwrapping(property: "self", object: "TokenFactory", function: #function)))
 						return
 				}
 				strongSelf.loadCreatedShop(from: transactionSendingResult) { (result) in
@@ -70,7 +70,7 @@ class TokenFactory: ContractProtocol {
 	func loadAllCreatedShops(for address: EthereumAddress, completion: @escaping (Result<[ShopIntermediate]>) -> Void) {
 		guard let contract = contract
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "contract", object: "TokenFactory", function: #function)))
 				return
 		}
 
@@ -96,7 +96,7 @@ class TokenFactory: ContractProtocol {
 		Web3Manager.getTransactionReceipt(for: transactionSendingResult.hash) { [weak self] (receiptResult) in
 			guard let strongSelf = self
 				else {
-					completion(Result.failure(Web3Error.unknownError))
+					completion(Result.failure(ValletError.unwrapping(property: "self", object: "TokenFactory", function: #function)))
 					return
 			}
 			switch receiptResult {
@@ -119,7 +119,7 @@ class TokenFactory: ContractProtocol {
 		guard let contract = contract,
 			let eventParser = contract.createEventParser(Constants.BlockChain.Event.tokenCreated, filter: nil)
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "contract, eventParser", object: "TokenFactory", function: #function)))
 				return
 		}
 
@@ -132,7 +132,7 @@ class TokenFactory: ContractProtocol {
 					guard let decodedResult = parsedEvents.first?.decodedResult,
 						let shop = ShopIntermediate(decodedLog: decodedResult)
 						else {
-							completion(Result.failure(Web3Error.dataError))
+							completion(Result.failure(ValletError.dataDecoding(object: "ShopIntermediate", function: #function)))
 							return
 					}
 					completion(Result.success(shop))
