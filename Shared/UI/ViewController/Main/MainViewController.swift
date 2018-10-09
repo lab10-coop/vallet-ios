@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, ErrorContaining {
 
 	@IBOutlet var contentSegmentedView: SegmentedControlView!
 	@IBOutlet var containerView: UIView!
@@ -20,6 +20,8 @@ class MainViewController: UIViewController {
 
 	var pageViewController: UIPageViewController?
 	var viewControllers = [UIViewController]()
+
+	var error: Error?
 
 	var shop: Shop? {
 		didSet {
@@ -45,13 +47,22 @@ class MainViewController: UIViewController {
 		self.shop = ShopManager.selectedShop
 	}
 
-	static func makeAppRootViewController() {
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		if let error = error {
+			NotificationView.drop(error: error)
+			self.error = nil
+		}
+	}
+
+	static func makeAppRootViewController(error: Error? = nil) {
 		let storyboard = UIStoryboard(name: "Shared", bundle: Bundle.main)
 		guard let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController,
 			let appDelegate = UIApplication.shared.delegate as? AppDelegate
 			else {
 				return
 		}
+		mainViewController.error = error
 
 		appDelegate.window?.rootViewController = mainViewController
 	}

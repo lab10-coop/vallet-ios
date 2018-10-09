@@ -17,6 +17,7 @@ enum ValletError: Error {
 	case nonexistingData(function: String?)
 	case rawValueConversion(object: String, function: String?)
 	case storeInsertion(object: String, function: String?)
+	case wallet(object: String, function: String?)
 
 }
 
@@ -38,6 +39,8 @@ extension ValletError {
 			return NSLocalizedString("Raw Value Error", comment: "Error notification title")
 		case .storeInsertion:
 			return NSLocalizedString("Store Insertion Error", comment: "Error notification title")
+		case .wallet:
+			return NSLocalizedString("Wallet Error", comment: "Error notification title")
 		}
 	}
 
@@ -75,7 +78,11 @@ extension ValletError: LocalizedError {
 		case .storeInsertion(let object, let function):
 			let descriptionFormat = NSLocalizedString("Failed to insert %@ in managed object context (function: %@)", comment: "Error description")
 			return String(format: descriptionFormat, object, function ?? "")
-			
+
+		case .wallet(let object, let function):
+			let descriptionFormat = NSLocalizedString("Failed to get %@ to open wallet (function: %@)", comment: "Error description")
+			return String(format: descriptionFormat, object, function ?? "")
+
 		}
 	}
 

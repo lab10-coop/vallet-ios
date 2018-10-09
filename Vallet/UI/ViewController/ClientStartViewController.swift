@@ -9,19 +9,23 @@
 import UIKit
 import KeyboardLayoutGuide
 
-class ClientStartViewController: UIViewController {
+class ClientStartViewController: UIViewController, ErrorContaining {
 
 	@IBOutlet private var containerView: UIView!
 	@IBOutlet private var nameInputView: TextInputView!
 	@IBOutlet private var submitButton: UIButton!
 
-	static func makeAppRootViewController() {
+	var error: Error?
+
+	static func makeAppRootViewController(error: Error? = nil) {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 		guard let startViewController = storyboard.instantiateViewController(withIdentifier: "ClientStartViewController") as? ClientStartViewController,
 			let appDelegate = UIApplication.shared.delegate as? AppDelegate
 			else {
 				return
 		}
+
+		startViewController.error = error
 
 		appDelegate.window?.rootViewController = startViewController
 	}
@@ -38,6 +42,14 @@ class ClientStartViewController: UIViewController {
 		}
 
 		containerView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor).isActive = true
+	}
+
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		if let error = error {
+			NotificationView.drop(error: error)
+			self.error = nil
+		}
 	}
 
 	@IBAction func hideKeyboard(_ sender: Any? = nil) {
