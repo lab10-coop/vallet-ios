@@ -225,6 +225,10 @@
 		D4DA57DD215CD72200942ED7 /* HistoryTableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DA57DB215CD71E00942ED7 /* HistoryTableSectionHeaderView.swift */; };
 		D4DA57DF215CD73100942ED7 /* HistoryTableSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4DA57DE215CD73100942ED7 /* HistoryTableSectionHeaderView.xib */; };
 		D4DA57E0215CD73100942ED7 /* HistoryTableSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4DA57DE215CD73100942ED7 /* HistoryTableSectionHeaderView.xib */; };
+		D4EC296B216CAE2F009D6A8B /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EC296A216CAE2F009D6A8B /* NotificationView.swift */; };
+		D4EC296C216CAE2F009D6A8B /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EC296A216CAE2F009D6A8B /* NotificationView.swift */; };
+		D4EC296E216CAE40009D6A8B /* NotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4EC296D216CAE40009D6A8B /* NotificationView.xib */; };
+		D4EC296F216CAE40009D6A8B /* NotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4EC296D216CAE40009D6A8B /* NotificationView.xib */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -382,6 +386,8 @@
 		D4CE256A215E912C00D41449 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D4DA57DB215CD71E00942ED7 /* HistoryTableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableSectionHeaderView.swift; sourceTree = "<group>"; };
 		D4DA57DE215CD73100942ED7 /* HistoryTableSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableSectionHeaderView.xib; sourceTree = "<group>"; };
+		D4EC296A216CAE2F009D6A8B /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		D4EC296D216CAE40009D6A8B /* NotificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -588,6 +594,8 @@
 				D443CDBF214BDB1600A7100F /* ActivityIndicatorView.xib */,
 				D4BE2B55215DF62300146566 /* SegmentedControlView.swift */,
 				D4BE2B54215DF62300146566 /* SegmentedControlView.xib */,
+				D4EC296A216CAE2F009D6A8B /* NotificationView.swift */,
+				D4EC296D216CAE40009D6A8B /* NotificationView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1041,6 +1049,7 @@
 				D429F85421400572004427F0 /* Main.storyboard in Resources */,
 				D4C8C983215A8BF000C831F0 /* Work Sans.plist in Resources */,
 				D443CD9A214AA0A500A7100F /* ShopTableViewCell.xib in Resources */,
+				D4EC296E216CAE40009D6A8B /* NotificationView.xib in Resources */,
 				D48D957921523F6000840707 /* ClientHistoryEventTableViewCell.xib in Resources */,
 				D4C8C972215A844400C831F0 /* WorkSans-Medium.ttf in Resources */,
 				D443CDC0214BDB1600A7100F /* ActivityIndicatorView.xib in Resources */,
@@ -1073,6 +1082,7 @@
 				D4C9AFDB216B71AB00F029BC /* MonthsGraphView.xib in Resources */,
 				D443CDB7214BB3EE00A7100F /* TextInputView.xib in Resources */,
 				D429F89621400A5A004427F0 /* Main.storyboard in Resources */,
+				D4EC296F216CAE40009D6A8B /* NotificationView.xib in Resources */,
 				D4C8C984215A8BF000C831F0 /* Work Sans.plist in Resources */,
 				D443CD9B214AA0A500A7100F /* ShopTableViewCell.xib in Resources */,
 				D48D958521525B0000840707 /* AdminHistoryEventTableViewCell.xib in Resources */,
@@ -1271,6 +1281,7 @@
 				D48D956F21512BDE00840707 /* ValueEvent.swift in Sources */,
 				D4C8C95B215936AF00C831F0 /* ClientPriceListViewController.swift in Sources */,
 				D4C8C986215A8D7B00C831F0 /* Theme.swift in Sources */,
+				D4EC296B216CAE2F009D6A8B /* NotificationView.swift in Sources */,
 				D4C8C9B6215AC02300C831F0 /* SecondaryDesctructiveButton.swift in Sources */,
 				D4C8C98E215A9D7300C831F0 /* BaseLabel.swift in Sources */,
 				D4C8C9AD215AAC1500C831F0 /* UIColor.swift in Sources */,
@@ -1382,6 +1393,7 @@
 				D4C8C9592159058600C831F0 /* PriceListViewModel+Admin.swift in Sources */,
 				D4C8C9542158ECC600C831F0 /* PriceListViewModel.swift in Sources */,
 				D4C8C9352153DA7D00C831F0 /* HTTPMethod.swift in Sources */,
+				D4EC296C216CAE2F009D6A8B /* NotificationView.swift in Sources */,
 				D4C8C9A5215AAB3200C831F0 /* ButtonCustomizable.swift in Sources */,
 				D4DA57DD215CD72200942ED7 /* HistoryTableSectionHeaderView.swift in Sources */,
 				D4BE2B59215DF62400146566 /* SegmentedControlView.swift in Sources */,
