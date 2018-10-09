@@ -20,6 +20,29 @@ enum ValletError: Error {
 
 }
 
+extension ValletError {
+
+	var localizedNotificationTitle: String {
+		switch self {
+		case .unwrapping:
+			return NSLocalizedString("Unwrapping Error", comment: "Error notification title")
+		case .networkData:
+			return NSLocalizedString("Network Data Error", comment: "Error notification title")
+		case .dataDecoding:
+			return NSLocalizedString("Data Decoding Error", comment: "Error notification title")
+		case .dataEncoding:
+			return NSLocalizedString("Data Encoding Error", comment: "Error notification title")
+		case .nonexistingData:
+			return NSLocalizedString("No Data Error", comment: "Error notification title")
+		case .rawValueConversion:
+			return NSLocalizedString("Raw Value Error", comment: "Error notification title")
+		case .storeInsertion:
+			return NSLocalizedString("Store Insertion Error", comment: "Error notification title")
+		}
+	}
+
+}
+
 extension ValletError: LocalizedError {
 
 	var errorDescription: String? {

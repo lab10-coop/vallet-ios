@@ -229,6 +229,8 @@
 		D4EC296C216CAE2F009D6A8B /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EC296A216CAE2F009D6A8B /* NotificationView.swift */; };
 		D4EC296E216CAE40009D6A8B /* NotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4EC296D216CAE40009D6A8B /* NotificationView.xib */; };
 		D4EC296F216CAE40009D6A8B /* NotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4EC296D216CAE40009D6A8B /* NotificationView.xib */; };
+		D4EC2971216CB2D1009D6A8B /* ErrorNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EC2970216CB2D1009D6A8B /* ErrorNotificationView.swift */; };
+		D4EC2972216CB2D1009D6A8B /* ErrorNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EC2970216CB2D1009D6A8B /* ErrorNotificationView.swift */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -388,6 +390,7 @@
 		D4DA57DE215CD73100942ED7 /* HistoryTableSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableSectionHeaderView.xib; sourceTree = "<group>"; };
 		D4EC296A216CAE2F009D6A8B /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		D4EC296D216CAE40009D6A8B /* NotificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationView.xib; sourceTree = "<group>"; };
+		D4EC2970216CB2D1009D6A8B /* ErrorNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorNotificationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -906,6 +909,7 @@
 			isa = PBXGroup;
 			children = (
 				D4C9AFDF216B852D00F029BC /* ValletError.swift */,
+				D4EC2970216CB2D1009D6A8B /* ErrorNotificationView.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -1308,6 +1312,7 @@
 				D443CDD0214F925000A7100F /* ClientAddressViewController.swift in Sources */,
 				D443CD98214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
 				D4C8C95F21596BE100C831F0 /* PaymentConfirmationViewController.swift in Sources */,
+				D4EC2971216CB2D1009D6A8B /* ErrorNotificationView.swift in Sources */,
 				D4C8C92E2153D87400C831F0 /* NetworkRequest.swift in Sources */,
 				D48D95622150FD7700840707 /* ScanShopAddressViewController.swift in Sources */,
 				D4C8C9B9215AC19A00C831F0 /* UIImage.swift in Sources */,
@@ -1375,6 +1380,7 @@
 				D4B0860A21678AAD00DB623B /* CurrencyFormatter.swift in Sources */,
 				D4C9AFE1216B852D00F029BC /* ValletError.swift in Sources */,
 				D4C7F76121667925006D85B1 /* PrimaryIconButton.swift in Sources */,
+				D4EC2972216CB2D1009D6A8B /* ErrorNotificationView.swift in Sources */,
 				D4C8C92B2153C73B00C831F0 /* JSONDecoder.swift in Sources */,
 				D429F8C92142BF87004427F0 /* Token.swift in Sources */,
 				D4C7F75D21666219006D85B1 /* AdminPriceListCollectionHeaderView.swift in Sources */,
