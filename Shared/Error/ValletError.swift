@@ -18,6 +18,7 @@ enum ValletError: Error {
 	case rawValueConversion(object: String, function: String?)
 	case storeInsertion(object: String, function: String?)
 	case wallet(object: String, function: String?)
+	case insuficientFunds
 
 }
 
@@ -41,6 +42,8 @@ extension ValletError {
 			return NSLocalizedString("Store Insertion Error", comment: "Error notification title")
 		case .wallet:
 			return NSLocalizedString("Wallet Error", comment: "Error notification title")
+		case .insuficientFunds:
+			return NSLocalizedString("Insuficient Funds", comment: "Error notification title")
 		}
 	}
 
@@ -82,6 +85,8 @@ extension ValletError: LocalizedError {
 		case .wallet(let object, let function):
 			let descriptionFormat = NSLocalizedString("Failed to get %@ to open wallet (function: %@)", comment: "Error description")
 			return String(format: descriptionFormat, object, function ?? "")
+		case .insuficientFunds:
+			return NSLocalizedString("You don't have enough money to pay for this item.", comment: "Error description")
 
 		}
 	}

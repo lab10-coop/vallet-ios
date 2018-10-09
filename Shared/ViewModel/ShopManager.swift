@@ -30,8 +30,11 @@ class ShopManager {
 		set {
 			UserDefaultsManager.selectedShopAddress = newValue?.address
 			shared._selectedShop = newValue
+			savedBalance = nil
 		}
 	}
+
+	static var savedBalance: Int64?
 
 	static var tokenFactory: TokenFactory? {
 		return shared._tokenFactory
@@ -107,6 +110,9 @@ class ShopManager {
 				return
 		}
 		token.balance(for: address) { (result) in
+			if case .success(let balance) = result {
+				self.savedBalance = balance
+			}
 			completion(result)
 		}
 	}

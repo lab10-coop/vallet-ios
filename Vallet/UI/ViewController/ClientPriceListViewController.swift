@@ -62,6 +62,7 @@ class ClientPriceListViewController: UIViewController {
 
 	@objc private func reloadData() {
 		priceListViewModel?.reload()
+		NotificationCenter.default.post(name: Constants.Notification.balanceRequest, object: nil)
 	}
 
 }
@@ -104,6 +105,12 @@ extension ClientPriceListViewController: UICollectionViewDelegate {
 				return
 		}
 		let product = priceListViewModel.products[indexPath.row]
+
+		if let balance = ShopManager.savedBalance,
+			balance < product.price {
+			NotificationView.drop(error: ValletError.insuficientFunds)
+			return
+		}
 
 		PaymentConfirmationViewController.present(for: product, over: container) { [weak self] in
 			self?.container?.showActivityIndicator()
