@@ -62,7 +62,7 @@ extension ShopManager {
 				})
 
 			case .failure(let error):
-				print(error)
+				completion(Result.failure(error))
 			}
 		}
 	}

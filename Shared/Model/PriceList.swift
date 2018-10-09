@@ -68,7 +68,7 @@ public class PriceList: NSManagedObject, Codable {
 		guard let contextUserInfoKey = CodingUserInfoKey.context,
 			let managedObjectContext = decoder.userInfo[contextUserInfoKey] as? NSManagedObjectContext,
 			let entity = PriceList.entity(in: managedObjectContext) else {
-				fatalError("Failed to resolve the PriceList ")
+				throw ValletError.dataDecoding(object: "Product", function: #function)
 		}
 		self.init(entity: entity, insertInto: managedObjectContext)
 

@@ -85,7 +85,6 @@ class TokenFactory: ContractProtocol {
 					let myShops = events.compactMap { ShopIntermediate(decodedLog: $0.decodedResult) }.filter { $0.creatorAddress == address }
 					completion(Result.success(myShops))
 				case .failure(let error):
-					print("Factory contract events error: \(error)")
 					completion(Result.failure(error))
 				}
 			}
@@ -137,7 +136,6 @@ class TokenFactory: ContractProtocol {
 					}
 					completion(Result.success(shop))
 				case .failure(let error):
-					print("factory events error: \(error)")
 					completion(Result.failure(error))
 				}
 			}

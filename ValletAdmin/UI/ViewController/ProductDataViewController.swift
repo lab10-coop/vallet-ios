@@ -132,7 +132,7 @@ class ProductDataViewController: UIViewController {
 			case .success:
 				self?.hideActivityIndicator()
 			case .failure(let error):
-				print("Update product error: \(error)")
+				NotificationView.drop(error: error)
 			}
 			self?.close()
 		}
@@ -151,7 +151,7 @@ class ProductDataViewController: UIViewController {
 			case .success:
 				self?.hideActivityIndicator()
 			case .failure(let error):
-				print("Create new product error: \(error)")
+				NotificationView.drop(error: error)
 			}
 			self?.close()
 		}

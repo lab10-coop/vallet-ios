@@ -110,9 +110,9 @@ extension ClientPriceListViewController: UICollectionViewDelegate {
 			self?.priceListViewModel?.pay(for: product) { [weak self] (result) in
 				switch result {
 				case .success:
-					print("Paid for product")
+					break
 				case .failure(let error):
-					print("Payment error: \(error)")
+					NotificationView.drop(error: error)
 				}
 				self?.container?.hideActivityIndicator()
 			}

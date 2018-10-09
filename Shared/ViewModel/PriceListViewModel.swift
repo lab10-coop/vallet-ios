@@ -42,12 +42,13 @@ class PriceListViewModel {
 	}
 
 	func reload() {
-		ShopManager.loadPriceList(for: shop) { (result) in
+		ShopManager.loadPriceList(for: shop) { [weak self] (result) in
 			switch result {
 			case .success(let priceList):
-				self.priceList = priceList
+				self?.priceList = priceList
 			case .failure(let error):
-				print("Price list load error: \(error)")
+				self?.newDataBlock()
+				NotificationView.drop(error: error)
 			}
 		}
 	}

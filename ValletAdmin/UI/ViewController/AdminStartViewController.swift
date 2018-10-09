@@ -66,7 +66,7 @@ class AdminStartViewController: UIViewController {
 			case .success:
 				self?.continueToApp()
 			case .failure(let error):
-				print("Create shop error: \(error)")
+				NotificationView.drop(error: error)
 			}
 			self?.hideActivityIndicator()
 		}

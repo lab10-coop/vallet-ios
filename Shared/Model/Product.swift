@@ -54,8 +54,7 @@ public class Product: NSManagedObject, Codable {
 		guard let contextUserInfoKey = CodingUserInfoKey.context,
 			let managedObjectContext = decoder.userInfo[contextUserInfoKey] as? NSManagedObjectContext,
 			let entity = Product.entity(in: managedObjectContext) else {
-				// TODO: Implement proper error handling
-				fatalError("Failed to resolve the Product ")
+				throw ValletError.dataDecoding(object: "Product", function: #function)
 		}
 		self.init(entity: entity, insertInto: managedObjectContext)
 

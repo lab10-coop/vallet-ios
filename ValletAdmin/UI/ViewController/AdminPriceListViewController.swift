@@ -106,7 +106,7 @@ extension AdminPriceListViewController: AdminPriceListCollectionHeaderDelegate {
 					else {
 						return
 				}
-				print("Upload pricelist error: \(error)")
+				NotificationView.drop(error: error)
 			})
 		}
 	}

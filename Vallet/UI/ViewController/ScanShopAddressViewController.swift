@@ -65,7 +65,7 @@ class ScanShopAddressViewController: UIViewController {
 				self?.delegate?.didScan(shop: shop)
 				self?.close()
 			case .failure(let error):
-				print("Scan shop error: \(error)")
+				NotificationView.drop(error: error)
 			}
 		}
 	}

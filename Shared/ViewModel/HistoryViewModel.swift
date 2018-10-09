@@ -82,7 +82,7 @@ class HistoryViewModel {
 				strongSelf.updateEvents()
 				completion(Result.success(loadedEvents))
 			case .failure(let error):
-				print("Load history error: \(error)")
+				completion(Result.failure(error))
 			}
 		}
 	}

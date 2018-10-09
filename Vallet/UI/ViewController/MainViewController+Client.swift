@@ -67,7 +67,7 @@ extension MainViewController {
 			case .success(let balance):
 				self?.clientBalanceLabel.text = "Balance: \(CurrencyFormatter.displayString(for: balance) ?? "")"
 			case .failure(let error):
-				print("Load balance error: \(error)")
+				NotificationView.drop(error: error)
 			}
 		}
 	}
