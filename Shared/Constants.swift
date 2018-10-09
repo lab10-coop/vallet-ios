@@ -58,12 +58,14 @@ struct Constants {
 	struct Notification {
 
 		static let newValueEvent: NSNotification.Name = NSNotification.Name(rawValue: "Notification.newValueEvent")
+		static let balanceRequest: NSNotification.Name = NSNotification.Name(rawValue: "Notification.balanceRequest")
 
 	}
 
 	struct Animation {
 
 		static let shortDuration = 0.25
+		static let defaultDuration = 0.4
 		static let longDuration = 0.7
 
 	}
@@ -72,6 +74,7 @@ struct Constants {
 
 		static let pollInterval: TimeInterval = 3.0
 		static let maxRepeatCount = 20
+		static let notificationDuration: TimeInterval = 3.0
 
 	}
 

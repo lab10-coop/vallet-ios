@@ -56,7 +56,7 @@ class Token: ContractProtocol {
 
 		guard let intermediate = transactionIntermediate(method: Method.issue.rawValue, parameters: [NSString(string: toAddress.address), BigUInt(value) as AnyObject], options: options)
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "transactionIntermediate", object: "Token", function: #function)))
 				return
 		}
 
@@ -75,7 +75,7 @@ class Token: ContractProtocol {
 	func balance(for address: EthereumAddress, completion: @escaping (Result<Int64>) -> Void) {
 		guard let intermediate = transactionIntermediate(method: Method.balance.rawValue, parameters: [NSString(string: address.address)])
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "transactionIntermediate", object: "Token", function: #function)))
 				return
 		}
 
@@ -85,7 +85,7 @@ class Token: ContractProtocol {
 				guard let balanceValue = resultDictionary["balance"],
 					let balance = Int64("\(balanceValue)")
 					else {
-						completion(Result.failure(Web3Error.dataError))
+						completion(Result.failure(ValletError.dataDecoding(object: "balance", function: #function)))
 						return
 				}
 				completion(Result.success(balance))
@@ -101,7 +101,7 @@ class Token: ContractProtocol {
 
 		guard let intermediate = transactionIntermediate(method: Method.redeem.rawValue, parameters: [BigUInt(value) as AnyObject], options: options)
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "transactionIntermediate", object: "Token", function: #function)))
 				return
 		}
 
@@ -122,7 +122,7 @@ class Token: ContractProtocol {
 	func name(completion: @escaping (Result<String>) -> Void) {
 		guard let intermediate = transactionIntermediate(method: Method.name.rawValue)
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "transactionIntermediate", object: "Token", function: #function)))
 				return
 		}
 
@@ -131,7 +131,7 @@ class Token: ContractProtocol {
 			case .success(let resultDictionary):
 				guard let name = resultDictionary.first?.value as? String
 					else {
-						completion(Result.failure(Web3Error.dataError))
+						completion(Result.failure(ValletError.dataDecoding(object: "name", function: #function)))
 						return
 				}
 				completion(Result.success(name))
@@ -144,7 +144,7 @@ class Token: ContractProtocol {
 	func totalSupply(completion: @escaping (Result<Int64>) -> Void) {
 		guard let intermediate = transactionIntermediate(method: Method.totalSupply.rawValue)
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "transactionIntermediate", object: "Token", function: #function)))
 				return
 		}
 
@@ -154,7 +154,7 @@ class Token: ContractProtocol {
 				guard let supplyValue = resultDictionary.first?.value,
 					let supply = Int64("\(supplyValue)")
 					else {
-						completion(Result.failure(Web3Error.dataError))
+						completion(Result.failure(ValletError.dataDecoding(object: "supply", function: #function)))
 						return
 				}
 				completion(Result.success(supply))
@@ -167,7 +167,7 @@ class Token: ContractProtocol {
 	func creatorAddress(completion: @escaping (Result<String>) -> Void) {
 		guard let intermediate = transactionIntermediate(method: Method.creatorAddress.rawValue)
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "transactionIntermediate", object: "Token", function: #function)))
 				return
 		}
 
@@ -176,7 +176,7 @@ class Token: ContractProtocol {
 			case .success(let resultDictionary):
 				guard let ethAddress = resultDictionary.first?.value as? EthereumAddress
 					else {
-						completion(Result.failure(Web3Error.dataError))
+						completion(Result.failure(ValletError.dataDecoding(object: "ethAddress", function: #function)))
 						return
 				}
 				completion(Result.success(ethAddress.address))
@@ -189,7 +189,7 @@ class Token: ContractProtocol {
 	func symbol(completion: @escaping (Result<String>) -> Void) {
 		guard let intermediate = transactionIntermediate(method: Method.symbol.rawValue)
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "transactionIntermediate", object: "Token", function: #function)))
 				return
 		}
 
@@ -198,7 +198,7 @@ class Token: ContractProtocol {
 			case .success(let resultDictionary):
 				guard let symbol = resultDictionary.first?.value as? String
 					else {
-						completion(Result.failure(Web3Error.dataError))
+						completion(Result.failure(ValletError.dataDecoding(object: "symbol", function: #function)))
 						return
 				}
 				completion(Result.success(symbol))
@@ -214,7 +214,7 @@ class Token: ContractProtocol {
 		guard let contract = contract,
 			let contractAddress = address
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "contract, address", object: "Token", function: #function)))
 				return
 		}
 
@@ -247,7 +247,7 @@ class Token: ContractProtocol {
 		guard let contract = contract,
 			let contractAddress = address
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "contract, address", object: "Token", function: #function)))
 				return
 		}
 

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import web3swift
 
 protocol ShopMenuDelegate: class {
 

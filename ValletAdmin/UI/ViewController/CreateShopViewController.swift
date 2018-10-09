@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import web3swift
 
 protocol CreateShopDelegate: class {
 
@@ -68,7 +67,7 @@ class CreateShopViewController: UIViewController {
 				self?.delegate?.didCreate(shop: shop)
 				self?.close()
 			case .failure(let error):
-				print("Create shop error: \(error)")
+				NotificationView.drop(error: error)
 			}
 			self?.hideActivityIndicator()
 		}

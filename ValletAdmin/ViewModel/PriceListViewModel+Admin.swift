@@ -58,7 +58,7 @@ extension PriceListViewModel {
 		guard let managedObjectContext = managedObjectContext,
 			let product = Product(in: managedObjectContext, name: name, price: Int64(price), imagePath: imagePath, nfcTagId: nil, image: image)
 			else {
-				// TODO: Send an error to the completion block.
+				completion(Result.failure(ValletError.unwrapping(property: "managedObjectContext, product", object: "PriceListViewModel", function: #function)))
 				return
 		}
 

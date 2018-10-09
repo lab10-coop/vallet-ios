@@ -15,7 +15,7 @@ extension ShopManager {
 	static func addShop(with address: String, completion: @escaping (Result<Shop>) -> Void) {
 		guard let ethAddress = EthereumAddress(address)
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "ethAddress", object: "ShopManager", function: #function)))
 				return
 		}
 
@@ -29,7 +29,7 @@ extension ShopManager {
 					case .success(let symbolValue):
 						guard let symbol = TokenType(rawValue: symbolValue)
 							else {
-								completion(Result.failure(Web3Error.dataError))
+								completion(Result.failure(ValletError.rawValueConversion(object: "TokenType", function: #function)))
 								return
 						}
 						token.creatorAddress { (creatorResult) in
@@ -37,7 +37,7 @@ extension ShopManager {
 							case .success(let creatorAddress):
 								guard let shop = Shop(in: managedObjectContext, name: name, address: address, symbol: symbol, creatorAddress: creatorAddress)
 									else {
-										completion(Result.failure(Web3Error.dataError))
+										completion(Result.failure(ValletError.storeInsertion(object: "Shop", function: #function)))
 										return
 								}
 								DataBaseManager.save(managedContext: managedObjectContext)

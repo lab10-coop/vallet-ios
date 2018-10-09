@@ -72,10 +72,13 @@ class ClientHistoryViewController: UIViewController {
 
 	@objc private func reloadData() {
 		historyViewModel?.reload(completion: { [weak self] (result) in
-			guard case .success = result
-				else {
-					return
+			switch result {
+			case .success:
+				break
+			case .failure(let error):
+				NotificationView.drop(error: error)
 			}
+
 			self?.refreshControl.endRefreshing()
 			self?.reloadTableView()
 		})

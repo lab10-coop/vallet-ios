@@ -105,10 +105,13 @@ class AdminHistoryViewController: UIViewController {
 
 	@objc private func reloadData() {
 		historyViewModel?.reload(completion: { [weak self] (result) in
-			guard case .success = result
-				else {
-					return
+			switch result {
+			case .success:
+				break
+			case .failure(let error):
+				NotificationView.drop(error: error)
 			}
+
 			self?.refreshControl.endRefreshing()
 			self?.reloadView()
 		})
@@ -124,7 +127,7 @@ class AdminHistoryViewController: UIViewController {
 			case .success(let balance):
 				self?.totalSupplyLabel.text = CurrencyFormatter.displayString(for: balance)
 			case .failure(let error):
-				print("Load total supply error: \(error)")
+				NotificationView.drop(error: error)
 			}
 		}
 	}

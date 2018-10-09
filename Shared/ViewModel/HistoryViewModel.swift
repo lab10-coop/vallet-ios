@@ -72,7 +72,7 @@ class HistoryViewModel {
 			guard let strongSelf = self,
 				let managedObjectContext = strongSelf.managedObjectContext
 				else {
-					completion(Result.failure(Web3Error.unknownError))
+					completion(Result.failure(ValletError.unwrapping(property: "managedObjectContext", object: "HistoryViewModel", function: #function)))
 					return
 			}
 			switch eventsResult {
@@ -82,7 +82,7 @@ class HistoryViewModel {
 				strongSelf.updateEvents()
 				completion(Result.success(loadedEvents))
 			case .failure(let error):
-				print("Load history error: \(error)")
+				completion(Result.failure(error))
 			}
 		}
 	}
@@ -124,7 +124,7 @@ class HistoryViewModel {
 				successCounter += 1
 				event.date = block.timestamp
 				if resultCounter == allEvents {
-					let result = successCounter == allEvents ? Result.success(true) : Result.failure(Web3Error.connectionError)
+					let result = successCounter == allEvents ? Result.success(true) : Result.failure(ValletError.networkData(function: #function))
 					completion(result)
 				}
 			}

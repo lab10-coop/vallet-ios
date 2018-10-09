@@ -26,21 +26,33 @@ class Web3Manager {
 		return instance
 	}
 
-	private func createInstance() -> web3 {
-		guard let nodeURL = URL(string: Constants.BlockChain.nodeAddress)
-			else {
-				fatalError("invalid node URL")
+	private func createInstance() throws -> web3 {
+		do {
+			guard let nodeURL = URL(string: Constants.BlockChain.nodeAddress)
+				else {
+					throw ValletError.unwrapping(property: "nodeURL", object: "Web3Manager", function: #function)
+			}
+			guard let createdInstance = Web3.new(nodeURL) else {
+				throw ValletError.unwrapping(property: "web3", object: "Web3Manager", function: #function)
+			}
+
+			let keystoreManager = try Wallet.getKeystoreManager()
+			createdInstance.addKeystoreManager(keystoreManager)
+			return createdInstance
 		}
-		guard let createdInstance = Web3.new(nodeURL) else {
-			fatalError("no instance created")
+		catch {
+			throw error
 		}
-		createdInstance.addKeystoreManager(Wallet.keystoreManager)
-		return createdInstance
 	}
 
-	static func start() {
-		Wallet.start()
-		shared._instance = shared.createInstance()
+	static func start() throws -> Void {
+		do {
+			try Wallet.start()
+			shared._instance = try shared.createInstance()
+		}
+		catch {
+			throw error
+		}
 	}
 
 	// MARK - Utils

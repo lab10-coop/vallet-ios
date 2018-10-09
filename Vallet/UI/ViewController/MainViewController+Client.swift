@@ -48,6 +48,7 @@ extension MainViewController {
 		})
 
 		NotificationCenter.default.addObserver(self, selector: #selector(updateBalance), name: Constants.Notification.newValueEvent, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(updateBalance), name: Constants.Notification.balanceRequest, object: nil)
 	}
 
 	private func addNoShopsViewController() {
@@ -67,7 +68,7 @@ extension MainViewController {
 			case .success(let balance):
 				self?.clientBalanceLabel.text = "Balance: \(CurrencyFormatter.displayString(for: balance) ?? "")"
 			case .failure(let error):
-				print("Load balance error: \(error)")
+				NotificationView.drop(error: error)
 			}
 		}
 	}

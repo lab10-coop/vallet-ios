@@ -45,7 +45,7 @@ class IssueAmountViewController: UIViewController {
 					self?.dismiss(animated: true, completion: nil)
 				}
 			case .failure(let error):
-				print("Issue to client error: \(error)")
+				NotificationView.drop(error: error)
 			}
 			self?.hideActivityIndicator()
 		}

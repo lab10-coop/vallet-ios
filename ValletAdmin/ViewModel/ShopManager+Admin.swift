@@ -14,7 +14,7 @@ extension ShopManager {
 	static func reload(for shopOwnerAddress: EthereumAddress, completion: @escaping (Result<[Shop]>) -> Void) {
 		guard let tokenFactory = tokenFactory
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "tokenFactory", object: "ShopManager", function: #function)))
 				return
 		}
 
@@ -33,7 +33,7 @@ extension ShopManager {
 	static func createShop(named name: String, completion: @escaping (Result<Shop>) -> Void) {
 		guard let tokenFactory = tokenFactory
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "tokenFactory", object: "ShopManager", function: #function)))
 				return
 		}
 
@@ -42,7 +42,7 @@ extension ShopManager {
 			case .success(let createdShop):
 				guard let shop = Shop(in: managedObjectContext, intermediate: createdShop)
 					else {
-						completion(Result.failure(Web3Error.dataError))
+						completion(Result.failure(ValletError.storeInsertion(object: "Shop", function: #function)))
 						return
 				}
 				DataBaseManager.save(managedContext: managedObjectContext)
@@ -51,7 +51,7 @@ extension ShopManager {
 					case .success(let priceList):
 						guard let shop = priceList.shop
 							else {
-								completion(Result.failure(Web3Error.dataError))
+								completion(Result.failure(ValletError.unwrapping(property: "shop", object: "PriceList", function: #function)))
 								return
 						}
 						DataBaseManager.save(managedContext: managedObjectContext)
@@ -62,7 +62,7 @@ extension ShopManager {
 				})
 
 			case .failure(let error):
-				print(error)
+				completion(Result.failure(error))
 			}
 		}
 	}
@@ -75,21 +75,26 @@ extension ShopManager {
 			let blankPriceList = PriceList(in: managedObjectContext, shop: shop),
 			let jsonData = blankPriceList.jsonData
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "shop, priceList, jsonData", object: "ShopManager", function: #function)))
 				return
 		}
 
 		NetworkManager.performDataRequest(request: NetworkRequest.createNew(priceList: jsonData)) { (result) in
 			switch result {
 			case .success(let listJSONData):
-				guard let listJSONData = listJSONData,
-					let newPriceList = PriceList.create(in: managedObjectContext, jsonData: listJSONData)
+				guard let listJSONData = listJSONData
 					else {
-						completion(Result.failure(Web3Error.dataError))
+						completion(Result.failure(ValletError.networkData(function: #function)))
 						return
 				}
-				DataBaseManager.save(managedContext: managedObjectContext)
-				completion(Result.success(newPriceList))
+				do {
+					let newPriceList = try PriceList.create(in: managedObjectContext, jsonData: listJSONData)
+					completion(Result.success(newPriceList))
+					DataBaseManager.save(managedContext: managedObjectContext)
+				}
+				catch {
+					completion(Result.failure(error))
+				}
 			case .failure(let error):
 				completion(Result.failure(error))
 			}
@@ -101,7 +106,7 @@ extension ShopManager {
 			let priceList = shop.priceList,
 			let jsonData = priceList.jsonData
 			else {
-				completion(Result.failure(Web3Error.unknownError))
+				completion(Result.failure(ValletError.unwrapping(property: "shop, priceList, jsonData", object: "ShopManager", function: #function)))
 				return
 		}
 

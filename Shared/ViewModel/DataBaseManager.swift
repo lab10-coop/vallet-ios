@@ -16,9 +16,8 @@ class DataBaseManager {
 	lazy private var persistentContainer: NSPersistentContainer = {
 		let container = NSPersistentContainer(name: "Model")
 		container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-			// TODO: Replace this implementation with code to handle the error appropriately.
-			if let error = error as NSError? {
-				fatalError("Unresolved error \(error), \(error.userInfo)")
+			if let error = error {
+				NotificationView.drop(error: error)
 			}
 		})
 		return container

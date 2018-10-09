@@ -16,14 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		Web3Manager.start()
 		Appearance.setup()
 
-		if UserDefaultsManager.userName != nil {
-			MainViewController.makeAppRootViewController()
+		var startingError: Error?
+		do {
+			try Web3Manager.start()
+		}
+		catch {
+			startingError = error
+		}
+
+		// Pass the error to the initial view controller so it can be displayed when it appears
+		if ShopManager.shops.count > 0 {
+			MainViewController.makeAppRootViewController(error: startingError)
 		}
 		else {
-			ClientStartViewController.makeAppRootViewController()
+			ClientStartViewController.makeAppRootViewController(error: startingError)
 		}
 
 		return true

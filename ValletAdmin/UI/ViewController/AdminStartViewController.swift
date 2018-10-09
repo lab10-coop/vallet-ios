@@ -9,19 +9,23 @@
 import UIKit
 import KeyboardLayoutGuide
 
-class AdminStartViewController: UIViewController {
+class AdminStartViewController: UIViewController, ErrorContaining {
 
 	@IBOutlet private var containerView: UIView!
 	@IBOutlet private var nameInputView: TextInputView!
 	@IBOutlet private var submitButton: UIButton!
 
-	static func makeAppRootViewController() {
+	var error: Error?
+
+	static func makeAppRootViewController(error: Error? = nil) {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 		guard let startViewController = storyboard.instantiateViewController(withIdentifier: "AdminStartViewController") as? AdminStartViewController,
 			let appDelegate = UIApplication.shared.delegate as? AppDelegate
 			else {
 				return
 		}
+
+		startViewController.error = error
 
 		appDelegate.window?.rootViewController = startViewController
 	}
@@ -39,6 +43,14 @@ class AdminStartViewController: UIViewController {
 		}
 
 		containerView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor).isActive = true
+	}
+
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		if let error = error {
+			NotificationView.drop(error: error)
+			self.error = nil
+		}
 	}
 
 	@IBAction func hideKeyboard(_ sender: Any? = nil) {
@@ -66,7 +78,7 @@ class AdminStartViewController: UIViewController {
 			case .success:
 				self?.continueToApp()
 			case .failure(let error):
-				print("Create shop error: \(error)")
+				NotificationView.drop(error: error)
 			}
 			self?.hideActivityIndicator()
 		}
