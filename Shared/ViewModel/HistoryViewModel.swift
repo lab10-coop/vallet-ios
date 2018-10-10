@@ -53,6 +53,8 @@ class HistoryViewModel {
 		return groups
 	}
 
+	var newDataBlock: (() -> Void) = {}
+
 	init?(shop: Shop, clientAddress: EthereumAddress? = nil) {
 		guard let shopAddress = shop.address,
 			let shopEthAddress = EthereumAddress(shopAddress)
@@ -64,30 +66,32 @@ class HistoryViewModel {
 		self.token = Token(address: shopEthAddress)
 		self.clientAddress = clientAddress
 
+		NotificationCenter.default.addObserver(self, selector: #selector(updateEvents), name: Constants.Notification.newValueEvent, object: nil)
 		updateEvents()
 	}
 
-	func reload(completion: @escaping (Result<[ValueEvent]>) -> Void) {
+	func reload() {
 		token.loadHistory(for: clientAddress, fromBlock: lastBlockNumber) { [weak self] (eventsResult) in
 			guard let strongSelf = self,
 				let managedObjectContext = strongSelf.managedObjectContext
 				else {
-					completion(Result.failure(ValletError.unwrapping(property: "managedObjectContext", object: "HistoryViewModel", function: #function)))
+					NotificationView.drop(error: ValletError.unwrapping(property: "managedObjectContext", object: "HistoryViewModel", function: #function))
 					return
 			}
 			switch eventsResult {
 			case .success(let eventsIntermediate):
 				let loadedEvents = eventsIntermediate.compactMap { ValueEvent(in: managedObjectContext, shop: strongSelf.shop, intermediate: $0) }
-				DataBaseManager.save(managedContext: managedObjectContext)
-				strongSelf.updateEvents()
-				completion(Result.success(loadedEvents))
+				if loadedEvents.count > 0 {
+					DataBaseManager.save(managedContext: managedObjectContext)
+					NotificationCenter.default.post(name: Constants.Notification.newValueEvent, object: nil)
+				}
 			case .failure(let error):
-				completion(Result.failure(error))
+				NotificationView.drop(error: error)
 			}
 		}
 	}
 
-	func updateEvents() {
+	@objc func updateEvents() {
 		// update events from the database
 		guard var updatedEvents = (try? managedObjectContext?.fetch(ValueEvent.fetchRequest())) as? [ValueEvent]
 			else {
@@ -95,15 +99,18 @@ class HistoryViewModel {
 		}
 		updatedEvents = updatedEvents.filter({ $0.shop == shop }).sorted(by: { $0.blockNumber > $1.blockNumber })
 		if updatedEvents.count != events.count {
-			NotificationCenter.default.post(name: Constants.Notification.newValueEvent, object: nil)
+			NotificationCenter.default.post(name: Constants.Notification.balanceRequest, object: nil)
 		}
 
 		events = updatedEvents
 
 		attachUser(for: events)
+
+		newDataBlock()
 		
-		fetchDateFor(events: events) { (result) in
+		fetchDateFor(events: events) { [weak self] (result) in
 			print("Fetch date events result: \(result)")
+			self?.newDataBlock()
 		}
 	}
 

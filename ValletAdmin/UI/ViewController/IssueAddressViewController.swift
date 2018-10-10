@@ -17,6 +17,8 @@ class IssueAddressViewController: UIViewController {
 
 	var issueViewModel: IssueViewModel?
 
+	weak var delegate: IssueViewControllerDelegate?
+
 	var shop: Shop?
 	var clientAddress: String? {
 		didSet {
@@ -24,18 +26,20 @@ class IssueAddressViewController: UIViewController {
 		}
 	}
 
-	static func present(for shop: Shop, over viewController: UIViewController) {
+	@discardableResult
+	static func present(for shop: Shop, over viewController: UIViewController) -> IssueAddressViewController? {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
 		guard let issueNavigationController = storyboard.instantiateViewController(withIdentifier: "IssueNavigationViewController") as? UINavigationController,
 			let issueAddressViewController = issueNavigationController.viewControllers.first as? IssueAddressViewController
 			else {
-				return
+				return nil
 		}
 
 		issueAddressViewController.shop = shop
 
 		viewController.present(issueNavigationController, animated: true)
+		return issueAddressViewController
 	}
 
 	override func viewDidLoad() {
@@ -116,6 +120,7 @@ class IssueAddressViewController: UIViewController {
 		case "ShowIssueAmountViewControllerSegue":
 			if let issueAmountViewController = segue.destination as? IssueAmountViewController {
 				issueAmountViewController.issueViewModel = issueViewModel
+				issueAmountViewController.delegate = self.delegate
 			}
 		default:
 			break

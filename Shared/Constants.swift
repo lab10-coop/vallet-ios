@@ -57,6 +57,7 @@ struct Constants {
 
 	struct Notification {
 
+		static let valueEventsUpdate: NSNotification.Name = NSNotification.Name(rawValue: "Notification.valueEventsUpdate")
 		static let newValueEvent: NSNotification.Name = NSNotification.Name(rawValue: "Notification.newValueEvent")
 		static let balanceRequest: NSNotification.Name = NSNotification.Name(rawValue: "Notification.balanceRequest")
 

@@ -10,36 +10,37 @@ import Foundation
 
 extension PriceListViewModel {
 
-	func pay(for product: Product, completion: @escaping (Result<Bool>) -> Void) {
+	func pay(for product: Product, completion: @escaping (Result<PendingValueEvent>) -> Void) {
 		let clientAddress = Wallet.address.address
 		let clientEthAddress = Wallet.address
 
 		guard let managedObjectContext = managedObjectContext,
-			product.price > 0,
-			let pendingEvent = PendingValueEvent(in: managedObjectContext, shop: shop, type: .redeem, value: product.price, productName: product.name, clientAddress: clientAddress, date: Date())
+			product.price >= 0
 			else {
-				completion(Result.failure(ValletError.unwrapping(property: "pendingEvent", object: "PriceListViewModel", function: #function)))
+				completion(Result.failure(ValletError.unwrapping(property: "managedObjectContext", object: "PriceListViewModel", function: #function)))
 				return
 		}
 
-		DataBaseManager.save(managedContext: managedObjectContext)
-
 		token.redeem(value: Int(product.price), from: clientEthAddress) { [weak self] (result) in
 			switch result {
-			case .success(let receipt):
-				let success = receipt.status == .ok
+			case .success(let transactionSendingResult):
 				guard let strongSelf = self,
-					let _ = ValueEvent(from: pendingEvent, transactionHash: receipt.transactionHash, blockHash: receipt.blockHash, blockNumber: Int64(receipt.blockNumber), status: ValueEventStatus(from: receipt.status))
+					let pendingEvent = PendingValueEvent(in: managedObjectContext, shop: strongSelf.shop, type: .redeem, value: product.price, productName: product.name, clientAddress: clientAddress, date: Date(), transactionHash: transactionSendingResult.hash)
 					else {
-						completion(Result.failure(ValletError.storeInsertion(object: "ValueEvent", function: #function)))
+						completion(Result.failure(ValletError.storeInsertion(object: "PendingValueEvent", function: #function)))
 						return
 				}
 				DataBaseManager.save(managedContext: strongSelf.managedObjectContext)
-				NotificationCenter.default.post(name: Constants.Notification.newValueEvent, object: nil)
-				completion(Result.success(success))
+				completion(Result.success(pendingEvent))
 			case .failure(let error):
 				completion(Result.failure(error))
 			}
+		}
+	}
+
+	func makeValueEvent(from pendingValueEvent: PendingValueEvent, completion: @escaping (Result<Bool>) -> Void) {
+		PendingEventManager.makeValueEvent(from: pendingValueEvent) { (result) in
+			completion(result)
 		}
 	}
 

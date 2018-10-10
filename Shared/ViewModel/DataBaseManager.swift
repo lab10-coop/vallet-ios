@@ -15,6 +15,7 @@ class DataBaseManager {
 
 	lazy private var persistentContainer: NSPersistentContainer = {
 		let container = NSPersistentContainer(name: "Model")
+
 		container.loadPersistentStores(completionHandler: { (storeDescription, error) in
 			if let error = error {
 				NotificationView.drop(error: error)

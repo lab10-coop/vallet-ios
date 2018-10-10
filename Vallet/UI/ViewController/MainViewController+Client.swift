@@ -48,7 +48,6 @@ extension MainViewController {
 		pageViewController?.setViewControllers([currentViewController], direction: .forward, animated: false, completion: { (success) in
 		})
 
-		NotificationCenter.default.addObserver(self, selector: #selector(updateBalance), name: Constants.Notification.newValueEvent, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(updateBalance), name: Constants.Notification.balanceRequest, object: nil)
 	}
 

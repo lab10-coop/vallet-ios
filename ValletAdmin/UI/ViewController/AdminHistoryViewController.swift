@@ -63,6 +63,10 @@ class AdminHistoryViewController: UIViewController {
 		}
 
 		historyViewModel = HistoryViewModel(shop: shop)
+		historyViewModel?.newDataBlock = { [weak self] in
+			self?.refreshControl.endRefreshing()
+			self?.reloadView()
+		}
 
 		AdminHistoryEventTableViewCell.register(for: tableView)
 		HistoryTableSectionHeaderView.register(for: tableView)
@@ -93,7 +97,6 @@ class AdminHistoryViewController: UIViewController {
 			else {
 				return
 		}
-		historyViewModel.updateEvents()
 		self.groupedEvents = historyViewModel.groupedEvents
 		tableView.reloadData()
 
@@ -101,23 +104,19 @@ class AdminHistoryViewController: UIViewController {
 
 		incomingValueLabel.text = CurrencyFormatter.displayString(for: historyViewModel.incomingSum)
 		outgoingValueLabel.text = CurrencyFormatter.displayString(for: historyViewModel.outgoingSum)
+
+		// Temporarily display total supply value calculated from events.
+		totalSupplyLabel.text = CurrencyFormatter.displayString(for: (historyViewModel.outgoingSum - historyViewModel.incomingSum))
+
+		updateTotalSupply()
 	}
 
 	@objc private func reloadData() {
-		historyViewModel?.reload(completion: { [weak self] (result) in
-			switch result {
-			case .success:
-				break
-			case .failure(let error):
-				NotificationView.drop(error: error)
-			}
-
-			self?.refreshControl.endRefreshing()
-			self?.reloadView()
-		})
+		historyViewModel?.reload()
 	}
 
 	private func updateTotalSupply() {
+
 		guard let shop = shop
 			else {
 				return
@@ -138,7 +137,8 @@ class AdminHistoryViewController: UIViewController {
 			else {
 				return
 		}
-		IssueAddressViewController.present(for: shop, over: container)
+		let issueAddressViewController = IssueAddressViewController.present(for: shop, over: container)
+		issueAddressViewController?.delegate = self
 	}
 
 }
@@ -191,3 +191,19 @@ extension AdminHistoryViewController: UITableViewDelegate {
 }
 
 
+// MARK: - Issue delegate
+
+extension AdminHistoryViewController: IssueViewControllerDelegate {
+
+	func didIssueAmount(with pendingValueEvent: PendingValueEvent) {
+		PendingEventManager.makeValueEvent(from: pendingValueEvent) { (result) in
+			switch result {
+			case .success:
+				break
+			case .failure(let error):
+				NotificationView.drop(error: error)
+			}
+		}
+	}
+
+}

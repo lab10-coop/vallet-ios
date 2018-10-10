@@ -85,7 +85,7 @@ class Web3Manager {
 		add(timer: newTimer)
 	}
 
-	static func getBlock(by blockHash: Data, completion: @escaping (Result<Block>) -> Void) {
+	static func getBlock(by blockHash: String, completion: @escaping (Result<Block>) -> Void) {
 		DispatchQueue.global(qos: .background).async {
 		let result = instance.eth.getBlockByHash(blockHash)
 			DispatchQueue.main.async {

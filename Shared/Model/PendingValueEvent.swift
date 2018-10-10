@@ -12,18 +12,24 @@ import CoreData
 @objc(PendingValueEvent)
 public class PendingValueEvent: NSManagedObject {
 
-	convenience init?(in managedContext: NSManagedObjectContext, shop: Shop, type: ValueEventType, value: Int64, productName: String? = nil,  clientAddress: String, date: Date) {
+	var type: ValueEventType? {
+		return ValueEventType(rawValue: storedType)
+	}
+
+	convenience init?(in managedContext: NSManagedObjectContext, shop: Shop, type: ValueEventType, value: Int64, productName: String? = nil, clientAddress: String, date: Date, transactionHash: String) {
 		guard let entity = PendingValueEvent.entity(in: managedContext)
 			else {
 				return nil
 		}
 		self.init(entity: entity, insertInto: managedContext)
-		self.type = type.rawValue
+		self.storedType = type.rawValue
 		self.value = value
 		self.clientAddress = clientAddress
 		self.storedDate = date as NSDate
 		self.productName = productName
 		self.shop = shop
+		self.transactionHash = transactionHash
+		self.needsRetry = false
 	}
 
 	func delete() {
@@ -45,10 +51,12 @@ extension PendingValueEvent {
 
 	@NSManaged public var value: Int64
 	@NSManaged public var clientAddress: String
-	@NSManaged public var type: String
+	@NSManaged public var storedType: String
 	@NSManaged public var storedDate: NSDate
 	@NSManaged public var productName: String?
+	@NSManaged public var transactionHash: String
 	@NSManaged public var shop: Shop?
+	@NSManaged public var needsRetry: Bool
 
 }
 

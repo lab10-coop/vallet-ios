@@ -65,6 +65,26 @@ class ClientPriceListViewController: UIViewController {
 		NotificationCenter.default.post(name: Constants.Notification.balanceRequest, object: nil)
 	}
 
+	func triggerPayment(for product: Product) {
+		container?.showActivityIndicator()
+		priceListViewModel?.pay(for: product) { [weak self] (result) in
+			switch result {
+			case .success(let pendingValueEvent):
+				self?.priceListViewModel?.makeValueEvent(from: pendingValueEvent, completion: { (result) in
+					switch result {
+					case .success:
+						break
+					case .failure(let error):
+						NotificationView.drop(error: error)
+					}
+				})
+			case .failure(let error):
+				NotificationView.drop(error: error)
+			}
+			self?.container?.hideActivityIndicator()
+		}
+	}
+
 }
 
 // MARK: - UICollectionView Data Source
@@ -113,16 +133,7 @@ extension ClientPriceListViewController: UICollectionViewDelegate {
 		}
 
 		PaymentConfirmationViewController.present(for: product, over: container) { [weak self] in
-			self?.container?.showActivityIndicator()
-			self?.priceListViewModel?.pay(for: product) { [weak self] (result) in
-				switch result {
-				case .success:
-					break
-				case .failure(let error):
-					NotificationView.drop(error: error)
-				}
-				self?.container?.hideActivityIndicator()
-			}
+			self?.triggerPayment(for: product)
 		}
 	}
 

@@ -44,21 +44,12 @@ public class ValueEvent: NSManagedObject {
 		}
 	}
 
-	var blockHash: Data {
-		return storedBlockHash as Data
-	}
-
 	var blockNumber: UInt64 {
 		return UInt64(storedBlockNumber)
 	}
 
-	var transactionHash: Data {
-		return storedTransactionHash as Data
-	}
-
-	// TODO: refactor resolvedType -> type and type -> storedType 
-	var resolvedType: ValueEventType? {
-		return ValueEventType(rawValue: type)
+	var type: ValueEventType? {
+		return ValueEventType(rawValue: storedType)
 	}
 
 	convenience init?(in managedContext: NSManagedObjectContext, shop: Shop, intermediate: ValueEventIntermediate) {
@@ -68,25 +59,24 @@ public class ValueEvent: NSManagedObject {
 			value: intermediate.value,
 			clientAddress: intermediate.clientAddress.address,
 			type: intermediate.type,
-			transactionHash:intermediate.transactionHash,
+			transactionHash: intermediate.transactionHash,
 			blockHash: intermediate.blockHash,
 			blockNumber: intermediate.blockNumber,
 			status: intermediate.status,
 			date: intermediate.date)
 	}
 
-	convenience init?(from pendingValueEvent: PendingValueEvent, transactionHash: Data, blockHash: Data, blockNumber: Int64, status: ValueEventStatus) {
+	convenience init?(from pendingValueEvent: PendingValueEvent, blockHash: String, blockNumber: Int64, status: ValueEventStatus) {
 		guard let managedObjectContext = pendingValueEvent.managedObjectContext,
 			let shop = pendingValueEvent.shop,
-			let type = ValueEventType(rawValue: pendingValueEvent.type)
+			let type = pendingValueEvent.type
 			else {
 				return nil
 		}
-		self.init(in: managedObjectContext, shop: shop, value: pendingValueEvent.value, productName: pendingValueEvent.productName, clientAddress: pendingValueEvent.clientAddress, type: type, transactionHash: transactionHash, blockHash: blockHash, blockNumber: blockNumber, status: status, date: pendingValueEvent.storedDate as Date)
-		pendingValueEvent.delete()
+		self.init(in: managedObjectContext, shop: shop, value: pendingValueEvent.value, productName: pendingValueEvent.productName, clientAddress: pendingValueEvent.clientAddress, type: type, transactionHash: pendingValueEvent.transactionHash, blockHash: blockHash, blockNumber: blockNumber, status: status, date: pendingValueEvent.storedDate as Date)
 	}
 
-	convenience init?(in managedContext: NSManagedObjectContext, shop: Shop, value: Int64, productName: String? = nil, clientAddress: String, type: ValueEventType, transactionHash: Data, blockHash: Data, blockNumber: Int64, status: ValueEventStatus, date: Date? = nil) {
+	convenience init?(in managedContext: NSManagedObjectContext, shop: Shop, value: Int64, productName: String? = nil, clientAddress: String, type: ValueEventType, transactionHash: String, blockHash: String, blockNumber: Int64, status: ValueEventStatus, date: Date? = nil) {
 		guard let entity = ValueEvent.entity(in: managedContext)
 			else {
 				return nil
@@ -94,12 +84,12 @@ public class ValueEvent: NSManagedObject {
 		self.init(entity: entity, insertInto: managedContext)
 		self.value = value
 		self.clientAddress = clientAddress
-		self.type = type.rawValue
+		self.storedType = type.rawValue
 		self.status = status.rawValue
-		self.storedBlockHash = blockHash as NSData
+		self.blockHash = blockHash
 		self.storedBlockNumber = blockNumber
 		self.storedDate = date as NSDate?
-		self.storedTransactionHash = transactionHash as NSData
+		self.transactionHash = transactionHash
 		self.productName = productName
 		self.shop = shop
 	}
@@ -109,7 +99,7 @@ public class ValueEvent: NSManagedObject {
 extension ValueEvent {
 
 	var uniqueHash: Int {
-		return self.clientAddress.hashValue ^ self.value.hashValue ^ self.storedBlockHash.hashValue ^ self.type.hashValue
+		return self.clientAddress.hashValue ^ self.value.hashValue ^ self.blockHash.hashValue ^ self.storedType.hashValue
 	}
 
 }
@@ -126,12 +116,12 @@ extension ValueEvent {
 		return NSEntityDescription.entity(forEntityName: "ValueEvent", in: managedContext)
 	}
 
-	@NSManaged public var storedTransactionHash: NSData
+	@NSManaged public var transactionHash: String
 	@NSManaged public var value: Int64
 	@NSManaged public var clientAddress: String
-	@NSManaged public var type: String
+	@NSManaged public var storedType: String
 	@NSManaged public var status: String
-	@NSManaged public var storedBlockHash: NSData
+	@NSManaged public var blockHash: String
 	@NSManaged public var storedBlockNumber: Int64
 	@NSManaged public var storedDate: NSDate?
 	@NSManaged public var productName: String?

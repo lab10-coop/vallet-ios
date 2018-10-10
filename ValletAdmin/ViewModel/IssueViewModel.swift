@@ -28,31 +28,28 @@ class IssueViewModel {
 		self.token = Token(address: shopAddress)
 	}
 
-	func issue(completion: @escaping (Result<Bool>) -> Void) {
-		// TODO: Check if pendingEvent creates a retain cycle
-		guard	amount > 0,
+	func issue(completion: @escaping (Result<PendingValueEvent>) -> Void) {
+		guard	self.amount >= 0,
 			let clientAddress = clientAddress,
-			let clientEthAddress = EthereumAddress(clientAddress),
-			let pendingEvent = PendingValueEvent(in: managedObjectContext, shop: shop, type: .issue, value: Int64(amount), clientAddress: clientAddress, date: Date())
+			let clientEthAddress = EthereumAddress(clientAddress)
 			else {
 				completion(Result.failure(ValletError.unwrapping(property: "clientEthAddress, pendingEvent", object: "IssueViewModel", function: #function)))
 				return
 		}
 
-		DataBaseManager.save(managedContext: managedObjectContext)
+		let amount = self.amount
 		
 		token.issue(value: amount, to: clientEthAddress, from: Wallet.address) { [weak self] (result) in
 			switch result {
-			case .success(let receipt):
-				let success = receipt.status == .ok
+			case .success(let transactionSendingResult):
 				guard let strongSelf = self,
-					let _ = ValueEvent(from: pendingEvent, transactionHash: receipt.transactionHash, blockHash: receipt.blockHash, blockNumber: Int64(receipt.blockNumber), status: ValueEventStatus(from: receipt.status))
+					let pendingEvent = PendingValueEvent(in: strongSelf.managedObjectContext, shop: strongSelf.shop, type: .issue, value: Int64(amount), clientAddress: clientAddress, date: Date(), transactionHash: transactionSendingResult.hash)
 					else {
-						completion(Result.failure(ValletError.storeInsertion(object: "ValueEvent", function: #function)))
+						completion(Result.failure(ValletError.storeInsertion(object: "PendingValueEvent", function: #function)))
 						return
 				}
 				DataBaseManager.save(managedContext: strongSelf.managedObjectContext)
-				completion(Result.success(success))
+				completion(Result.success(pendingEvent))
 			case .failure(let error):
 				completion(Result.failure(error))
 			}

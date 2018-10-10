@@ -19,7 +19,7 @@ class AdminHistoryEventTableViewCell: UITableViewCell, NibBackedTableViewCell {
 	var event: ValueEvent? {
 		didSet {
 			guard let event = event,
-				let type = event.resolvedType,
+				let type = event.type,
 				let value = CurrencyFormatter.displayString(for: event.value)
 				else {
 					prepareForReuse()

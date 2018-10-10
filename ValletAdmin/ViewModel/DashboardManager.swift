@@ -11,11 +11,11 @@ import Foundation
 class DashboardManager {
 
 	static func incomingSum(for events: [ValueEvent]) -> Int64 {
-		return events.filter({$0.resolvedType == .redeem}).compactMap({$0.value}).reduce(0, +)
+		return events.filter({$0.type == .redeem}).compactMap({$0.value}).reduce(0, +)
 	}
 
 	static func outgoingSum(for events: [ValueEvent]) -> Int64 {
-		return events.filter({$0.resolvedType == .issue}).compactMap({$0.value}).reduce(0, +)
+		return events.filter({$0.type == .issue}).compactMap({$0.value}).reduce(0, +)
 	}
 
 	static func monthsData(for events: [ValueEvent], preceedingCount: Int) -> [DashboardMonth] {

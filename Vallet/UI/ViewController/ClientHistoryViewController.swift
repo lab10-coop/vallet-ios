@@ -46,6 +46,10 @@ class ClientHistoryViewController: UIViewController {
 		}
 
 		historyViewModel = HistoryViewModel(shop: shop, clientAddress: Wallet.address)
+		historyViewModel?.newDataBlock = { [weak self] in
+			self?.refreshControl.endRefreshing()
+			self?.reloadTableView()
+		}
 
 		ClientHistoryEventTableViewCell.register(for: tableView)
 		HistoryTableSectionHeaderView.register(for: tableView)
@@ -61,7 +65,6 @@ class ClientHistoryViewController: UIViewController {
 	}
 
 	private func reloadTableView() {
-		historyViewModel?.updateEvents()
 		guard let groupedEvents = historyViewModel?.groupedEvents
 			else {
 				return
@@ -71,17 +74,7 @@ class ClientHistoryViewController: UIViewController {
 	}
 
 	@objc private func reloadData() {
-		historyViewModel?.reload(completion: { [weak self] (result) in
-			switch result {
-			case .success:
-				break
-			case .failure(let error):
-				NotificationView.drop(error: error)
-			}
-
-			self?.refreshControl.endRefreshing()
-			self?.reloadTableView()
-		})
+		historyViewModel?.reload()
 	}
 
 }
