@@ -10,10 +10,18 @@ import Foundation
 import CoreData
 
 @objc(PendingValueEvent)
-public class PendingValueEvent: NSManagedObject {
+public class PendingValueEvent: NSManagedObject, EventValuable {
 
 	var type: ValueEventType? {
 		return ValueEventType(rawValue: storedType)
+	}
+
+	var client: User? {
+		guard let managedObjectContext = managedObjectContext
+			else {
+				return nil
+		}
+		return User.user(in: managedObjectContext, with: clientAddress)
 	}
 
 	convenience init?(in managedContext: NSManagedObjectContext, shop: Shop, type: ValueEventType, value: Int64, productName: String? = nil, clientAddress: String, date: Date, transactionHash: String) {

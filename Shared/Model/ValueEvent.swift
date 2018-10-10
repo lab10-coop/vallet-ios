@@ -33,7 +33,7 @@ public enum ValueEventStatus: String {
 }
 
 @objc(ValueEvent)
-public class ValueEvent: NSManagedObject {
+public class ValueEvent: NSManagedObject, EventValuable {
 
 	var date: Date? {
 		get {

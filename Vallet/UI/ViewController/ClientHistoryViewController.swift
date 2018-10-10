@@ -22,7 +22,7 @@ class ClientHistoryViewController: UIViewController {
 	var shop: Shop?
 	weak var container: UIViewController?
 
-	private var groupedEvents = [EventsGroup]()
+	private var groupedEvents = [EventGroupable]()
 
 	static func instance(for shop: Shop) -> ClientHistoryViewController? {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -110,7 +110,10 @@ extension ClientHistoryViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: HistoryTableSectionHeaderView.reuseIdentifier)
 		if let historyHeaderView = headerView as? HistoryTableSectionHeaderView {
-			historyHeaderView.date = groupedEvents[section].date
+			let eventGroup = groupedEvents[section]
+			if let datedEventsGroup = eventGroup as? DatedEventsGroup {
+				historyHeaderView.date = datedEventsGroup.date
+			}
 		}
 		return headerView
 	}

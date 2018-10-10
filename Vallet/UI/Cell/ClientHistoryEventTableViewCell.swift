@@ -16,7 +16,7 @@ class ClientHistoryEventTableViewCell: UITableViewCell, NibBackedTableViewCell {
 	@IBOutlet private var outgoingImageView: UIImageView!
 	@IBOutlet private var shadowView: UIView!
 
-	var event: ValueEvent? {
+	var event: EventValuable? {
 		didSet {
 			guard let event = event,
 				let type = event.type,

@@ -10,10 +10,16 @@ import Foundation
 import web3swift
 import CoreData
 
-struct EventsGroup {
+struct EventsGroup: EventGroupable {
+
+	var events = [EventValuable]()
+
+}
+
+struct DatedEventsGroup: EventGroupable {
 
 	var date = Date()
-	var events = [ValueEvent]()
+	var events = [EventValuable]()
 
 }
 
@@ -34,7 +40,7 @@ class HistoryViewModel {
 		return lastBlockNumber
 	}
 
-	var groupedEvents: [EventsGroup] {
+	var groupedEvents: [EventGroupable] {
 		let calendar = Calendar.current
 
 		let grouped = Dictionary(grouping: events, by: { (event) -> Date in
@@ -45,8 +51,8 @@ class HistoryViewModel {
 			return calendar.startOfDay(for: date)
 		})
 
-		var groups = grouped.map { (entry) -> EventsGroup in
-			return EventsGroup(date: entry.key, events: entry.value)
+		var groups = grouped.map { (entry) -> DatedEventsGroup in
+			return DatedEventsGroup(date: entry.key, events: entry.value)
 		}
 		groups.sort(by: { $0.date > $1.date })
 
