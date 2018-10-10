@@ -14,6 +14,7 @@ struct Theme {
 
 		static let cornerRadius: CGFloat = 6.0
 		static let shadowRadius: CGFloat = 5.0
+		static let loadingValueLabelAlpha: CGFloat = 0.3
 
 	}
 

@@ -19,6 +19,7 @@ class AdminHistoryViewController: UIViewController {
 	@IBOutlet private var outgoingValueLabel: UILabel!
 	@IBOutlet private var incomingTitleLabel: UILabel!
 	@IBOutlet private var incomingValueLabel: UILabel!
+	@IBOutlet private var totalSupplyActivityIndicator: DotsActivityIndicator!
 
 	private lazy var refreshControl: UIRefreshControl = {
 		let refreshControl = UIRefreshControl()
@@ -112,15 +113,28 @@ class AdminHistoryViewController: UIViewController {
 	}
 
 	@objc private func reloadData() {
+		showTotalSupplyActivityIndicator()
 		historyViewModel?.reload()
 	}
 
-	private func updateTotalSupply() {
+	private func showTotalSupplyActivityIndicator() {
+		totalSupplyActivityIndicator.startAnimating()
+		totalSupplyLabel.alpha = Theme.Constants.loadingValueLabelAlpha
+	}
 
+	private func hideTotalSupplyActivityIndicator() {
+		totalSupplyActivityIndicator.stopAnimating()
+		totalSupplyLabel.alpha = 1.0
+	}
+
+	private func updateTotalSupply() {
 		guard let shop = shop
 			else {
 				return
 		}
+
+		showTotalSupplyActivityIndicator()
+
 		ShopManager.totalSupply(for: shop) { [weak self] (result) in
 			switch result {
 			case .success(let balance):
@@ -128,6 +142,7 @@ class AdminHistoryViewController: UIViewController {
 			case .failure(let error):
 				NotificationView.drop(error: error)
 			}
+			self?.hideTotalSupplyActivityIndicator()
 		}
 	}
 

@@ -521,7 +521,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubr-j2-YBC" customClass="LargeTextLabel" customModule="ValletAdmin" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="756" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubr-j2-YBC" customClass="LargeTextLabel" customModule="ValletAdmin" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="23.666666666666668"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -529,9 +529,19 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P9k-b1-jdT" customClass="DotsActivityIndicator" customModule="ValletAdmin" customModuleProvider="target">
+                                                    <rect key="frame" x="74" y="25" width="30" height="6"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="6" id="8ya-wb-kvd"/>
+                                                        <constraint firstAttribute="width" constant="30" id="VZ4-FZ-5xS"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstItem="P9k-b1-jdT" firstAttribute="leading" secondItem="Ubr-j2-YBC" secondAttribute="trailing" constant="8" id="41R-Hv-sbs"/>
+                                                <constraint firstItem="P9k-b1-jdT" firstAttribute="centerY" secondItem="Ubr-j2-YBC" secondAttribute="centerY" id="648-5D-jlG"/>
                                                 <constraint firstItem="AuZ-u4-tCJ" firstAttribute="leading" secondItem="azm-Q3-cne" secondAttribute="leading" constant="16" id="CfA-vu-WP2"/>
                                                 <constraint firstAttribute="trailing" secondItem="AuZ-u4-tCJ" secondAttribute="trailing" constant="16" id="SU9-1M-BVa"/>
                                                 <constraint firstAttribute="bottom" secondItem="AuZ-u4-tCJ" secondAttribute="bottom" constant="16" id="e63-ba-A62"/>
@@ -647,6 +657,7 @@
                         <outlet property="outgoingTitleLabel" destination="VBR-XQ-D5m" id="S4d-9I-idc"/>
                         <outlet property="outgoingValueLabel" destination="yEH-0j-6PP" id="EvV-F0-VPh"/>
                         <outlet property="tableView" destination="jKM-qB-Afb" id="BMq-Yh-6vV"/>
+                        <outlet property="totalSupplyActivityIndicator" destination="P9k-b1-jdT" id="K3e-kX-qNA"/>
                         <outlet property="totalSupplyContainerView" destination="azm-Q3-cne" id="4bx-DR-TeK"/>
                         <outlet property="totalSupplyLabel" destination="Ubr-j2-YBC" id="JJE-42-0SQ"/>
                     </connections>

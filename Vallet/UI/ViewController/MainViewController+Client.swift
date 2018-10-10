@@ -64,7 +64,7 @@ extension MainViewController {
 
 	@objc func updateBalance() {
 		balanceActivityIndicator.startAnimating()
-		clientBalanceLabel.alpha = 0.5
+		clientBalanceLabel.alpha = Theme.Constants.loadingValueLabelAlpha
 		ShopManager.balance(for: Wallet.address, in: shop) { [weak self] (result) in
 			switch result {
 			case .success(let balance):

@@ -43,7 +43,8 @@ class DotsActivityIndicator: UIView {
 	}
 
 	func startAnimating() {
-		guard let stackView = stackView
+		guard let stackView = stackView,
+			isAnimating == false
 			else {
 				return
 		}
@@ -59,7 +60,8 @@ class DotsActivityIndicator: UIView {
 	}
 
 	func stopAnimating() {
-		guard let stackView = stackView
+		guard let stackView = stackView,
+			isAnimating == true
 			else {
 				return
 		}
