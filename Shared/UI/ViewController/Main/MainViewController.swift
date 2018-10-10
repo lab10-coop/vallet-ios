@@ -15,6 +15,7 @@ class MainViewController: UIViewController, ErrorContaining {
 	@IBOutlet var shopNameLabel: UILabel!
 	@IBOutlet var dropMenuIconView: UIImageView!
 	@IBOutlet var clientBalanceLabel: UILabel!
+	@IBOutlet var balanceActivityIndicator: DotsActivityIndicator!
 	@IBOutlet var qrCodeButton: UIButton!
 	@IBOutlet var headerContainerView: UIView!
 

@@ -24,6 +24,7 @@ extension MainViewController {
 
 		shopNameLabel.text = shop.name
 
+		balanceActivityIndicator.isHidden = false
 		clientBalanceLabel.isHidden = false
 		clientBalanceLabel.text = ""
 		updateBalance()
@@ -63,6 +64,8 @@ extension MainViewController {
 	}
 
 	@objc func updateBalance() {
+		balanceActivityIndicator.startAnimating()
+		clientBalanceLabel.alpha = 0.5
 		ShopManager.balance(for: Wallet.address, in: shop) { [weak self] (result) in
 			switch result {
 			case .success(let balance):
@@ -70,6 +73,9 @@ extension MainViewController {
 			case .failure(let error):
 				NotificationView.drop(error: error)
 			}
+
+			self?.balanceActivityIndicator.stopAnimating()
+			self?.clientBalanceLabel.alpha = 1
 		}
 	}
 

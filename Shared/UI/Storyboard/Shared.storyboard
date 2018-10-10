@@ -160,6 +160,14 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5M-id-CiE" customClass="DotsActivityIndicator" customModule="Vallet" customModuleProvider="target">
+                                        <rect key="frame" x="172.66666666666666" y="84.333333333333329" width="30" height="6"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="6" id="EpB-rf-3wT"/>
+                                            <constraint firstAttribute="width" constant="30" id="uNW-Sk-Br5"/>
+                                        </constraints>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBi-kq-gNy">
                                         <rect key="frame" x="126" y="52" width="123.33333333333331" height="36.333333333333343"/>
                                         <connections>
@@ -187,8 +195,10 @@
                                     <constraint firstAttribute="trailing" secondItem="qva-MT-EBa" secondAttribute="trailing" constant="8" id="1Qd-Sq-oli"/>
                                     <constraint firstItem="FBi-kq-gNy" firstAttribute="width" secondItem="HrJ-cs-Bz4" secondAttribute="width" constant="16" id="6mX-l6-Lu7"/>
                                     <constraint firstItem="FBi-kq-gNy" firstAttribute="height" secondItem="HrJ-cs-Bz4" secondAttribute="height" constant="16" id="7PI-Xd-CAk"/>
+                                    <constraint firstItem="L5M-id-CiE" firstAttribute="top" secondItem="zRf-bP-RgQ" secondAttribute="bottom" constant="4" id="Ifr-Bi-HyW"/>
                                     <constraint firstItem="qva-MT-EBa" firstAttribute="leading" secondItem="ov7-Jm-YmF" secondAttribute="leading" constant="8" id="Kcf-jb-JzO"/>
                                     <constraint firstItem="zRf-bP-RgQ" firstAttribute="centerX" secondItem="ov7-Jm-YmF" secondAttribute="centerX" id="Ky0-ti-kMQ"/>
+                                    <constraint firstItem="L5M-id-CiE" firstAttribute="centerX" secondItem="3Up-lT-TrN" secondAttribute="centerX" id="McF-fl-t2j"/>
                                     <constraint firstItem="qva-MT-EBa" firstAttribute="top" secondItem="zRf-bP-RgQ" secondAttribute="bottom" constant="16" id="R6A-KR-qIX"/>
                                     <constraint firstAttribute="trailing" secondItem="KOy-Rz-xnh" secondAttribute="trailing" constant="10" id="X9z-ZK-pIr"/>
                                     <constraint firstAttribute="bottom" secondItem="qva-MT-EBa" secondAttribute="bottom" id="g9L-fQ-YD3"/>
@@ -212,6 +222,7 @@
                         <viewLayoutGuide key="safeArea" id="8Lx-ip-Bkz"/>
                     </view>
                     <connections>
+                        <outlet property="balanceActivityIndicator" destination="L5M-id-CiE" id="asE-ys-xgO"/>
                         <outlet property="clientBalanceLabel" destination="3Up-lT-TrN" id="J8r-ES-KOw"/>
                         <outlet property="containerView" destination="43w-Hg-OjD" id="P7I-4Q-jI3"/>
                         <outlet property="contentSegmentedView" destination="qva-MT-EBa" id="ckN-Ek-pcG"/>

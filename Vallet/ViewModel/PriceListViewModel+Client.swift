@@ -11,7 +11,6 @@ import Foundation
 extension PriceListViewModel {
 
 	func pay(for product: Product, completion: @escaping (Result<Bool>) -> Void) {
-		// TODO: Check if pendingEvent creates a retain cycle
 		let clientAddress = Wallet.address.address
 		let clientEthAddress = Wallet.address
 

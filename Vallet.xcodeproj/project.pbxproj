@@ -233,6 +233,8 @@
 		D4EC2972216CB2D1009D6A8B /* ErrorNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EC2970216CB2D1009D6A8B /* ErrorNotificationView.swift */; };
 		D4EC2975216CC7F3009D6A8B /* ErrorContaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EC2974216CC7F3009D6A8B /* ErrorContaining.swift */; };
 		D4EC2976216CC7F3009D6A8B /* ErrorContaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EC2974216CC7F3009D6A8B /* ErrorContaining.swift */; };
+		D4EC297D216D3B18009D6A8B /* DotsActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EC297C216D3B18009D6A8B /* DotsActivityIndicator.swift */; };
+		D4EC297E216D3B18009D6A8B /* DotsActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EC297C216D3B18009D6A8B /* DotsActivityIndicator.swift */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -394,6 +396,7 @@
 		D4EC296D216CAE40009D6A8B /* NotificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationView.xib; sourceTree = "<group>"; };
 		D4EC2970216CB2D1009D6A8B /* ErrorNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorNotificationView.swift; sourceTree = "<group>"; };
 		D4EC2974216CC7F3009D6A8B /* ErrorContaining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorContaining.swift; sourceTree = "<group>"; };
+		D4EC297C216D3B18009D6A8B /* DotsActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotsActivityIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -603,6 +606,7 @@
 				D4BE2B54215DF62300146566 /* SegmentedControlView.xib */,
 				D4EC296A216CAE2F009D6A8B /* NotificationView.swift */,
 				D4EC296D216CAE40009D6A8B /* NotificationView.xib */,
+				D4EC297C216D3B18009D6A8B /* DotsActivityIndicator.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1350,6 +1354,7 @@
 				D429F84F21400572004427F0 /* AppDelegate.swift in Sources */,
 				D4C5CD9A2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */,
 				D4C8C9312153D88200C831F0 /* NetworkManager.swift in Sources */,
+				D4EC297D216D3B18009D6A8B /* DotsActivityIndicator.swift in Sources */,
 				D4C8C94A2158D37200C831F0 /* MainViewController+Client.swift in Sources */,
 				D4C8C994215A9E6500C831F0 /* Label.swift in Sources */,
 				D4BE2B58215DF62400146566 /* SegmentedControlView.swift in Sources */,
@@ -1443,6 +1448,7 @@
 				D4C8C995215A9E6500C831F0 /* Label.swift in Sources */,
 				D443CD99214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
 				D48D958A215290C100840707 /* UserDefaultsManager.swift in Sources */,
+				D4EC297E216D3B18009D6A8B /* DotsActivityIndicator.swift in Sources */,
 				D443CDBB214BDABE00A7100F /* UIViewController.swift in Sources */,
 				D443CDB4214BB2DE00A7100F /* UIView.swift in Sources */,
 				D48D957021512BDE00840707 /* ValueEvent.swift in Sources */,
