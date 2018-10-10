@@ -10,8 +10,9 @@ import Foundation
 import web3swift
 import CoreData
 
-struct EventsGroup: EventGroupable {
+struct DescribableEventsGroup: EventGroupable {
 
+	var description: String
 	var events = [EventValuable]()
 
 }
@@ -43,6 +44,14 @@ class HistoryViewModel {
 	var groupedEvents: [EventGroupable] {
 		let calendar = Calendar.current
 
+		var allGroups = [EventGroupable]()
+
+		if let pendingEvents = pendingEvents {
+			// TODO: Move the title to the view layer
+			let pendingGroup = DescribableEventsGroup(description: NSLocalizedString("Pending", comment: "Events group title"), events: pendingEvents)
+			allGroups.append(pendingGroup)
+		}
+
 		let grouped = Dictionary(grouping: events, by: { (event) -> Date in
 			guard let date = event.date
 				else {
@@ -56,7 +65,18 @@ class HistoryViewModel {
 		}
 		groups.sort(by: { $0.date > $1.date })
 
-		return groups
+		allGroups.append(contentsOf: groups)
+
+		return allGroups
+	}
+
+	var pendingEvents: [PendingValueEvent]? {
+		guard var pendingEvents = (try? managedObjectContext?.fetch(PendingValueEvent.fetchRequest())) as? [PendingValueEvent]
+			else {
+				return nil
+		}
+		pendingEvents = pendingEvents.filter { $0.shop == shop }
+		return pendingEvents.count > 0 ? pendingEvents : nil
 	}
 
 	var newDataBlock: (() -> Void) = {}
@@ -74,6 +94,7 @@ class HistoryViewModel {
 
 		NotificationCenter.default.addObserver(self, selector: #selector(updateEvents), name: Constants.Notification.newValueEvent, object: nil)
 		updateEvents()
+		clearPendingEvents()
 	}
 
 	func reload() {
@@ -153,6 +174,19 @@ class HistoryViewModel {
 			if event.client == nil,
 				let user = User.user(in: managedObjectContext, with: event.clientAddress) {
 				event.client = user
+			}
+		}
+		DataBaseManager.save(managedContext: managedObjectContext)
+	}
+
+	private func clearPendingEvents() {
+		guard let pendingEvents = pendingEvents
+			else{
+				return
+		}
+		for pendingEvent in pendingEvents {
+			if events.filter({$0.transactionHash == pendingEvent.transactionHash}).first != nil {
+				pendingEvent.delete()
 			}
 		}
 		DataBaseManager.save(managedContext: managedObjectContext)

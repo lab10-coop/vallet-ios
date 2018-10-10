@@ -193,6 +193,9 @@ extension AdminHistoryViewController: UITableViewDelegate {
 			if let datedEventsGroup = eventGroup as? DatedEventsGroup {
 				historyHeaderView.date = datedEventsGroup.date
 			}
+			else if let describableEventsGroup = eventGroup as? DescribableEventsGroup {
+				historyHeaderView.title = describableEventsGroup.description
+			}
 		}
 		return headerView
 	}
