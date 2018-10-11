@@ -119,12 +119,16 @@ class AdminHistoryViewController: UIViewController {
 
 	private func showTotalSupplyActivityIndicator() {
 		totalSupplyActivityIndicator.startAnimating()
-		totalSupplyLabel.alpha = Theme.Constants.loadingValueLabelAlpha
+		UIView.animate(withDuration: Constants.Animation.defaultDuration) {
+			self.totalSupplyLabel.alpha = Theme.Constants.loadingValueLabelAlpha
+		}
 	}
 
 	private func hideTotalSupplyActivityIndicator() {
 		totalSupplyActivityIndicator.stopAnimating()
-		totalSupplyLabel.alpha = 1.0
+		UIView.animate(withDuration: Constants.Animation.defaultDuration) {
+			self.totalSupplyLabel.alpha = 1
+		}
 	}
 
 	private func updateTotalSupply() {

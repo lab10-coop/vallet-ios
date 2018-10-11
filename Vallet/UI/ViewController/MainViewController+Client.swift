@@ -48,6 +48,8 @@ extension MainViewController {
 		pageViewController?.setViewControllers([currentViewController], direction: .forward, animated: false, completion: { (success) in
 		})
 
+		NotificationCenter.default.addObserver(self, selector: #selector(updateBalance), name: Constants.Notification.newValueEvent, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(updateBalance), name: Constants.Notification.valueEventsUpdate, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(updateBalance), name: Constants.Notification.balanceRequest, object: nil)
 	}
 
@@ -62,9 +64,27 @@ extension MainViewController {
 		})
 	}
 
-	@objc func updateBalance() {
+	private func showBalanceActivityIndicator() {
 		balanceActivityIndicator.startAnimating()
-		clientBalanceLabel.alpha = Theme.Constants.loadingValueLabelAlpha
+		UIView.animate(withDuration: Constants.Animation.defaultDuration) {
+			self.clientBalanceLabel.alpha = Theme.Constants.loadingValueLabelAlpha
+		}
+	}
+
+	private func hideBalanceActivityIndicator() {
+		guard let shop = shop,
+			PendingValueEvent.events(in: DataBaseManager.managedContext, shop: shop) == nil
+			else {
+				return
+		}
+		balanceActivityIndicator.stopAnimating()
+		UIView.animate(withDuration: Constants.Animation.defaultDuration) {
+			self.clientBalanceLabel.alpha = 1
+		}
+	}
+
+	@objc func updateBalance() {
+		showBalanceActivityIndicator()
 		ShopManager.balance(for: Wallet.address, in: shop) { [weak self] (result) in
 			switch result {
 			case .success(let balance):
@@ -73,8 +93,7 @@ extension MainViewController {
 				NotificationView.drop(error: error)
 			}
 
-			self?.balanceActivityIndicator.stopAnimating()
-			self?.clientBalanceLabel.alpha = 1
+			self?.hideBalanceActivityIndicator()
 		}
 	}
 

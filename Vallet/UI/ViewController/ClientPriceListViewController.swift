@@ -78,6 +78,7 @@ class ClientPriceListViewController: UIViewController {
 						NotificationView.drop(error: error)
 					}
 				})
+				NotificationCenter.default.post(name: Constants.Notification.valueEventsUpdate, object: nil)
 			case .failure(let error):
 				NotificationView.drop(error: error)
 			}

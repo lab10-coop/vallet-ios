@@ -57,6 +57,10 @@ class DotsActivityIndicator: UIView {
 				dot.alpha = 1.0
 			}, completion: nil)
 		}
+
+		UIView.animate(withDuration: 0.6) {
+			self.alpha = 1
+		}
 	}
 
 	func stopAnimating() {
@@ -74,6 +78,10 @@ class DotsActivityIndicator: UIView {
 			UIView.animate(withDuration: 0.6, delay: Double(i) * 0.3, options: [], animations: {
 				dot.alpha = 0.0
 			}, completion: nil)
+		}
+
+		UIView.animate(withDuration: 0.6) {
+			self.alpha = 0
 		}
 	}
 

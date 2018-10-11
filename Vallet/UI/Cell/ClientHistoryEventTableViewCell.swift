@@ -30,7 +30,7 @@ class ClientHistoryEventTableViewCell: UITableViewCell, NibBackedTableViewCell {
 			case .redeem:
 				outgoingImageView.tintColor = Theme.Color.accent
 				outgoingImageView.isHidden = false
-				descriptionLabel.text = event.productName ?? NSLocalizedString("Unknow Item", comment: "Unknown item name")
+				descriptionLabel.text = event.productName ?? NSLocalizedString("Unknown Item", comment: "Unknown item name")
 				valueLabel.text = "- \(value)"
 				valueLabel.textColor = Theme.Color.darkText
 			case .issue:

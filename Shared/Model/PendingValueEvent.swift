@@ -68,3 +68,16 @@ extension PendingValueEvent {
 
 }
 
+extension PendingValueEvent {
+
+	static func events(in managedObjectContext: NSManagedObjectContext, shop: Shop) -> [PendingValueEvent]? {
+		guard var pendingEvents = (try? managedObjectContext.fetch(PendingValueEvent.fetchRequest())) as? [PendingValueEvent]
+			else {
+				return nil
+		}
+		pendingEvents = pendingEvents.filter { $0.shop == shop }
+		return pendingEvents.count > 0 ? pendingEvents : nil
+	}
+	
+}
+

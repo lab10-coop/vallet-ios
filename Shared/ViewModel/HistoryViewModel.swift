@@ -71,12 +71,11 @@ class HistoryViewModel {
 	}
 
 	var pendingEvents: [PendingValueEvent]? {
-		guard var pendingEvents = (try? managedObjectContext?.fetch(PendingValueEvent.fetchRequest())) as? [PendingValueEvent]
+		guard let managedObjectContext = managedObjectContext
 			else {
 				return nil
 		}
-		pendingEvents = pendingEvents.filter { $0.shop == shop }
-		return pendingEvents.count > 0 ? pendingEvents : nil
+		return PendingValueEvent.events(in: managedObjectContext, shop: shop)
 	}
 
 	var newDataBlock: (() -> Void) = {}
