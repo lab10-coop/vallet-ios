@@ -125,6 +125,12 @@ class AdminHistoryViewController: UIViewController {
 	}
 
 	private func hideTotalSupplyActivityIndicator() {
+		guard let shop = shop,
+			let managedObjectContext = historyViewModel?.managedObjectContext,
+			PendingValueEvent.events(in: managedObjectContext, shop: shop) == nil
+			else {
+				return
+		}
 		totalSupplyActivityIndicator.stopAnimating()
 		UIView.animate(withDuration: Constants.Animation.defaultDuration) {
 			self.totalSupplyLabel.alpha = 1
