@@ -502,7 +502,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="48" sectionHeaderHeight="52" estimatedSectionHeaderHeight="52" sectionFooterHeight="17" estimatedSectionFooterHeight="17" translatesAutoresizingMaskIntoConstraints="NO" id="jKM-qB-Afb">
+                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="48" sectionHeaderHeight="60" estimatedSectionHeaderHeight="60" sectionFooterHeight="17" estimatedSectionFooterHeight="17" translatesAutoresizingMaskIntoConstraints="NO" id="jKM-qB-Afb">
                                 <rect key="frame" x="0.0" y="44" width="375" height="768"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="LJx-VQ-XLK" customClass="BackgroundView" customModule="ValletAdmin" customModuleProvider="target">
