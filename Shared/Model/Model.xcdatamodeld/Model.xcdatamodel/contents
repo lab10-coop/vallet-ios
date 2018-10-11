@@ -67,9 +67,9 @@
         <attribute name="blockHash" attributeType="String" customClassName=".Data" syncable="YES"/>
         <attribute name="clientAddress" attributeType="String" syncable="YES"/>
         <attribute name="productName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="status" attributeType="String" syncable="YES"/>
         <attribute name="storedBlockNumber" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="storedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" customClassName="Date" syncable="YES"/>
+        <attribute name="storedStatus" attributeType="String" syncable="YES"/>
         <attribute name="storedType" attributeType="String" syncable="YES"/>
         <attribute name="transactionHash" attributeType="String" syncable="YES"/>
         <attribute name="value" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>

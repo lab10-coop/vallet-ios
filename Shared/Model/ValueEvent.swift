@@ -52,6 +52,10 @@ public class ValueEvent: NSManagedObject, EventValuable {
 		return ValueEventType(rawValue: storedType)
 	}
 
+	var status: ValueEventStatus? {
+		return ValueEventStatus(rawValue: storedStatus)
+	}
+
 	convenience init?(in managedContext: NSManagedObjectContext, shop: Shop, intermediate: ValueEventIntermediate) {
 		self.init(
 			in: managedContext,
@@ -85,7 +89,7 @@ public class ValueEvent: NSManagedObject, EventValuable {
 		self.value = value
 		self.clientAddress = clientAddress
 		self.storedType = type.rawValue
-		self.status = status.rawValue
+		self.storedStatus = status.rawValue
 		self.blockHash = blockHash
 		self.storedBlockNumber = blockNumber
 		self.storedDate = date as NSDate?
@@ -120,7 +124,7 @@ extension ValueEvent {
 	@NSManaged public var value: Int64
 	@NSManaged public var clientAddress: String
 	@NSManaged public var storedType: String
-	@NSManaged public var status: String
+	@NSManaged public var storedStatus: String
 	@NSManaged public var blockHash: String
 	@NSManaged public var storedBlockNumber: Int64
 	@NSManaged public var storedDate: NSDate?

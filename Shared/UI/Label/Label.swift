@@ -65,6 +65,12 @@ class SmallDarkTextLabel: BaseLabel {
 	}
 }
 
+class SmallErrorTextLabel: SmallDarkTextLabel {
+	override var mode: LabelMode {
+		return .error
+	}
+}
+
 class NavigationBarTitleLabel: BaseLabel {
 	override var mode: LabelMode {
 		return .normal
