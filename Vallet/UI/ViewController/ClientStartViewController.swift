@@ -37,10 +37,6 @@ class ClientStartViewController: UIViewController, ErrorContaining {
 		nameInputView.returnKeyType = .send
 		nameInputView.delegate = self
 
-		FaucetManager.getFunds(for: Wallet.address) { result in
-			print("Get funds result: \(result)")
-		}
-
 		containerView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor).isActive = true
 	}
 
