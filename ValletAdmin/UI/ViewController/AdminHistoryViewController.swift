@@ -19,6 +19,7 @@ class AdminHistoryViewController: UIViewController {
 	@IBOutlet private var outgoingValueLabel: UILabel!
 	@IBOutlet private var incomingTitleLabel: UILabel!
 	@IBOutlet private var incomingValueLabel: UILabel!
+	@IBOutlet private var totalSupplyActivityIndicator: DotsActivityIndicator!
 
 	private lazy var refreshControl: UIRefreshControl = {
 		let refreshControl = UIRefreshControl()
@@ -30,7 +31,7 @@ class AdminHistoryViewController: UIViewController {
 	var shop: Shop?
 	weak var container: UIViewController?
 
-	private var groupedEvents = [EventsGroup]()
+	private var groupedEvents = [EventGroupable]()
 
 	static func instance(for shop: Shop) -> AdminHistoryViewController? {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -63,6 +64,10 @@ class AdminHistoryViewController: UIViewController {
 		}
 
 		historyViewModel = HistoryViewModel(shop: shop)
+		historyViewModel?.newDataBlock = { [weak self] in
+			self?.refreshControl.endRefreshing()
+			self?.reloadView()
+		}
 
 		AdminHistoryEventTableViewCell.register(for: tableView)
 		HistoryTableSectionHeaderView.register(for: tableView)
@@ -93,7 +98,6 @@ class AdminHistoryViewController: UIViewController {
 			else {
 				return
 		}
-		historyViewModel.updateEvents()
 		self.groupedEvents = historyViewModel.groupedEvents
 		tableView.reloadData()
 
@@ -101,20 +105,36 @@ class AdminHistoryViewController: UIViewController {
 
 		incomingValueLabel.text = CurrencyFormatter.displayString(for: historyViewModel.incomingSum)
 		outgoingValueLabel.text = CurrencyFormatter.displayString(for: historyViewModel.outgoingSum)
+
+		// Temporarily display total supply value calculated from events.
+		totalSupplyLabel.text = CurrencyFormatter.displayString(for: (historyViewModel.outgoingSum - historyViewModel.incomingSum))
+
+		updateTotalSupply()
 	}
 
 	@objc private func reloadData() {
-		historyViewModel?.reload(completion: { [weak self] (result) in
-			switch result {
-			case .success:
-				break
-			case .failure(let error):
-				NotificationView.drop(error: error)
-			}
+		showTotalSupplyActivityIndicator()
+		historyViewModel?.reload()
+	}
 
-			self?.refreshControl.endRefreshing()
-			self?.reloadView()
-		})
+	private func showTotalSupplyActivityIndicator() {
+		totalSupplyActivityIndicator.startAnimating()
+		UIView.animate(withDuration: Constants.Animation.defaultDuration) {
+			self.totalSupplyLabel.alpha = Theme.Constants.loadingValueLabelAlpha
+		}
+	}
+
+	private func hideTotalSupplyActivityIndicator() {
+		guard let shop = shop,
+			let managedObjectContext = historyViewModel?.managedObjectContext,
+			PendingValueEvent.events(in: managedObjectContext, shop: shop) == nil
+			else {
+				return
+		}
+		totalSupplyActivityIndicator.stopAnimating()
+		UIView.animate(withDuration: Constants.Animation.defaultDuration) {
+			self.totalSupplyLabel.alpha = 1
+		}
 	}
 
 	private func updateTotalSupply() {
@@ -122,6 +142,9 @@ class AdminHistoryViewController: UIViewController {
 			else {
 				return
 		}
+
+		showTotalSupplyActivityIndicator()
+
 		ShopManager.totalSupply(for: shop) { [weak self] (result) in
 			switch result {
 			case .success(let balance):
@@ -129,6 +152,7 @@ class AdminHistoryViewController: UIViewController {
 			case .failure(let error):
 				NotificationView.drop(error: error)
 			}
+			self?.hideTotalSupplyActivityIndicator()
 		}
 	}
 
@@ -138,7 +162,8 @@ class AdminHistoryViewController: UIViewController {
 			else {
 				return
 		}
-		IssueAddressViewController.present(for: shop, over: container)
+		let issueAddressViewController = IssueAddressViewController.present(for: shop, over: container)
+		issueAddressViewController?.delegate = self
 	}
 
 }
@@ -174,7 +199,13 @@ extension AdminHistoryViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: HistoryTableSectionHeaderView.reuseIdentifier)
 		if let historyHeaderView = headerView as? HistoryTableSectionHeaderView {
-			historyHeaderView.date = groupedEvents[section].date
+			let eventGroup = groupedEvents[section]
+			if let datedEventsGroup = eventGroup as? DatedEventsGroup {
+				historyHeaderView.date = datedEventsGroup.date
+			}
+			else if let describableEventsGroup = eventGroup as? DescribableEventsGroup {
+				historyHeaderView.title = describableEventsGroup.description
+			}
 		}
 		return headerView
 	}
@@ -191,3 +222,19 @@ extension AdminHistoryViewController: UITableViewDelegate {
 }
 
 
+// MARK: - Issue delegate
+
+extension AdminHistoryViewController: IssueViewControllerDelegate {
+
+	func didIssueAmount(with pendingValueEvent: PendingValueEvent) {
+		PendingEventManager.makeValueEvent(from: pendingValueEvent) { (result) in
+			switch result {
+			case .success:
+				break
+			case .failure(let error):
+				NotificationView.drop(error: error)
+			}
+		}
+	}
+
+}

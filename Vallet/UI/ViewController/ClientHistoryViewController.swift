@@ -22,7 +22,7 @@ class ClientHistoryViewController: UIViewController {
 	var shop: Shop?
 	weak var container: UIViewController?
 
-	private var groupedEvents = [EventsGroup]()
+	private var groupedEvents = [EventGroupable]()
 
 	static func instance(for shop: Shop) -> ClientHistoryViewController? {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -46,6 +46,10 @@ class ClientHistoryViewController: UIViewController {
 		}
 
 		historyViewModel = HistoryViewModel(shop: shop, clientAddress: Wallet.address)
+		historyViewModel?.newDataBlock = { [weak self] in
+			self?.refreshControl.endRefreshing()
+			self?.reloadTableView()
+		}
 
 		ClientHistoryEventTableViewCell.register(for: tableView)
 		HistoryTableSectionHeaderView.register(for: tableView)
@@ -61,7 +65,6 @@ class ClientHistoryViewController: UIViewController {
 	}
 
 	private func reloadTableView() {
-		historyViewModel?.updateEvents()
 		guard let groupedEvents = historyViewModel?.groupedEvents
 			else {
 				return
@@ -71,17 +74,7 @@ class ClientHistoryViewController: UIViewController {
 	}
 
 	@objc private func reloadData() {
-		historyViewModel?.reload(completion: { [weak self] (result) in
-			switch result {
-			case .success:
-				break
-			case .failure(let error):
-				NotificationView.drop(error: error)
-			}
-
-			self?.refreshControl.endRefreshing()
-			self?.reloadTableView()
-		})
+		historyViewModel?.reload()
 	}
 
 }
@@ -117,7 +110,13 @@ extension ClientHistoryViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: HistoryTableSectionHeaderView.reuseIdentifier)
 		if let historyHeaderView = headerView as? HistoryTableSectionHeaderView {
-			historyHeaderView.date = groupedEvents[section].date
+			let eventGroup = groupedEvents[section]
+			if let datedEventsGroup = eventGroup as? DatedEventsGroup {
+				historyHeaderView.date = datedEventsGroup.date
+			}
+			else if let describableEventsGroup = eventGroup as? DescribableEventsGroup {
+				historyHeaderView.title = describableEventsGroup.description
+			}
 		}
 		return headerView
 	}

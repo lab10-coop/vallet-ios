@@ -9,5 +9,7 @@
 import Foundation
 
 protocol ErrorContaining {
+
 	var error: Error? {get set}
+	
 }

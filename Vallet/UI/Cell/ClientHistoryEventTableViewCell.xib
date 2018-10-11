@@ -23,42 +23,53 @@
                         <rect key="frame" x="16" y="-8" width="288" height="59.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" image="IncomingArrowIcon" translatesAutoresizingMaskIntoConstraints="NO" id="CPL-04-L44">
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" image="OutgoingArrowIcon" translatesAutoresizingMaskIntoConstraints="NO" id="dNS-HC-jLe">
                         <rect key="frame" x="32" y="17" width="10" height="10"/>
                     </imageView>
-                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" image="OutgoingArrowIcon" translatesAutoresizingMaskIntoConstraints="NO" id="dNS-HC-jLe">
-                        <rect key="frame" x="32" y="17" width="10" height="10"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="arn-1T-f5O" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
-                        <rect key="frame" x="50" y="12" width="186" height="19.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mo2-Re-IfX" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
-                        <rect key="frame" x="246" y="11.5" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XDy-5N-QpN">
+                        <rect key="frame" x="32" y="8" width="256" height="27.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WvP-6C-z5N">
+                                <rect key="frame" x="0.0" y="0.0" width="256" height="27.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" image="IncomingArrowIcon" translatesAutoresizingMaskIntoConstraints="NO" id="CPL-04-L44">
+                                        <rect key="frame" x="0.0" y="0.0" width="10" height="27.5"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="arn-1T-f5O" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
+                                        <rect key="frame" x="18" y="0.0" width="188" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mo2-Re-IfX" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
+                                        <rect key="frame" x="214" y="0.0" width="42" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nje-IY-Pc1" customClass="SmallErrorTextLabel" customModule="Vallet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="27.5" width="256" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="arn-1T-f5O" firstAttribute="centerY" secondItem="CPL-04-L44" secondAttribute="centerY" id="5ao-Dh-tuR"/>
-                    <constraint firstItem="dNS-HC-jLe" firstAttribute="centerY" secondItem="CPL-04-L44" secondAttribute="centerY" id="6PB-gA-b74"/>
+                    <constraint firstItem="dNS-HC-jLe" firstAttribute="centerX" secondItem="CPL-04-L44" secondAttribute="centerX" id="4e2-sW-rH6"/>
                     <constraint firstAttribute="bottom" secondItem="SGE-Xe-dO7" secondAttribute="bottom" constant="-8" id="9bb-bn-mAy"/>
-                    <constraint firstItem="arn-1T-f5O" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Gj6-7W-RZ1"/>
-                    <constraint firstItem="arn-1T-f5O" firstAttribute="leading" secondItem="CPL-04-L44" secondAttribute="trailing" constant="8" id="Lwa-9o-8R4"/>
-                    <constraint firstItem="CPL-04-L44" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="NdX-ry-35t"/>
+                    <constraint firstItem="XDy-5N-QpN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="AVL-VW-bYj"/>
+                    <constraint firstItem="XDy-5N-QpN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="JEW-Hh-c36"/>
+                    <constraint firstAttribute="trailing" secondItem="XDy-5N-QpN" secondAttribute="trailing" constant="32" id="KUY-Z7-riz"/>
                     <constraint firstItem="SGE-Xe-dO7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Qqf-nl-3Ob"/>
-                    <constraint firstItem="arn-1T-f5O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="Rfe-uc-nVt"/>
-                    <constraint firstAttribute="trailing" secondItem="Mo2-Re-IfX" secondAttribute="trailing" constant="32" id="UWg-wm-wKm"/>
-                    <constraint firstItem="dNS-HC-jLe" firstAttribute="centerX" secondItem="CPL-04-L44" secondAttribute="centerX" id="YZj-fi-cvl"/>
+                    <constraint firstAttribute="bottom" secondItem="XDy-5N-QpN" secondAttribute="bottom" constant="8" id="a8x-3G-XxW"/>
                     <constraint firstAttribute="trailing" secondItem="SGE-Xe-dO7" secondAttribute="trailing" constant="16" id="dUC-u9-PH5"/>
                     <constraint firstItem="SGE-Xe-dO7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="-8" id="gF3-WC-Xlx"/>
-                    <constraint firstAttribute="bottom" secondItem="arn-1T-f5O" secondAttribute="bottom" constant="12" id="r16-Ax-YfY"/>
-                    <constraint firstItem="Mo2-Re-IfX" firstAttribute="leading" secondItem="arn-1T-f5O" secondAttribute="trailing" constant="10" id="rzl-pf-a67"/>
-                    <constraint firstItem="Mo2-Re-IfX" firstAttribute="centerY" secondItem="arn-1T-f5O" secondAttribute="centerY" id="spv-pe-ksw"/>
+                    <constraint firstItem="dNS-HC-jLe" firstAttribute="centerY" secondItem="CPL-04-L44" secondAttribute="centerY" id="yl3-Hd-xsR"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,6 +79,7 @@
                 <outlet property="incomingImageView" destination="CPL-04-L44" id="Qdl-gj-DsI"/>
                 <outlet property="outgoingImageView" destination="dNS-HC-jLe" id="LdX-kN-sep"/>
                 <outlet property="shadowView" destination="SGE-Xe-dO7" id="dGQ-GC-t6k"/>
+                <outlet property="statusLabel" destination="Nje-IY-Pc1" id="fVh-dR-Czv"/>
                 <outlet property="valueLabel" destination="Mo2-Re-IfX" id="nTD-aK-ACk"/>
             </connections>
             <point key="canvasLocation" x="140.80000000000001" y="154.72263868065968"/>

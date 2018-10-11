@@ -8,12 +8,20 @@
 
 import UIKit
 
+protocol IssueViewControllerDelegate: class {
+
+	func didIssueAmount(with pendingValueEvent: PendingValueEvent)
+
+}
+
 class IssueAmountViewController: UIViewController {
 
 	@IBOutlet private var amountTextInputView: TextInputView!
 	@IBOutlet private var issueButton: UIButton!
 
 	var issueViewModel: IssueViewModel?
+
+	weak var delegate: IssueViewControllerDelegate?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -40,10 +48,9 @@ class IssueAmountViewController: UIViewController {
 		showActivityIndicator()
 		issueViewModel.issue { [weak self] (result) in
 			switch result {
-			case .success(let success):
-				if success {
-					self?.dismiss(animated: true, completion: nil)
-				}
+			case .success(let pendingEvent):
+				self?.delegate?.didIssueAmount(with: pendingEvent)
+				self?.dismiss(animated: true, completion: nil)
 			case .failure(let error):
 				NotificationView.drop(error: error)
 			}

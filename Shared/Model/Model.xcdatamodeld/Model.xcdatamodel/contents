@@ -7,11 +7,18 @@
     </entity>
     <entity name="PendingValueEvent" representedClassName="PendingValueEvent" syncable="YES">
         <attribute name="clientAddress" attributeType="String" syncable="YES"/>
+        <attribute name="needsRetry" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="productName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="storedDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="type" attributeType="String" syncable="YES"/>
+        <attribute name="storedType" attributeType="String" syncable="YES"/>
+        <attribute name="transactionHash" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="value" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="shop" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Shop" inverseName="pendingEvents" inverseEntity="Shop" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="transactionHash"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="PriceList" representedClassName="PriceList" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
@@ -57,26 +64,26 @@
         </uniquenessConstraints>
     </entity>
     <entity name="ValueEvent" representedClassName="ValueEvent" syncable="YES">
+        <attribute name="blockHash" attributeType="String" customClassName=".Data" syncable="YES"/>
         <attribute name="clientAddress" attributeType="String" syncable="YES"/>
         <attribute name="productName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="status" attributeType="String" syncable="YES"/>
-        <attribute name="storedBlockHash" attributeType="Binary" customClassName=".Data" syncable="YES"/>
         <attribute name="storedBlockNumber" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="storedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" customClassName="Date" syncable="YES"/>
-        <attribute name="storedTransactionHash" attributeType="Binary" syncable="YES"/>
-        <attribute name="type" attributeType="String" syncable="YES"/>
+        <attribute name="storedStatus" attributeType="String" syncable="YES"/>
+        <attribute name="storedType" attributeType="String" syncable="YES"/>
+        <attribute name="transactionHash" attributeType="String" syncable="YES"/>
         <attribute name="value" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="client" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="events" inverseEntity="User" syncable="YES"/>
         <relationship name="shop" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Shop" inverseName="events" inverseEntity="Shop" syncable="YES"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
-                <constraint value="storedTransactionHash"/>
+                <constraint value="transactionHash"/>
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
     <elements>
         <element name="ExternalImage" positionX="-558.34765625" positionY="27.1640625" width="128" height="88"/>
-        <element name="PendingValueEvent" positionX="188.28125" positionY="218.4296875" width="128" height="135"/>
+        <element name="PendingValueEvent" positionX="188.28125" positionY="218.4296875" width="128" height="165"/>
         <element name="PriceList" positionX="-64.14453125" positionY="203.6796875" width="128" height="103"/>
         <element name="Product" positionX="-326" positionY="-18" width="128" height="133"/>
         <element name="Shop" positionX="-63" positionY="-18" width="128" height="163"/>

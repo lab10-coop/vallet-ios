@@ -50,7 +50,7 @@ class Token: ContractProtocol {
 
 	// MARK: - Contract methods
 
-	func issue(value: Int, to toAddress: EthereumAddress, from fromAddress: EthereumAddress, completion: @escaping (Result<TransactionReceipt>) -> Void) {
+	func issue(value: Int, to toAddress: EthereumAddress, from fromAddress: EthereumAddress, completion: @escaping (Result<TransactionSendingResult>) -> Void) {
 		var options = Web3Options()
 		options.from = fromAddress
 
@@ -63,9 +63,7 @@ class Token: ContractProtocol {
 		intermediate.sendAsync(password: Constants.Temp.keystorePassword) { (result) in
 			switch result {
 			case .success(let transactionResult):
-				Web3Manager.getTransactionReceipt(for: transactionResult.hash, completion: { (receiptResult) in
-					completion(receiptResult)
-				})
+				completion(Result.success(transactionResult))
 			case .failure(let error):
 				completion(Result.failure(error))
 			}
@@ -95,7 +93,7 @@ class Token: ContractProtocol {
 		}
 	}
 
-	func redeem(value: Int, from address: EthereumAddress, completion: @escaping (Result<TransactionReceipt>) -> Void) {
+	func redeem(value: Int, from address: EthereumAddress, completion: @escaping (Result<TransactionSendingResult>) -> Void) {
 		var options = Web3Options()
 		options.from = address
 
@@ -108,9 +106,7 @@ class Token: ContractProtocol {
 		intermediate.sendAsync(password: Constants.Temp.keystorePassword) { (result) in
 			switch result {
 			case .success(let transactionResult):
-				Web3Manager.getTransactionReceipt(for: transactionResult.hash, completion: { (receiptResult) in
-					completion(receiptResult)
-				})
+				completion(Result.success(transactionResult))
 			case .failure(let error):
 				completion(Result.failure(error))
 			}
@@ -302,12 +298,12 @@ class Token: ContractProtocol {
 
 struct ValueEventIntermediate: CustomStringConvertible {
 
-	var transactionHash: Data
+	var transactionHash: String
 	var value: Int64
 	var clientAddress: EthereumAddress
 	var type: ValueEventType
 	var status: ValueEventStatus
-	var blockHash: Data
+	var blockHash: String
 	var blockNumber: Int64
 	var date: Date?
 
@@ -322,8 +318,8 @@ struct ValueEventIntermediate: CustomStringConvertible {
 		self.value = parsedValue
 		self.clientAddress = parsedAddress
 		self.type = .issue
-		self.transactionHash = transactionReceipt.transactionHash
-		self.blockHash = transactionReceipt.blockHash
+		self.transactionHash = transactionReceipt.transactionHash.hashString
+		self.blockHash = transactionReceipt.blockHash.hashString
 		self.blockNumber = Int64(transactionReceipt.blockNumber)
 		switch transactionReceipt.status {
 		case .ok:
@@ -346,8 +342,8 @@ struct ValueEventIntermediate: CustomStringConvertible {
 		self.value = parsedValue
 		self.clientAddress = parsedAddress
 		self.type = .redeem
-		self.transactionHash = transactionReceipt.transactionHash
-		self.blockHash = transactionReceipt.blockHash
+		self.transactionHash = transactionReceipt.transactionHash.hashString
+		self.blockHash = transactionReceipt.blockHash.hashString
 		self.blockNumber = Int64(transactionReceipt.blockNumber)
 		switch transactionReceipt.status {
 		case .ok:

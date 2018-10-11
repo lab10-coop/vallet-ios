@@ -10,10 +10,17 @@ import Foundation
 import web3swift
 import CoreData
 
-struct EventsGroup {
+struct DescribableEventsGroup: EventGroupable {
+
+	var description: String
+	var events = [EventValuable]()
+
+}
+
+struct DatedEventsGroup: EventGroupable {
 
 	var date = Date()
-	var events = [ValueEvent]()
+	var events = [EventValuable]()
 
 }
 
@@ -34,8 +41,16 @@ class HistoryViewModel {
 		return lastBlockNumber
 	}
 
-	var groupedEvents: [EventsGroup] {
+	var groupedEvents: [EventGroupable] {
 		let calendar = Calendar.current
+
+		var allGroups = [EventGroupable]()
+
+		if let pendingEvents = pendingEvents {
+			// TODO: Move the title to the view layer
+			let pendingGroup = DescribableEventsGroup(description: NSLocalizedString("Pending", comment: "Events group title"), events: pendingEvents)
+			allGroups.append(pendingGroup)
+		}
 
 		let grouped = Dictionary(grouping: events, by: { (event) -> Date in
 			guard let date = event.date
@@ -45,13 +60,25 @@ class HistoryViewModel {
 			return calendar.startOfDay(for: date)
 		})
 
-		var groups = grouped.map { (entry) -> EventsGroup in
-			return EventsGroup(date: entry.key, events: entry.value)
+		var groups = grouped.map { (entry) -> DatedEventsGroup in
+			return DatedEventsGroup(date: entry.key, events: entry.value)
 		}
 		groups.sort(by: { $0.date > $1.date })
 
-		return groups
+		allGroups.append(contentsOf: groups)
+
+		return allGroups
 	}
+
+	var pendingEvents: [PendingValueEvent]? {
+		guard let managedObjectContext = managedObjectContext
+			else {
+				return nil
+		}
+		return PendingValueEvent.events(in: managedObjectContext, shop: shop)
+	}
+
+	var newDataBlock: (() -> Void) = {}
 
 	init?(shop: Shop, clientAddress: EthereumAddress? = nil) {
 		guard let shopAddress = shop.address,
@@ -64,30 +91,33 @@ class HistoryViewModel {
 		self.token = Token(address: shopEthAddress)
 		self.clientAddress = clientAddress
 
+		NotificationCenter.default.addObserver(self, selector: #selector(updateEvents), name: Constants.Notification.newValueEvent, object: nil)
 		updateEvents()
+		clearPendingEvents()
 	}
 
-	func reload(completion: @escaping (Result<[ValueEvent]>) -> Void) {
+	func reload() {
 		token.loadHistory(for: clientAddress, fromBlock: lastBlockNumber) { [weak self] (eventsResult) in
 			guard let strongSelf = self,
 				let managedObjectContext = strongSelf.managedObjectContext
 				else {
-					completion(Result.failure(ValletError.unwrapping(property: "managedObjectContext", object: "HistoryViewModel", function: #function)))
+					NotificationView.drop(error: ValletError.unwrapping(property: "managedObjectContext", object: "HistoryViewModel", function: #function))
 					return
 			}
 			switch eventsResult {
 			case .success(let eventsIntermediate):
 				let loadedEvents = eventsIntermediate.compactMap { ValueEvent(in: managedObjectContext, shop: strongSelf.shop, intermediate: $0) }
-				DataBaseManager.save(managedContext: managedObjectContext)
-				strongSelf.updateEvents()
-				completion(Result.success(loadedEvents))
+				if loadedEvents.count > 0 {
+					DataBaseManager.save(managedContext: managedObjectContext)
+					NotificationCenter.default.post(name: Constants.Notification.newValueEvent, object: nil)
+				}
 			case .failure(let error):
-				completion(Result.failure(error))
+				NotificationView.drop(error: error)
 			}
 		}
 	}
 
-	func updateEvents() {
+	@objc func updateEvents() {
 		// update events from the database
 		guard var updatedEvents = (try? managedObjectContext?.fetch(ValueEvent.fetchRequest())) as? [ValueEvent]
 			else {
@@ -95,15 +125,18 @@ class HistoryViewModel {
 		}
 		updatedEvents = updatedEvents.filter({ $0.shop == shop }).sorted(by: { $0.blockNumber > $1.blockNumber })
 		if updatedEvents.count != events.count {
-			NotificationCenter.default.post(name: Constants.Notification.newValueEvent, object: nil)
+			NotificationCenter.default.post(name: Constants.Notification.balanceRequest, object: nil)
 		}
 
 		events = updatedEvents
 
 		attachUser(for: events)
+
+		newDataBlock()
 		
-		fetchDateFor(events: events) { (result) in
+		fetchDateFor(events: events) { [weak self] (result) in
 			print("Fetch date events result: \(result)")
+			self?.newDataBlock()
 		}
 	}
 
@@ -140,6 +173,19 @@ class HistoryViewModel {
 			if event.client == nil,
 				let user = User.user(in: managedObjectContext, with: event.clientAddress) {
 				event.client = user
+			}
+		}
+		DataBaseManager.save(managedContext: managedObjectContext)
+	}
+
+	private func clearPendingEvents() {
+		guard let pendingEvents = pendingEvents
+			else{
+				return
+		}
+		for pendingEvent in pendingEvents {
+			if events.filter({$0.transactionHash == pendingEvent.transactionHash}).first != nil {
+				pendingEvent.delete()
 			}
 		}
 		DataBaseManager.save(managedContext: managedObjectContext)

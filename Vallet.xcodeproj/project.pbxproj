@@ -109,6 +109,12 @@
 		D4B0860A21678AAD00DB623B /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B0860821678AAD00DB623B /* CurrencyFormatter.swift */; };
 		D4B0860E216944F600DB623B /* PrivacyPermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B0860D216944F500DB623B /* PrivacyPermissionsManager.swift */; };
 		D4B0860F216944F600DB623B /* PrivacyPermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B0860D216944F500DB623B /* PrivacyPermissionsManager.swift */; };
+		D4B4B368216E4994008A406C /* PendingEventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B4B367216E4994008A406C /* PendingEventManager.swift */; };
+		D4B4B369216E4994008A406C /* PendingEventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B4B367216E4994008A406C /* PendingEventManager.swift */; };
+		D4B4B36B216E5BA5008A406C /* EventGroupable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B4B36A216E5BA5008A406C /* EventGroupable.swift */; };
+		D4B4B36C216E5BA5008A406C /* EventGroupable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B4B36A216E5BA5008A406C /* EventGroupable.swift */; };
+		D4B4B36E216E5BDB008A406C /* EventValuable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B4B36D216E5BDB008A406C /* EventValuable.swift */; };
+		D4B4B36F216E5BDB008A406C /* EventValuable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B4B36D216E5BDB008A406C /* EventValuable.swift */; };
 		D4BE2B56215DF62400146566 /* SegmentedControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4BE2B54215DF62300146566 /* SegmentedControlView.xib */; };
 		D4BE2B57215DF62400146566 /* SegmentedControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4BE2B54215DF62300146566 /* SegmentedControlView.xib */; };
 		D4BE2B58215DF62400146566 /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BE2B55215DF62300146566 /* SegmentedControlView.swift */; };
@@ -225,6 +231,8 @@
 		D4DA57DD215CD72200942ED7 /* HistoryTableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DA57DB215CD71E00942ED7 /* HistoryTableSectionHeaderView.swift */; };
 		D4DA57DF215CD73100942ED7 /* HistoryTableSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4DA57DE215CD73100942ED7 /* HistoryTableSectionHeaderView.xib */; };
 		D4DA57E0215CD73100942ED7 /* HistoryTableSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4DA57DE215CD73100942ED7 /* HistoryTableSectionHeaderView.xib */; };
+		D4E816EF216E1DB7006717DB /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E816EE216E1DB7006717DB /* Data.swift */; };
+		D4E816F0216E1DB7006717DB /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E816EE216E1DB7006717DB /* Data.swift */; };
 		D4EC296B216CAE2F009D6A8B /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EC296A216CAE2F009D6A8B /* NotificationView.swift */; };
 		D4EC296C216CAE2F009D6A8B /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EC296A216CAE2F009D6A8B /* NotificationView.swift */; };
 		D4EC296E216CAE40009D6A8B /* NotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4EC296D216CAE40009D6A8B /* NotificationView.xib */; };
@@ -233,6 +241,8 @@
 		D4EC2972216CB2D1009D6A8B /* ErrorNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EC2970216CB2D1009D6A8B /* ErrorNotificationView.swift */; };
 		D4EC2975216CC7F3009D6A8B /* ErrorContaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EC2974216CC7F3009D6A8B /* ErrorContaining.swift */; };
 		D4EC2976216CC7F3009D6A8B /* ErrorContaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EC2974216CC7F3009D6A8B /* ErrorContaining.swift */; };
+		D4EC297D216D3B18009D6A8B /* DotsActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EC297C216D3B18009D6A8B /* DotsActivityIndicator.swift */; };
+		D4EC297E216D3B18009D6A8B /* DotsActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EC297C216D3B18009D6A8B /* DotsActivityIndicator.swift */; };
 		EF8538596FE81F5FCA6F238B /* Pods_ValletAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -323,6 +333,9 @@
 		D48D9588215283A500840707 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		D4B0860821678AAD00DB623B /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		D4B0860D216944F500DB623B /* PrivacyPermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPermissionsManager.swift; sourceTree = "<group>"; };
+		D4B4B367216E4994008A406C /* PendingEventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingEventManager.swift; sourceTree = "<group>"; };
+		D4B4B36A216E5BA5008A406C /* EventGroupable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventGroupable.swift; sourceTree = "<group>"; };
+		D4B4B36D216E5BDB008A406C /* EventValuable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventValuable.swift; sourceTree = "<group>"; };
 		D4BE2B54215DF62300146566 /* SegmentedControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegmentedControlView.xib; sourceTree = "<group>"; };
 		D4BE2B55215DF62300146566 /* SegmentedControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlView.swift; sourceTree = "<group>"; };
 		D4BE2B5A215E011D00146566 /* QRCodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeManager.swift; sourceTree = "<group>"; };
@@ -390,10 +403,12 @@
 		D4CE256A215E912C00D41449 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D4DA57DB215CD71E00942ED7 /* HistoryTableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableSectionHeaderView.swift; sourceTree = "<group>"; };
 		D4DA57DE215CD73100942ED7 /* HistoryTableSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableSectionHeaderView.xib; sourceTree = "<group>"; };
+		D4E816EE216E1DB7006717DB /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		D4EC296A216CAE2F009D6A8B /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		D4EC296D216CAE40009D6A8B /* NotificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationView.xib; sourceTree = "<group>"; };
 		D4EC2970216CB2D1009D6A8B /* ErrorNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorNotificationView.swift; sourceTree = "<group>"; };
 		D4EC2974216CC7F3009D6A8B /* ErrorContaining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorContaining.swift; sourceTree = "<group>"; };
+		D4EC297C216D3B18009D6A8B /* DotsActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotsActivityIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -554,6 +569,7 @@
 				D48D956B2151192A00840707 /* HistoryViewModel.swift */,
 				D4C8C9532158ECC600C831F0 /* PriceListViewModel.swift */,
 				D4B0860D216944F500DB623B /* PrivacyPermissionsManager.swift */,
+				D4B4B367216E4994008A406C /* PendingEventManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -586,6 +602,7 @@
 				D4C8C9AC215AAC1500C831F0 /* UIColor.swift */,
 				D4C8C9B8215AC19A00C831F0 /* UIImage.swift */,
 				D4C9AFCA216B5BF400F029BC /* Calendar.swift */,
+				D4E816EE216E1DB7006717DB /* Data.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -603,6 +620,7 @@
 				D4BE2B54215DF62300146566 /* SegmentedControlView.xib */,
 				D4EC296A216CAE2F009D6A8B /* NotificationView.swift */,
 				D4EC296D216CAE40009D6A8B /* NotificationView.xib */,
+				D4EC297C216D3B18009D6A8B /* DotsActivityIndicator.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -922,6 +940,8 @@
 			isa = PBXGroup;
 			children = (
 				D4EC2974216CC7F3009D6A8B /* ErrorContaining.swift */,
+				D4B4B36A216E5BA5008A406C /* EventGroupable.swift */,
+				D4B4B36D216E5BDB008A406C /* EventValuable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1298,8 +1318,10 @@
 				D4C8C95B215936AF00C831F0 /* ClientPriceListViewController.swift in Sources */,
 				D4C8C986215A8D7B00C831F0 /* Theme.swift in Sources */,
 				D4EC296B216CAE2F009D6A8B /* NotificationView.swift in Sources */,
+				D4B4B36E216E5BDB008A406C /* EventValuable.swift in Sources */,
 				D4C8C9B6215AC02300C831F0 /* SecondaryDesctructiveButton.swift in Sources */,
 				D4C8C98E215A9D7300C831F0 /* BaseLabel.swift in Sources */,
+				D4B4B36B216E5BA5008A406C /* EventGroupable.swift in Sources */,
 				D4C8C9AD215AAC1500C831F0 /* UIColor.swift in Sources */,
 				D4C8C9552158ECC900C831F0 /* PriceListViewModel.swift in Sources */,
 				D4C5CDB521490DC500AB67D7 /* Shop.swift in Sources */,
@@ -1308,6 +1330,7 @@
 				D443CDB0214BB26400A7100F /* TextInputView.swift in Sources */,
 				D48D956C2151192A00840707 /* HistoryViewModel.swift in Sources */,
 				D4C8C9252153B3C200C831F0 /* CodingUserInfoKey.swift in Sources */,
+				D4B4B368216E4994008A406C /* PendingEventManager.swift in Sources */,
 				D443CDBD214BDAF900A7100F /* ActivityIndicatorView.swift in Sources */,
 				D4C8C92A2153C73B00C831F0 /* JSONDecoder.swift in Sources */,
 				D4C8C9212153A4EF00C831F0 /* Product.swift in Sources */,
@@ -1347,9 +1370,11 @@
 				D4C8C9342153DA7C00C831F0 /* HTTPMethod.swift in Sources */,
 				D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */,
 				D48D957421523BBD00840707 /* ClientHistoryViewController.swift in Sources */,
+				D4E816EF216E1DB7006717DB /* Data.swift in Sources */,
 				D429F84F21400572004427F0 /* AppDelegate.swift in Sources */,
 				D4C5CD9A2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */,
 				D4C8C9312153D88200C831F0 /* NetworkManager.swift in Sources */,
+				D4EC297D216D3B18009D6A8B /* DotsActivityIndicator.swift in Sources */,
 				D4C8C94A2158D37200C831F0 /* MainViewController+Client.swift in Sources */,
 				D4C8C994215A9E6500C831F0 /* Label.swift in Sources */,
 				D4BE2B58215DF62400146566 /* SegmentedControlView.swift in Sources */,
@@ -1408,11 +1433,13 @@
 				D443CDCD214F7EFA00A7100F /* IssueViewModel.swift in Sources */,
 				D48D957E2152515900840707 /* PendingValueEvent.swift in Sources */,
 				D48D95662151104000840707 /* ShopMenuViewController+Admin.swift in Sources */,
+				D4B4B36C216E5BA5008A406C /* EventGroupable.swift in Sources */,
 				D4C8C94F2158E6DF00C831F0 /* ProductCollectionViewCell.swift in Sources */,
 				D4C8C9592159058600C831F0 /* PriceListViewModel+Admin.swift in Sources */,
 				D4C8C9542158ECC600C831F0 /* PriceListViewModel.swift in Sources */,
 				D4C8C9352153DA7D00C831F0 /* HTTPMethod.swift in Sources */,
 				D4EC296C216CAE2F009D6A8B /* NotificationView.swift in Sources */,
+				D4B4B36F216E5BDB008A406C /* EventValuable.swift in Sources */,
 				D4C8C9A5215AAB3200C831F0 /* ButtonCustomizable.swift in Sources */,
 				D4DA57DD215CD72200942ED7 /* HistoryTableSectionHeaderView.swift in Sources */,
 				D4BE2B59215DF62400146566 /* SegmentedControlView.swift in Sources */,
@@ -1425,12 +1452,14 @@
 				D443CDB1214BB26400A7100F /* TextInputView.swift in Sources */,
 				D443CDBE214BDAF900A7100F /* ActivityIndicatorView.swift in Sources */,
 				D443CDCA214F7E4200A7100F /* IssueAmountViewController.swift in Sources */,
+				D4B4B369216E4994008A406C /* PendingEventManager.swift in Sources */,
 				D4C5CDBC2149410800AB67D7 /* DataBaseManager.swift in Sources */,
 				D4C9AFD2216B5E2D00F029BC /* DashboardManager.swift in Sources */,
 				D4C8C9B1215AAF3900C831F0 /* PrimaryRoundedButton.swift in Sources */,
 				D42DD94B2165FAED0015261A /* IPFSManager.swift in Sources */,
 				D443CDC6214C00C500A7100F /* ShopAddressViewController.swift in Sources */,
 				D4C8C9322153D88200C831F0 /* NetworkManager.swift in Sources */,
+				D4E816F0216E1DB7006717DB /* Data.swift in Sources */,
 				D48D956D2151192A00840707 /* HistoryViewModel.swift in Sources */,
 				D429F8BF21416F91004427F0 /* ContractProtocol.swift in Sources */,
 				D429F8A921400F1C004427F0 /* FaucetManager.swift in Sources */,
@@ -1443,6 +1472,7 @@
 				D4C8C995215A9E6500C831F0 /* Label.swift in Sources */,
 				D443CD99214AA0A500A7100F /* ShopTableViewCell.swift in Sources */,
 				D48D958A215290C100840707 /* UserDefaultsManager.swift in Sources */,
+				D4EC297E216D3B18009D6A8B /* DotsActivityIndicator.swift in Sources */,
 				D443CDBB214BDABE00A7100F /* UIViewController.swift in Sources */,
 				D443CDB4214BB2DE00A7100F /* UIView.swift in Sources */,
 				D48D957021512BDE00840707 /* ValueEvent.swift in Sources */,

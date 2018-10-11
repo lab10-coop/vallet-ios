@@ -34,6 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			ClientStartViewController.makeAppRootViewController(error: startingError)
 		}
 
+		FaucetManager.getFunds(for: Wallet.address) { result in
+			print("Get funds result: \(result)")
+		}
+
 		return true
 	}
 

@@ -24,6 +24,7 @@ extension MainViewController {
 
 		shopNameLabel.text = shop.name
 
+		balanceActivityIndicator.isHidden = false
 		clientBalanceLabel.isHidden = false
 		clientBalanceLabel.text = ""
 		updateBalance()
@@ -48,6 +49,7 @@ extension MainViewController {
 		})
 
 		NotificationCenter.default.addObserver(self, selector: #selector(updateBalance), name: Constants.Notification.newValueEvent, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(updateBalance), name: Constants.Notification.valueEventsUpdate, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(updateBalance), name: Constants.Notification.balanceRequest, object: nil)
 	}
 
@@ -62,7 +64,27 @@ extension MainViewController {
 		})
 	}
 
+	private func showBalanceActivityIndicator() {
+		balanceActivityIndicator.startAnimating()
+		UIView.animate(withDuration: Constants.Animation.defaultDuration) {
+			self.clientBalanceLabel.alpha = Theme.Constants.loadingValueLabelAlpha
+		}
+	}
+
+	private func hideBalanceActivityIndicator() {
+		guard let shop = shop,
+			PendingValueEvent.events(in: DataBaseManager.managedContext, shop: shop) == nil
+			else {
+				return
+		}
+		balanceActivityIndicator.stopAnimating()
+		UIView.animate(withDuration: Constants.Animation.defaultDuration) {
+			self.clientBalanceLabel.alpha = 1
+		}
+	}
+
 	@objc func updateBalance() {
+		showBalanceActivityIndicator()
 		ShopManager.balance(for: Wallet.address, in: shop) { [weak self] (result) in
 			switch result {
 			case .success(let balance):
@@ -70,6 +92,8 @@ extension MainViewController {
 			case .failure(let error):
 				NotificationView.drop(error: error)
 			}
+
+			self?.hideBalanceActivityIndicator()
 		}
 	}
 
