@@ -56,4 +56,12 @@ extension ShopManager {
 		}
 	}
 
+	static func delete(shop: Shop) {
+		if shop == selectedShop {
+			selectedShop = nil
+		}
+		shop.delete()
+		DataBaseManager.save(managedContext: managedObjectContext)
+	}
+
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C34255CC06607463FE40399 /* Pods_Vallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63CA453DC703DB1A613E81CD /* Pods_Vallet.framework */; };
+		D40592E1216F409C0018B05A /* Shop+Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40592E0216F409C0018B05A /* Shop+Client.swift */; };
 		D41A8E22215CF90E00B0E8AE /* HistoryTableSectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41A8E21215CF90E00B0E8AE /* HistoryTableSectionFooterView.xib */; };
 		D41A8E23215CF90E00B0E8AE /* HistoryTableSectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41A8E21215CF90E00B0E8AE /* HistoryTableSectionFooterView.xib */; };
 		D41A8E25215CF94800B0E8AE /* HistoryTableSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41A8E24215CF94800B0E8AE /* HistoryTableSectionFooterView.swift */; };
@@ -263,6 +264,7 @@
 		BC427D9B2FFCD9CA48489E79 /* Pods-Vallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vallet/Pods-Vallet.debug.xcconfig"; sourceTree = "<group>"; };
 		C9683045E8DE422BEFE13276 /* Pods-ValletAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValletAdmin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ValletAdmin/Pods-ValletAdmin.debug.xcconfig"; sourceTree = "<group>"; };
 		CE9A1944D3BC6BF95D7335C4 /* Pods_ValletAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ValletAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D40592E0216F409C0018B05A /* Shop+Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shop+Client.swift"; sourceTree = "<group>"; };
 		D41A8E21215CF90E00B0E8AE /* HistoryTableSectionFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableSectionFooterView.xib; sourceTree = "<group>"; };
 		D41A8E24215CF94800B0E8AE /* HistoryTableSectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableSectionFooterView.swift; sourceTree = "<group>"; };
 		D429F84B21400572004427F0 /* Vallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -463,6 +465,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D40592DF216F407D0018B05A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D40592E0216F409C0018B05A /* Shop+Client.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D429F84221400572004427F0 = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +502,7 @@
 				D429F84E21400572004427F0 /* AppDelegate.swift */,
 				D48D95692151181F00840707 /* UI */,
 				D48D955E2150F65F00840707 /* ViewModel */,
+				D40592DF216F407D0018B05A /* Model */,
 				D4C8C93E2155258700C831F0 /* Assets */,
 				D4C8C93F2155259E00C831F0 /* Supporting Files */,
 			);
@@ -1318,6 +1329,7 @@
 				D4C8C95B215936AF00C831F0 /* ClientPriceListViewController.swift in Sources */,
 				D4C8C986215A8D7B00C831F0 /* Theme.swift in Sources */,
 				D4EC296B216CAE2F009D6A8B /* NotificationView.swift in Sources */,
+				D40592E1216F409C0018B05A /* Shop+Client.swift in Sources */,
 				D4B4B36E216E5BDB008A406C /* EventValuable.swift in Sources */,
 				D4C8C9B6215AC02300C831F0 /* SecondaryDesctructiveButton.swift in Sources */,
 				D4C8C98E215A9D7300C831F0 /* BaseLabel.swift in Sources */,

@@ -8,6 +8,23 @@
 
 import UIKit
 
+extension ShopMenuViewController {
+
+	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+		return true
+	}
+
+	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+		if (editingStyle == UITableViewCell.EditingStyle.delete) {
+			print("delete")
+			let shop = ShopManager.shops[indexPath.row]
+			ShopManager.delete(shop: shop)
+			refreshView()
+		}
+	}
+
+}
+
 extension ShopMenuViewController: ShopAddable {
 
 	func addShop() {
@@ -23,7 +40,7 @@ extension ShopMenuViewController: ShopAddable {
 extension ShopMenuViewController: ScanShopAddressViewControllerDelegate {
 
 	func didScan(shop: Shop) {
-		shopsTableView.reloadData()
+		refreshView()
 	}
 
 }

@@ -11,6 +11,7 @@ import UIKit
 protocol ShopMenuDelegate: class {
 
 	func didSelect(shop: Shop)
+	func willCloseWithNoShops()
 
 }
 
@@ -51,6 +52,10 @@ class ShopMenuViewController: UIViewController {
 
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
+		refreshView()
+	}
+
+	func refreshView() {
 		shopsTableView.reloadData()
 
 		if let selectedShop = ShopManager.selectedShop,
@@ -64,6 +69,9 @@ class ShopMenuViewController: UIViewController {
 	}
 
 	@IBAction func close(_ sender: Any? = nil) {
+		if ShopManager.shops.count == 0 {
+			delegate?.willCloseWithNoShops()
+		}
 		dismiss(animated: true, completion: nil)
 	}
 
@@ -92,7 +100,7 @@ extension ShopMenuViewController: UITableViewDelegate {
 		ShopManager.selectedShop = shop
 
 		delegate?.didSelect(shop: shop)
-		close()
+		dismiss(animated: true, completion: nil)
 	}
 	
 }

@@ -19,6 +19,11 @@ extension MainViewController {
 			else {
 				shopNameLabel.text = ""
 				addNoShopsViewController()
+
+				balanceActivityIndicator.isHidden = true
+				clientBalanceLabel.isHidden = true
+				clientBalanceLabel.text = ""
+				viewControllers = [UIViewController]()
 				return
 		}
 

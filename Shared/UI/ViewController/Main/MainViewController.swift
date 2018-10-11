@@ -152,6 +152,10 @@ extension MainViewController: ShopMenuDelegate {
 		self.shop = shop
 	}
 
+	func willCloseWithNoShops() {
+		self.shop = nil
+	}
+
 }
 
 extension MainViewController: SegmentedControlViewDelegate {
