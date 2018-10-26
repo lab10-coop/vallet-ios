@@ -35,7 +35,8 @@ public class NibLinkedView: UIView {
 	private func xibSetup() {
 		guard let loadedView = loadViewFromXib()
 			else {
-				fatalError("View cannot be loaded from Xib. Check the file names!")
+				assertionFailure("View cannot be loaded from Xib. Check the file names!")
+				return
 		}
 		view = loadedView
 		view.frame = self.bounds

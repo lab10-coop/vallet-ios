@@ -116,13 +116,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan the shop's QR code." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHk-FV-g5A" customClass="BodyLabel" customModule="Vallet" customModuleProvider="target">
-                                <rect key="frame" x="16" y="120" width="343" height="21"/>
+                                <rect key="frame" x="16" y="119.99999999999999" width="343" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="73y-Fa-wNn" customClass="ContentBackgroundView" customModule="Vallet" customModuleProvider="target">
-                                <rect key="frame" x="48" y="173" width="279" height="279"/>
+                                <rect key="frame" x="48" y="172.33333333333337" width="279" height="279"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLa-SE-AlK" customClass="QRCodeReaderView" customModule="Vallet" customModuleProvider="target">
                                         <rect key="frame" x="16" y="16" width="247" height="247"/>
@@ -140,6 +140,18 @@
                                     <constraint firstAttribute="trailing" secondItem="WLa-SE-AlK" secondAttribute="trailing" constant="16" id="iYJ-hY-CyG"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="R2g-0e-Bee">
+                                <rect key="frame" x="16" y="732" width="343" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTb-yh-hqZ" customClass="SecondaryButton" customModule="ValletAdmin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <state key="normal" title="Scan again"/>
+                                        <connections>
+                                            <action selector="scanAgain:" destination="IaT-Uf-uc0" eventType="touchUpInside" id="RdR-Ry-TcO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -147,8 +159,11 @@
                             <constraint firstItem="73y-Fa-wNn" firstAttribute="leading" secondItem="xre-Tg-r0B" secondAttribute="leading" constant="48" id="Fa7-bb-cjD"/>
                             <constraint firstItem="73y-Fa-wNn" firstAttribute="top" secondItem="uHk-FV-g5A" secondAttribute="bottom" constant="32" id="Ilf-oH-Qts"/>
                             <constraint firstItem="xre-Tg-r0B" firstAttribute="trailing" secondItem="73y-Fa-wNn" secondAttribute="trailing" constant="48" id="JVg-9B-0ve"/>
+                            <constraint firstItem="R2g-0e-Bee" firstAttribute="leading" secondItem="xre-Tg-r0B" secondAttribute="leading" constant="16" id="Qga-Ug-3Jc"/>
+                            <constraint firstItem="xre-Tg-r0B" firstAttribute="trailing" secondItem="R2g-0e-Bee" secondAttribute="trailing" constant="16" id="TLc-K5-5Ax"/>
                             <constraint firstItem="xre-Tg-r0B" firstAttribute="trailing" secondItem="uHk-FV-g5A" secondAttribute="trailing" constant="16" id="fvi-01-Zfn"/>
                             <constraint firstItem="uHk-FV-g5A" firstAttribute="top" secondItem="xre-Tg-r0B" secondAttribute="top" constant="32" id="pw1-Z0-VDd"/>
+                            <constraint firstItem="xre-Tg-r0B" firstAttribute="bottom" secondItem="R2g-0e-Bee" secondAttribute="bottom" constant="16" id="ype-yH-Pol"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xre-Tg-r0B"/>
                     </view>
@@ -163,6 +178,7 @@
                     <connections>
                         <outlet property="contentBackgroundView" destination="73y-Fa-wNn" id="36Q-Sn-mIl"/>
                         <outlet property="qrCodeReaderView" destination="WLa-SE-AlK" id="7O2-dj-q6y"/>
+                        <outlet property="scanAgainButton" destination="YTb-yh-hqZ" id="xRJ-5K-aLW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1mg-yh-HRO" userLabel="First Responder" sceneMemberID="firstResponder"/>

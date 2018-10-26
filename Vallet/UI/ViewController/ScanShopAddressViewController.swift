@@ -9,20 +9,21 @@
 import UIKit
 
 protocol ScanShopAddressViewControllerDelegate: class {
-
+	
 	func didScan(shop: Shop)
-
+	
 }
 
 class ScanShopAddressViewController: UIViewController {
-
+	
 	@IBOutlet private var qrCodeReaderView: QRCodeReaderView!
 	@IBOutlet private var contentBackgroundView: UIView!
-
+	@IBOutlet private var scanAgainButton: UIButton!
+	
 	weak var delegate: ScanShopAddressViewControllerDelegate?
-
+	
 	var shop: Shop?
-
+	
 	@discardableResult
 	static func present(over viewController: UIViewController) -> ScanShopAddressViewController? {
 		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -34,15 +35,15 @@ class ScanShopAddressViewController: UIViewController {
 		viewController.present(navigationController, animated: false)
 		return scanShopAddressViewController
 	}
-
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
+		
 		qrCodeReaderView.delegate = self
 		
 		contentBackgroundView.addShadow()
 		contentBackgroundView.addRoundedCorners()
-
+		
 		PrivacyPermissionsManager.getPermission(for: .camera) { [weak self] (type, isGranted) in
 			if !isGranted {
 				guard let strongSelf = self
@@ -52,12 +53,19 @@ class ScanShopAddressViewController: UIViewController {
 				PrivacyPermissionsManager.presentSettingsAlert(for: type, in: strongSelf)
 			}
 		}
+		
+		scanAgainButton.isHidden = true
 	}
-
+	
 	@IBAction func close(_ sender: Any? = nil) {
 		dismiss(animated: true, completion: nil)
 	}
-
+	
+	@IBAction func scanAgain(_ sender: Any? = nil) {
+		qrCodeReaderView.startScanning()
+		scanAgainButton.isHidden = true
+	}
+	
 	private func addShop(with address: String) {
 		ShopManager.addShop(with: address) { [weak self] (result) in
 			switch result {
@@ -69,18 +77,21 @@ class ScanShopAddressViewController: UIViewController {
 			}
 		}
 	}
-
+	
 }
 
 extension ScanShopAddressViewController: QRCodeReaderViewDelegate {
-
+	
 	func didReadQRCode(value: String) {
-		guard let shopAddress = QRCodeManager.shopAddress(from: value)
-			else {
-				return
+		do {
+			let shopAddress = try QRCodeManager.shopAddress(from: value)
+			addShop(with: shopAddress)
 		}
-		addShop(with: shopAddress)
+		catch {
+			NotificationView.drop(error: error)
+			scanAgainButton.isHidden = false
+		}
 	}
-
+	
 }
 
