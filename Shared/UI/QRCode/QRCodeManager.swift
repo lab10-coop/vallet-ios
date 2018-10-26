@@ -33,22 +33,22 @@ class QRCodeManager {
 		return urlComponents?.url?.absoluteString
 	}
 
-	static func shopAddress(from code: String) -> String? {
+	static func shopAddress(from code: String) throws -> String {
 		guard let urlComponents = URLComponents(string: code),
 			urlComponents.host == Constants.Deeplink.shop
 			else {
-				return nil
+				throw ValletError.qrCodeAddress(object: "shop")
 		}
 		var address = urlComponents.path
 		address.removeFirst()
 		return address
 	}
 
-	static func userAddress(from code: String) -> String? {
+	static func userAddress(from code: String) throws -> String {
 		guard let urlComponents = URLComponents(string: code),
 			urlComponents.host == Constants.Deeplink.user
 			else {
-				return nil
+				throw ValletError.qrCodeAddress(object: "user")
 		}
 		var address = urlComponents.path
 		address.removeFirst()
