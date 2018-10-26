@@ -485,6 +485,8 @@
 				F210E04398A1C2678A4653B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 1;
 		};
 		D429F84C21400572004427F0 /* Products */ = {
 			isa = PBXGroup;
