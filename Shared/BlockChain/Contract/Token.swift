@@ -61,8 +61,14 @@ class Token: ContractProtocol {
 				completion(Result.failure(ValletError.unwrapping(property: "transactionIntermediate", object: "Token", function: #function)))
 				return
 		}
+		
+		guard let password = PasswordManager.storedPassword
+			else {
+				completion(Result.failure(ValletError.passwordNotFound(function: #function)))
+				return
+		}
 
-		intermediate.sendAsync(password: Constants.Temp.keystorePassword) { (result) in
+		intermediate.sendAsync(password: password) { (result) in
 			switch result {
 			case .success(let transactionResult):
 				completion(Result.success(transactionResult))
@@ -104,8 +110,14 @@ class Token: ContractProtocol {
 				completion(Result.failure(ValletError.unwrapping(property: "transactionIntermediate", object: "Token", function: #function)))
 				return
 		}
+		
+		guard let password = PasswordManager.storedPassword
+			else {
+				completion(Result.failure(ValletError.passwordNotFound(function: #function)))
+				return
+		}
 
-		intermediate.sendAsync(password: Constants.Temp.keystorePassword) { (result) in
+		intermediate.sendAsync(password: password) { (result) in
 			switch result {
 			case .success(let transactionResult):
 				completion(Result.success(transactionResult))

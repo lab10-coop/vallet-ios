@@ -105,7 +105,7 @@ class Wallet {
 
 	static private func createNewKeystore() throws -> EthereumKeystoreV3 {
 		do {
-			guard let newKeystore = try EthereumKeystoreV3(password: Constants.Temp.keystorePassword)
+			guard let newKeystore = try EthereumKeystoreV3(password: PasswordManager.createAndStorePassword())
 				else {
 					throw ValletError.wallet(object: "PrivateKey", function: #function)
 			}

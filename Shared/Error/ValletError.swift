@@ -20,6 +20,7 @@ enum ValletError: Error {
 	case wallet(object: String, function: String?)
 	case insuficientFunds
 	case qrCodeAddress(object: String)
+	case passwordNotFound(function: String?)
 
 }
 
@@ -47,6 +48,8 @@ extension ValletError {
 			return NSLocalizedString("Insuficient Funds", comment: "Error notification title")
 		case .qrCodeAddress:
 			return NSLocalizedString("QR Code error", comment: "Error notification title")
+		case .passwordNotFound:
+			return NSLocalizedString("Password not found", comment: "Error notification title")
 		}
 	}
 
@@ -95,6 +98,10 @@ extension ValletError: LocalizedError {
 		case .qrCodeAddress(let object):
 			let descriptionFormat = NSLocalizedString("Failed to resolve %@ address from QR code", comment: "Error description")
 			return String(format: descriptionFormat, object)
+			
+		case .passwordNotFound(let function):
+			let descriptionFormat = NSLocalizedString("Counldn't find the password to sign (function: %@)", comment: "Error description")
+			return String(format: descriptionFormat, function ?? "")
 		}
 	}
 

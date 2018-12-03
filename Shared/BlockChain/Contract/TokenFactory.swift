@@ -44,8 +44,14 @@ class TokenFactory: ContractProtocol {
 				completion(Result.failure(ValletError.unwrapping(property: "transactionIntermediate", object: "TokenFactory", function: #function)))
 				return
 		}
+		
+		guard let password = PasswordManager.storedPassword
+			else {
+				completion(Result.failure(ValletError.passwordNotFound(function: #function)))
+				return
+		}
 
-		intermediate.sendAsync(password: Constants.Temp.keystorePassword) { [weak self] (result) in
+		intermediate.sendAsync(password: password) { [weak self] (result) in
 			switch result {
 			case .success(let transactionSendingResult):
 				guard let strongSelf = self
