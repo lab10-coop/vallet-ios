@@ -1,2 +1,5 @@
 # IPFS
 github "ipfs/swift-ipfs-api" "master"
+
+# Keychain
+github "kishikawakatsumi/KeychainAccess"

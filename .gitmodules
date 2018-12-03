@@ -19,3 +19,6 @@
 [submodule "Carthage/Checkouts/VarInt"]
 	path = Carthage/Checkouts/VarInt
 	url = ssh://git@github.com/NeoTeo/VarInt.git
+[submodule "Carthage/Checkouts/KeychainAccess"]
+	path = Carthage/Checkouts/KeychainAccess
+	url = ssh://git@github.com/kishikawakatsumi/KeychainAccess.git
