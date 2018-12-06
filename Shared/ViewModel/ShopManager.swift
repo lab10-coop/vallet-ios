@@ -79,7 +79,7 @@ class ShopManager {
 
 	// MARK: - Total Supply/Ballance
 
-	private static func token(for shop: Shop?) -> Token? {
+	static func token(for shop: Shop?) -> Token? {
 		guard let shop = shop ?? selectedShop,
 			let shopAddress = shop.address,
 			let shopEthereumAddress = EthereumAddress(shopAddress)
@@ -120,44 +120,49 @@ class ShopManager {
 	// MARK: - Price List
 
 	static func loadPriceList(for shop: Shop? = nil, completion: @escaping (Result<PriceList>) -> Void) {
-		guard let shop = shop ?? selectedShop,
-			let shopAddress = shop.address
+		guard let shop = shop ?? selectedShop
 			else {
 				completion(Result.failure(ValletError.unwrapping(property: "shop", object: "ShopManager", function: #function)))
 				return
 		}
-
-		NetworkManager.performDataRequest(request: NetworkRequest.getPriceList(address: shopAddress)) { (result) in
-			switch result {
-			case .success(let listJSONData):
-				guard let listJSONData = listJSONData
-					else {
-						completion(Result.failure(ValletError.networkData(function: #function)))
-						return
-				}
-				// Update if the price list for the shop already exists.
-				if let priceList = shop.priceList,
-					priceList.update(with: listJSONData) {
-					completion(Result.success(priceList))
-					return
-				}
-				// Create a new price list with the loaded data
-				guard let managedContext = shop.managedObjectContext
-					else {
-						completion(Result.failure(ValletError.unwrapping(property: "managedObjectContext", object: "ShopManager", function: #function)))
-						return
-				}
-				do {
-					let loadedPriceList = try PriceList.create(in: managedContext, jsonData: listJSONData)
-					completion(Result.success(loadedPriceList))
-				}
-				catch {
-					completion(Result.failure(error))
-				}
+		
+		let shopToken = token(for: shop)
+		
+		shopToken?.pricelistAddress(completion: { (hexAddressResult) in
+			switch hexAddressResult {
+			case .success(let hexAddress):
+				let pricelistHash = IPFSManager.hashDecode(hex: hexAddress)
+				IPFSManager.loadData(hash: pricelistHash, completion: { (pricelistDataResult) in
+					switch pricelistDataResult {
+					case .success(let listJSONData):
+						// Update if the price list for the shop already exists.
+						if let priceList = shop.priceList,
+							priceList.update(with: listJSONData) {
+							completion(Result.success(priceList))
+							return
+						}
+						// Create a new price list with the loaded data
+						guard let managedContext = shop.managedObjectContext
+							else {
+								completion(Result.failure(ValletError.unwrapping(property: "managedObjectContext", object: "ShopManager", function: #function)))
+								return
+						}
+						do {
+							let loadedPriceList = try PriceList.create(in: managedContext, jsonData: listJSONData)
+							completion(Result.success(loadedPriceList))
+						}
+						catch {
+							completion(Result.failure(error))
+						}
+						
+					case .failure(let error):
+						completion(Result.failure(error))
+					}
+				})
 			case .failure(let error):
 				completion(Result.failure(error))
 			}
-		}
+		})
 	}
 
 }

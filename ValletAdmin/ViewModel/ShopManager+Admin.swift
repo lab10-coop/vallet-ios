@@ -54,8 +54,16 @@ extension ShopManager {
 								completion(Result.failure(ValletError.unwrapping(property: "shop", object: "PriceList", function: #function)))
 								return
 						}
-						DataBaseManager.save(managedContext: managedObjectContext)
-						completion(Result.success(shop))
+						uploadPriceList(for: shop, completion: { (uploadResult) in
+							switch uploadResult {
+							case .success:
+								completion(Result.success(shop))
+								DataBaseManager.save(managedContext: managedObjectContext)
+							case .failure(let error):
+								completion(Result.failure(error))
+							}
+						})
+						
 					case .failure(let error):
 						completion(Result.failure(error))
 					}
@@ -69,36 +77,16 @@ extension ShopManager {
 
 	// MARK: - Price List
 
-	private static func createPriceList(for shop: Shop? = nil, completion: @escaping (Result<PriceList>) -> Void) {
+	private static func createPriceList(for shop: Shop? = nil, completion: (Result<PriceList>) -> Void) {
 		guard let shop = shop ?? selectedShop,
 			shop.address != nil,
-			let blankPriceList = PriceList(in: managedObjectContext, shop: shop),
-			let jsonData = blankPriceList.jsonData
+			let blankPriceList = PriceList(in: managedObjectContext, shop: shop)
 			else {
 				completion(Result.failure(ValletError.unwrapping(property: "shop, priceList, jsonData", object: "ShopManager", function: #function)))
 				return
 		}
-
-		NetworkManager.performDataRequest(request: NetworkRequest.createNew(priceList: jsonData)) { (result) in
-			switch result {
-			case .success(let listJSONData):
-				guard let listJSONData = listJSONData
-					else {
-						completion(Result.failure(ValletError.networkData(function: #function)))
-						return
-				}
-				do {
-					let newPriceList = try PriceList.create(in: managedObjectContext, jsonData: listJSONData)
-					completion(Result.success(newPriceList))
-					DataBaseManager.save(managedContext: managedObjectContext)
-				}
-				catch {
-					completion(Result.failure(error))
-				}
-			case .failure(let error):
-				completion(Result.failure(error))
-			}
-		}
+		
+		completion(Result.success(blankPriceList))
 	}
 
 	static func uploadPriceList(for shop: Shop? = nil, completion: @escaping (Result<Bool>) -> Void) {
@@ -109,11 +97,23 @@ extension ShopManager {
 				completion(Result.failure(ValletError.unwrapping(property: "shop, priceList, jsonData", object: "ShopManager", function: #function)))
 				return
 		}
-
-		NetworkManager.performDataRequest(request: NetworkRequest.update(priceList: jsonData)) { (result) in
+		
+		let shopToken = token(for: shop)
+		
+		IPFSManager.upload(data: jsonData) { (result) in
 			switch result {
-			case .success:
-				completion(Result.success(true))
+			case .success(let pricelistHash):
+				let pricelistAddress = IPFSManager.hexEncode(hash: pricelistHash)
+				
+				shopToken?.setPricelist(address: pricelistAddress!, from: Wallet.address, completion: { (result) in
+					switch result {
+					case .success(let transaction):
+						// TODO: Possibly implement waiting for the receipt.
+						completion(Result.success(true))
+					case .failure(let error):
+						completion(Result.failure(error))
+					}
+				})
 			case .failure(let error):
 				completion(Result.failure(error))
 			}

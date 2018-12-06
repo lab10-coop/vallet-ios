@@ -26,6 +26,22 @@ class IPFSManager {
 	}
 
 	static func loadImage(hash: String, completion: @escaping (Result<UIImage>) -> Void) {
+		loadData(hash: hash) { (result) in
+			switch result {
+			case .success(let imageData):
+				guard let image = UIImage(data: imageData)
+					else {
+						completion(Result.failure(ValletError.dataDecoding(object: "image", function: #function)))
+						return
+				}
+				completion(Result.success(image))
+			case .failure(let error):
+				completion(Result.failure(error))
+			}
+		}
+	}
+	
+	static func loadData(hash: String, completion: @escaping (Result<Data>) -> Void) {
 		guard let api = shared.api
 			else {
 				completion(Result.failure(ValletError.unwrapping(property: "api", object: "IPFSManager", function: #function)))
@@ -36,12 +52,7 @@ class IPFSManager {
 			try api.get(dataHash) { (dataArray) in
 				DispatchQueue.main.async {
 					let imageData = Data(bytes: dataArray)
-					guard let image = UIImage(data: imageData)
-						else {
-							completion(Result.failure(ValletError.dataDecoding(object: "image", function: #function)))
-							return
-					}
-					completion(Result.success(image))
+					completion(Result.success(imageData))
 				}
 			}
 		}
@@ -83,6 +94,24 @@ class IPFSManager {
 				completion(Result.failure(error))
 			}
 		}
+	}
+	
+	// Encode hash address to hex so it can be stored in the smart contract
+	static func hexEncode(hash: String) -> String? {
+		guard let base58Decoded = hash.base58DecodedData
+			else {
+				return nil
+		}
+		let hexString = base58Decoded.toHexString()
+		return "0x\(hexString.dropFirst(4))"
+	}
+	
+	// Decode hex to IPFS hash
+	static func hashDecode(hex: String) -> String {
+		let prefixedHex = "1220\(hex.dropFirst(2))"
+		let hexData = Data(hex: prefixedHex)
+		let byteArray = Array<UInt8>(hexData)
+		return byteArray.base58EncodedString
 	}
 
 }

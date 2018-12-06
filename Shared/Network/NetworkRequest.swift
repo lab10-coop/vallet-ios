@@ -17,21 +17,11 @@ public protocol URLRequestConvertible {
 enum NetworkRequest: URLRequestConvertible {
 
 	case getFunds(address: String)
-	case getPriceList(address: String)
-	case update(priceList: Data)
-	case createNew(priceList: Data)
 
 	private var method: HTTPMethod {
 		switch self {
-		case .getFunds,
-				 .getPriceList:
+		case .getFunds:
 			return .get
-
-		case .update:
-			return .put
-
-		case .createNew:
-			return .post
 		}
 	}
 
@@ -39,8 +29,6 @@ enum NetworkRequest: URLRequestConvertible {
 		switch self {
 		case .getFunds:
 			return Constants.BlockChain.faucetServerAddress
-		default:
-			return Constants.Network.apiHost
 		}
 	}
 
@@ -48,13 +36,6 @@ enum NetworkRequest: URLRequestConvertible {
 		switch self {
 		case .getFunds(let address):
 			return "addr/\(address)"
-
-		case .getPriceList(let address):
-			return "/price_lists/\(address)"
-
-		case .update,
-			.createNew:
-			return "/price_lists"
 		}
 	}
 
@@ -70,12 +51,7 @@ enum NetworkRequest: URLRequestConvertible {
 		urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
 
 		switch self {
-		case .createNew(let data),
-				 .update(let data):
-			urlRequest.httpBody = data
-			return urlRequest
-			
-		default:
+		case .getFunds:
 			return urlRequest
 		}
 	}

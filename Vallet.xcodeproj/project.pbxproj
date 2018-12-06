@@ -87,6 +87,9 @@
 		D460E634216283C600829198 /* SwiftMultihash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D460E623216283BC00829198 /* SwiftMultihash.framework */; };
 		D460E635216283C600829198 /* VarInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D460E626216283BC00829198 /* VarInt.framework */; };
 		D460E63A2163757700829198 /* IPFSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D460E6392163757700829198 /* IPFSManager.swift */; };
+		D465FF7521B5BD3100B81ED5 /* PasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D465FF7421B5BD3100B81ED5 /* PasswordManager.swift */; };
+		D465FF7621B5BD3100B81ED5 /* PasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D465FF7421B5BD3100B81ED5 /* PasswordManager.swift */; };
+		D465FF7921B5C68400B81ED5 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D465FF7821B5C68400B81ED5 /* KeychainAccess.framework */; };
 		D48D95602150F67000840707 /* ShopManager+Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D955F2150F67000840707 /* ShopManager+Client.swift */; };
 		D48D95622150FD7700840707 /* ScanShopAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D95612150FD7600840707 /* ScanShopAddressViewController.swift */; };
 		D48D956421510ECB00840707 /* ShopManager+Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D956321510ECB00840707 /* ShopManager+Admin.swift */; };
@@ -318,6 +321,8 @@
 		D460E626216283BC00829198 /* VarInt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VarInt.framework; path = Carthage/Build/iOS/VarInt.framework; sourceTree = "<group>"; };
 		D460E627216283BC00829198 /* SwiftGMP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftGMP.framework; path = Carthage/Build/iOS/SwiftGMP.framework; sourceTree = "<group>"; };
 		D460E6392163757700829198 /* IPFSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPFSManager.swift; sourceTree = "<group>"; };
+		D465FF7421B5BD3100B81ED5 /* PasswordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordManager.swift; sourceTree = "<group>"; };
+		D465FF7821B5C68400B81ED5 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
 		D48D955F2150F67000840707 /* ShopManager+Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopManager+Client.swift"; sourceTree = "<group>"; };
 		D48D95612150FD7600840707 /* ScanShopAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanShopAddressViewController.swift; sourceTree = "<group>"; };
 		D48D956321510ECB00840707 /* ShopManager+Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopManager+Admin.swift"; sourceTree = "<group>"; };
@@ -426,6 +431,7 @@
 				D460E62C216283BC00829198 /* SwiftMultiaddr.framework in Frameworks */,
 				D460E62D216283BC00829198 /* VarInt.framework in Frameworks */,
 				D460E62E216283BC00829198 /* SwiftGMP.framework in Frameworks */,
+				D465FF7921B5C68400B81ED5 /* KeychainAccess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +565,7 @@
 				D429F8B321401528004427F0 /* Wallet.swift */,
 				D429F8A521400D87004427F0 /* FaucetManager.swift */,
 				D429F8B621411FA2004427F0 /* Web3Manager.swift */,
+				D465FF7421B5BD3100B81ED5 /* PasswordManager.swift */,
 			);
 			path = BlockChain;
 			sourceTree = "<group>";
@@ -962,6 +969,7 @@
 		F210E04398A1C2678A4653B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D465FF7821B5C68400B81ED5 /* KeychainAccess.framework */,
 				D460E622216283BC00829198 /* SwiftBase58.framework */,
 				D460E627216283BC00829198 /* SwiftGMP.framework */,
 				D460E621216283BC00829198 /* SwiftHex.framework */,
@@ -1231,6 +1239,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftMultiaddr.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftMultihash.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/VarInt.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
 			);
 			name = "Carthage script";
 			outputFileListPaths = (
@@ -1256,6 +1265,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftMultiaddr.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftMultihash.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/VarInt.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
 			);
 			name = "Carthage script";
 			outputFileListPaths = (
@@ -1385,6 +1395,7 @@
 				D4C5CD972147DA2600AB67D7 /* QRCodeReaderView.swift in Sources */,
 				D48D957421523BBD00840707 /* ClientHistoryViewController.swift in Sources */,
 				D4E816EF216E1DB7006717DB /* Data.swift in Sources */,
+				D465FF7521B5BD3100B81ED5 /* PasswordManager.swift in Sources */,
 				D429F84F21400572004427F0 /* AppDelegate.swift in Sources */,
 				D4C5CD9A2147DB2A00AB67D7 /* NibLinkedView.swift in Sources */,
 				D4C8C9312153D88200C831F0 /* NetworkManager.swift in Sources */,
@@ -1471,6 +1482,7 @@
 				D4C9AFD2216B5E2D00F029BC /* DashboardManager.swift in Sources */,
 				D4C8C9B1215AAF3900C831F0 /* PrimaryRoundedButton.swift in Sources */,
 				D42DD94B2165FAED0015261A /* IPFSManager.swift in Sources */,
+				D465FF7621B5BD3100B81ED5 /* PasswordManager.swift in Sources */,
 				D443CDC6214C00C500A7100F /* ShopAddressViewController.swift in Sources */,
 				D4C8C9322153D88200C831F0 /* NetworkManager.swift in Sources */,
 				D4E816F0216E1DB7006717DB /* Data.swift in Sources */,

@@ -17,7 +17,7 @@ class TokenFactory: ContractProtocol {
 		case createTokenContract = "createTokenContract"
 	}
 
-	var jsonABI = "[{\"constant\": false,\"inputs\": [{\"name\": \"name\",\"type\": \"string\"},{\"name\": \"symbol\",\"type\": \"string\"},{\"name\": \"decimals\",\"type\": \"uint8\"}],\"name\": \"createTokenContract\",\"outputs\": [],\"payable\": false,\"stateMutability\": \"nonpayable\",\"type\": \"function\"},{\"anonymous\": false,\"inputs\": [{\"indexed\": false,\"name\": \"_address\",\"type\": \"address\"},{\"indexed\": false,\"name\": \"_creator\",\"type\": \"address\"},{\"indexed\": false,\"name\": \"_name\",\"type\": \"string\"},{\"indexed\": false,\"name\": \"_symbol\",\"type\": \"string\"},{\"indexed\": false,\"name\": \"_decimals\",\"type\": \"uint8\"}],\"name\": \"TokenCreated\",\"type\": \"event\"}]"
+	var jsonABI = "[{\"anonymous\": false,\"inputs\": [{\"indexed\": false,\"name\": \"_address\",\"type\": \"address\"},{\"indexed\": false,\"name\": \"_creator\",\"type\": \"address\"},{\"indexed\": false,\"name\": \"_name\",\"type\": \"string\"},{\"indexed\": false,\"name\": \"_symbol\",\"type\": \"string\"},{\"indexed\": false,\"name\": \"_decimals\",\"type\": \"uint8\"}],\"name\": \"TokenCreated\",\"type\": \"event\"},{\"constant\": false,\"inputs\": [{\"name\": \"name\",\"type\": \"string\"},{\"name\": \"symbol\",\"type\": \"string\"},{\"name\": \"decimals\",\"type\": \"uint8\"}],\"name\": \"createTokenContract\",\"outputs\": [],\"payable\": false,\"stateMutability\": \"nonpayable\",\"type\": \"function\"}]"
 
 
 	lazy var contract: web3.web3contract? = {
@@ -44,8 +44,14 @@ class TokenFactory: ContractProtocol {
 				completion(Result.failure(ValletError.unwrapping(property: "transactionIntermediate", object: "TokenFactory", function: #function)))
 				return
 		}
+		
+		guard let password = PasswordManager.storedPassword
+			else {
+				completion(Result.failure(ValletError.passwordNotFound(function: #function)))
+				return
+		}
 
-		intermediate.sendAsync(password: Constants.Temp.keystorePassword) { [weak self] (result) in
+		intermediate.sendAsync(password: password) { [weak self] (result) in
 			switch result {
 			case .success(let transactionSendingResult):
 				guard let strongSelf = self

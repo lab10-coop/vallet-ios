@@ -27,12 +27,6 @@ struct Constants {
 
 	}
 
-	struct Network {
-
-		static let apiHost = "https://vallet.mars.lab10.io"
-
-	}
-
 	struct IPFS {
 
 		static let address = "ipfs.mars.lab10.io"
@@ -44,7 +38,7 @@ struct Constants {
 		// TODO: move the addresses to the xcconfig file
 		static let faucetServerAddress = "http://faucet.t1.artis.lab10.io/"
 		static let nodeAddress = "http://rpc.t1.artis.lab10.io:10204/"
-		static let tokenFactoryContractAddress = "0x0fd1fa8112f205d5c2754ece65eb43deb3592214"
+		static let tokenFactoryContractAddress = "0xf764a976aa3e4623b5724fa22a3058ad78960b58"
 
 		struct Event {
 
@@ -97,13 +91,6 @@ struct Constants {
 		static let maxShopNameLength = 10
 		static let productImageSize = CGSize(width: 500, height: 500)
 		static let maxCurrencyDecimals = 2
-
-	}
-
-	// do not deploy with these values !!!
-	struct Temp {
-
-		static let keystorePassword = "ValletTEST"
 
 	}
 
