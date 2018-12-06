@@ -49,7 +49,6 @@ public class PriceList: NSManagedObject, Codable {
 		case name = "token_name"
 		case type = "token_type"
 		case shopAddress = "token_contract_address"
-		case secret
 	}
 
 	public func encode(to encoder: Encoder) throws {
@@ -59,9 +58,6 @@ public class PriceList: NSManagedObject, Codable {
 		try container.encode(shop?.address, forKey: .shopAddress)
 		let productsArray = products?.array as? [Product] ?? [Product]()
 		try container.encode(productsArray, forKey: .products)
-		if let secret = secret {
-			try container.encode(secret, forKey: .secret)
-		}
 	}
 
 	public required convenience init(from decoder: Decoder) throws {
@@ -80,9 +76,6 @@ public class PriceList: NSManagedObject, Codable {
 		if let productsArray = productsArray {
 			self.products = NSOrderedSet(array: productsArray)
 		}
-		if let decodedSecret = try? values.decode(String.self, forKey: .secret) {
-			self.secret = decodedSecret
-		}
 	}
 
 }
@@ -100,7 +93,6 @@ extension PriceList {
 	}
 
 	@NSManaged public var name: String?
-	@NSManaged public var secret: String?
 	@NSManaged public var shop: Shop?
 	@NSManaged public var products: NSOrderedSet?
 
