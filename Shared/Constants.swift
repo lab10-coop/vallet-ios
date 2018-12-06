@@ -27,12 +27,6 @@ struct Constants {
 
 	}
 
-	struct Network {
-
-		static let apiHost = "https://vallet.mars.lab10.io"
-
-	}
-
 	struct IPFS {
 
 		static let address = "ipfs.mars.lab10.io"
