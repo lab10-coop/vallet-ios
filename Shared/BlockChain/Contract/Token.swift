@@ -51,6 +51,32 @@ class Token: ContractProtocol {
 	}
 
 	// MARK: - Contract methods
+	
+	func setPricelist(address: String, from fromAddress: EthereumAddress, completion: @escaping (Result<TransactionSendingResult>) -> Void) {
+		var options = Web3Options()
+		options.from = fromAddress
+		
+		guard let intermediate = transactionIntermediate(method: Method.setPricelistAddress.rawValue, parameters: [address as AnyObject], options: options)
+			else {
+				completion(Result.failure(ValletError.unwrapping(property: "transactionIntermediate", object: "Token", function: #function)))
+				return
+		}
+		
+		guard let password = PasswordManager.storedPassword
+			else {
+				completion(Result.failure(ValletError.passwordNotFound(function: #function)))
+				return
+		}
+		
+		intermediate.sendAsync(password: password) { (result) in
+			switch result {
+			case .success(let transactionResult):
+				completion(Result.success(transactionResult))
+			case .failure(let error):
+				completion(Result.failure(error))
+			}
+		}
+	}
 
 	func issue(value: Int, to toAddress: EthereumAddress, from fromAddress: EthereumAddress, completion: @escaping (Result<TransactionSendingResult>) -> Void) {
 		var options = Web3Options()
@@ -101,9 +127,9 @@ class Token: ContractProtocol {
 		}
 	}
 
-	func redeem(value: Int, from address: EthereumAddress, completion: @escaping (Result<TransactionSendingResult>) -> Void) {
+	func redeem(value: Int, from fromAddress: EthereumAddress, completion: @escaping (Result<TransactionSendingResult>) -> Void) {
 		var options = Web3Options()
-		options.from = address
+		options.from = fromAddress
 
 		guard let intermediate = transactionIntermediate(method: Method.redeem.rawValue, parameters: [BigUInt(value) as AnyObject], options: options)
 			else {
@@ -145,6 +171,29 @@ class Token: ContractProtocol {
 						return
 				}
 				completion(Result.success(name))
+			case .failure(let error):
+				completion(Result.failure(error))
+			}
+		}
+	}
+	
+	func pricelistAddress(completion: @escaping (Result<String>) -> Void) {
+		guard let intermediate = transactionIntermediate(method: Method.getPriceListAddress.rawValue)
+			else {
+				completion(Result.failure(ValletError.unwrapping(property: "transactionIntermediate", object: "Token", function: #function)))
+				return
+		}
+		
+		intermediate.callAsync(options: nil) { result in
+			switch result {
+			case .success(let resultDictionary):
+				guard let pricelistAddressData = resultDictionary.first?.value as? Data
+					else {
+						completion(Result.failure(ValletError.dataDecoding(object: "getPriceListAddress", function: #function)))
+						return
+				}
+				let pricelistHexAddress = "0x\(pricelistAddressData.toHexString())"
+				completion(Result.success(pricelistHexAddress))
 			case .failure(let error):
 				completion(Result.failure(error))
 			}
