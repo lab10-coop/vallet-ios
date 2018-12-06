@@ -95,6 +95,24 @@ class IPFSManager {
 			}
 		}
 	}
+	
+	// Encode hash address to hex so it can be stored in the smart contract
+	static func hexEncode(hash: String) -> String? {
+		guard let base58Decoded = hash.base58DecodedData
+			else {
+				return nil
+		}
+		let hexString = base58Decoded.toHexString()
+		return "0x\(hexString.dropFirst(4))"
+	}
+	
+	// Decode hex to IPFS hash
+	static func hashDecode(hex: String) -> String {
+		let prefixedHex = "1220\(hex.dropFirst(2))"
+		let hexData = Data(hex: prefixedHex)
+		let byteArray = Array<UInt8>(hexData)
+		return byteArray.base58EncodedString
+	}
 
 }
 
