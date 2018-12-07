@@ -46,16 +46,28 @@ public class PriceList: NSManagedObject, Codable {
 
 	enum CodingKeys: String, CodingKey {
 		case products
-		case name = "token_name"
-		case type = "token_type"
-		case shopAddress = "token_contract_address"
+		case name = "tokenName"
+		case type = "tokenType"
+		case shopAddress = "tokenContractAddress"
+		case version = "version"
 	}
 
 	public func encode(to encoder: Encoder) throws {
+		guard let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+			else {
+				return
+				throw ValletError.unwrapping(property: "Version", object: "Info.plist", function: #function)
+		}
+		guard let shop = shop
+			else {
+				return
+				throw ValletError.unwrapping(property: "Shop", object: "PriceList", function: #function)
+		}
 		var container = encoder.container(keyedBy: CodingKeys.self)
-		try container.encode(name ?? shop?.name, forKey: .name)
-		try container.encode(0, forKey: .type)
-		try container.encode(shop?.address, forKey: .shopAddress)
+		try container.encode(name ?? shop.name, forKey: .name)
+		try container.encode(shop.tokenType?.rawValue, forKey: .type)
+		try container.encode(appVersion, forKey: .version)
+		try container.encode(shop.address, forKey: .shopAddress)
 		let productsArray = products?.array as? [Product] ?? [Product]()
 		try container.encode(productsArray, forKey: .products)
 	}
