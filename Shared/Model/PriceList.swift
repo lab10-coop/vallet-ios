@@ -9,6 +9,12 @@
 import Foundation
 import CoreData
 
+extension Encodable {
+	func toJSONData() throws -> Data {
+		return try JSONEncoder().encode(self)
+	}
+}
+
 @objc(PriceList)
 public class PriceList: NSManagedObject, Codable {
 
@@ -39,8 +45,7 @@ public class PriceList: NSManagedObject, Codable {
 	// MARK: - Codable
 
 	var jsonData: Data? {
-		let jsonEncoder = JSONEncoder()
-		let jsonData = try? jsonEncoder.encode(self)
+		let jsonData = try? self.toJSONData()
 		return jsonData
 	}
 
@@ -55,12 +60,10 @@ public class PriceList: NSManagedObject, Codable {
 	public func encode(to encoder: Encoder) throws {
 		guard let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
 			else {
-				return
 				throw ValletError.unwrapping(property: "Version", object: "Info.plist", function: #function)
 		}
 		guard let shop = shop
 			else {
-				return
 				throw ValletError.unwrapping(property: "Shop", object: "PriceList", function: #function)
 		}
 		var container = encoder.container(keyedBy: CodingKeys.self)
