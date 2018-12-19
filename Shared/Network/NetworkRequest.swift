@@ -35,7 +35,7 @@ enum NetworkRequest: URLRequestConvertible {
 	private var path: String {
 		switch self {
 		case .getFunds(let address):
-			return "addr/\(address)"
+			return "ats/\(address)"
 		}
 	}
 

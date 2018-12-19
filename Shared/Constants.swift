@@ -36,9 +36,9 @@ struct Constants {
 	struct BlockChain {
 
 		// TODO: move the addresses to the xcconfig file
-		static let faucetServerAddress = "http://faucet.t1.artis.lab10.io/"
-		static let nodeAddress = "http://rpc.t1.artis.lab10.io:10204/"
-		static let tokenFactoryContractAddress = "0xf764a976aa3e4623b5724fa22a3058ad78960b58"
+		static let faucetServerAddress = "http://faucet.tau1.artis.network/"
+		static let nodeAddress = "http://rpc.tau1.artis.network"
+		static let tokenFactoryContractAddress = "0xE8DF33A947c911D0E74D66d880e3de07aEd5023D"
 
 		struct Event {
 

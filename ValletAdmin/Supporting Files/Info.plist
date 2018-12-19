@@ -28,14 +28,14 @@
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>t1.artis.lab10.io</key>
+			<key>ipfs.mars.lab10.io</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
 				<key>NSIncludesSubdomains</key>
 				<true/>
 			</dict>
-			<key>vallet.mars.lab10.io</key>
+			<key>tau1.artis.network</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
