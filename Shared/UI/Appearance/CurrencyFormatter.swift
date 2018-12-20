@@ -21,7 +21,7 @@ struct CurrencyFormatter {
 		let formatter = NumberFormatter()
 		formatter.numberStyle = .currency
 		formatter.locale = Locale.current
-		formatter.currencySymbol = "€"
+		formatter.currencySymbol = "¤"
 		return formatter
 	}()
 
