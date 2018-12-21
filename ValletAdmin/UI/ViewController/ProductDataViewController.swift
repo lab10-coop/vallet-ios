@@ -193,6 +193,13 @@ extension ProductDataViewController {
 		actionSheetController.addAction(cameraAction)
 		actionSheetController.addAction(libraryAction)
 		actionSheetController.addAction(cancelAction)
+		
+		if let popoverController = actionSheetController.popoverPresentationController {
+			popoverController.sourceView = self.view
+			popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+			popoverController.permittedArrowDirections = []
+		}
+		
 		present(actionSheetController, animated: true, completion: nil)
 		actionSheetController.view.tintColor = Theme.Color.accent
 	}
