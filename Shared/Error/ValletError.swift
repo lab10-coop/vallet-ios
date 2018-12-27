@@ -45,7 +45,7 @@ extension ValletError {
 		case .wallet:
 			return NSLocalizedString("Wallet Error", comment: "Error notification title")
 		case .insuficientFunds:
-			return NSLocalizedString("Insuficient Funds", comment: "Error notification title")
+			return NSLocalizedString("Insufficient Funds", comment: "Error notification title")
 		case .qrCodeAddress:
 			return NSLocalizedString("QR Code error", comment: "Error notification title")
 		case .passwordNotFound:
