@@ -68,7 +68,7 @@ class DashboardManager {
 
 		while dates.count < numMonths {
 			if month == 0 {
-				month = 1
+				month = 12
 				year -= 1
 			}
 			if let date = calendar.startOfMonth(for: month, year: year) {
